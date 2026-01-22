@@ -1,42 +1,32 @@
-"use client"
+ 
 import React from "react";
-import Nav from "./Nav";
+import Nav from "../Nav/Nav"
 import Link from "next/link";
 import Image from "next/image";
 import { socialLinks } from "@/data/socials"; 
  
  
-export default function MainHeader() {   
+export default function MainHeader({lng}) {    
   return (
-    <header className="!absolute w-full">
-      <div
-        className="gradient-5 !text-white font-bold !text-[.75rem] !mb-2 !relative"
-        style={{ zIndex: 1 }}
-      >
-        <div className="container py-2 !text-center">
-          <p className="!mb-0">
-            ✨  
-          </p> 
-        </div>
-        {/* /.container */}
-      </div>
+    <header className="!absolute w-full"> 
       <nav className="navbar navbar-expand-lg center-nav transparent navbar-light">
         <div className="container xl:!flex-row lg:!flex-row !flex-nowrap items-center">
           <div className="navbar-brand w-full">
             <Link href={`/`}>
               <Image
-                srcSet="/assets/img/logo-dark@2x.png 2x"
+                srcSet="/assets/img/logo/logo.svg"
                 alt="image"
                 src="/assets/img/logo/logo.svg"
                 width={134}
                 height={26}
+                className="h-10 w-auto"
               />
             </Link>
           </div>
           <div className="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div className="offcanvas-header xl:!hidden lg:!hidden flex items-center justify-between flex-row p-6">
               <h3 className="!text-white xl:!text-[1.5rem] !text-[calc(1.275rem_+_0.3vw)] !mb-0">
-                Sandbox
+                APSTH
               </h3>
               <button
                 type="button"
@@ -46,7 +36,7 @@ export default function MainHeader() {
               />
             </div>
             <div className="offcanvas-body xl:!ml-auto lg:!ml-auto flex flex-col !h-full">
-              <Nav color="#605dba" />
+              <Nav color="#605dba" lng={lng}/>
               {/* /.navbar-nav */}
               <div className="offcanvas-footer xl:!hidden lg:!hidden">
                 <div>
@@ -86,12 +76,14 @@ export default function MainHeader() {
                   {socialLinks.slice(0, 4).map((elm, i) => (
                     <a
                       key={i}
-                      className="m-[0_0_0_.7rem] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]"
+                      className={`m-[0_0_0_.7rem] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]`}
                       href={elm.href}
                     >
                       <i
                         className={`uil ${elm.icon} before:content-[${elm.unicode}] !text-[${elm.color}] text-[1rem]`}
-                      />
+                        style={{ color: elm.color }}
+                      /> 
+                      
                     </a>
                   ))}
                 </nav>

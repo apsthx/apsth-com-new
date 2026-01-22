@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@theme {
+@theme { 
   --font-IBMPlexSerif: "IBM Plex Serif", "serif";
   --font-SpaceGrotesk: "Space Grotesk", "sans-serif";
   --font-Manrope: "Manrope", "sans-serif";
@@ -28,7 +28,7 @@
   padding-inline: 2rem;
 }
 :root {
-  @apply text-[20px];
+  @apply text-[20px]; 
 }
 *,
 ::after,
@@ -171,6 +171,7 @@ h6 {
 body,
 html {
   @apply h-full;
+  
 }
 body {
   @apply flex flex-col;
@@ -183,6 +184,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   word-spacing: 0.05rem;
+  font-family: 'Manrope', 'IBM Plex Sans Thai', sans-serif; 
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 hr {
   @apply text-[rgba(164,174,198,0.2)] border-t-[1px] opacity-100 mx-0 my-[4.5rem] border-0 border-solid;

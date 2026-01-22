@@ -10,10 +10,11 @@ import {
   otherPages,
   projectPages,
 } from "@/data/menu";
-import { usePathname } from "next/navigation";  
+import { usePathname } from "next/navigation";
+
 // import LanguageChanger from '@/components/common/LanguageChanger'
 // !text-[var(--current-color)]
-export default function Nav({ color = "#fab758" }) {
+export default function NavClient({ color, labels }) {
   useEffect(() => {
     // Dynamically import Bootstrap
     import("bootstrap").then((Bootstrap) => {
@@ -82,7 +83,7 @@ export default function Nav({ color = "#fab758" }) {
           href="#"
           data-bs-toggle="dropdown"
         >
-          Demos
+          {labels.our_services}
         </a>
         <ul className="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
           <li className="mega-menu-content mega-menu-scroll">
@@ -141,7 +142,7 @@ export default function Nav({ color = "#fab758" }) {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Pages
+          {labels.our_customers}
         </a>
         <ul className="dropdown-menu">
           {otherPages.map((item) => (
@@ -204,7 +205,7 @@ export default function Nav({ color = "#fab758" }) {
           href="#"
           data-bs-toggle="dropdown"
         >
-          Projects
+          {labels.priicing}
         </a>
         <div className="dropdown-menu dropdown-lg">
           <div className="dropdown-lg-content">
@@ -243,7 +244,7 @@ export default function Nav({ color = "#fab758" }) {
           href="#"
           data-bs-toggle="dropdown"
         >
-          Blog
+          {labels.docs}
         </a>
         <ul className="dropdown-menu">
           {blogItems.map((item) => (
@@ -307,7 +308,7 @@ export default function Nav({ color = "#fab758" }) {
           href="#"
           data-bs-toggle="dropdown"
         >
-          Blocks
+          {labels.contact_us}
         </a>
         <ul className="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
           <li className="mega-menu-content">
@@ -340,89 +341,6 @@ export default function Nav({ color = "#fab758" }) {
                 </li>
               ))}
             </ul>
-            {/*/.row */}
-          </li>
-          {/*/.mega-menu-content*/}
-        </ul>
-        {/*/.dropdown-menu */}
-      </li>
-      <li className="nav-item dropdown dropdown-mega">
-        <a
-          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--current-color)] after:!text-[var(--current-color)]   ${
-            getActiveParent(docsPages) ? "!text-[var(--current-color)]" : ""
-          } `}
-          href="#"
-          data-bs-toggle="dropdown"
-        >
-          Documentation
-        </a>
-        <ul className="dropdown-menu mega-menu">
-          <li className="mega-menu-content">
-            <div className="flex flex-wrap mx-0 xl:mx-[-7.5px] lg:mx-[-7.5px]">
-              <div className="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] max-w-full">
-                {docsPages.slice(0, 2).map((links, i) => (
-                  <React.Fragment key={i}>
-                    <h6
-                      className={
-                        i != 0
-                          ? "dropdown-header !text-[var(--current-color)] xl:!mt-6 lg:!mt-6"
-                          : "dropdown-header !text-[var(--current-color)]"
-                      }
-                    >
-                      {links.title}
-                    </h6>
-                    <ul
-                      className={
-                        i != 0
-                          ? "pl-0 list-none xl:columns-2 lg:columns-2"
-                          : "pl-0 list-none xl:columns-2 lg:columns-2 xl:pb-1 lg:pb-1"
-                      }
-                    >
-                      {links.links.map((link, i) => (
-                        <li
-                          key={i}
-                          className="xl:inline-block xl:w-full lg:inline-block lg:w-full"
-                        >
-                          <Link
-                            className={`dropdown-item hover:!text-[var(--current-color)]    ${
-                              link.href == pathname
-                                ? "!text-[var(--current-color)]"
-                                : ""
-                            } `}
-                            href={link.href}
-                          >
-                            {link.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>{" "}
-                  </React.Fragment>
-                ))}
-              </div>
-              {/*/column */}
-              <div className="xl:w-8/12 lg:w-8/12 w-full flex-[0_0_auto] max-w-full xl:border-l-[rgba(164,174,198,0.2)] xl:border-l xl:border-solid lg:border-l-[rgba(164,174,198,0.2)] lg:border-l lg:border-solid">
-                <h6 className="dropdown-header !text-[var(--current-color)]">
-                  Elements
-                </h6>
-                <ul className="pl-0 list-none xl:columns-3 lg:columns-3">
-                  {docsPages[2].links.map((link, i) => (
-                    <li key={i}>
-                      <Link
-                        className={`dropdown-item hover:!text-[var(--current-color)]     ${
-                          link.href == pathname
-                            ? "!text-[var(--current-color)]"
-                            : ""
-                        } `}
-                        href={link.href}
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/*/column */}
-            </div>
             {/*/.row */}
           </li>
           {/*/.mega-menu-content*/}

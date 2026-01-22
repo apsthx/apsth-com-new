@@ -1,9 +1,8 @@
-import MainFooter from "@/components/footers/MainFooter";
-import MainHeader from "@/components/headers/MainHeader";
+ 
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
+ 
 export const metadata = {
   title:
     "Page Not Found || Sandbox - Modern & Multipurpose React Next.js Template with Tailwind CSS",
@@ -13,14 +12,10 @@ export const metadata = {
 export default function NotFoundPage() {
   return (
     <>
-      <div className="grow shrink-0 space-y-2 mb-14">
-        <MainHeader
-          parentClass="relative wrapper !bg-[#ffffff]"
-          navClass="navbar navbar-expand-lg center-nav transparent navbar-light"
-        />
+      <div className="grow shrink-0">
         <section className="wrapper !bg-[#ffffff]">
           <div className="container pt-14 xl:pt-[4.5rem] lg:pt-[4.5rem] md:pt-[4.5rem] pb-[4.5rem] xl:pb-24 lg:pb-24 md:pb-24">
-            <div className="flex mt-14 flex-wrap mx-[-15px]">
+            <div className="flex flex-wrap mx-[-15px]">
               <div className="lg:w-9/12 xl:w-8/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mx-auto">
                 <figure className="!mb-10">
                   <Image
@@ -54,8 +49,7 @@ export default function NotFoundPage() {
           </div>
           {/* /.container */}
         </section>
-      </div>
-      <MainFooter />
+      </div> 
     </>
   );
 }
