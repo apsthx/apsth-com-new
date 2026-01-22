@@ -1,7 +1,35 @@
 { 
+  "services": {
+    "clinic_software": "Clinic Software", 
+    "hospital_software":"Hospital Software",
+    "wellness_software":"Wellness Software",
+    "elderly_care_center_software":"Elderly Care Center Software",
+    "spa_Beauty_software":"Spa Beauty Software" 
+  }, 
+  "customers": {
+    "our_customers": "Our Customers",
+    "partner":"Partner", 
+    "sub_customers":{
+      "sub_our_customers":"Our Current Customers",
+      "sub_partner":"Our Partner"
+    }
+  },
+   "document": {
+      "api_integration": "API Integration",
+      "documentation":"Documentation",
+      "changelog":"Changelog",
+      "sub_document":{
+        "sub_api_integration":"API Documentation",
+        "sub_documentation":"User Manual", 
+        "sub_changelog":"Update Log"
+      }
+    },
   "our_services": "Our Services",
   "our_customers": "Our Customers",
-  "priicing":"Priicing",
+  "priicing":"Pricing",
   "docs":"Docs",
-  "contact_us":"Contact Us"
+  "contact_us":"Contact Us", 
+  "login":"Login",
+  "free_trial":"Free Trial",
+  "free":"Free"
 }

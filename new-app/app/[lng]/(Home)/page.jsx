@@ -25,8 +25,9 @@ export default async function HomePage({ params }) {
   const { lng } = await params;
   return (
     <>
-      <div className="color-grape font-space demo30">
-        <div className="!bg-[#f0f0f8]">
+      <div className="color-grape font-space demo30 ">
+        {/* className="!bg-[#f0f0f8]" */}
+        <div>
           <div className="grow shrink-0">
             <section className="wrapper overflow-hidden">
               <Hero />

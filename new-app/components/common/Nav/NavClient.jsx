@@ -9,12 +9,18 @@ import {
   docsPages,
   otherPages,
   projectPages,
+  ourServices,
+  ourCustomers,
+  documents,
 } from "@/data/menu";
 import { usePathname } from "next/navigation";
 
+// components
+import Badge from "../Badges";
+
 // import LanguageChanger from '@/components/common/LanguageChanger'
 // !text-[var(--current-color)]
-export default function NavClient({ color, labels }) {
+export default function NavClient({ color, labels, badges }) {
   useEffect(() => {
     // Dynamically import Bootstrap
     import("bootstrap").then((Bootstrap) => {
@@ -72,71 +78,60 @@ export default function NavClient({ color, labels }) {
   };
 
   return (
-    <ul className="navbar-nav" style={{ "--current-color": color }}>
-      <li className="nav-item dropdown dropdown-mega">
+    <ul className="navbar-nav " style={{ "--current-color": color }}>
+      <li className="nav-item dropdown ">
         <a
-          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--current-color)] after:!text-[var(--current-color)] ${
-            demos.some((link) => link.href == pathname)
-              ? "!text-[var(--current-color)]"
-              : ""
+          className={`nav-link space-x-1 dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--hover-text)] ${
+            getActiveParent(ourServices) ? "!text-[var(--current-color)]" : ""
           } `}
           href="#"
           data-bs-toggle="dropdown"
         >
-          {labels.our_services}
+          <span>{labels.our_services}</span>
+          <Badge color="yellow" variant="softText">
+            {badges.new}
+          </Badge>
         </a>
-        <ul className="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
-          <li className="mega-menu-content mega-menu-scroll">
-            <ul className="grid grid-cols-1 xl:grid-cols-6 lg:grid-cols-6 mx-0 xl:mx-[-10px] lg:mx-[-10px] xl:!mt-[-10px] lg:!mt-[-10px] !pl-0 list-none">
-              {demos.map((demo) => (
-                <li
-                  key={demo.id}
-                  className={`xl:!px-[10px] xl:!mt-[10px] lg:!px-[10px] lg:!mt-[10px]`}
-                >
-                  <Link className={`dropdown-item`} href={demo.href}>
-                    <figure
-                      className={`!rounded-[.4rem] lift hidden xl:block lg:block`}
-                    >
-                      <Image
-                        className={`!rounded-[.4rem] ${
-                          demo.href == pathname
-                            ? "p-[3px] bg-[var(--current-color)]"
-                            : ""
-                        } `}
-                        srcSet={demo.srcSet}
-                        alt={demo.alt}
-                        src={demo.src}
-                        width={185}
-                        height={135}
-                      />
-                    </figure>
-                    <span
-                      className={`xl:!hidden lg:!hidden ${
-                        demo.href == pathname
-                          ? "!text-[var(--current-color)]"
-                          : ""
-                      } `}
-                    >
-                      {demo.alt}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            {/*/.row */}
-            <span className="hidden xl:!flex lg:!flex">
-              <i className="uil uil-direction before:content-['\ea93']" />
-              <strong>Scroll to view more</strong>
-            </span>
-          </li>
-          {/*/.mega-menu-content*/}
+        <ul className="dropdown-menu">
+          {labels.services.map((item) => (
+            <li key={item.id} className="nav-item">
+              {/* hover:!text-[var(--current-color)] */}
+              <a
+                className={`flex items-center space-x-2 dropdown-item  ${
+                  item.href === pathname ? "!text-[var(--current-color)]" : ""
+                }`}
+                href={item.href}
+                style={{
+                  display: "flex", // บังคับเป็น flex
+                  alignItems: "center", // จัดกลางแนวตั้ง
+                  letterSpacing: "0.7px",
+                  paddingTop: "0.5rem", // ปรับ padding ให้สมดุล
+                  paddingBottom: "0.5rem",
+                }}
+              >
+                <div className="flex items-center justify-center w-[1.2rem]">
+                  {/* หุ้ม Icon ด้วย div เพื่อคุมพื้นที่ให้เท่ากันทุกเมนู */}
+                  <i
+                    className={`uil ${item.icon} text-[1rem] leading-none`}
+                    style={{ color: item.color }}
+                  />
+                </div>
+                <span className="leading-none">{item.label}</span>
+                {item.id != "clinic_software" && (
+                  <Badge color="yellow" variant="softText">
+                    {badges.new}
+                  </Badge>
+                )}
+              </a>
+            </li>
+          ))}
         </ul>
         {/*/.dropdown-menu */}
       </li>
       <li className="nav-item dropdown">
         <a
-          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--current-color)] after:!text-[var(--current-color)] ${
-            getActiveParent(otherPages) ? "!text-[var(--current-color)]" : ""
+          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--hover-text)] ${
+            getActiveParent(ourCustomers) ? "!text-[var(--current-color)]" : ""
           } `}
           href="#"
           data-bs-toggle="dropdown"
@@ -145,101 +140,54 @@ export default function NavClient({ color, labels }) {
           {labels.our_customers}
         </a>
         <ul className="dropdown-menu">
-          {otherPages.map((item) => (
-            <li
-              key={item.id}
-              className={`dropdown ${
-                item.links ? "dropdown-submenu dropend" : "nav-item"
-              }`}
-            >
-              {item.links ? (
-                <>
-                  <a
-                    className={`dropdown-item hover:!text-[var(--current-color)] dropdown-toggle  ${
-                      getActiveParent([item])
-                        ? "!text-[var(--current-color)]"
-                        : ""
-                    } `}
-                    href="#"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    {item.label}
-                  </a>
-                  <ul className="dropdown-menu submenu">
-                    {item.links.map((subItem) => (
-                      <li key={subItem.id} className="nav-item">
-                        <Link
-                          className={`dropdown-item hover:!text-[var(--current-color)]   ${
-                            subItem.href == pathname
-                              ? "!text-[var(--current-color)]"
-                              : ""
-                          } `}
-                          href={subItem.href}
-                        >
-                          {subItem.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : (
-                <Link
-                  className={`dropdown-item hover:!text-[var(--current-color)]   ${
-                    item.href == pathname ? "!text-[var(--current-color)]" : ""
-                  } `}
-                  href={item.href}
-                >
-                  {item.label}
-                </Link>
-              )}
+          {labels.customers.map((item) => (
+            <li key={item.id} className="nav-item">
+              {/* hover:!text-[var(--current-color)] */}
+              <a
+                className={`flex items-center space-x-2 dropdown-item  ${
+                  item.href === pathname ? "!text-[var(--current-color)]" : ""
+                }`}
+                href={item.href}
+                style={{
+                  display: "flex", // บังคับเป็น flex
+                  alignItems: "center", // จัดกลางแนวตั้ง
+                  letterSpacing: "0.7px",
+                  paddingTop: "0.5rem", // ปรับ padding ให้สมดุล
+                  paddingBottom: "0.5rem",
+                }}
+              >
+                <div className="flex items-center justify-center w-[1.2rem]">
+                  {/* หุ้ม Icon ด้วย div เพื่อคุมพื้นที่ให้เท่ากันทุกเมนู */}
+                  <i
+                    className={`uil ${item.icon} text-[1rem] leading-none`}
+                    style={{ color: item.color }}
+                  />
+                </div>
+                <div className="grid gap-1">
+                  <span className="leading-none">{item.label}</span>
+                  <span className="leading-none text-[12px] font-medium">
+                    {item.sub}
+                  </span>
+                </div>
+              </a>
             </li>
           ))}
         </ul>
       </li>
-      <li className="nav-item dropdown">
+      <li className="nav-item ">
         <a
-          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--current-color)] after:!text-[var(--current-color)]  ${
-            getActiveParent(projectPages) ? "!text-[var(--current-color)]" : ""
-          } `}
+          className={`nav-link  !text-[.85rem] !tracking-[normal] hover:!text-[var(--hover-text)] 
+          after:!content-none after:!hidden  
+          `}
           href="#"
-          data-bs-toggle="dropdown"
         >
           {labels.priicing}
         </a>
-        <div className="dropdown-menu dropdown-lg">
-          <div className="dropdown-lg-content">
-            {projectPages.map((section) => (
-              <div key={section.id}>
-                <h6 className="dropdown-header !text-[var(--current-color)]">
-                  {section.title}
-                </h6>
-                <ul className="pl-0 list-none">
-                  {section.links.map((link) => (
-                    <li key={link.id}>
-                      <Link
-                        className={`dropdown-item hover:!text-[var(--current-color)]   ${
-                          link.href == pathname
-                            ? "!text-[var(--current-color)]"
-                            : ""
-                        }  `}
-                        href={link.href}
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          {/* /auto-column */}
-        </div>
       </li>
       <li className="nav-item dropdown">
         <a
-          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--current-color)] after:!text-[var(--current-color)]   ${
-            getActiveParent(blogItems) ? "!text-[var(--current-color)]" : ""
+          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--hover-text)] ${
+            getActiveParent(documents) ? "!text-[var(--current-color)]" : ""
           } `}
           href="#"
           data-bs-toggle="dropdown"
@@ -247,109 +195,50 @@ export default function NavClient({ color, labels }) {
           {labels.docs}
         </a>
         <ul className="dropdown-menu">
-          {blogItems.map((item) => (
-            <li
-              key={item.id}
-              className={`nav-item ${
-                item.type === "dropdown"
-                  ? "dropdown dropdown-submenu dropend"
-                  : ""
-              }`}
-            >
-              {item.type === "dropdown" ? (
-                <>
-                  <a
-                    className={`dropdown-item hover:!text-[var(--current-color)] dropdown-toggle   ${
-                      getActiveParent([item])
-                        ? "!text-[var(--current-color)]"
-                        : ""
-                    } `}
-                    href="#"
-                    data-bs-toggle="dropdown"
-                  >
-                    {item.label}
-                  </a>
-                  <ul className="dropdown-menu">
-                    {item.links.map((subItem) => (
-                      <li key={subItem.id} className="nav-item">
-                        <Link
-                          className={`dropdown-item hover:!text-[var(--current-color)]   ${
-                            subItem.href == pathname
-                              ? "!text-[var(--current-color)]"
-                              : ""
-                          } `}
-                          href={subItem.href}
-                        >
-                          {subItem.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : (
-                <Link
-                  className={`dropdown-item hover:!text-[var(--current-color)]   ${
-                    item.href == pathname ? "!text-[var(--current-color)]" : ""
-                  } `}
-                  href={item.href}
-                >
-                  {item.label}
-                </Link>
-              )}
+          {labels.documents.map((item) => (
+            <li key={item.id} className="nav-item">
+              {/* hover:!text-[var(--current-color)] */}
+              <a
+                className={`flex items-center space-x-2 dropdown-item  ${
+                  item.href === pathname ? "!text-[var(--current-color)]" : ""
+                }`}
+                href={item.href}
+                style={{
+                  display: "flex", // บังคับเป็น flex
+                  alignItems: "center", // จัดกลางแนวตั้ง
+                  letterSpacing: "0.7px",
+                  paddingTop: "0.5rem", // ปรับ padding ให้สมดุล
+                  paddingBottom: "0.5rem",
+                }}
+              >
+                <div className="flex items-center justify-center w-[1.2rem]">
+                  {/* หุ้ม Icon ด้วย div เพื่อคุมพื้นที่ให้เท่ากันทุกเมนู */}
+                  <i
+                    className={`uil ${item.icon} text-[1rem] leading-none`}
+                    style={{ color: item.color }}
+                  />
+                </div>
+                <div className="grid gap-1">
+                  <span className="leading-none">{item.label}</span>
+                  <span className="leading-none text-[12px] font-medium">
+                    {item.sub}
+                  </span>
+                </div>
+              </a>
             </li>
           ))}
         </ul>
       </li>
-      <li className="nav-item dropdown dropdown-mega">
+      <li className="nav-item ">
         <a
-          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--current-color)] after:!text-[var(--current-color)]   ${
-            getActiveParent(blockItems) ? "!text-[var(--current-color)]" : ""
-          } `}
+          className={`nav-link  !text-[.85rem] !tracking-[normal] hover:!text-[var(--hover-text)] 
+          after:!content-none after:!hidden  
+          `}
           href="#"
-          data-bs-toggle="dropdown"
         >
           {labels.contact_us}
         </a>
-        <ul className="dropdown-menu mega-menu mega-menu-dark mega-menu-img">
-          <li className="mega-menu-content">
-            <ul className="grid grid-cols-1 xl:grid-cols-6 lg:grid-cols-6 mx-0 xl:mx-[-15px] lg:mx-[-15px] xl:!mt-[-20px] lg:!mt-[-20px] !pl-0 list-none">
-              {blockItems.map((item) => (
-                <li
-                  key={item.id}
-                  className="xl:!px-[15px] xl:!mt-[20px] lg:!px-[15px] lg:!mt-[20px]"
-                >
-                  <Link className="dropdown-item" href={item.href}>
-                    <div className="rounded img-svg hidden xl:block lg:block p-4 xl:!mb-2 lg:!mb-2">
-                      <Image
-                        className="rounded-none"
-                        alt="image"
-                        src={item.image}
-                        width={635}
-                        height={330}
-                      />
-                    </div>
-                    <span
-                      className={`${
-                        item.href == pathname
-                          ? "!text-[var(--current-color)]"
-                          : ""
-                      } `}
-                    >
-                      {item.label}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            {/*/.row */}
-          </li>
-          {/*/.mega-menu-content*/}
-        </ul>
-        {/*/.dropdown-menu */}
       </li>
-      {/* <li>
-        <LanguageChanger/>
-      </li> */}
     </ul>
   );
 }

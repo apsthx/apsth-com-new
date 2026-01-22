@@ -6,6 +6,160 @@ export const demos = Array.from({ length: 34 }, (_, i) => ({
   alt: `Demo ${i + 1}`,
 }));
 
+export const navMenu = [
+  {
+    id: "our_services",
+    href: "/services",
+    type: "link",
+    label: "nav:our_services",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+  },
+  {
+    id: "our_customers",
+    href: "/customers",
+    type: "link",
+    label: "nav:our_customers",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+  },
+  {
+    id: "priicing",
+    href: "/priicing",
+    type: "link",
+    label: "nav:priicing",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+  },
+  {
+    id: "docs",
+    href: "/docs",
+    type: "link",
+    label: "nav:docs",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+  },
+  {
+    id: "contact_us",
+    href: "/contact_us",
+    type: "link",
+    label: "nav:contact_us",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+  },
+];
+
+export const ourServices = [
+  {
+    id: "clinic_software",
+    href: "/clinic",
+    type: "link",
+    label: "nav:services.clinic_software",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+  },
+  {
+    id: "hospital_software",
+    href: "/hospital_software",
+    type: "link",
+    label: "nav:services.hospital_software",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+  },
+  {
+    id: "wellness_software",
+    href: "/wellness_software",
+    type: "link",
+    label: "nav:services.wellness_software",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+  },
+  {
+    id: "elderly_care_center_software",
+    href: "/elderly_care_center_software",
+    type: "link",
+    label: "nav:services.elderly_care_center_software",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+  },
+  {
+    id: "spa_Beauty_software",
+    href: "/spa_Beauty_software",
+    type: "link",
+    label: "nav:services.spa_Beauty_software",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+  },
+];
+
+export const ourCustomers = [
+  {
+    id: "our_customers",
+    href: "/our_customers",
+    type: "link",
+    label: "nav:customers.our_customers",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+    sub: "nav:customers.sub_customers.sub_our_customers",
+  },
+  {
+    id: "partner",
+    href: "/partner",
+    type: "link",
+    label: "nav:customers.partner",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+    sub: "nav:customers.sub_customers.sub_partner",
+  },
+];
+
+export const documents = [
+  {
+    id: "api_integration",
+    href: "/api_integration",
+    type: "link",
+    label: "nav:document.api_integration",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+    sub: "nav:document.sub_document.sub_api_integration",
+  },
+  {
+    id: "documentation",
+    href: "/documentation",
+    type: "link",
+    label: "nav:document.documentation",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+    sub: "nav:document.sub_document.sub_documentation",
+  },
+  {
+    id: "changelog",
+    href: "/changelog",
+    type: "link",
+    label: "nav:document.changelog",
+    icon: "uil-line",
+    unicode: "'\\eb43'",
+    color: "#45c4a0",
+    sub: "nav:document.sub_document.sub_changelog",
+  },
+];
+
+// เวลาใช้งาน: const services = getOurServices("th");
+
 export const otherPages = [
   {
     id: "services",

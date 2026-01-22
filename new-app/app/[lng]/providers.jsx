@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useRef } from "react";
 // import "./assets/style.css";
-// import "./globals.css"; 
+// import "./globals.css";
 
 // 2. Import style.css (ถอยหลัง 2 ชั้นไป root แล้วเข้า public)
-import "../../public/assets/style.css"; 
+import "../../public/assets/style.css";
 import "photoswipe/dist/photoswipe.css";
 import "photoswipe/dist/photoswipe.css";
 import iTooltip from "itooltip";
@@ -15,7 +15,7 @@ import ProgressWrap from "@/components/common/ProgressWrap";
 import initPlayer from "@/utlis/initPlayer";
 import SearchModal from "@/components/common/modals/SearchModal";
 import InfoModal from "@/components/common/modals/InfoModal";
- 
+import { ThemeProvider } from "next-themes";
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     initPlayer();
     const overlayElements = document.querySelectorAll(
-      ".overlay > a, .overlay > span"
+      ".overlay > a, .overlay > span",
     );
     overlayElements.forEach((element) => {
       const overlayBg = document.createElement("span");
@@ -50,10 +50,10 @@ export default function RootLayout({ children }) {
   }, [pathname]);
   useEffect(() => {
     const tooltipTriggerList = document.querySelectorAll(
-      '[data-bs-toggle="tooltip"]'
+      '[data-bs-toggle="tooltip"]',
     );
     const popoverTriggerList = document.querySelectorAll(
-      '[data-bs-toggle="popover"]'
+      '[data-bs-toggle="popover"]',
     );
 
     if (tooltipTriggerList.length > 0 || popoverTriggerList.length > 0) {
@@ -64,14 +64,14 @@ export default function RootLayout({ children }) {
             return new bootstrap.Tooltip(tooltipTriggerEl, {
               trigger: "hover",
             });
-          }
+          },
         );
 
         // Initialize popovers
         const popoverList = Array.from(popoverTriggerList).map(
           (popoverTriggerEl) => {
             return new bootstrap.Popover(popoverTriggerEl);
-          }
+          },
         );
 
         // Cleanup tooltips and popovers on component unmount
@@ -167,13 +167,13 @@ export default function RootLayout({ children }) {
 
         const navOffCanvasBtn = document.querySelectorAll(".offcanvas-nav-btn");
         const navOffCanvas = document.querySelector(
-          ".navbar:not(.navbar-clone) .offcanvas-nav"
+          ".navbar:not(.navbar-clone) .offcanvas-nav",
         );
         if (!navOffCanvas) return;
 
         const bsOffCanvas = new Offcanvas(navOffCanvas, { scroll: true });
         const scrollLink = document.querySelectorAll(
-          ".onepage .navbar li a.scroll"
+          ".onepage .navbar li a.scroll",
         );
         const searchOffcanvas = document.getElementById("offcanvas-search");
 
@@ -181,10 +181,10 @@ export default function RootLayout({ children }) {
         const handleScrollClick = () => bsOffCanvas.hide();
 
         navOffCanvasBtn.forEach((e) =>
-          e.addEventListener("click", handleNavClick)
+          e.addEventListener("click", handleNavClick),
         );
         scrollLink.forEach((e) =>
-          e.addEventListener("click", handleScrollClick)
+          e.addEventListener("click", handleScrollClick),
         );
 
         if (searchOffcanvas) {
@@ -195,21 +195,28 @@ export default function RootLayout({ children }) {
 
         return () => {
           navOffCanvasBtn.forEach((e) =>
-            e.removeEventListener("click", handleNavClick)
+            e.removeEventListener("click", handleNavClick),
           );
           scrollLink.forEach((e) =>
-            e.removeEventListener("click", handleScrollClick)
+            e.removeEventListener("click", handleScrollClick),
           );
         };
       });
     });
   }, [pathname]);
-  return ( 
-    <Context> 
+  return (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light" // กำหนดค่าเริ่มต้นเป็นสีสว่าง
+      forcedTheme="light" // *** บังคับให้เป็นสีสว่างตลอดเวลา (ห้ามเปลี่ยน) ***
+      enableSystem={false} // ปิดการตรวจจับโหมดของระบบ Windows/macOS
+    >
+      <Context>
         {children}
         <SearchModal />
         <InfoModal />
         <ProgressWrap />
-    </Context>  
+      </Context>
+    </ThemeProvider>
   );
 }
