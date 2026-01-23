@@ -1,0 +1,30 @@
+{
+    "hero":{
+        "title":"โปรแกรม คลินิก APSX Platform",
+        "our_solutions":{
+            "who_are_we": "เราคือใคร?",
+            "aps_platform_clinic": "APSX แพลตฟอร์มสำหรับคลินิก", 
+            "smart_inventory_emr": "ระบบ EMR และคลังสินค้า",
+            "boost_your_clinic": "ยกระดับคลินิกของคุณ"  
+        },
+        "description":"For Hospital, Clinic, Spa, Wellness, ศูนย์ดูแลผู้สูงอายุ ธุรกิจความงาม คลินิกเฉพาะทาง คลินิกเวชกรรม คลินิกทั่วไป คลินิกพยาบาลผดุงครรภ์ คลินิกกายภาพบำบัด คลินิกแพทย์แผนไทย-จีน คลินิกอายุรกรรม คลินิกแม่และเด็ก คลินิกบําบัดยาเสพติด คลินิกสุขภาพจิต คลินิกตา คลินิกทันตกรรม",
+        "free_essentials":{
+            "free_training":"สอนการใช้งานฟรี",
+            "sub_free_training":"สอนใช้งานฟรีจนกว่าจะเป็น โดยทีมผู้เชี่ยวชาญ",
+            "free_updates":"อัพเดทเวอร์ชั่นฟรี",
+            "sub_free_updates":"อัปเดตฟีเจอร์ใหม่และระบบความปลอดภัยฟรี"
+        },
+        "connect":{
+            "line":"ID: @apsth",
+            "book_a_demo":"Book a Demo"
+        },
+        "user_ecosystem":{
+            "role_owner": "เจ้าของกิจการ",
+            "role_medical_professional": "แพทย์/นักกายภาพบำบัด/พยาบาล",
+            "role_manager": "ผู้จัดการ",
+            "role_staff": "พนักงาน"
+        }
+
+
+    }
+}

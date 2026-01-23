@@ -1,0 +1,29 @@
+{
+    "hero":{
+        "title":"APSX Platform Clinic Program",
+        "our_solutions":{
+            "who_are_we":"Who Are We?",
+            "aps_platform_clinic":"APSX Platform Clinic", 
+            "smart_inventory_emr":"Inventory & EMR" 
+        },
+        "description":"For Hospital, Clinic, Spa, Wellness, Senior Care, Beauty, Specialized Clinics, General Clinics, Maternity Clinics, Physiotherapy Clinics, Thai‐Chinese Medicine Clinics, General Medicine Clinics, Mother and Child Clinics, Rehabilitation Clinics, Mental Health Clinics, Eye Clinics",
+        "free_essentials":{
+            "free_training":"Free Training",
+            "sub_free_training": "Free comprehensive training by experts until you're proficient",
+            "free_updates":"Free Updates",
+            "sub_free_updates": "Free security updates and new feature releases"
+        },
+        "connect":{
+            "line":"ID: @apsth",
+            "book_a_demo":"Book a Demo"
+        },
+        "user_ecosystem":{
+            "role_owner": "Business Owner",
+            "role_medical_professional": "Doctor/Physiotherapist/Nurse",
+            "role_manager": "Manager",
+            "role_staff": "Staff"
+        }
+
+
+    }
+}

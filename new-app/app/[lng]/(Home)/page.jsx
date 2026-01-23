@@ -30,7 +30,7 @@ export default async function HomePage({ params }) {
         <div>
           <div className="grow shrink-0">
             <section className="wrapper overflow-hidden">
-              <Hero />
+              <Hero lng={lng} />
               {/* /.container */}
               <Demos />
               {/* /.container */}

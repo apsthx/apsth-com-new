@@ -67,25 +67,27 @@ export default async function MainHeader({ lng }) {
                     <a
                       target="_blank"
                       href="https://www.app-apsx.com/login"
-                      className="btn !text-[#f5f5f6] !bg-[#a4aec633] hover:!bg-[#9daac733] !border-none !shadow-none focus:!shadow-none active:!shadow-none btn-xs !rounded-lg !py-1"
+                      className="btn btn-xs !inline-flex items-center gap-1 !text-[#343f52] !bg-[#ffffff] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn   focus:!shadow-none active:!shadow-none btn-xs "
                     >
-                      {labels.login}
+                      <i className="uil uil-signin text-[0.9rem]" />
+                      <span className="font-medium">{labels.login}</span>
                     </a>
                     <a
                       target="_blank"
                       href="https://www.app-apsx.com/register"
-                      className="btn !relative !text-[#f5f5f6] !bg-[#747ed1] hover:!bg-[#6b76d3] !border-none !shadow-none focus:!shadow-none active:!shadow-none btn-xs !rounded-lg !py-1 !px-3"
+                      className=" !relative !inline-flex items-center gap-1 !text-[#f5f5f6] !bg-[#747ed1] hover:!bg-[#6b76d3] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn  focus:!shadow-none active:!shadow-none btn-xs "
                     >
-                      <span className="absolute -top-3 -right-5 -translate-x-1/2">
+                      <span className="absolute -top-3 -right-3">
                         <Badge
                           color="red"
                           variant="softText"
-                          className="!text-[0.6rem] !px-2 !py-[2px] !leading-tight !shadow-sm"
+                          className="!text-[0.6rem] !px-1.5 !py-[1px] !leading-tight !shadow-sm !rounded-md"
                         >
                           {labels.free}
                         </Badge>
                       </span>
-                      {labels.free_trial}
+                      <i className="uil uil-rocket text-[0.9rem]" />
+                      <span className="font-bold">{labels.free_trial}</span>
                     </a>
                   </div>
                   <nav className="nav social social-white !mt-4">
@@ -115,27 +117,29 @@ export default async function MainHeader({ lng }) {
                 <a
                   target="_blank"
                   href="https://www.app-apsx.com/login"
-                  className="btn !text-[#343f52] !bg-[#a4aec633] hover:!bg-[#9daac733] !border-none !shadow-none focus:!shadow-none active:!shadow-none btn-xs !rounded-lg !py-1"
+                  className="btn btn-xs !inline-flex items-center gap-1 !text-[#343f52] !bg-[#f3f2f2] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn focus:!shadow-none active:!shadow-none btn-xs"
                 >
-                  {labels.login}
+                  <i className="uil uil-signin text-[0.9rem]" />
+                  <span className="font-bold">{labels.login}</span>
                 </a>
               </li>
               <li className="flex items-center justify-center navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                 <a
                   target="_blank"
                   href="https://www.app-apsx.com/register"
-                  className="btn !relative !text-[#f5f5f6] !bg-[#747ed1] hover:!bg-[#6b76d3] !border-none !shadow-none focus:!shadow-none active:!shadow-none btn-xs !rounded-lg !py-1 !px-3"
+                  className="!relative !inline-flex items-center gap-1 !text-[#f5f5f6] !bg-[#5eb9f0] hover:!bg-[#4baeeb] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn  focus:!shadow-none active:!shadow-none btn-xs"
                 >
-                  <span className="absolute -top-3 -right-5 -translate-x-1/2">
+                  <span className="absolute -top-3 -right-3">
                     <Badge
                       color="red"
                       variant="softText"
-                      className="!text-[0.6rem] !px-2 !py-[2px] !leading-tight !shadow-sm"
+                      className="!text-[0.6rem] !px-1.5 !py-[1px] !leading-tight !shadow-sm !rounded-md"
                     >
                       {labels.free}
                     </Badge>
                   </span>
-                  {labels.free_trial}
+                  <i className="uil uil-rocket text-[0.9rem]" />
+                  <span className="font-bold">{labels.free_trial}</span>
                 </a>
               </li>
               <li className="nav-item xl:!hidden lg:!hidden">
