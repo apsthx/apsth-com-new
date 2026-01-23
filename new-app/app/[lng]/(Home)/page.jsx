@@ -4,6 +4,7 @@ import Testimonials from "@/components/services/homes/componemts/Testimonials";
 import Banner from "@/components/services/homes/componemts/Banner";
 import Demos from "@/components/services/homes/componemts/Demos";
 import Features from "@/components/services/homes/componemts/Features";
+import PlatformHighlights from "@/components/services/homes/componemts/PlatformHighlights";
 import Hero from "@/components/services/homes/componemts/Hero";
 import Pricing from "@/components/services/homes/componemts/Pricing";
 import Process from "@/components/services/homes/componemts/Process";
@@ -32,6 +33,8 @@ export default async function HomePage({ params }) {
             <section className="wrapper overflow-hidden">
               <Hero lng={lng} />
               {/* /.container */}
+              <Features lng={lng} />
+              <PlatformHighlights lng={lng} />
               <Demos />
               {/* /.container */}
               <Services />
@@ -40,7 +43,6 @@ export default async function HomePage({ params }) {
             {/* /section */}
             <Process />
             {/* /section */}
-            <Features />
             {/* /section */}
             <Banner />
             {/* /section */}

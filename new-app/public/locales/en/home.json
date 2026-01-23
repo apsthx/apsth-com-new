@@ -1,29 +1,306 @@
 {
-    "hero":{
-        "title":"APSX Platform Clinic Program",
-        "our_solutions":{
-            "who_are_we":"Who Are We?",
-            "aps_platform_clinic":"APSX Platform Clinic", 
-            "smart_inventory_emr":"Inventory & EMR" 
-        },
-        "description":"For Hospital, Clinic, Spa, Wellness, Senior Care, Beauty, Specialized Clinics, General Clinics, Maternity Clinics, Physiotherapy Clinics, Thai‐Chinese Medicine Clinics, General Medicine Clinics, Mother and Child Clinics, Rehabilitation Clinics, Mental Health Clinics, Eye Clinics",
-        "free_essentials":{
-            "free_training":"Free Training",
-            "sub_free_training": "Free comprehensive training by experts until you're proficient",
-            "free_updates":"Free Updates",
-            "sub_free_updates": "Free security updates and new feature releases"
-        },
-        "connect":{
-            "line":"ID: @apsth",
-            "book_a_demo":"Book a Demo"
-        },
-        "user_ecosystem":{
-            "role_owner": "Business Owner",
-            "role_medical_professional": "Doctor/Physiotherapist/Nurse",
-            "role_manager": "Manager",
-            "role_staff": "Staff"
-        }
-
-
+  "category": "Category",
+  "coming_soon": "Coming Soon",
+  "read_more": "Read More",
+  "hero": {
+    "title": "APSX Platform Clinic Program",
+    "our_solutions": {
+      "who_are_we": "Who Are We?",
+      "aps_platform_clinic": "APSX Platform Clinic",
+      "smart_inventory_emr": "Inventory & EMR"
+    },
+    "description": "For Hospital, Clinic, Spa, Wellness, Senior Care, Beauty, Specialized Clinics, General Clinics, Maternity Clinics, Physiotherapy Clinics, Thai‐Chinese Medicine Clinics, General Medicine Clinics, Mother and Child Clinics, Rehabilitation Clinics, Mental Health Clinics, Eye Clinics",
+    "free_essentials": {
+      "free_training": "Free Training",
+      "sub_free_training": "Free comprehensive training by experts until you're proficient",
+      "free_updates": "Free Updates",
+      "sub_free_updates": "Free security updates and new feature releases"
+    },
+    "connect": {
+      "line": "ID: @apsth",
+      "book_a_demo": "Book a Demo"
+    },
+    "user_ecosystem": {
+      "role_owner": "Business Owner",
+      "role_medical_professional": "Doctor/Physiotherapist/Nurse",
+      "role_manager": "Manager",
+      "role_staff": "Staff"
     }
+  },
+  "features": {
+    "section_badge": "Why APSX?",
+    "title": "The easiest-to-use, most efficient and modern system available now",
+    "description": "APSX Platform is a streamlined system that is user-friendly, convenient, and operates on the Cloud with modern technology – eliminating outdated OPD cards.",
+    "features": {
+      "title": "Features",
+      "description": "Elevate your clinic management with intelligent cloud technology, designed for maximum speed and data security.",
+      "blog1": {
+        "title": "Real Time Data",
+        "description": "Convenient and fast data transmission reduces time and simplifies management."
+      },
+      "blog2": {
+        "title": "AWS Cloud",
+        "description": "Clinic data is stored on AWS Cloud with security standards recognized by leading organizations worldwide."
+      },
+      "blog3": {
+        "title": "Data Security",
+        "description": "Web Application Security: This website is encrypted with SSL 256-bit, ensuring your data is protected and secure."
+      }
+    },
+    "services": {
+      "blog1": {
+        "title": "Clinic / Hospital",
+        "description": "The Clinic/Hospital program supports services such as specialized treatments, general examinations, maternity, physiotherapy, traditional Thai-Chinese medicine, general medicine, mother and child care, rehabilitation, mental health, and eye care."
+      },
+      "blog2": {
+        "title": "Wellness / Senior Care Center",
+        "description": "The Wellness/Senior Care program supports services such as senior care centers, wellness initiatives, specialized patient care, and chronic patient management."
+      },
+      "blog3": {
+        "title": "Spa / Beauty",
+        "description": "Supports management for various spa/beauty businesses such as nail salons, hair salons, beauty parlors, tattoo studios, massage centers, hot springs, saunas, and more."
+      }
+    }
+  },
+  "platform_highlights": {
+    "section_badge": "",
+    "title": "Highlights",
+    "sub_title": "All-in-One Comprehensive Clinic System",
+    "description": "APSX Platform is a smart healthcare management system designed for maximum efficiency. Perfect for clinics, hospitals, wellness centers, and elder care, covering every essential function in one place.",
+    "features": {
+      "blog1": {
+        "title": "OPD Management System",
+        "sub_title": "Streamlined front-desk and clinical workflows",
+        "description": "An intuitive EMR system specialized for clinics. It manages everything from patient registration and diagnosis to pharmacy and billing, reducing paperwork while enhancing care quality.",
+        "list": {
+          "list1": {
+            "title": "Online OPD Cards",
+            "description": "Digitized medical records following standard protocols."
+          },
+          "list2": {
+            "title": "Registration & Appointments",
+            "description": "End-to-end patient and queue management."
+          },
+          "list3": {
+            "title": "JCI/HL7 Standards",
+            "description": "International-level medical data security and structure."
+          },
+          "list4": {
+            "title": "15+ Medical Documents",
+            "description": "Certificates, appointments, referrals, and lab orders."
+          },
+          "list5": {
+            "title": "Lab, X-Ray & Courses",
+            "description": "Manage specialized services and treatment packages."
+          },
+          "list6": {
+            "title": "Face Verification AI",
+            "description": "AI-powered identity verification for enhanced security."
+          }
+        }
+      },
+      "blog2": {
+        "title": "Inventory & Pharmacy Management",
+        "sub_title": "Fully Integrated – No Extra Modules Needed",
+        "description": "A powerful, all-in-one pharmacy inventory system included in the core package at no extra cost. Track stock levels, monitor lots, manage expirations, and control costs effectively.",
+        "list": {
+          "list1": {
+            "title": "Real-time Inventory",
+            "description": "Instant stock updates upon dispensing or receiving."
+          },
+          "list2": {
+            "title": "Smart Notifications",
+            "description": "Alerts for expiring items and low-stock levels."
+          },
+          "list3": {
+            "title": "Lot & Batch Tracking",
+            "description": "Monitor manufacturing dates and expiry by batch."
+          },
+          "list4": {
+            "title": "Purchasing & Transfers",
+            "description": "Manage supplier orders and multi-branch transfers."
+          },
+          "list5": {
+            "title": "Movement Reports",
+            "description": "Track stock flow, usage, and total inventory value."
+          },
+          "list6": {
+            "title": "Stock Adjustments",
+            "description": "Easy manual adjustments for damages or audits."
+          }
+        }
+      },
+      "blog3": {
+        "title": "40+ Advanced Analytics Reports",
+        "sub_title": "Comprehensive service, financial, and management insights",
+        "description": "Powerful reporting engine covering every business dimension—from accounting and services to inventory and marketing. Export instantly to Excel/PDF for fast, data-driven decision making.",
+        "list": {
+          "list1": {
+            "title": "Financial & Accounting",
+            "description": "Profit/Loss, revenue, AR, receipts, and tax invoices."
+          },
+          "list2": {
+            "title": "Service Reports",
+            "description": "OPD, Lab, X-Ray, course usage, and appointments."
+          },
+          "list3": {
+            "title": "Inventory Analytics",
+            "description": "Stock levels, movements, expiry, and procurement."
+          },
+          "list4": {
+            "title": "Sales & Forecasting",
+            "description": "Top sales, trend forecasting, and RFM analytics."
+          },
+          "list5": {
+            "title": "Commission Tracking",
+            "description": "Automated payouts for doctors, nurses, and staff."
+          },
+          "list6": {
+            "title": "Medical Compliance",
+            "description": "Controlled substance and narcotics regulatory reports."
+          }
+        }
+      },
+      "blog4": {
+        "title": "Customer Data & CRM Tools",
+        "sub_title": "Actionable insights for marketing and loyalty",
+        "description": "Built-in CRM and Marketing Automation to capture leads, segment customers, and deliver targeted promotions. Boost retention and build long-term relationships effectively.",
+        "list": {
+          "list": {
+            "list1": {
+              "title": "RFM Analysis",
+              "description": "Analyze Recency, Frequency, and Monetary behavior."
+            },
+            "list2": {
+              "title": "Customer Segmentation",
+              "description": "Group clients by specific behavior or criteria."
+            },
+            "list3": {
+              "title": "Marketing Campaigns",
+              "description": "Reach out via SMS, Email, or LINE OA."
+            },
+            "list4": {
+              "title": "Sales Pipeline",
+              "description": "Track leads from first contact to closing."
+            },
+            "list5": {
+              "title": "LINE OA Integration",
+              "description": "Let clients check their own info via LINE."
+            },
+            "list6": {
+              "title": "Loyalty & Coupons",
+              "description": "Point systems and rewards for customer retention."
+            }
+          }
+        }
+      },
+      "blog5": {
+        "title": "Multi-Branch Management",
+        "sub_title": "Centralized control for growing businesses",
+        "description": "Designed for multi-location businesses. Manage all branches from a single account, transfer stock, compare performance, and maintain a unified customer database seamlessly.",
+        "list": {
+          "list": {
+            "list1": {
+              "title": "Centralized Control",
+              "description": "Manage all locations with a single master user."
+            },
+            "list2": {
+              "title": "Real-time Dashboard",
+              "description": "View total sales and profit across all branches."
+            },
+            "list3": {
+              "title": "Inter-branch Transfers",
+              "description": "Easily move stock and equipment between sites."
+            },
+            "list4": {
+              "title": "Local Configurations",
+              "description": "Set custom prices and permissions per branch."
+            },
+            "list5": {
+              "title": "Comparison Reports",
+              "description": "Analyze and compare performance between locations."
+            },
+            "list6": {
+              "title": "Unified Database",
+              "description": "Share patient records across the entire network."
+            }
+          }
+        }
+      },
+      "blog6": {
+        "title": "Flexible Access Control",
+        "sub_title": "Secure role-based workflows",
+        "description": "Advanced permission management to safeguard your data. Customize access by role, implement 2-factor authentication, and monitor system usage with detailed audit logs.",
+        "list": {
+          "list": {
+            "list1": {
+              "title": "Role-Based Control",
+              "description": "Defined access for Owners, Managers, Doctors, and Staff."
+            },
+            "list2": {
+              "title": "Granular Permissions",
+              "description": "Control visibility down to specific menus and buttons."
+            },
+            "list3": {
+              "title": "Google Authenticator",
+              "description": "2FA login for maximum account security."
+            },
+            "list4": {
+              "title": "Access Scheduling",
+              "description": "Restrict system access to specific working hours."
+            },
+            "list5": {
+              "title": "Detailed Audit Logs",
+              "description": "Track every login and data modification."
+            },
+            "list6": {
+              "title": "IP Whitelisting",
+              "description": "Restrict access to authorized office IP addresses."
+            }
+          }
+        }
+      }
+    },
+    "ai_suggestion": {
+      "title": "AI Suggestion",
+      "sub_title": "Smart Auto-Text & Medical Terminology Engine",
+      "description": "AI-powered suggestions for medical charting. Reduce typing time, minimize errors, and ensure accurate clinical terminology. Fast, intuitive, and most importantly—",
+      "ai_highlights": {
+        "save_time": {
+          "title": "Save Charting Time",
+          "description": "Reduce workload by over 50%"
+        }
+      },
+      "list": {
+        "list1": {
+          "title": "CC - Chief Complaint",
+          "description": "Smart suggestions for primary symptoms."
+        },
+        "list2": {
+          "title": "PMH - Past Medical History",
+          "description": "Automated historical clinical data entries."
+        },
+        "list3": {
+          "title": "PE - Physical Examination",
+          "description": "Standardized anatomical & clinical findings."
+        },
+        "list4": {
+          "title": "NOTE - Clinical Notes",
+          "description": "Contextual shorthand for detailed observations."
+        },
+        "list5": {
+          "title": "HPI - History of Present Illness",
+          "description": "Guided descriptors for current symptoms."
+        },
+        "list6": {
+          "title": "DX - Diagnosis",
+          "description": "Smart mapping for accurate disease classification."
+        },
+        "list7": {
+          "title": "GA - General Appearance",
+          "description": "Common clinical observations and assessments."
+        }
+      }
+    }
+  }
 }

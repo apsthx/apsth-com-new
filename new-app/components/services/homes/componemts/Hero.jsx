@@ -9,7 +9,7 @@ import { useTranslation } from "@/app/i18n";
 export default async function Hero({ lng }) {
   const { t } = await useTranslation(lng);
   return (
-    <div className="pt-28 xl:pt-[2rem] lg:pt-[1rem] md:pt-[1rem] !text-center !relative">
+    <div className="pt-28 xl:pt-[4rem] lg:pt-[1rem] md:pt-[1rem] !text-center !relative">
       <div
         className="absolute"
         style={{
@@ -34,64 +34,66 @@ export default async function Hero({ lng }) {
               <div
                 data-cue="fadeIn"
                 className="
-                    mt-4
-                  bg-white/20 backdrop-blur-md border border-white/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] 
-                    p-4 rounded-2xl w-full md:w-10/12 lg:w-6/12 xl:w-7/12 flex-[0_0_auto] max-w-full 
-                    lg:mt-0  
-                    relative overflow-visible order-2 lg:order-1 
+                  mt-8 relative order-2 lg:order-1 
+                  w-full md:w-10/12 lg:w-6/12 xl:w-7/12 flex-[0_0_auto] max-w-full
+                  bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-xl
+                  border border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.1)] 
+                  p-3 sm:p-5 rounded-[2.5rem] lg:mt-0
+                  hover:scale-[101%] transition-transform cursor-default whitespace-nowrap duration-500
                 "
               >
+                {/* เพิ่มวงเรืองแสง (Glow) ด้านหลังรูปเพื่อความโดดเด่น */}
+                <div className=" absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 bg-blue-400/10 blur-[100px] rounded-full"></div>
+
                 <figure
-                  // data-cue="fadeIn"
                   data-cues="slideInDown"
                   data-delay={300}
-                  className="!rounded-[.4rem] z-[2] relative overflow-visible"
+                  className="z-[2] relative overflow-visible m-0"
                 >
                   <Image
-                    className="!rounded-[.4rem] h-auto w-full shadow-lg"
-                    src="/assets/homes/blog1.webp"
+                    className="rounded-[1.5rem] h-auto w-full shadow-2xl border border-white/20"
+                    src="/assets/homes/hero.webp"
                     alt="image"
-                    width={1200} // เพิ่มความกว้างเพื่อให้รูปชัดขึ้น
+                    width={1200}
                     height={800}
                     priority
                   />
 
-                  {/* --- ส่วนของลูกศร (Arrows) --- */}
+                  {/* --- ส่วนของ Labels ที่เพิ่มความพรีเมียม --- */}
 
-                  {/* 1. เจ้าของกิจการ (ชี้จากซ้าย) */}
-                  <div className="absolute top-[20%] -left-[70px] hidden md:flex items-center animate-bounce-horizontal">
-                    <div className="bg-[#54a8c7] text-white px-3 py-1 rounded-full text-[12px] font-bold shadow-lg whitespace-nowrap">
+                  {/* 1. เจ้าของกิจการ */}
+                  <div className="absolute top-[8%] left-[5%] md:top-[20%] md:-left-[80px] flex items-center group z-10 animate-float-slow">
+                    <div className="bg-[#54a8c7] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] font-bold shadow-[0_10px_20px_rgba(84,168,199,0.3)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
                       {t(
                         "home:hero.user_ecosystem.role_owner",
                         "เจ้าของกิจการ",
                       )}
                     </div>
-                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-[#54a8c7] border-b-[6px] border-b-transparent ml-[-1px]"></div>
+                    <div className="hidden md:block w-3 h-[2px] bg-gradient-to-r from-[#54a8c7] to-transparent"></div>
                   </div>
 
-                  {/* 2. แพทย์/พยาบาล (ชี้จากบนลงล่าง) */}
-                  <div className="absolute top-[-0px] right-[20%] hidden md:flex flex-col items-center">
-                    <div className="bg-[#fab758] text-white px-3 py-1 rounded-full text-[12px] font-bold shadow-lg whitespace-nowrap">
+                  {/* 2. แพทย์/พยาบาล (เน้นตรงกลางบน) */}
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 md:top-[-25px] md:right-[15%] md:left-auto flex flex-col items-center z-10 animate-float">
+                    <div className="bg-[#fab758] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] font-bold shadow-[0_10px_20px_rgba(250,183,88,0.3)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
                       {t(
                         "home:hero.user_ecosystem.role_medical_professional",
-                        "แพทย์/นักกายภาพบำบัด/พยาบาล",
+                        "แพทย์/พยาบาล",
                       )}
                     </div>
-                    <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[10px] border-t-[#fab758] mt-[-1px]"></div>
+                    <div className="w-[2px] h-4 bg-gradient-to-b from-[#fab758] to-transparent"></div>
                   </div>
 
-                  {/* 3. ผู้จัดการ (ชี้จากซ้ายล่าง) */}
-                  <div className="absolute bottom-[40%] -left-[40px] hidden md:flex items-center">
-                    <div className="bg-[#45c4a0] text-white px-3 py-1 rounded-full text-[12px] font-bold shadow-lg whitespace-nowrap">
+                  {/* 3. ผู้จัดการ */}
+                  <div className="absolute bottom-[25%] left-[5%] md:bottom-[35%] md:-left-[50px] flex items-center z-10 animate-float-delayed">
+                    <div className="bg-[#45c4a0] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] font-bold shadow-[0_10px_20px_rgba(69,196,160,0.3)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
                       {t("home:hero.user_ecosystem.role_manager", "ผู้จัดการ")}
                     </div>
-                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-[#45c4a0] border-b-[6px] border-b-transparent ml-[-1px]"></div>
                   </div>
 
-                  {/* 4. พนักงาน (ชี้จากล่างขวา) */}
-                  <div className="absolute bottom-10 -right-14 hidden md:flex items-center">
-                    <div className="w-0 h-0 border-t-[6px] border-t-transparent border-r-[10px] border-r-[#e668b3] border-b-[6px] border-b-transparent mr-[-1px]"></div>
-                    <div className="bg-[#e668b3] text-white px-3 py-1 rounded-full text-[12px] font-bold shadow-lg whitespace-nowrap">
+                  {/* 4. พนักงาน */}
+                  <div className="absolute bottom-[8%] right-[5%] md:bottom-12 md:-right-16 flex items-center z-10 animate-float">
+                    <div className="hidden md:block w-4 h-[2px] bg-gradient-to-l from-[#e668b3] to-transparent"></div>
+                    <div className="bg-[#e668b3] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] font-bold shadow-[0_10px_20px_rgba(230,104,179,0.3)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
                       {t("home:hero.user_ecosystem.role_staff", "พนักงาน")}
                     </div>
                   </div>
