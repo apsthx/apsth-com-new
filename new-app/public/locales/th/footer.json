@@ -1,1 +1,32 @@
-{}
+{
+  "description": "For Hospital, Clinic, Spa, Wellness, ศูนย์ดูแลผู้สูงอายุ ธุรกิจความงาม คลินิกเฉพาะทาง คลินิกเวชกรรม คลินิกทั่วไป คลินิกพยาบาลผดุงครรภ์ คลินิกกายภาพบำบัด คลินิกแพทย์แผนไทย-จีน คลินิกอายุรกรรม คลินิกแม่และเด็ก คลินิกบําบัดยาเสพติด คลินิกสุขภาพจิต คลินิกตา",
+  "services": {
+    "title": "บริการของเรา",
+    "clinic_software": "โปรแกรม คลินิก",
+    "hospital_software": "โปรแกรม โรงพยาบาล",
+    "wellness_software": "โปรแกรม Wellness",
+    "elderly_care_center_software": "โปรแกรม ศูนย์ดูแลผู้สูงอายุ",
+    "spa_Beauty_software": "โปรแกรม Spa/Beauty"
+  },
+  "accounts": {
+    "title": "Accounts",
+    "our_customer": "ลูกค้าของเรา",
+    "system_demo": "Demo ระบบ",
+    "login": "Login",
+    "teams_of_service": "Teams of Service",
+    "privacy_policy": "Privacy Policy"
+  },
+  "support": {
+    "title": "Support",
+    "docs": "Docs",
+    "help_center": "Help Center",
+    "changelog": "Changelog",
+    "connect": "ติดต่อเรา",
+    "vdo_tutorial": "VDO Tutorial",
+    "site_map": "Site Map"
+  },
+  "contact": {
+    "title": "สนใจใช้งาน โปรแกรม คลินิก APSX Platform",
+    "description": "สามารถสอบถามเรื่องการใช้งานเพิ่มเติมได้ที่ LINE: @apsth โทรติดต่อทีมสนับสนุนของเราได้ที่ 043-002488, 098-1816769"
+  }
+}

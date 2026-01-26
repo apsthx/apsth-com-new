@@ -1,101 +1,145 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Globe, Check, ChevronDown } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
 
-export default function LanguageChanger() {
+export default function LanguageSelect({ color = "#5eb9f0" }) {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+
+  // 1. กำหนดโครงสร้างข้อมูลภาษา
+  const languageConfig = {
+    th: {
+      code: "th",
+      label: "TH",
+      name: "ภาษาไทย",
+      flag: "https://flagcdn.com/w40/th.png",
+    },
+    en: {
+      code: "en",
+      label: "EN",
+      name: "English",
+      flag: "https://flagcdn.com/w40/gb.png",
+    },
+  };
+
+  const languageCodes = ["th", "en"];
   const [currentLanguage, setCurrentLanguage] = useState("th");
+  const [isOpen, setIsOpen] = useState(false);
 
-  const languages = [
-    { code: "th", name: "ภาษาไทย", flag: "🇹🇭" },
-    { code: "en", name: "English", flag: "🇺🇸" },
-  ];
-
+  // 2. ตรวจสอบภาษาจาก URL (Pathname) เมื่อโหลดหน้าเว็บ
   useEffect(() => {
     if (pathname) {
       const segments = pathname.split("/");
-      const locale = segments[1];
-      if (languages.some((lang) => lang.code === locale)) {
+      const locale = segments[1]; // ดึง segment แรกหลัง /
+      if (languageCodes.includes(locale)) {
         setCurrentLanguage(locale);
       }
     }
   }, [pathname]);
 
-  const redirectedPathname = (locale) => {
-    if (!pathname) return `/${locale}`;
+  // 3. ฟังก์ชันสร้าง URL สำหรับภาษาใหม่
+  const getRedirectedPathname = (locale) => {
+    if (!pathname) return "/";
     const segments = pathname.split("/");
-    segments[1] = locale;
+    segments[1] = locale; // แทนที่ค่าเดิมด้วย locale ใหม่
     return segments.join("/");
   };
 
-  const handleLanguageChange = (locale) => {
+  // 4. ฟังก์ชันจัดการเมื่อเปลี่ยนภาษา
+  const handleLanguageChange = (e, locale) => {
+    e.preventDefault();
+
+    // บันทึก Cookie
     if (typeof window !== "undefined") {
       document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000`;
     }
+
+    // เปลี่ยน URL ไปยัง Path ของภาษานั้นๆ
+    const newPath = getRedirectedPathname(locale);
+    router.push(newPath);
+
+    setCurrentLanguage(locale);
     setIsOpen(false);
   };
 
-  const currentLang = languages.find((lang) => lang.code === currentLanguage);
+  const activeLangData =
+    languageConfig[currentLanguage] || languageConfig["th"];
 
   return (
-    <div className="relative inline-block text-left">
-      {/*ปุ่มหลัก: เน้นขนาดเล็กและกะทัดรัด (Compact) */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all duration-300
-          bg-[oklch(85.5%_0.138_181.071)/0.1] hover:bg-[oklch(85.5%_0.138_181.071)/0.2]
-          border border-[oklch(85.5%_0.138_181.071)/0.3] group`}
+    <div
+      className="nav-item dropdown relative"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <a
+        className="nav-link dropdown-toggle !flex items-center gap-2"
+        href="#"
+        role="button"
+        style={{ color: isOpen ? color : "inherit" }}
+        onClick={(e) => e.preventDefault()}
       >
-        <Globe className="w-4 h-4 text-[oklch(60%_0.15_181)]" />
-        <span className="text-[0.8rem] font-semibold text-[#343f52]">
-          {currentLang?.code.toUpperCase()}
-        </span>
-        <ChevronDown
-          className={`w-3.5 h-3.5 transition-transform duration-300 text-gray-400
-            ${isOpen ? "rotate-180" : "group-hover:translate-y-0.5"}`}
+        <img
+          src={activeLangData.flag}
+          alt={activeLangData.label}
+          className="w-5 h-auto rounded-sm object-cover"
         />
-      </button>
+        <span className="font-medium uppercase">{activeLangData.label}</span>
+      </a>
 
-      {/* Dropdown Menu */}
-      {isOpen && (
-        <>
-          <div
-            className="fixed inset-0 z-30"
-            onClick={() => setIsOpen(false)}
-          />
-
-          <div className="absolute right-0 mt-2 w-40 bg-white/90 backdrop-blur-md rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-40 animate-in fade-in zoom-in-95 duration-200 origin-top-right">
-            <div className="p-1.5">
-              {languages.map((lang) => (
-                <Link
-                  key={lang.code}
-                  href={redirectedPathname(lang.code)}
-                  onClick={() => handleLanguageChange(lang.code)}
-                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg transition-all duration-200 ${
-                    currentLanguage === lang.code
-                      ? "bg-[oklch(85.5%_0.138_181.071)/0.15] text-[oklch(55%_0.15_181)]"
-                      : "hover:bg-gray-50 text-gray-600 hover:text-gray-900"
-                  }`}
-                >
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-base">{lang.flag}</span>
-                    <span className="text-[0.85rem] font-medium">
-                      {lang.name}
-                    </span>
-                  </div>
-                  {currentLanguage === lang.code && (
-                    <Check className="w-3.5 h-3.5 stroke-[3px]" />
-                  )}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </>
-      )}
+      <ul
+        className={`dropdown-menu transition-all duration-300 transform ${
+          isOpen
+            ? "show opacity-100 visible translate-y-0"
+            : "opacity-0 invisible translate-y-2"
+        }`}
+        style={{
+          display: "block",
+          position: "absolute",
+          top: "100%",
+          left: "0px",
+          margin: 0,
+          paddingTop: "0px", // ช่องว่างเพื่อให้เมาส์เลื่อนจากปุ่มไปเมนูได้ (Invisible bridge)
+          backgroundColor: "transparent",
+          border: "none",
+          boxShadow: "none",
+          zIndex: 1000,
+        }}
+      >
+        <div className="bg-white rounded-xl py-1 min-w-[140px] overflow-hidden">
+          {languageCodes.map((code) => (
+            <li key={code}>
+              <a
+                href="#"
+                onClick={(e) => handleLanguageChange(e, code)}
+                className="flex items-center gap-3 px-4 py-2.5 transition-all duration-200"
+                style={{
+                  color: currentLanguage === code ? color : "#4b5563",
+                  backgroundColor: "transparent",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "#f8fafc";
+                  e.currentTarget.style.color = color;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "transparent";
+                  if (currentLanguage !== code)
+                    e.currentTarget.style.color = "#4b5563";
+                }}
+              >
+                <img
+                  src={languageConfig[code].flag}
+                  alt={code}
+                  className="w-5 h-3.5 rounded-sm"
+                />
+                <span className="text-sm font-semibold">
+                  {languageConfig[code].name}
+                </span>
+              </a>
+            </li>
+          ))}
+        </div>
+      </ul>
     </div>
   );
 }

@@ -1,5 +1,12 @@
 {
   "new": "New",
   "free_label": "Free to Use",
-  "new_feature_label": "Latest Feature"
+  "start_to_free": "Get Started for Free",
+  "new_feature_label": "Latest Feature",
+  "service_confidence": {
+    "title": "Greater Confidence with Our Service"
+  },
+  "read_more": "Read More",
+  "month": "Month",
+  "year": "Year"
 }

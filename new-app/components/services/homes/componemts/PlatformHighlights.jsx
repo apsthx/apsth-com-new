@@ -1,10 +1,4 @@
 import Image from "next/image";
-import AnimatedText from "@/components/common/AnimatedText";
-import TypeWriter from "@/components/common/TypeWriter";
-import Link from "next/link";
-import PagesSlider from "./PagesSlider";
-import { slidesData } from "@/data/blogs";
-
 import { useTranslation } from "@/app/i18n";
 
 // components
@@ -18,6 +12,19 @@ export default async function PlatformHighlights({ lng }) {
         {/*/.row */}
         <div className="mt-0 flex flex-wrap mx-[-15px] xl:mx-0 lg:mx-0 items-center">
           <div className="container">
+            <div
+              data-cues="slideInDown"
+              data-delay={300}
+              className="flex justify-center mb-6"
+            >
+              <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#45c4a0]">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#45c4a0] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#45c4a0]"></span>
+                </span>
+                Highlights APSX Platform
+              </span>
+            </div>
             <div className="flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-50px] !mb-[4.5rem] xl:!mb-[7rem] lg:!mb-[7rem] md:!mb-[7rem] items-center">
               <div
                 data-cues="slideInDown"
@@ -66,22 +73,22 @@ export default async function PlatformHighlights({ lng }) {
               >
                 <div className="flex items-center gap-4 !mb-4">
                   {/* ส่วนของ Icon Box */}
-                  <div className="flex-shrink-0 p-3 bg-[#5eb8f027] rounded-xl flex items-center justify-center">
+                  <div className="flex-shrink-0 p-3 bg-[#ffffff] rounded-xl flex items-center justify-center shadow-md">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 256 218.67"
-                      className="svg-inject icon-svg !w-[1.8rem] !h-[1.8rem] solid-mono text-primary !text-[#3f78e0]"
+                      className="svg-inject icon-svg !w-[1.8rem] !h-[1.8rem] solid-mono !text-[#00b899]"
                     >
                       <path
-                        className="fill-secondary"
+                        className="fill-[#00b899]"
                         d="M88 208a48.06 48.06 0 01-48-48 45.85 45.85 0 012.26-14.48 10.66 10.66 0 1120.22 6.75 24.28 24.28 0 00-1.15 7.73 26.65 26.65 0 0052.56 6.22 10.67 10.67 0 0120.77 4.87A47.71 47.71 0 0188 208z"
                       ></path>
                       <path
-                        className="fill-primary"
+                        className="fill-[#00b899]"
                         d="M248 210.67a8 8 0 01-2.22-.32L5.78 141A8 8 0 010 133.34v-48a8 8 0 015.78-7.68l240-69.32A8 8 0 01256 16v186.7a8 8 0 01-3.2 6.4 8.09 8.09 0 01-4.8 1.57z"
                       ></path>
                       <path
-                        className="fill-primary"
+                        className="fill-[#00b899]"
                         d="M245.33 218.67A10.67 10.67 0 01234.66 208V10.67a10.67 10.67 0 1121.34 0V208a10.66 10.66 0 01-10.67 10.67zm-234.66-64A10.66 10.66 0 010 144V74.69a10.67 10.67 0 0121.34 0V144a10.67 10.67 0 01-10.67 10.67z"
                       ></path>
                     </svg>
@@ -90,7 +97,7 @@ export default async function PlatformHighlights({ lng }) {
                   {/* ส่วนของหัวข้อ */}
                   <h2 className="!text-[calc(1.2rem_+_0.66vw)] font-bold xl:!text-[1.8rem] !leading-none !m-0">
                     {t("home:platform_highlights.title", "จุดเด่น")}{" "}
-                    <span className="text-[#5eb9f0]">APSX Platform</span>
+                    <span className="text-[#00b899]">APSX Platform</span>
                   </h2>
                 </div>
                 <p className="lead !text-[1.05rem] !leading-[1.6] font-medium">
@@ -100,7 +107,7 @@ export default async function PlatformHighlights({ lng }) {
                   )}
                 </p>
                 <p className="!mb-1">
-                  <strong className="font-bold text-[#019eff]">
+                  <strong className="font-bold text-[#00b899]">
                     APSX Platform
                   </strong>{" "}
                   {t(
@@ -114,31 +121,40 @@ export default async function PlatformHighlights({ lng }) {
                     <ul className="pl-0 list-none !mb-0">
                       {/* OPD System */}
                       <li className="flex items-start !mt-5 first:!mt-0 group">
-                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#e0f2fe] rounded-lg transition-transform group-hover:scale-110">
-                          <i className="uil uil-medkit text-[#0ea5e9] text-[1.2rem] leading-none" />
+                        <span className=" flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
+                          <i className="uil uil-medkit text-[#00b899] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
-                          ระบบเวชระเบียน (OPD Management)
+                          {t(
+                            "home:platform_highlights.features.blog1.title",
+                            "ระบบเวชระเบียน (OPD Management)",
+                          )}
                         </span>
                       </li>
 
                       {/* Inventory */}
                       <li className="flex items-start !mt-5 group">
-                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#fef3c7] rounded-lg transition-transform group-hover:scale-110">
-                          <i className="uil uil-store text-[#f59e0b] text-[1.2rem] leading-none" />
+                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
+                          <i className="uil uil-store text-[#00b899] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
-                          ระบบบริหารสต็อกยา
+                          {t(
+                            "home:platform_highlights.features.blog2.title",
+                            "ระบบบริหารสต็อกยา",
+                          )}
                         </span>
                       </li>
 
                       {/* Reports */}
                       <li className="flex items-start !mt-5 group">
-                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#dcfce7] rounded-lg transition-transform group-hover:scale-110">
-                          <i className="uil uil-chart-line text-[#22c55e] text-[1.2rem] leading-none" />
+                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
+                          <i className="uil uil-chart-line text-[#00b899] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
-                          รายงานวิเคราะห์กว่า 40 รูปแบบ
+                          {t(
+                            "home:platform_highlights.features.blog3.title",
+                            "รายงานวิเคราะห์กว่า 40 รูปแบบ",
+                          )}
                         </span>
                       </li>
                     </ul>
@@ -149,31 +165,40 @@ export default async function PlatformHighlights({ lng }) {
                     <ul className="pl-0 list-none !mb-0">
                       {/* CRM */}
                       <li className="flex items-start !mt-5 first:!mt-0 group">
-                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ede9fe] rounded-lg transition-transform group-hover:scale-110">
-                          <i className="uil uil-users-alt text-[#8b5cf6] text-[1.2rem] leading-none" />
+                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
+                          <i className="uil uil-users-alt text-[#00b899] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
-                          เครื่องมือเก็บ–ใช้ข้อมูลลูกค้า
+                          {t(
+                            "home:platform_highlights.features.blog4.title",
+                            "เครื่องมือเก็บ–ใช้ข้อมูลลูกค้า",
+                          )}
                         </span>
                       </li>
 
                       {/* Multi-Branch */}
                       <li className="flex items-start !mt-5 group">
-                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffedd5] rounded-lg transition-transform group-hover:scale-110">
-                          <i className="uil uil-layers text-[#f97316] text-[1.2rem] leading-none" />
+                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
+                          <i className="uil uil-layers text-[#00b899] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
-                          รองรับหลายสาขาในบัญชีเดียว
+                          {t(
+                            "home:platform_highlights.features.blog5.title",
+                            "รองรับหลายสาขาในบัญชีเดียว",
+                          )}
                         </span>
                       </li>
 
                       {/* Security */}
                       <li className="flex items-start !mt-5 group">
-                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#fee2e2] rounded-lg transition-transform group-hover:scale-110">
-                          <i className="uil uil-shield-check text-[#ef4444] text-[1.2rem] leading-none" />
+                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
+                          <i className="uil uil-shield-check text-[#00b899] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
-                          สิทธิ์การเข้าถึงที่ยืดหยุ่น
+                          {t(
+                            "home:platform_highlights.features.blog6.title",
+                            "สิทธิ์การเข้าถึงที่ยืดหยุ่น",
+                          )}
                         </span>
                       </li>
                     </ul>
@@ -679,16 +704,16 @@ export default async function PlatformHighlights({ lng }) {
                             <div className="flex justify-between items-center mb-3">
                               <div className="flex items-center">
                                 <i
-                                  className={`${item.icon} text-[#3f78e0] text-[1.2rem] mr-2`}
+                                  className={`${item.icon} text-[#00b899] text-[1.2rem] mr-2`}
                                 ></i>
-                                <p className="text-[0.65rem] font-bold uppercase tracking-widest text-[#3f78e0] !mb-0">
+                                <p className="text-[0.65rem] font-bold uppercase tracking-widest text-[#00b899] !mb-0">
                                   {item.category}
                                 </p>
                               </div>
                             </div>
 
                             <h3 className="post-title !text-[1.1rem] !leading-[1.4] font-bold !mb-3">
-                              <div className="!text-[#343f52] hover:!text-[#3f78e0] transition-colors cursor-pointer">
+                              <div className="!text-[#343f52]  transition-colors ">
                                 {item.title}
                               </div>
                             </h3>
@@ -704,7 +729,7 @@ export default async function PlatformHighlights({ lng }) {
                               {transformedFeatures.map((feature, fIdx) => (
                                 <li key={fIdx} className="flex items-start">
                                   {/* ไอคอนติ๊กถูก SVG */}
-                                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#3f78e0]">
+                                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
                                     <svg
                                       xmlns="http://www.w3.org/2000/svg"
                                       viewBox="0 0 20 20"
@@ -744,88 +769,67 @@ export default async function PlatformHighlights({ lng }) {
           <div
             data-cues="slideInDown"
             data-delay={300}
-            className="flex flex-wrap mx-[-15px] md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px] items-center !mt-[7rem] shadow-md border border-[#a4aec633] rounded-lg mb-4 pb-10 "
+            className="p-8 flex flex-wrap mx-[-15px] md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px] items-center !mt-[7rem] 
+             bg-white/40   
+             border border-[#a4aec633] rounded-[2rem] mb-4 pb-12 transition-all duration-500
+             hover:shadow-[0_20px_80px_rgba(0,0,0,0.05)]"
           >
-            <div className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!px-[35px] lg:!px-[20px] md:!px-[20px] !mt-[80px]">
+            <div className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!px-[35px] lg:!px-[20px] md:!px-[20px] !mt-[40px] relative">
+              {/* Background Decorative Blob (ตัวช่วยเสริมให้พื้นหลังดูสวย) */}
+              <div className="absolute -top-10 -left-10 w-64 h-64 bg-teal-200/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
+              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-indigo-200/20 rounded-full blur-3xl -z-10"></div>
+
               <div className="flex flex-wrap mx-[-15px] xl:mx-[-12.5px] lg:mx-[-12.5px] md:mx-[-12.5px] !mt-[-25px]">
-                {/* 1. AI Analysis Icon (บน - โทนน้ำเงินเข้ม High-Tech) */}
+                {/* 1. AI Analysis Icon (บน) */}
                 <div className="w-full flex-[0_0_auto] xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !px-[15px] max-w-full !mt-[25px]">
                   <div
-                    className="
-                            /* Border & Shape */
-                            !rounded-3xl border border-white/60 
-                            
-                            /* Layout & Spacing */
-                            xl:mx-8 lg:mx-6 md:mx-4 
-                            flex flex-col items-center justify-center p-12 
-                            
-                            /* Color & Glassmorphism */
-                            bg-gradient-to-br from-[#f0fdfa] to-[#eef2ff] 
-                            shadow-[0_20px_50px_rgba(13,148,136,0.05)]
-                            backdrop-blur-sm 
-                          "
+                    className="group !rounded-[2.5rem] border border-white/80 
+                     xl:mx-8 lg:mx-6 md:mx-4 flex flex-col items-center justify-center p-12 
+                     bg-gradient-to-br from-white/90 via-[#f8fafc] to-[#eef2ff]/80 
+                     shadow-[0_20px_50px_rgba(0,0,0,0.04)] backdrop-blur-md 
+                     transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-blue-200"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="80"
-                      height="80"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mb-4 drop-shadow-md"
-                    >
-                      <defs>
-                        {/* นิยามการไล่เฉดสี Navy Blue ไปจนถึงสี Light Blue */}
-                        <linearGradient
-                          id="aiGradient"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" stopColor="#1e3a8a" />{" "}
-                          {/* Navy Blue */}
-                          <stop offset="100%" stopColor="#60a5fa" />{" "}
-                          {/* Light Blue */}
-                        </linearGradient>
-
-                        {/* ใส่เงาจางๆ ให้เส้น SVG */}
-                        <filter
-                          id="shadow"
-                          x="-20%"
-                          y="-20%"
-                          width="140%"
-                          height="140%"
-                        >
-                          <feDropShadow
-                            dx="0.5"
-                            dy="1"
-                            stdDeviation="0.5"
-                            floodOpacity="0.3"
-                          />
-                        </filter>
-                      </defs>
-
-                      <g stroke="url(#aiGradient)" filter="url(#shadow)">
-                        <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .52 5.898 4 4 0 0 0 7.864.444A3 3 0 1 0 12 5Z" />
-                        <path d="M9 13a4.5 4.5 0 0 0 3-4" />
-                        <path d="M6.003 5.125A3 3 0 1 0 12 5" />
-                        <path d="M15 13a4.5 4.5 0 0 1-3-4" />
-                        <path d="M17.526 10.895A4 4 0 0 0 15 5a3 3 0 1 1 5.997.125" />
-                        <path d="M21.474 10.895a4 4 0 0 1-2.526 5.77 4 4 0 0 1-7.864.444" />
-                        <path d="M12 13v8" />
-                        <path d="M9 17h6" />
-                      </g>
-                    </svg>
-                    <h3 className="text-xl font-bold text-[#1e293b]">
+                    {/* SVG Container with Animation */}
+                    <div className="relative mb-4 transform transition-transform duration-500 group-hover:scale-110">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="80"
+                        height="80"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="drop-shadow-xl"
+                      >
+                        <defs>
+                          <linearGradient
+                            id="aiGradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="100%"
+                          >
+                            <stop offset="0%" stopColor="#00b899" />
+                            <stop offset="100%" stopColor="#60a5fa" />
+                          </linearGradient>
+                        </defs>
+                        <g stroke="url(#aiGradient)">
+                          <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .52 5.898 4 4 0 0 0 7.864.444A3 3 0 1 0 12 5Z" />
+                          <path d="M9 13a4.5 4.5 0 0 0 3-4" />
+                          <path d="M15 13a4.5 4.5 0 0 1-3-4" />
+                          <path d="M12 13v8" />
+                          <path d="M9 17h6" />
+                        </g>
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-[#1e293b] group-hover:text-blue-700 transition-colors">
                       {t(
                         "home:platform_highlights.ai_suggestion.ai_highlights.save_time.title",
                         "ลดเวลาบันทึก",
                       )}
                     </h3>
-                    <p className="text-[#64748b] text-sm leading-relaxed">
+                    <p className="text-[#64748b] text-sm leading-relaxed text-center mt-2">
                       {t(
                         "home:platform_highlights.ai_suggestion.ai_highlights.save_time.description",
                         "ประหยัดเวลาได้มากกว่า 50%",
@@ -834,88 +838,85 @@ export default async function PlatformHighlights({ lng }) {
                   </div>
                 </div>
 
-                {/* 2. Patient Monitoring Icon (ล่างซ้าย - โทนเขียวหัวเป็ด Modern Teal) */}
+                {/* 2. AI Diagnostics (ล่างซ้าย) */}
                 <div className="xl:w-6/12 lg:w-6/12 md:w-6/12 w-full flex-[0_0_auto] xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !px-[15px] max-w-full !mt-[25px]">
                   <div
-                    className="
-                            /* Color & Glassmorphism */
-                            bg-gradient-to-br from-[#9df3ec18] to-[#a4faf31f] 
-                            shadow-[0_20px_50px_rgba(13,148,136,0.05)]
-                            backdrop-blur-sm
-                            rounded-[0.4rem] bg-[#f0fdfa] p-10 flex flex-col items-center justify-center h-full"
+                    className="group bg-gradient-to-br from-[#f0fdfa] to-white border border-white shadow-lg backdrop-blur-sm
+                        rounded-[2rem] p-10 flex flex-col items-center justify-center h-full transition-all duration-500 hover:shadow-teal-100 hover:-translate-y-1"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#0d9488" // Teal
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mb-3"
-                    >
-                      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                    </svg>
-                    <span className="font-semibold text-[#134e4a] text-center">
+                    <div className="p-4 bg-teal-50 rounded-2xl mb-3 group-hover:bg-teal-500 group-hover:text-white transition-all duration-500">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                      </svg>
+                    </div>
+                    <span className="font-bold text-[#0d9488] text-center">
                       AI Diagnostics
                     </span>
                   </div>
                 </div>
 
-                {/* 3. Smart Robot/Automation (ล่างขวา - โทนม่วงคราม Royal Indigo) */}
+                {/* 3. Smart Robotics (ล่างขวา) */}
                 <div className="xl:w-6/12 lg:w-6/12 md:w-6/12 w-full flex-[0_0_auto] xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !px-[15px] max-w-full !mt-[25px]">
                   <div
-                    className=" 
-                            /* Color & Glassmorphism */
-                            bg-gradient-to-br from-[#bcb8ff00] to-[#9c97ff11] 
-                            shadow-[0_20px_50px_rgba(13,148,136,0.05)]
-                            backdrop-blur-sm
-                            rounded-[0.4rem] bg-[#f5f3ff] p-10 flex flex-col items-center justify-center h-full"
+                    className="group bg-gradient-to-br from-[#f5f3ff] to-white border border-white shadow-lg backdrop-blur-sm
+                        rounded-[2rem] p-10 flex flex-col items-center justify-center h-full transition-all duration-500 hover:shadow-indigo-100 hover:-translate-y-1"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="50"
-                      height="50"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#4f46e5" // Indigo
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="mb-3"
-                    >
-                      <path d="M12 8V4H8" />
-                      <rect width="16" height="12" x="4" y="8" rx="2" />
-                      <path d="M2 14h2" />
-                      <path d="M20 14h2" />
-                      <path d="M15 13v2" />
-                      <path d="M9 13v2" />
-                    </svg>
-                    <span className="font-semibold text-[#1e1b4b] text-center">
+                    <div className="p-4 bg-indigo-50 rounded-2xl mb-3 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="40"
+                        height="40"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <rect width="16" height="12" x="4" y="8" rx="2" />
+                        <path d="M12 8V4H8" />
+                        <path d="M9 13v2" />
+                        <path d="M15 13v2" />
+                      </svg>
+                    </div>
+                    <span className="font-bold text-[#4f46e5] text-center">
                       Smart Robotics
                     </span>
                   </div>
                 </div>
               </div>
-              <div className="hidden lg:block absolute top-1/2 -left-12 z-20 animate-pulse">
-                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-md p-2 rounded-full shadow-xl border border-teal-100">
-                  <span className="w-2 h-2 bg-teal-500 rounded-full animate-ping"></span>
-                  <span className="text-[11px] font-bold text-teal-800">
+
+              {/* Real-time Analysis Floating Badge */}
+              <div className="hidden lg:block absolute top-1/2 -left-16 z-20 animate-bounce">
+                <div className="flex items-center gap-3 bg-white/90 backdrop-blur-md px-5 py-3 rounded-2xl shadow-2xl border border-teal-100">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
+                  </span>
+                  <span className="text-xs font-black tracking-wider text-teal-800 uppercase">
                     Real-time Analysis
                   </span>
                 </div>
               </div>
-              {/*/.row */}
             </div>
+
             {/*/column */}
             <div className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!px-[35px] lg:!px-[20px] md:!px-[20px] !mt-[80px]">
               <h2 className="!text-[0.8rem] !tracking-[0.02rem] uppercase !text-[#aab0bc] !mb-3 !leading-[1.35]">
                 AI Suggestion
               </h2>
               <Badge
-                color="blue"
+                color="teal"
                 variant="softText"
                 className="!inline-flex items-center gap-x-1.5 !text-[1rem] mb-2 !px-4 !py-[5px] !leading-none !shadow-sm !rounded-full w-fit"
               >
@@ -926,7 +927,7 @@ export default async function PlatformHighlights({ lng }) {
               </Badge>
               <div className="flex gap-1">
                 <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#f0f9ff] rounded-lg transition-transform group-hover:scale-110">
-                  <i className="uil uil-robot text-[#0284c7] text-[1.2rem] leading-none" />
+                  <i className="uil uil-robot text-[#00b899] text-[1.2rem] leading-none" />
                 </span>
                 <div>
                   <h3 className="xl:!text-[2.1rem] !text-[calc(1.335rem_+_1.02vw)] !leading-[1.2] font-semibold !mb-1">
@@ -944,8 +945,8 @@ export default async function PlatformHighlights({ lng }) {
                 </div>
               </div>
 
-              <div className="flex gap-1">
-                <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#eff6ff] rounded-lg text-[#3b82f6]">
+              <div className="flex gap-1 ">
+                <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#eff6ff] rounded-lg text-[#00b899]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -972,14 +973,14 @@ export default async function PlatformHighlights({ lng }) {
                     "home:platform_highlights.ai_suggestion.description",
                     "ระบบ AI ช่วยแนะนำข้อความในการบันทึกเวชระเบียน ลดเวลาการพิมพ์ลดข้อผิดพลาด และใช้ศัพท์ทางการแพทย์ที่ถูกต้อง ใช้งานง่าย สะดวก รวดเร็ว และที่สำคัญ",
                   )}
-                  <strong className="text-[#5eb9f0]">
+                  <strong className="text-[#00b899]">
                     {t("free_label", "ใช้งานฟรี")}!
                   </strong>{" "}
                 </p>
               </div>
               <div className="!mt-[15px] ml-14">
                 <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#3f78e0]">
+                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
@@ -1003,7 +1004,7 @@ export default async function PlatformHighlights({ lng }) {
                 </div>
                 {/*/column */}
                 <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#3f78e0]">
+                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
@@ -1027,7 +1028,7 @@ export default async function PlatformHighlights({ lng }) {
                 </div>
                 {/*/column */}
                 <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#3f78e0]">
+                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
@@ -1051,7 +1052,7 @@ export default async function PlatformHighlights({ lng }) {
                 </div>
                 {/*/column */}
                 <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#3f78e0]">
+                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
@@ -1075,7 +1076,7 @@ export default async function PlatformHighlights({ lng }) {
                 </div>
                 {/*/column */}
                 <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#3f78e0]">
+                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
@@ -1099,7 +1100,7 @@ export default async function PlatformHighlights({ lng }) {
                 </div>
                 {/*/column */}
                 <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#3f78e0]">
+                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
@@ -1123,7 +1124,7 @@ export default async function PlatformHighlights({ lng }) {
                 </div>
                 {/*/column */}
                 <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#3f78e0]">
+                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"

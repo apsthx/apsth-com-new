@@ -28,7 +28,7 @@
     }
   },
   "features": {
-    "section_badge": "Why APSX?",
+    "section_badge": "",
     "title": "The easiest-to-use, most efficient and modern system available now",
     "description": "APSX Platform is a streamlined system that is user-friendly, convenient, and operates on the Cloud with modern technology – eliminating outdated OPD cards.",
     "features": {
@@ -300,6 +300,192 @@
           "title": "GA - General Appearance",
           "description": "Common clinical observations and assessments."
         }
+      }
+    }
+  },
+  "why_apsx": {
+    "why_apsx": {
+      "why_apsx": "Why APSX Platform",
+      "solution": "The Complete Solution for Modern Digital Healthcare",
+      "title": "Why APSX Platform",
+      "description": "Manage less, care more. Automate complex paperwork and reclaim your most valuable time to focus entirely on patient care.",
+      "apsx_items": {
+        "blog1": {
+          "title": "User-Friendly",
+          "description": "Intuitive UI/UX designed for simplicity and ease of use."
+        },
+        "blog2": {
+          "title": "Cloud-Based",
+          "description": "Access anytime, anywhere, powered by AWS Cloud."
+        },
+        "blog3": {
+          "title": "Free Updates",
+          "description": "Automatic feature updates at no additional cost."
+        },
+        "blog4": {
+          "title": "Free Training",
+          "description": "Complimentary training and professional consultation."
+        }
+      },
+      "input_opd_card": {
+        "title": "Digital OPD Records Management",
+        "description": "Comprehensive online OPD card system supporting diverse clinical specialties: General Practice, Specialized Medicine, Nursing & Midwifery, Physical Therapy, Traditional Thai-Chinese Medicine, Internal Medicine, Pediatrics, Addiction Treatment, Mental Health, Ophthalmology, and Dentistry."
+      }
+    },
+    "what_new_apsx": {
+      "what_new_apsx": "What’s New in APSX Platform",
+      "solution": "The platform that makes clinic management effortless.",
+      "title": "APSX Platform is designed to help business owners manage and operate efficiently.",
+      "description": "The system covers all aspects of business, including internal management, financial management, marketing management, sales management, stock management, expense management, commissions, and more.",
+      "what_new_items": {
+        "blog1": {
+          "title": "Simple Control Shop",
+          "description": "View sales across multiple branches and manage easily with a single user account."
+        },
+        "blog2": {
+          "title": "Top Sales Products And Services",
+          "description": "View sales across multiple branches and analyze sales by product type, individual, month, year, and time period."
+        },
+        "blog3": {
+          "title": "User Interface Beautiful and Easy to Use",
+          "description": "The system is designed to be simple and user-friendly with modern technology."
+        },
+        "blog4": {
+          "title": "Forecasting Sales Analysis",
+          "description": "Before starting any marketing activity, you need to evaluate its success and effectiveness."
+        },
+        "blog5": {
+          "title": "File Management System",
+          "description": "Efficiently manage files including Lab, X-ray, receipts, images, and other documents."
+        },
+        "blog6": {
+          "title": "Admin Management System",
+          "description": "Highly flexible, allowing complete management within a single user account, including usage rights, system settings, and more."
+        }
+      }
+    },
+    "security_first": {
+      "solution": "Security First",
+      "title": "2-Factor Login System Google Authenticator High Security System",
+      "description": "The 2-Factor Login System Google Authenticator enhances user security, ensuring the safety of your users and verifying their authenticity. It also includes a system to enable/disable login based on specified times."
+    },
+    "face_verification": {
+      "solution": "Face Verification (Comparison AI)",
+      "title": "Face Verification System (Comparison AI)",
+      "description": "Face Verification System ensures the safety of your clinic with precise, fast, and modern AI facial comparison technology. Elevate your service with confidence in security during every service/course cut."
+    },
+    "additional_services": {
+      "solution": "Additional Services",
+      "title": "System Add-ons",
+      "description": "Connect data via Line@ (Official Account) free for 1 year. Sync clinic customer data through Line@ with features such as adding appointments, checking OPD results, before/after images, remaining courses, appointment reminders, displaying personal information, and more."
+    },
+    "partner": {
+      "solution": "Partner",
+      "title": "We integrate your work tools together through our Partners",
+      "description": "To perfect your workflow through our Partners who will help you work efficiently. Supporting various types of businesses such as Clinic, Spa, Wellness, Hospital, Beauty, and Elderly Care Centers.",
+      "blog1": {
+        "title": "Pay Solutions",
+        "description": "Online payment system supporting various online payment channels."
+      },
+      "blog2": {
+        "title": "Dietz.asia",
+        "description": "Complete Telemedicine system for clinics with legal permissions for online patient care."
+      },
+      "blog3": {
+        "title": "LIS/LAB Plus",
+        "description": "Automatic Lab/X-Ray results retrieval system through LIS integration."
+      },
+      "blog4": {
+        "title": "Healthcare Expense Claims System (e-Claim)",
+        "description": "Supports healthcare expense claims (e-Claim) with 16 file types"
+      },
+      "blog5": {
+        "title": "PEAK",
+        "description": "Thailand's most comprehensive online accounting software, helping business owners understand their true financial status."
+      }
+    }
+  },
+  "our_customers": {
+    "title": "Our Customers",
+    "description": "Our customers have over 1,000 branches across all types of businesses, including clinics, spas, health centers, hospitals, beauty businesses, senior care centers, and more that trust our services."
+  },
+  "teams": {
+    "title": "Our Team",
+    "description": "Our team has experience and expertise in development, ready to provide professional consultation and service to customers. To ensure customers that we can appropriately meet their needs."
+  },
+  "package": {
+    "title": "Package Plans",
+    "description": "excluding VAT 7%",
+    "name": {
+      "branches": "Number of Branches",
+      "user": "User",
+      "file_uploads": "File uploads",
+      "free_card_reader": "Free Card Reader",
+      "free_data_import": "Free Data Import",
+      "free_training": "Free Training",
+      "appointment_system": "Appointment System (Room, Doctor Lock)",
+      "queue_system": "Queue System (Room, Doctor Lock)",
+      "commission_system": "Commission System",
+      "barcode_stock": "Barcode System for Stock Management",
+      "central_admin": "Central Admin System (for multiple branches)",
+      "lab_xray": "Lab & X-Ray System",
+      "icd10_diagnosis": "ICD10/Disease Diagnosis System",
+      "accounting_system": "Accounting System",
+      "new_document": "New Document System",
+      "coupon_membership": "Coupon, Membership Card System (Credit)",
+      "id_card_retrieval": "Data Retrieval System via ID Card/Passport",
+      "email_appointment": "Email Appointment Reminder System",
+      "email_document": "Email Document Reminder System",
+      "online_reg_line": "Online Membership Registration System (via Line@)",
+      "patient_privacy": "Patient Data Privacy (Doctor Only)",
+      "sales_pipeline": "Sales Pipeline System",
+      "realtime_lab_xray": "Real-time Lab & X-Ray Data",
+      "patient_file_system": "Patient File Management System",
+      "multi_room_exam": "Multi-Room Examination System",
+      "family_genetic": "Family Genetic Linkage System",
+      "drug_alert": "Drug-Drug Interaction Alert System",
+      "ipd_admission": "IPD Admission System (Inpatient)",
+      "central_warehouse": "Central Warehouse System",
+      "face_verification": "Face Verification System (AI)"
+    },
+    "units": {
+      "branches": "Branches",
+      "user": "users/Branch",
+      "file_uploads": "GB",
+      "free_card_reader": "Devices"
+    }
+  },
+  "faq": {
+    "title": "Have any questions? Frequently Asked Questions",
+    "description": "Focus on your business and let APS handle it for you. You have a business to run. Stop worrying about flaws and let us take care of you",
+    "questions": {
+      "list1": {
+        "question": "What is the APSX Platform program?",
+        "answer": "It is a clinic management system that helps you manage your clinic conveniently, quickly, and with maximum efficiency. The system is user-friendly, comprehensive, and accessible on all devices, anytime, anywhere via the internet. Suitable for hospitals, clinics, spas, wellness centers, senior care centers, beauty businesses, specialized clinics, general clinics, maternity clinics, physiotherapy clinics, Thai-Chinese medicine clinics, general medicine clinics, mother and child clinics, drug rehabilitation clinics, mental health clinics, and eye clinics."
+      },
+      "list2": {
+        "question": "What is a cloud system?",
+        "answer": "Cloud Computing is the use of software, systems, and computer resources provided by service providers via the internet. Therefore, there is no need to install any programs, and it can be used on any device with a web browser installed. Typically, user data is stored on large server networks that are monitored 24/7 and have high security, reducing the risk of data loss due to computer failure or virus attacks."
+      },
+      "list3": {
+        "question": "Can the system be used on Macbook, iMac, Notebook, PC, and Linux operating systems?",
+        "answer": "The system can work with Macbook, iMac, Notebook, PC, and Linux operating systems. Simply install Google Chrome on your device, and you can use it."
+      },
+      "list4": {
+        "question": "How can I update the system to use new functions? Do I need to install additional programs?",
+        "answer": "Whenever new functions are updated, the system will automatically update them. Users can start using these new functions immediately without any time or cost. The list of new function updates will be displayed on the system's main screen."
+      },
+      "list5": {
+        "question": "If I have questions about using the program, where can I ask?",
+        "answer": "You can ask additional questions about usage via LINE: @apsth or watch usage tutorial videos."
+      },
+      "list6": {
+        "question": "Is there training for using the program?",
+        "answer": "APSTH provides one training session for your clinic via remote access. If additional training is needed, please contact us to schedule an appointment with the team at no additional cost. If you require on-site training at the clinic, the clinic will need to cover travel and accommodation expenses for multi-day training."
+      },
+      "list7": {
+        "question": "How long does it take to install the APSTH Clinic system?",
+        "answer": "Installation takes a short time. After the customer confirms payment with the staff and provides clinic information, the system will be ready for use within 20 minutes."
       }
     }
   }

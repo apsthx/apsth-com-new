@@ -32,6 +32,7 @@ export default async function Nav({ color = "#fab758", lng }) {
   return (
     <NavClient
       color={color}
+      locale={lng}
       labels={{
         our_services: t("nav:our_services", "บริการของเรา"),
         our_customers: t("nav:our_customers", "ลูกค้าของเรา"),

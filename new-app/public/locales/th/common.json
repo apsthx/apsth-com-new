@@ -1,5 +1,12 @@
 {
   "new": "ใหม่",
   "free_label": "ใช้งานฟรี",
-  "new_feature_label": "ฟีเจอร์ใหม่ล่าสุด"
+  "start_to_free": "สมัครใช้งานฟรี",
+  "new_feature_label": "ฟีเจอร์ใหม่ล่าสุด",
+  "service_confidence": {
+    "title": "มั่นใจยิ่งกว่าด้วยบริการ"
+  },
+  "read_more": "ดูรายละเอียด",
+  "month": "เดือน",
+  "year": "ปี"
 }

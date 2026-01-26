@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import AnimatedText from "@/components/common/AnimatedText";
-import TypeWriter from "@/components/common/TypeWriter";
 import Link from "next/link";
 
 import { useTranslation } from "@/app/i18n";
@@ -144,29 +143,7 @@ export default async function Hero({ lng }) {
                   )}
                 </p>
 
-                <h2 className="!text-[calc(1.365rem_+_1.38vw)] !leading-[1.2] xl:!text-[1.4rem]  !mb-0">
-                  <span className="typer !text-[#54a8c7] font-medium">
-                    {/* import TypeWriter from "../common/TypeWriter"; */}
-                    <TypeWriter
-                      strings={[
-                        t(
-                          "home:hero.free_essentials.free_training",
-                          "ฟรี สอนการใช้งาน",
-                        ),
-                        t(
-                          "home:hero.free_essentials.free_updates",
-                          "ฟรี อัพเดทเวอร์ชั่น",
-                        ),
-                      ]}
-                    />
-                  </span>
-                  <span
-                    className="cursor !text-[#54a8c7] "
-                    data-owner="typer"
-                  />
-                </h2>
-
-                <div className="mt-4 flex flex-col md:flex-row justify-center items-center mb-6 px-4 gap-3 md:gap-3">
+                <div className="mt-9 flex flex-col md:flex-row justify-center items-center mb-6 px-4 gap-3 md:gap-3">
                   {/* ปุ่ม Line ID - ขนาดกะทัดรัด */}
                   <Link
                     target="_blank"

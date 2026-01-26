@@ -1,9 +1,5 @@
 import Image from "next/image";
-import AnimatedText from "@/components/common/AnimatedText";
-import TypeWriter from "@/components/common/TypeWriter";
 import Link from "next/link";
-import PagesSlider from "./PagesSlider";
-import { slidesData } from "@/data/blogs";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -28,7 +24,7 @@ export default async function Features({ lng }) {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#45c4a0] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#45c4a0]"></span>
                 </span>
-                {t("home:features.section_badge", "ทำไมถึงควรเลือก APSX?")}
+                Features
               </span>
             </div>
 
@@ -410,9 +406,9 @@ export default async function Features({ lng }) {
                           height={560}
                         />
                       </a>
-                      <figcaption className="group-hover:opacity-100 absolute w-full h-full opacity-0 text-center px-4 py-3 inset-0 z-[5] pointer-events-none p-2 flex items-center justify-center">
-                        <h5 className="from-top !mb-0 text-white">
-                          {t("home:read_more", "เพิ่มเติม")}
+                      <figcaption className="group-hover:opacity-100  absolute w-full h-full opacity-0 text-center px-4 py-3 inset-0 z-[5] pointer-events-none p-2 flex items-center justify-center">
+                        <h5 className="from-top !mb-0  shadow-2xl text-white">
+                          {t("home:read_more", "ดูรายละเอียด")}
                         </h5>
                       </figcaption>
                     </figure>

@@ -1,1 +1,32 @@
-{}
+{
+  "description": "For Hospital, Clinic, Spa, Wellness, Elderly Care Centers, Beauty Business, Specialized Clinics, Medical Clinics, General Clinics,Nursing and Midwifery Clinics, Physiotherapy Clinics, Thai-Chinese Medicine Clinics, Internal Medicine Clinics, Mother and Child Clinics, Drug Rehabilitation Clinics, Mental Health Clinics, Eye Clinics",
+  "services": {
+    "title": "Our Services",
+    "clinic_software": "Clinic Software",
+    "hospital_software": "Hospital Software",
+    "wellness_software": "Wellness Software",
+    "elderly_care_center_software": "Elderly Care Center Software",
+    "spa_Beauty_software": "Spa Beauty Software"
+  },
+  "accounts": {
+    "title": "Accounts",
+    "our_customer": "Our Customers",
+    "system_demo": "System Demo",
+    "login": "Login",
+    "teams_of_service": "Teams of Service",
+    "privacy_policy": "Privacy Policy"
+  },
+  "support": {
+    "title": "Support",
+    "docs": "Docs",
+    "help_center": "Help Center",
+    "changelog": "Changelog",
+    "connect": "Contact Us",
+    "vdo_tutorial": "VDO Tutorial",
+    "site_map": "Site Map"
+  },
+  "contact": {
+    "title": "Interested in APSX Platform Clinic Software?",
+    "description": "For more information, contact us via LINE: @apsth Contact our support team at 043-002488, 089-81816769"
+  }
+}

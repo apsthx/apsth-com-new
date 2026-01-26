@@ -1,137 +1,149 @@
+const createFeatures = (tierConfig) => {
+  const { branch, user, file, reader, title } = tierConfig;
+  const isNPlus = title === "Package N+";
+
+  return [
+    // --- ส่วนที่ 1: ข้อมูลตัวเลข (Limits) ---
+    { key: "branch_count", value: branch, unitKey: "branches", included: true },
+    { key: "user_count", value: user, unitKey: "user", included: true },
+    {
+      key: "file_uploads",
+      value: file,
+      unitKey: "file_uploads",
+      included: true,
+    },
+    {
+      key: "card_reader",
+      value: reader,
+      unitKey: "free_card_reader",
+      included: true,
+    },
+    { key: "free_import", included: true },
+    { key: "free_training", included: true },
+
+    // --- ส่วนที่ 2: ระบบงาน (System Features) ---
+    { key: "appointment_system", included: true },
+    { key: "queue_system", included: true },
+    { key: "commission_system", included: true },
+    { key: "barcode_stock", included: true },
+    { key: "central_admin", included: true },
+    { key: "lab_xray", included: true },
+    { key: "icd10_diagnosis", included: true },
+    { key: "accounting_system", included: true },
+    { key: "new_document", included: true },
+    { key: "coupon_membership", included: true },
+    { key: "id_card_retrieval", included: true },
+    { key: "email_appointment", included: true },
+
+    // สองตัวนี้ Package N+ จะถูก Filter ออกไปเพราะ included เป็น false
+    { key: "email_document", included: !isNPlus },
+    { key: "online_reg_line", included: !isNPlus },
+
+    // --- ส่วนที่ 3: ระบบงานขั้นสูง (Advanced Systems) ---
+    {
+      key: "patient_privacy",
+      defaultLabel: "Patient Data Privacy System (Doctor Only)",
+      included: false,
+      isAddOn: true,
+    },
+    {
+      key: "sales_pipeline",
+      defaultLabel: "Sales Pipeline System",
+      included: false,
+      isAddOn: true,
+    },
+    {
+      key: "realtime_lab_xray",
+      defaultLabel: "Real-time Lab/X-Ray Data System",
+      included: false,
+      isAddOn: true,
+    },
+    {
+      key: "patient_file_system",
+      defaultLabel: "Patient File System",
+      included: false,
+      isAddOn: true,
+    },
+    {
+      key: "multi_room_exam",
+      defaultLabel: "Multi-Room Examination System",
+      included: false,
+      isAddOn: true,
+    },
+    {
+      key: "family_genetic",
+      defaultLabel: "Family Genetic Linkage System",
+      included: false,
+      isAddOn: true,
+    },
+    {
+      key: "drug_alert",
+      defaultLabel: "Drug Relationship Alert System",
+      included: false,
+      isAddOn: true,
+    },
+    {
+      key: "ipd_admission",
+      defaultLabel: "IPD Admission System (Overnight)",
+      included: false,
+      isAddOn: true,
+    },
+    {
+      key: "central_warehouse",
+      defaultLabel: "Central Warehouse System",
+      included: false,
+      isAddOn: true,
+    },
+    {
+      key: "face_verification",
+      defaultLabel: "Face Verification System (Comparison AI)",
+      included: false,
+      isAddOn: true,
+    },
+  ];
+};
+
 export const pricingPlans = [
   {
-    title: "Premium Plan",
-    monthlyPrice: "19",
-    yearlyPrice: "199",
-    features: [
-      { text: "5 Projects", included: true },
-      { text: "100K API Access", included: true },
-      { text: "200MB Storage", included: true },
-      { text: "Weekly Reports", included: true },
-      { text: "7/24 Support", included: false },
-    ],
+    title: "Package N+",
+    price3mo: 6750,
+    price6mo: 13500,
+    price1yr: 21000,
+    oldPrice1yr: 27000,
+    features: createFeatures({
+      title: "Package N+",
+      branch: 1,
+      user: 15,
+      file: 15,
+      reader: 1,
+    }),
   },
   {
-    title: "Corporate Plan",
-    monthlyPrice: "49",
-    yearlyPrice: "499",
-    features: [
-      { text: "20 Projects", included: true },
-      { text: "300K API Access", included: true },
-      { text: "500MB Storage", included: true },
-      { text: "Weekly Reports", included: true },
-      { text: "7/24 Support", included: true },
-    ],
-  },
-];
-
-export const pricingPlans2 = [
-  {
-    title: "Basic Plan",
-    monthlyPrice: 9,
-    yearlyPrice: 99,
-    features: [
-      { text: "1 Project", included: true },
-      { text: "100K API Access", included: true },
-      { text: "100MB Storage", included: true },
-      { text: "Weekly Reports", included: true },
-      { text: "7/24 Support", included: true },
-    ],
-    className:
-      "md:w-6/12 lg:w-4/12 xl:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]",
+    title: "Package B+",
+    price3mo: 13500,
+    price6mo: 27000,
+    price1yr: 42000,
+    oldPrice1yr: 48000,
+    features: createFeatures({
+      title: "Package B+",
+      branch: 2,
+      user: 20,
+      file: 30,
+      reader: 2,
+    }),
   },
   {
-    title: "Premium Plan",
-    monthlyPrice: 19,
-    yearlyPrice: 199,
-    features: [
-      { text: "5 Projects", included: true },
-      { text: "100K API Access", included: true },
-      { text: "200MB Storage", included: true },
-      { text: "Weekly Reports", included: true },
-      { text: "7/24 Support", included: true },
-    ],
-    isPopular: true,
-    className:
-      "md:w-6/12 lg:w-4/12 xl:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]",
-  },
-  {
-    title: "Corporate Plan",
-    monthlyPrice: 49,
-    yearlyPrice: 499,
-    features: [
-      { text: "20 Projects", included: true },
-      { text: "300K API Access", included: true },
-      { text: "500MB Storage", included: true },
-      { text: "Weekly Reports", included: true },
-      { text: "7/24 Support", included: true },
-    ],
-    className:
-      "md:w-6/12 lg:w-4/12 xl:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]",
-  },
-];
-// xl:!ml-0 lg:!ml-0 md:!ml-[25%]
-
-export const pricingPlans3 = [
-  {
-    title: "Basic Plan",
-    price: "9",
-    features: [
-      { text: "1 Project", included: true },
-      { text: "100K API Access", included: true },
-      { text: "100MB Storage", included: true },
-      { text: "Weekly Reports", included: false },
-      { text: "7/24 Support", included: false },
-    ],
-    className:
-      "md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] !mt-[30px] max-w-full",
-    cardClassName: "pricing card !shadow-none",
-    buttonClassName: "btn btn-soft-navy rounded",
-  },
-  {
-    title: "Premium Plan",
-    price: "19",
-    features: [
-      { text: "5 Projects", included: true },
-      { text: "100K API Access", included: true },
-      { text: "200MB Storage", included: true },
-      { text: "Weekly Reports", included: true },
-      { text: "7/24 Support", included: false },
-    ],
-    className:
-      "md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] !mt-[30px] max-w-full",
-    cardClassName: "pricing card !shadow-none",
-    buttonClassName: "btn btn-soft-navy rounded",
-  },
-  {
-    title: "Corporate Plan",
-    price: "29",
-    features: [
-      { text: "20 Projects", included: true },
-      { text: "300K API Access", included: true },
-      { text: "500MB Storage", included: true },
-      { text: "Weekly Reports", included: true },
-      { text: "7/24 Support", included: true },
-    ],
-    className:
-      "md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] !mt-[30px] max-w-full",
-    cardClassName: "pricing card !bg-[rgba(246,247,249,1)]",
-    buttonClassName:
-      "btn btn-navy !text-white !bg-[#343f52] border-[#343f52] hover:text-white hover:bg-[#343f52] hover:!border-[#343f52] focus:shadow-[rgba(82,92,108,1)] active:text-white active:bg-[#343f52] active:border-[#343f52] disabled:text-white disabled:bg-[#343f52] disabled:border-[#343f52] rounded hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]",
-  },
-  {
-    title: "Community Plan",
-    price: "49",
-    features: [
-      { text: "90 Projects", included: true },
-      { text: "900K API Access", included: true },
-      { text: "900MB Storage", included: true },
-      { text: "Weekly Reports", included: true },
-      { text: "7/24 Support", included: true },
-    ],
-    className:
-      "md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] !mt-[30px] max-w-full",
-    cardClassName: "pricing card !shadow-none",
-    buttonClassName: "btn btn-soft-navy rounded",
+    title: "Package PRO+",
+    price3mo: 33750,
+    price6mo: 67500,
+    price1yr: 105000,
+    oldPrice1yr: 120000,
+    features: createFeatures({
+      title: "Package PRO+",
+      branch: 5,
+      user: 30,
+      file: "Unlimited",
+      reader: 5,
+    }),
   },
 ];

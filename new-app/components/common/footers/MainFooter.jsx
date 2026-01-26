@@ -4,39 +4,61 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
-export default function MainFooter() {
+import { useTranslation } from "@/app/i18n";
+
+export default async function MainFooter({ lng }) {
+  const { t } = await useTranslation(lng);
   return (
     <footer
-      className="wrapper bg-repeat bg-fixed bg-image section-frame xl:mx-6 xl:rounded-[1rem] lg:mx-6 lg:rounded-[1rem] md:mx-6 md:rounded-[1rem]"
-      style={{ backgroundImage: "url(/assets/img/pattern.png)" }}
+      data-cues="slideInUp"
+      data-delay={300}
+      className="bg-[#f5f5f6] opacity-100 !text-[#343f52]"
     >
-      <div className="container mt-14 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
-        {/* <div
-          className="card image-wrapper bg-full bg-image bg-overlay xl:mx-5 lg:mx-5 md:mx-5 !rounded-[0.8rem] overflow-hidden [background-size:100%] bg-[center_center] bg-no-repeat bg-scroll relative z-0 before:content-[''] before:block before:absolute before:z-[1] before:w-full before:h-full before:rounded-[0.4rem] before:left-0 before:top-0 before:bg-[rgba(30,34,40,.5)] -translate-y-2/4"
-          style={{ backgroundImage: "url(/assets/img/photos/bg27.jpg)" }}
-        >
-          <div className="card-body p-6 flex-1 text-center xl:!justify-between lg:!justify-between md:!justify-between  xl:!p-12 lg:!p-12 md:!p-12 xl:!text-left lg:!text-left">
-            <h3 className="!text-[calc(1.345rem_+_1.14vw)] !font-semibold !leading-[1.2] xl:!text-[2.2rem] !mb-6 xl:!mb-0 lg:!mb-0 lg:!pr-[2.5rem] xl:!pr-[1.25rem] xxl:!pr-[8rem] !text-white">
-              สนใจใช้งาน โปรแกรม คลินิก APSX Platform
-            </h3>
-            <p>
-              สามารถสอบถามเรื่องการใช้งานเพิ่มเติมได้ที่ LINE: @apsth
-              โทรติดต่อทีมสนับสนุนของเราได้ที่ 043-002488, 098-1816769
-            </p>
-            <a
-              href="#"
-              className="btn btn-lg btn-white !rounded-[0.8rem] !mb-0 whitespace-nowrap"
-            >
-              Join Us
-            </a>
-          </div> 
-        </div> */}
-        {/*/.card */}
-        <div className="!text-[#cacaca] xl:mx-5 lg:mx-5 md:mx-5 !mt-[-5rem] xl:!mt-0 lg:!mt-0">
+      <div className="container">
+        {/* --- ส่วนบล็อกที่ซ้อนด้านบน (Upper Block / CTA) --- */}
+        <div className="card relative z-[10] !mt-[-5rem] overflow-hidden !border-0 !rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-gradient-to-tr from-[#009c82] via-[#00b899] to-[#00ce9b]">
+          {/* ลูกเล่นแสง Ambient ด้านหลัง */}
+          <div className="absolute top-[-50%] left-[-10%] w-80 h-80 bg-white/10 blur-[80px] rounded-full"></div>
+          <div className="absolute bottom-[-20%] right-[-5%] w-64 h-64 bg-blue-400/20 blur-[60px] rounded-full"></div>
+
+          <div className="card-body p-10 xl:p-12 relative z-10">
+            <div className="flex flex-wrap items-center mx-[-15px]">
+              <div className="xl:w-8/12 lg:w-8/12 w-full flex-[0_0_auto] px-[15px] max-w-full text-center lg:text-left">
+                <h3 className="h1 !mb-2 !text-white !leading-[1.2] drop-shadow-sm">
+                  {t(
+                    "footer:contact.title",
+                    "สนใจใช้งาน โปรแกรม คลินิก APSX Platform",
+                  )}
+                </h3>
+                <p className="lead !leading-[1.65] text-[1rem] font-medium !mb-0 text-white/90">
+                  {t(
+                    "footer:contact.description",
+                    "สามารถสอบถามเรื่องการใช้งานเพิ่มเติมได้ที่ LINE: @apsth โทรติดต่อทีมสนับสนุนของเราได้ที่ 043-002488, 098-1816769",
+                  )}
+                </p>
+              </div>
+
+              <div className="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] px-[15px] max-w-full text-center lg:text-right !mt-8 lg:!mt-0">
+                <a
+                  target="_blank"
+                  href="https://www.app-apsx.com/register"
+                  className="btn btn-white !bg-white !text-[#45c4a0] !border-0 !rounded-[50rem] px-10 py-3 font-bold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
+                >
+                  {t("start_to_free", "สมัครใช้งานฟรี")}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* --- จบบล็อกที่ซ้อนด้านบน --- */}
+
+        {/* เนื้อหา Footer หลัก */}
+        <div className="pt-[4.5rem] xl:pt-[7rem] lg:pt-[7rem] md:pt-[7rem] pb-[1.75rem]">
           <div className="flex flex-wrap mx-[-15px] !mt-[-30px] xl:!mt-0 lg:!mt-0">
-            <div className="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full">
+            {/* คอลัมน์ที่ 1: ข้อมูลบริษัท/โลโก้ (ถ้ามี) */}
+            <div className="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] px-[15px] max-w-full mt-[30px] xl:mt-0 lg:mt-0">
               <div className="widget">
-                <div className="navbar-brand w-full">
+                <div className="navbar-brand w-full !mb-4">
                   <Link href={`/`}>
                     <Image
                       srcSet="/assets/img/logo/logo.svg"
@@ -48,98 +70,233 @@ export default function MainFooter() {
                     />
                   </Link>
                 </div>
-                <p className="!mb-5">
-                  For Hospital, Clinic, Spa, Wellness, ศูนย์ดูแลผู้สูงอายุ
-                  ธุรกิจความงาม คลินิกเฉพาะทาง คลินิกเวชกรรม คลินิกทั่วไป
-                  คลินิกพยาบาลผดุงครรภ์ คลินิกกายภาพบำบัด คลินิกแพทย์แผนไทย-จีน
-                  คลินิกอายุรกรรม คลินิกแม่และเด็ก คลินิกบําบัดยาเสพติด
-                  คลินิกสุขภาพจิต คลินิกตา
+                <p className="!mb-4">
+                  {t(
+                    "footer:description",
+                    "For Hospital, Clinic, Spa, Wellness, ศูนย์ดูแลผู้สูงอายุ ธุรกิจความงาม คลินิกเฉพาะทาง คลินิกเวชกรรม คลินิกทั่วไป คลินิกพยาบาลผดุงครรภ์ คลินิกกายภาพบำบัด คลินิกแพทย์แผนไทย-จีน คลินิกอายุรกรรม คลินิกแม่และเด็ก คลินิกบําบัดยาเสพติด คลินิกสุขภาพจิต คลินิกตา",
+                  )}
                 </p>
-                <p className="!mb-1">
-                  © {new Date().getFullYear()} Sandbox. All rights reserved.
-                </p>
-                <nav className="nav social ">
-                  {socialLinks.map((elm, i) => (
-                    <a
-                      key={i}
-                      className="m-[0_.7rem_0_0] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 hover:translate-y-[-0.15rem]"
-                      href={elm.href}
-                    >
-                      <i
-                        className={`uil ${elm.icon} before:content-[${elm.unicode}] text-[1rem]`}
-                        style={{ color: elm.color }}
-                      />
-                    </a>
-                  ))}
-                </nav>
-                {/* /.social */}
+                {/* <address className="not-italic !leading-[inherit] !mb-4">
+                  Moonshine St. 14/05 Light City, London, UK
+                </address> */}
               </div>
-              {/* /.widget */}
             </div>
-            {/* /column */}
-            <div className="md:w-4/12 lg:w-2/12 xl:w-2/12 w-full flex-[0_0_auto] !px-[15px] max-w-full lg:!ml-[16.66666667%] xl:!ml-[16.66666667%] !mt-[30px] xl:!mt-0 lg:!mt-0">
+
+            {/* คอลัมน์ที่ 2: Need Help */}
+            <div className="md:w-4/12 lg:w-2/12 xl:w-2/12 w-full px-[15px] lg:ml-[8.33%] max-lg:mt-[30px]">
               <div className="widget">
-                <h4 className="widget-title !text-white !mb-3">บริการของเรา</h4>
-                <ul className="pl-0 list-none text-inherit !mb-0">
-                  {footerLinks2.map((elm, i) => (
-                    <li key={i} className={i != 0 ? "!mt-[0.35rem]" : ""}>
-                      <Link
-                        className="!text-[#cacaca] hover:!text-[#605dba]"
-                        href={elm.href}
-                      >
-                        {elm.text}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* /.widget */}
-            </div>
-            {/* /column */}
-            <div className="md:w-4/12 lg:w-2/12 xl:w-2/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px] xl:!mt-0 lg:!mt-0">
-              <div className="widget">
-                <h4 className="widget-title !text-white !mb-3">Accounts</h4>
-                <ul className="pl-0 list-none text-inherit !mb-0">
-                  {footerLinks.map((elm, i) => (
-                    <li className={i != 0 ? "!mt-[0.35rem]" : ""} key={i}>
-                      <Link
-                        className="!text-white hover:!text-[#605dba]"
-                        href={elm.href}
-                      >
-                        {elm.text}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {/* /.widget */}
-            </div>
-            {/* /column */}
-            <div className="md:w-4/12 lg:w-2/12 xl:w-2/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px] xl:!mt-0 lg:!mt-0">
-              <div className="widget">
-                <h4 className="widget-title !mb-[.75rem] !text-[.95rem] !leading-[1.45] !text-white">
-                  Support
+                <h4 className="widget-title !text-[#343f52] !mb-3">
+                  {t("footer:services.title", "บริการของเรา")}
                 </h4>
-                <address className="not-italic !leading-[inherit] !mb-4">
-                  Moonshine St. 14/05 Light City, London, United Kingdom
-                </address>
-                <a
-                  href="mailto:first.last@email.com"
-                  className="!text-white hover:!text-[#343f52]"
-                >
-                  info@email.com
-                </a>
-                <br />
-                00 (123) 456 78 90
+                <ul className="pl-0 list-none !mb-0">
+                  <li>
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t("footer:services.clinic_software", "โปรแกรม คลินิก")}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t(
+                        "footer:services.hospital_software",
+                        "โปรแกรม โรงพยาบาล",
+                      )}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t(
+                        "footer:services.wellness_software",
+                        "โปรแกรม Wellness",
+                      )}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t(
+                        "footer:services.elderly_care_center_software",
+                        "โปรแกรม ศูนย์ดูแลผู้สูงอายุ",
+                      )}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t(
+                        "footer:services.spa_Beauty_software",
+                        "โปรแกรม Spa/Beauty",
+                      )}
+                    </a>
+                  </li>
+                </ul>
               </div>
-              {/* /.widget */}
             </div>
-            {/* /column */}
+
+            {/* คอลัมน์ที่ 3: Learn More */}
+            <div className="md:w-4/12 lg:w-2/12 xl:w-2/12 w-full px-[15px] max-lg:mt-[30px]">
+              <div className="widget">
+                <h4 className="widget-title !text-[#343f52] !mb-3">
+                  {t("footer:accounts.title", "Accounts")}
+                </h4>
+                <ul className="pl-0 list-none !mb-0">
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t("footer:accounts.our_customer", "ลูกค้าของเรา")}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t(
+                        "footer:accounts.system_demo",
+                        "ลูกDemo ระบบค้าของเรา",
+                      )}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t("footer:accounts.login", "Login")}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t(
+                        "footer:accounts.teams_of_service",
+                        "Teams of Service",
+                      )}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t("footer:accounts.privacy_policy", "Privacy Policy")}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* คอลัมน์ที่ 4: Contact */}
+            <div className="md:w-4/12 lg:w-2/12 xl:w-2/12 w-full px-[15px] max-lg:mt-[30px]">
+              <div className="widget">
+                <h4 className="widget-title !text-[#343f52] !mb-3">
+                  {t("footer:support.title", "Support")}
+                </h4>
+                <ul className="pl-0 list-none !mb-0">
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t("footer:support.docs", "Docs")}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t("footer:support.help_center", "Help Center")}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t("footer:support.changelog", "Changelog")}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t("footer:support.connect", "ติดต่อเรา")}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t("footer:support.vdo_tutorial", "VDO Tutorialcs")}
+                    </a>
+                  </li>
+                  <li className="mt-2">
+                    <a
+                      className="!text-[#343f52] hover:!text-[#00B7B8]"
+                      href="#"
+                    >
+                      {t("footer:support.site_map", "Site Map")}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          {/*/.row */}
+
+          <hr className="!mt-13 xl:!mt-20 lg:!mt-20 md:!mt-20 !mb-7" />
+
+          <div className="xl:flex lg:flex md:flex items-center justify-between">
+            <p className="!mb-2 xl:!mb-0">
+              Copyright © 2024
+              <a href="/" className="mx-2 !text-[#00B7B8]">
+                APSX Platform
+              </a>
+              By
+              <a href="/" className="mx-2 !text-[#00B7B8]">
+                APSTH
+              </a>
+            </p>
+
+            <nav className="nav social !mt-4">
+              {socialLinks.map((elm, i) => (
+                <a
+                  key={i}
+                  className="text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
+                  href={elm.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i
+                    className={`uil ${elm.icon} text-[${elm.color}] text-[1.1rem]`}
+                    // ใช้ inline style เพื่อดึงค่าสีจาก object มาแสดงผล
+                    style={{ color: elm.color }}
+                    // ถ้ามึงต้องใช้ unicode ผ่าน attribute data หรืออื่นๆ (แต่ปกติ uil class ก็แสดงผลได้เลย)
+                  />
+                </a>
+              ))}
+            </nav>
+          </div>
         </div>
       </div>
-      {/* /.container */}
     </footer>
   );
 }

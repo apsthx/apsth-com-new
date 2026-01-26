@@ -2,25 +2,17 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import {
-  blockItems,
-  blogItems,
-  demos,
-  docsPages,
-  otherPages,
-  projectPages,
-  ourServices,
-  ourCustomers,
-  documents,
-} from "@/data/menu";
+import { ourServices, ourCustomers, documents } from "@/data/menu";
 import { usePathname } from "next/navigation";
+
+import LanguageSwitcher from "@/components/common/LanguageChanger";
 
 // components
 import Badge from "../Badges";
 
 // import LanguageChanger from '@/components/common/LanguageChanger'
 // !text-[var(--current-color)]
-export default function NavClient({ color, labels, badges }) {
+export default function NavClient({ color, labels, badges, locale }) {
   useEffect(() => {
     // Dynamically import Bootstrap
     import("bootstrap").then((Bootstrap) => {
@@ -100,7 +92,7 @@ export default function NavClient({ color, labels, badges }) {
                 className={`flex items-center space-x-2 dropdown-item  ${
                   item.href === pathname ? "!text-[var(--current-color)]" : ""
                 }`}
-                href={item.href}
+                href={`/${locale}/${item.href}`}
                 style={{
                   display: "flex", // บังคับเป็น flex
                   alignItems: "center", // จัดกลางแนวตั้ง
@@ -133,7 +125,7 @@ export default function NavClient({ color, labels, badges }) {
           className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--hover-text)] ${
             getActiveParent(ourCustomers) ? "!text-[var(--current-color)]" : ""
           } `}
-          href="#"
+          href={`#`}
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
@@ -147,7 +139,7 @@ export default function NavClient({ color, labels, badges }) {
                 className={`flex items-center space-x-2 dropdown-item  ${
                   item.href === pathname ? "!text-[var(--current-color)]" : ""
                 }`}
-                href={item.href}
+                href={`/${locale}/${item.href}`}
                 style={{
                   display: "flex", // บังคับเป็น flex
                   alignItems: "center", // จัดกลางแนวตั้ง
@@ -239,6 +231,7 @@ export default function NavClient({ color, labels, badges }) {
           {labels.contact_us}
         </a>
       </li>
+      <LanguageSwitcher />
     </ul>
   );
 }

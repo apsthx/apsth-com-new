@@ -3,6 +3,7 @@ import Nav from "../Nav/Nav";
 import Link from "next/link";
 import Image from "next/image";
 import { socialLinks } from "@/data/socials";
+import TypeWriter from "@/components/common/TypeWriter";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -18,6 +19,38 @@ export default async function MainHeader({ lng }) {
   };
   return (
     <header className="!absolute w-full">
+      <div
+        className=" bg-gradient-to-br from-[#00B7B8] via-[#45c4a0] to-[#41c7a1] !text-white font-bold !text-[.75rem] !relative"
+        style={{ zIndex: 1 }}
+      >
+        {/* แก้จุดนี้: เอา whitespace-nowrap ออกในมือถือ และใช้ flex-wrap แทนถ้าจำเป็น */}
+        <div className="!mb-0 flex items-center justify-center flex-wrap md:flex-nowrap">
+          {/* ส่วนหัวข้อคงที่ */}
+          <span className="flex-shrink-0">
+            ✨ {t("service_confidence.title", "ฟรี อัพเดทเวอร์ชั่น")}{" "}
+            :&nbsp;{" "}
+          </span>
+
+          {/* ส่วนข้อความวิ่ง: ปรับ min-w ให้เล็กลงในมือถือ (xs) */}
+          <span className="inline-block text-left min-w-[140px] xs:min-w-[160px] md:min-w-[220px]">
+            <span className="typer !text-white font-medium">
+              <TypeWriter
+                strings={[
+                  t(
+                    "home:hero.free_essentials.free_training",
+                    "ฟรี สอนการใช้งาน",
+                  ),
+                  t(
+                    "home:hero.free_essentials.free_updates",
+                    "ฟรี อัพเดทเวอร์ชั่น",
+                  ),
+                ]}
+              />
+            </span>
+            <span className="cursor !text-[#54a8c7]" data-owner="typer" />
+          </span>
+        </div>
+      </div>
       <nav
         className="navbar navbar-expand-lg center-nav sticky-top 
           !backdrop-blur-md 
@@ -60,6 +93,7 @@ export default async function MainHeader({ lng }) {
             </div>
             <div className="offcanvas-body xl:!ml-auto lg:!ml-auto flex flex-col !h-full">
               <Nav color="#605dba" lng={lng} />
+
               {/* /.navbar-nav */}
               <div className="offcanvas-footer xl:!hidden lg:!hidden">
                 <div>
@@ -75,7 +109,7 @@ export default async function MainHeader({ lng }) {
                     <a
                       target="_blank"
                       href="https://www.app-apsx.com/register"
-                      className=" !relative !inline-flex items-center gap-1 !text-[#f5f5f6] !bg-[#747ed1] hover:!bg-[#6b76d3] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn  focus:!shadow-none active:!shadow-none btn-xs "
+                      className=" !relative !inline-flex items-center gap-1 !text-[#f5f5f6] !bg-[#00B7B8] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn  focus:!shadow-none active:!shadow-none btn-xs "
                     >
                       <span className="absolute -top-3 -right-3">
                         <Badge
@@ -90,15 +124,20 @@ export default async function MainHeader({ lng }) {
                       <span className="font-bold">{labels.free_trial}</span>
                     </a>
                   </div>
-                  <nav className="nav social social-white !mt-4">
+                  <nav className="nav social !mt-4">
                     {socialLinks.map((elm, i) => (
                       <a
                         key={i}
-                        className="!text-[#cacaca] text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
+                        className="text-[1rem] transition-all duration-[0.2s] ease-in-out translate-y-0 motion-reduce:transition-none hover:translate-y-[-0.15rem] m-[0_.7rem_0_0]"
                         href={elm.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <i
-                          className={`uil ${elm.icon} before:content-[${elm.unicode}] !text-white text-[1rem]`}
+                          className={`uil ${elm.icon} text-[${elm.color}] text-[1.1rem]`}
+                          // ใช้ inline style เพื่อดึงค่าสีจาก object มาแสดงผล
+                          style={{ color: elm.color }}
+                          // ถ้ามึงต้องใช้ unicode ผ่าน attribute data หรืออื่นๆ (แต่ปกติ uil class ก็แสดงผลได้เลย)
                         />
                       </a>
                     ))}
@@ -127,7 +166,7 @@ export default async function MainHeader({ lng }) {
                 <a
                   target="_blank"
                   href="https://www.app-apsx.com/register"
-                  className="!relative !inline-flex items-center gap-1 !text-[#f5f5f6] !bg-[#5eb9f0] hover:!bg-[#4baeeb] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn  focus:!shadow-none active:!shadow-none btn-xs"
+                  className="!relative !inline-flex items-center gap-1 !text-[#f5f5f6] !bg-[#00B7B8] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn  focus:!shadow-none active:!shadow-none btn-xs"
                 >
                   <span className="absolute -top-3 -right-3">
                     <Badge

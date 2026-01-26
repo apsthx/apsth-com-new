@@ -1,14 +1,14 @@
 import React from "react";
 
-import Testimonials from "@/components/services/homes/componemts/Testimonials";
-import Banner from "@/components/services/homes/componemts/Banner";
-import Demos from "@/components/services/homes/componemts/Demos";
 import Features from "@/components/services/homes/componemts/Features";
 import PlatformHighlights from "@/components/services/homes/componemts/PlatformHighlights";
 import Hero from "@/components/services/homes/componemts/Hero";
-import Pricing from "@/components/services/homes/componemts/Pricing";
-import Process from "@/components/services/homes/componemts/Process";
-import Services from "@/components/services/homes/componemts/Services";
+import WhyAPSX from "@/components/services/homes/componemts/WhyAPSX";
+import Package from "@/components/services/homes/componemts/Package";
+import OurCustomers from "@/components/services/homes/componemts/OurCustomers";
+import Teams from "@/components/services/homes/componemts/Teams";
+import Certification from "@/components/services/homes/componemts/Certification";
+import Questions from "@/components/services/homes/componemts/Questions";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -35,27 +35,14 @@ export default async function HomePage({ params }) {
               {/* /.container */}
               <Features lng={lng} />
               <PlatformHighlights lng={lng} />
-              <Demos />
-              {/* /.container */}
-              <Services />
-              {/* /.container */}
-            </section>
-            {/* /section */}
-            <Process />
-            {/* /section */}
-            {/* /section */}
-            <Banner />
-            {/* /section */}
-            <section className="overflow-hidden">
-              <div className="container pt-24 xl:pt-32 lg:pt-32 md:pt-32 pb-40 xl:pb-60 lg:pb-60 md:pb-60">
-                <Testimonials />
-                {/*/.row */}
-                <Pricing />
-                {/*/.row */}
-              </div>
+              <WhyAPSX lng={lng} />
+              <Package lng={lng} />
+              <OurCustomers lng={lng} />
+              <Teams lng={lng} />
+              <Certification lng={lng} />
+              <Questions lng={lng} />
               {/* /.container */}
             </section>
-            {/* /section */}
           </div>
         </div>
       </div>

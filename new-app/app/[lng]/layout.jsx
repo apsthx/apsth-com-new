@@ -38,10 +38,10 @@ export default async function RootLayout({ children, params }) {
           {/* ส่วนเนื้อหาหลัก */}
           <main className="flex-grow">{children}</main>
 
-          <MainFooter />
+          <div className="xl:pb-52 lg:pb-96 md:pb-96" />
+          <MainFooter lng={lng} />
 
           {/* Spacer */}
-          <div className="xl:pb-6 lg:pb-6 md:pb-6" />
         </Providers>
       </body>
     </html>

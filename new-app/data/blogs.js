@@ -24,3 +24,10 @@ export const featuresData = [
     category: "Business Tips",
   },
 ];
+
+const slidesData = [
+  { src: "/assets/img/photos/b4.jpg", alt: "System Overview 1" },
+  { src: "/assets/img/photos/b5.jpg", alt: "System Overview 2" },
+  { src: "/assets/img/photos/b6.jpg", alt: "System Overview 3" },
+  { src: "/assets/img/photos/b7.jpg", alt: "System Overview 4" },
+];
