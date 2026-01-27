@@ -84,7 +84,9 @@ export default function LanguageSelect({ color = "#5eb9f0" }) {
           alt={activeLangData.label}
           className="w-4 h-auto rounded object-cover"
         />
-        <span className="font-medium uppercase">{activeLangData.label}</span>
+        <span className="!font-medium  !text-[#464c58] !tracking-wide uppercase">
+          {activeLangData.label}
+        </span>
       </a>
 
       <ul
@@ -132,7 +134,7 @@ export default function LanguageSelect({ color = "#5eb9f0" }) {
                   alt={code}
                   className="w-5 h-3.5 rounded"
                 />
-                <span className="text-sm font-semibold">
+                <span className="text-sm !font-medium  !text-[#464c58] !tracking-wide">
                   {languageConfig[code].name}
                 </span>
               </a>

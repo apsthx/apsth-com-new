@@ -64,7 +64,7 @@ export default function Package({ translations }) {
                     key={item.value}
                     onClick={() => setBillingCycle(item.value)}
                     className={`relative px-8 py-2.5 rounded-full text-sm font-black transition-all duration-500 ease-out min-w-[100px]
-                    ${isActive ? "!text-[#3f78e0] scale-105" : "text-gray-500 hover:text-gray-800"}`}
+                    ${isActive ? "!text-[#00B7B8] scale-105" : "text-gray-500 hover:text-gray-800"}`}
                   >
                     {isActive && (
                       <div className="absolute inset-0 bg-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.1)] z-[-1] animate-in fade-in zoom-in duration-300" />
@@ -109,7 +109,7 @@ export default function Package({ translations }) {
                           </span>
                         </div>
 
-                        <h4 className="text-sm font-bold mb-6 !text-[#5eb9f0] uppercase tracking-[0.2em]">
+                        <h4 className="!text-lg font-bold mb-6 !text-[#00B7B8] uppercase !tracking-[0.1em]">
                           {plan.title}
                         </h4>
 
@@ -128,7 +128,7 @@ export default function Package({ translations }) {
                                 <div
                                   className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${
                                     feature.included
-                                      ? "bg-[#edf9f6] text-[#45c4a0]"
+                                      ? "bg-[#eaf7f4] text-[#1bb35f]"
                                       : "bg-[#f5f5f6] text-[#9499a3]"
                                   }`}
                                 >
@@ -164,6 +164,8 @@ export default function Package({ translations }) {
                                 </div>
 
                                 {/* ข้อความและป้าย Add-on */}
+                                {/* ข้อความและป้าย Add-on */}
+                                {/* ข้อความและป้าย Add-on */}
                                 <div
                                   className={`leading-snug ${feature.included ? "text-[#343f52] font-medium" : "text-gray-400 font-normal"}`}
                                 >
@@ -173,7 +175,26 @@ export default function Package({ translations }) {
                                         {translations.addOnLabel}
                                       </span>
                                     )}
-                                    <span>{featureLabel}</span>
+
+                                    <div className="flex items-baseline gap-1">
+                                      {/* 1. แสดงชื่อหัวข้อฟีเจอร์ */}
+                                      <span>{featureLabel}</span>
+
+                                      {/* 2. แสดงตัวเลข (ถ้ามี) */}
+                                      {feature.value && (
+                                        <strong className="ml-1">
+                                          {feature.value}
+                                        </strong>
+                                      )}
+
+                                      {/* 3. ดึงหน่วยจาก translations.units[feature.key] */}
+                                      {translations.units &&
+                                        translations.units[feature.key] && (
+                                          <span className="text-[14px] text-slate-500 font-normal ml-0.5">
+                                            {translations.units[feature.key]}
+                                          </span>
+                                        )}
+                                    </div>
                                   </div>
                                 </div>
                               </li>

@@ -74,7 +74,7 @@ export default function NavClient({ color, labels, badges, locale }) {
   return (
     <ul className="navbar-nav" style={{ "--current-color": color }}>
       {/* เมนูหลัก: เพิ่ม !px-1 หรือ !px-2 เพื่อให้เมนูหลักชิดกันมากขึ้น */}
-      <li className="nav-item dropdown">
+      <li className="nav-item dropdown ">
         <a
           className={`nav-link space-x-1 dropdown-toggle !text-[.85rem] !tracking-[normal] !px-2 hover:!text-[var(--hover-text)] ${
             getActiveParent(ourServices) ? "!text-[var(--current-color)]" : ""
@@ -82,7 +82,9 @@ export default function NavClient({ color, labels, badges, locale }) {
           href="#"
           data-bs-toggle="dropdown"
         >
-          <span>{labels.our_services}</span>
+          <span className="!font-medium  !text-[#464c58] !tracking-wide">
+            {labels.our_services}
+          </span>
           <Badge color="yellow" variant="softText">
             {badges.new}
           </Badge>
@@ -99,8 +101,8 @@ export default function NavClient({ color, labels, badges, locale }) {
                   display: "flex",
                   alignItems: "center",
                   letterSpacing: "0.5px", // ลดระยะห่างตัวอักษรนิดนึง
-                  paddingTop: "0.35rem", // ลด padding บน
-                  paddingBottom: "0.35rem", // ลด padding ล่าง
+                  paddingTop: "0.8rem", // ลด padding บน
+                  paddingBottom: "0.8rem", // ลด padding ล่าง
                 }}
               >
                 <div className="flex items-center justify-center w-[1.1rem]">
@@ -109,7 +111,9 @@ export default function NavClient({ color, labels, badges, locale }) {
                     style={{ color: item.color }}
                   />
                 </div>
-                <span className="leading-none">{item.label}</span>
+                <span className="leading-none !font-medium  !text-[#464c58] !tracking-wide">
+                  {item.label}
+                </span>
                 {item.id != "clinic_software" && (
                   <Badge color="yellow" variant="softText" className="!ms-auto">
                     {" "}
@@ -125,7 +129,7 @@ export default function NavClient({ color, labels, badges, locale }) {
 
       <li className="nav-item dropdown">
         <a
-          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] !px-2 hover:!text-[var(--hover-text)] ${
+          className={`!font-medium  !text-[#464c58] !tracking-wide nav-link dropdown-toggle !text-[.85rem] !px-2 hover:!text-[var(--hover-text)] ${
             getActiveParent(ourCustomers) ? "!text-[var(--current-color)]" : ""
           } `}
           href={`#`}
@@ -158,10 +162,10 @@ export default function NavClient({ color, labels, badges, locale }) {
                 <div className="grid gap-0">
                   {" "}
                   {/* เปลี่ยน gap-1 เป็น gap-0 เพื่อให้ sub text ชิดหัวข้อ */}
-                  <span className="leading-tight text-[0.85rem]">
+                  <span className="leading-tight text-[0.85rem] !font-medium  !text-[#464c58] !tracking-wide">
                     {item.label}
                   </span>
-                  <span className="leading-none text-[11px] font-medium opacity-80">
+                  <span className="leading-none text-[14px] !font-medium  !text-[#464c58] !tracking-wide opacity-80">
                     {item.sub}
                   </span>
                 </div>
@@ -174,7 +178,7 @@ export default function NavClient({ color, labels, badges, locale }) {
       {/* เมนู Pricing & Contact: ใส่ !px-2 เพื่อให้ระยะเท่ากับ dropdown */}
       <li className="nav-item">
         <a
-          className="nav-link !text-[.85rem] !tracking-[normal] !px-2 hover:!text-[var(--hover-text)] after:!hidden"
+          className="!font-medium  !text-[#464c58] !tracking-wide nav-link  !text-[.85rem] !px-2 hover:!text-[var(--hover-text)] after:!hidden"
           href={`/${locale}#price`}
         >
           {labels.priicing}
@@ -183,7 +187,7 @@ export default function NavClient({ color, labels, badges, locale }) {
 
       <li className="nav-item dropdown">
         <a
-          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] !px-2 hover:!text-[var(--hover-text)] ${
+          className={`!font-medium  !text-[#464c58] !tracking-wide nav-link dropdown-toggle !text-[.85rem] !px-2 hover:!text-[var(--hover-text)] ${
             getActiveParent(documents) ? "!text-[var(--current-color)]" : ""
           } `}
           href="#"
@@ -212,11 +216,11 @@ export default function NavClient({ color, labels, badges, locale }) {
                     style={{ color: item.color }}
                   />
                 </div>
-                <div className="grid gap-0">
+                <div className="grid gap-0 !font-medium  !text-[#464c58] !tracking-wide">
                   <span className="leading-tight text-[0.85rem]">
                     {item.label}
                   </span>
-                  <span className="leading-none text-[11px] font-medium opacity-80">
+                  <span className="leading-none text-[14px] font-medium opacity-80">
                     {item.sub}
                   </span>
                 </div>
@@ -226,9 +230,9 @@ export default function NavClient({ color, labels, badges, locale }) {
         </ul>
       </li>
 
-      <li className="nav-item">
+      <li className="nav-item !font-medium  !text-[#464c58] !tracking-wide">
         <a
-          className="nav-link !text-[.85rem] !tracking-[normal] !px-2 hover:!text-[var(--hover-text)] after:!hidden"
+          className="!font-medium  !text-[#464c58] !tracking-wide nav-link !text-[.85rem] !px-2 hover:!text-[var(--hover-text)] after:!hidden"
           href={`/${locale}/contact`}
         >
           {labels.contact_us}

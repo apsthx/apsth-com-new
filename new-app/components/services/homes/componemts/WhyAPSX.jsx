@@ -34,7 +34,7 @@ export default async function WhyAPSX({ lng }) {
             className="container mx-auto text-center mb-12"
           >
             {/* ส่วนหัวเล็ก - ใช้ Badge หรือ Text Uppercase */}
-            <h2 className="!text-[0.75rem] uppercase !text-[#3f78e0] font-bold !mb-4 !tracking-[0.1rem] bg-blue-50 inline-block px-3 py-1 rounded-md">
+            <h2 className="!text-[0.75rem] uppercase !text-[#9499a3] !font-normal !mb-4 !tracking-[0.1rem] bg-blue-50 inline-block px-3 py-1 rounded-md">
               {t(
                 "home:why_apsx.why_apsx.solution",
                 "ครอบคลุมทุกความต้องการของสถานพยาบาลยุคดิจิทัล",
@@ -150,7 +150,7 @@ export default async function WhyAPSX({ lng }) {
         </div>
         {/*/.row */}
       </div>
-      <div className="container mt-12">
+      <div className="container !mt-32">
         <div
           data-cues="slideInDown"
           data-delay={300}
@@ -183,7 +183,7 @@ export default async function WhyAPSX({ lng }) {
           className="container mx-auto text-center mb-12"
         >
           {/* ส่วนหัวเล็ก - ใช้ Badge หรือ Text Uppercase */}
-          <h2 className="!text-[0.75rem] uppercase !text-[#3f78e0] font-bold !mb-4 !tracking-[0.1rem] bg-blue-50 inline-block px-3 py-1 rounded-md">
+          <h2 className="!text-[0.75rem] uppercase !text-[#9499a3] !font-normal !mb-4 !tracking-[0.1rem] bg-blue-50 inline-block px-3 py-1 rounded-md">
             {t(
               "home:why_apsx.what_new_apsx.solution",
               "Platform ที่ทำให้การจัดการคลินิกเป็นเรื่องง่าย",
@@ -332,11 +332,9 @@ export default async function WhyAPSX({ lng }) {
             >
               {/* ส่วน Badge ด้านบนจัดกลาง */}
               <div className="flex items-center justify-center gap-2 mb-4">
-                <span className="w-8 h-[2px] bg-[#3f78e0]"></span>
-                <span className="text-[0.7rem] uppercase tracking-[0.2rem] font-bold text-[#3f78e0]">
+                <span className="text-[0.7rem] uppercase tracking-[0.2rem] !text-[#9499a3] !font-normal">
                   {t("home:why_apsx.security_first.solution", "Security First")}
                 </span>
-                <span className="w-8 h-[2px] bg-[#3f78e0]"></span>
               </div>
 
               {/* ส่วนหัวข้อและไอคอนจัดวางกึ่งกลาง */}
@@ -415,14 +413,12 @@ export default async function WhyAPSX({ lng }) {
               data-delay={300}
             >
               <div className="flex items-center justify-center gap-2 mb-4">
-                <span className="w-8 h-[2px] bg-[#3f78e0]"></span>
-                <span className="text-[0.7rem] uppercase tracking-[0.2rem] font-bold text-[#3f78e0]">
+                <span className="text-[0.7rem] uppercase tracking-[0.2rem] !text-[#9499a3] !font-normal">
                   {t(
                     "home:why_apsx.face_verification.solution",
                     "Face Verification (Comparison AI)",
                   )}
                 </span>
-                <span className="w-8 h-[2px] bg-[#3f78e0]"></span>
               </div>
 
               {/* ส่วนหัวข้อและไอคอนจัดวางกึ่งกลาง */}
@@ -502,14 +498,12 @@ export default async function WhyAPSX({ lng }) {
               data-delay={300}
             >
               <div className="flex items-center justify-center gap-2 mb-4">
-                <span className="w-8 h-[2px] bg-[#3f78e0]"></span>
-                <span className="text-[0.7rem] uppercase tracking-[0.2rem] font-bold text-[#3f78e0]">
+                <span className="text-[0.7rem] uppercase tracking-[0.2rem] !text-[#9499a3] !font-normal">
                   {t(
                     "home:why_apsx.additional_services.solution",
                     "Additional Services",
                   )}
                 </span>
-                <span className="w-8 h-[2px] bg-[#3f78e0]"></span>
               </div>
 
               {/* ส่วนหัวข้อและไอคอนจัดวางกึ่งกลาง */}
@@ -608,11 +602,9 @@ export default async function WhyAPSX({ lng }) {
               data-delay={300}
             >
               <div className="flex items-center justify-center gap-2 mb-4">
-                <span className="w-8 h-[2px] bg-[#3f78e0]"></span>
-                <span className="text-[0.7rem] uppercase tracking-[0.2rem] font-bold text-[#3f78e0]">
+                <span className="text-[0.7rem] uppercase tracking-[0.2rem] !text-[#9499a3] !font-normal">
                   {t("home:why_apsx.partner.solution", "Partner")}
                 </span>
-                <span className="w-8 h-[2px] bg-[#3f78e0]"></span>
               </div>
 
               {/* ส่วนหัวข้อและไอคอนจัดวางกึ่งกลาง */}
@@ -726,9 +718,9 @@ export default async function WhyAPSX({ lng }) {
                       </figure>
 
                       <div className="post-header p-5 flex-grow">
-                        <div className="post-title h4 !mb-2 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-50%] before:w-3 before:h-[2px] before:left-0 before:top-1/2 before:bg-[#3f78e0]">
+                        <div className="post-title h4 !mb-2 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-50%] before:w-3 before:h-[2px] before:left-0 before:top-1/2 before:bg-[#00B7B8]">
                           <Link
-                            className="!text-[#343f52] hover:!text-[#3f78e0] transition-colors"
+                            className="!text-[#343f52] hover:!text-[#00B7B8] transition-colors"
                             href={item.link}
                           >
                             {item.title}

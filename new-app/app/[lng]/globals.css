@@ -1,8 +1,19 @@
 @import "tailwindcss";
 @theme {
-  --font-IBMPlexSerif: "IBM Plex Serif", "serif";
-  --font-SpaceGrotesk: "Space Grotesk", "sans-serif";
-  --font-Manrope: "Manrope", "sans-serif";
+  --font-Kanit: "Kanit", sans-serif;
+  --font-IBMPlexSansThai: "IBM Plex Sans Thai", sans-serif;
+  --font-Manrope: "Manrope", sans-serif;
+
+  --font-IBMPlexSerif: "IBM Plex Serif", serif;
+  --font-SpaceGrotesk: "Space Grotesk", sans-serif;
+  --font-Unicons: "Unicons";
+  --font-Monospace:
+    "SFMono-Regular,Menlo,Monaco,Consolas", "Liberation Mono", "Courier New",
+    monospace;
+  --font-DMSerif: "DM Serif Display";
+  --font-THICCCBOI: "THICCCBOI", sans-serif;
+  --font-Urbanist: "Urbanist", sans-serif;
+
   --font-Unicons: "Unicons";
   --font-Monospace:
     "SFMono-Regular,Menlo,Monaco,Consolas", "Liberation Mono", "Courier New",
@@ -29,7 +40,22 @@
   padding-inline: 2rem;
 }
 :root {
-  @apply text-[20px];
+  font-family: var(--font-default);
+
+  /* ตั้งค่าตามโจทย์: ขนาด 20px, บาง (300), และโปร่ง */
+  font-size: 20px;
+  font-weight: 300; /* ใช้ Weight 300 จากที่คุณ Import มา */
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+
+  color: #464c58;
+  background-color: #fefefe;
+  -webkit-font-smoothing: antialiased;
+}
+/* --- ส่วนของ Utility อื่นๆ (ยกยอดมาจากของเดิม) --- */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
 }
 *,
 ::after,
@@ -40,7 +66,7 @@ hr.dark {
   @apply text-[rgba(164,174,198,0.25)];
 }
 ::selection {
-  @apply text-white bg-[rgba(63,120,224,.7)];
+  @apply text-[#ffffff] !bg-[rgba(63,224,224,0.73)];
 }
 a {
   @apply transition-all duration-[0.2s] ease-in-out motion-reduce:transition-none;
@@ -177,16 +203,16 @@ body {
   @apply flex flex-col;
 }
 body {
-  @apply text-[0.8rem] font-medium leading-[1.7] text-[#60697b] bg-[#fefefe] m-0 font-Manrope;
+  @apply text-[0.8rem] font-medium leading-[1.7] text-[#60697b] bg-[#fefefe] m-0;
 }
 body {
-  @apply overflow-x-hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  word-spacing: 0.05rem;
-  font-family: "Manrope", "IBM Plex Sans Thai", sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  @apply flex flex-col h-full overflow-x-hidden m-0;
+
+  /* ดึงฟอนต์มาใช้ให้ชัวร์อีกครั้ง */
+  font-family: var(--font-Manrope), var(--font-IBMPlexSansThai), sans-serif;
+  font-weight: 300;
+  color: #464c58; /* สีเทาเข้มเพื่อให้ดูละมุนกว่าสีดำสนิท */
+  background-color: #fefefe;
 }
 hr {
   @apply text-[rgba(164,174,198,0.2)] border-t-[1px] opacity-100 mx-0 my-[4.5rem] border-0 border-solid;
@@ -202,9 +228,29 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  @apply font-bold leading-[1.2] text-[#343f52] tracking-[-0.01rem] mt-0 mb-2 [word-spacing:0.1rem];
+h6,
+p,
+span,
+a,
+li,
+button,
+input,
+select,
+textarea,
+div {
+  /* @apply font-bold leading-[1.2] text-[#343f52] tracking-[-0.01rem] mt-0 mb-2 [word-spacing:0.1rem]; */
+  /* ใช้ font-family โดยตรงเพื่อความแน่นอนที่สุด */
+  font-family: var(--font-Kanit), sans-serif !important;
+
+  /* หรือถ้าจะใช้ @apply ต้องสะกดแบบนี้ครับ */
+  /* @apply !font-Kanit; */
+
+  /* ดึงสไตล์เดิมที่คุณคอมเมนต์ไว้กลับมาบางส่วนเพื่อให้ขนาดและสีถูกต้อง */
+  @apply leading-[1.55] mt-0;
+
+  /* เนื่องจากคุณโหลดมาสูงสุดที่ 400 แนะนำให้ใช้ weight 400 ครับ */
 }
+
 .h1,
 h1 {
   @apply xl:text-[1.45rem] text-[calc(1.27rem_+_0.24vw)];
@@ -1847,7 +1893,7 @@ button:focus {
   @apply text-[#605dba];
 }
 .btn-soft-violet {
-  @apply text-[#a07cc5]
+  @apply text-[#c57c7c]
         bg-[#f0eaf6]
         border-[#f0eaf6]
         hover:text-[#a07cc5]
@@ -2907,7 +2953,7 @@ button.hamburger:before {
   @apply pl-[1.1rem] pr-0 py-0 before:left-0;
 }
 .accordion-wrapper .card-header button {
-  @apply cursor-pointer w-full text-left text-[0.85rem] font-bold text-[#3f78e0] transition-all duration-[150ms] ease-in-out m-0 pl-4 pr-0 py-0 border-0 motion-reduce:transition-none before:absolute before:content-["\e932"] before:text-[1.15rem] before:font-normal before:w-4 before:mt-[-0.25rem] before:ml-[-0.3rem] before:inline-block before:text-[#3f78e0] before:left-[1.3rem] bg-inherit before:font-Unicons;
+  @apply cursor-pointer w-full text-left text-[0.85rem] font-bold text-[#00B7B8] transition-all duration-[150ms] ease-in-out m-0 pl-4 pr-0 py-0 border-0 motion-reduce:transition-none before:absolute before:content-["\e932"] before:text-[1.15rem] before:font-normal before:w-4 before:mt-[-0.25rem] before:ml-[-0.3rem] before:inline-block before:text-[#00B7B8] before:left-[1.3rem] bg-inherit before:font-Unicons;
 }
 .accordion-wrapper .card-header button.collapsed {
   @apply text-[#343f52] before:content-["\e92d"];

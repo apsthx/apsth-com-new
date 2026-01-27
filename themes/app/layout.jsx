@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     initPlayer();
     const overlayElements = document.querySelectorAll(
-      ".overlay > a, .overlay > span"
+      ".overlay > a, .overlay > span",
     );
     overlayElements.forEach((element) => {
       const overlayBg = document.createElement("span");
@@ -44,10 +44,10 @@ export default function RootLayout({ children }) {
   }, [pathname]);
   useEffect(() => {
     const tooltipTriggerList = document.querySelectorAll(
-      '[data-bs-toggle="tooltip"]'
+      '[data-bs-toggle="tooltip"]',
     );
     const popoverTriggerList = document.querySelectorAll(
-      '[data-bs-toggle="popover"]'
+      '[data-bs-toggle="popover"]',
     );
 
     if (tooltipTriggerList.length > 0 || popoverTriggerList.length > 0) {
@@ -58,14 +58,14 @@ export default function RootLayout({ children }) {
             return new bootstrap.Tooltip(tooltipTriggerEl, {
               trigger: "hover",
             });
-          }
+          },
         );
 
         // Initialize popovers
         const popoverList = Array.from(popoverTriggerList).map(
           (popoverTriggerEl) => {
             return new bootstrap.Popover(popoverTriggerEl);
-          }
+          },
         );
 
         // Cleanup tooltips and popovers on component unmount
@@ -161,13 +161,13 @@ export default function RootLayout({ children }) {
 
         const navOffCanvasBtn = document.querySelectorAll(".offcanvas-nav-btn");
         const navOffCanvas = document.querySelector(
-          ".navbar:not(.navbar-clone) .offcanvas-nav"
+          ".navbar:not(.navbar-clone) .offcanvas-nav",
         );
         if (!navOffCanvas) return;
 
         const bsOffCanvas = new Offcanvas(navOffCanvas, { scroll: true });
         const scrollLink = document.querySelectorAll(
-          ".onepage .navbar li a.scroll"
+          ".onepage .navbar li a.scroll",
         );
         const searchOffcanvas = document.getElementById("offcanvas-search");
 
@@ -175,10 +175,10 @@ export default function RootLayout({ children }) {
         const handleScrollClick = () => bsOffCanvas.hide();
 
         navOffCanvasBtn.forEach((e) =>
-          e.addEventListener("click", handleNavClick)
+          e.addEventListener("click", handleNavClick),
         );
         scrollLink.forEach((e) =>
-          e.addEventListener("click", handleScrollClick)
+          e.addEventListener("click", handleScrollClick),
         );
 
         if (searchOffcanvas) {
@@ -189,10 +189,10 @@ export default function RootLayout({ children }) {
 
         return () => {
           navOffCanvasBtn.forEach((e) =>
-            e.removeEventListener("click", handleNavClick)
+            e.removeEventListener("click", handleNavClick),
           );
           scrollLink.forEach((e) =>
-            e.removeEventListener("click", handleScrollClick)
+            e.removeEventListener("click", handleScrollClick),
           );
         };
       });

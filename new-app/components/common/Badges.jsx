@@ -28,7 +28,7 @@ const Badge = ({ children, color = "blue", className = "" }) => {
 
   return (
     <span
-      className={`badge opacity-100 !rounded-full px-1.5  leading-[1.2] inline-block ${className}`}
+      className={`!font-medium !tracking-wide badge opacity-100 !rounded-full px-1.5  leading-[1.2] inline-block ${className}`}
       style={{
         backgroundColor: backgroundColor,
         color: textColor,

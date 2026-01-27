@@ -121,11 +121,18 @@ export default async function Package({ lng }) {
         "ระบบยืนยันตัวตนด้วยใบหน้า (AI)",
       ),
     },
+    // แก้ไขในส่วนของ translations
     units: {
-      branches: t("home:package.units.branches", "สาขา"),
-      user: t("home:package.units.user", "users/สาขา"),
+      // เปลี่ยนคีย์จาก branches เป็น branch_count ให้ตรงกับฟีเจอร์
+      branch_count: t("home:package.units.branches", "สาขา"),
+
+      // เปลี่ยนคีย์จาก user เป็น user_count ให้ตรงกับฟีเจอร์
+      user_count: t("home:package.units.user", "users/สาขา"),
+
       file_uploads: t("home:package.units.file_uploads", "GB"),
-      free_card_reader: t("home:package.units.free_card_reader", "เครื่อง"),
+
+      // เปลี่ยนคีย์จาก free_card_reader เป็น card_reader ให้ตรงกับฟีเจอร์
+      card_reader: t("home:package.units.free_card_reader", "เครื่อง"),
     },
   };
 

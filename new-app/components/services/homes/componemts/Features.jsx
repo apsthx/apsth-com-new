@@ -220,7 +220,7 @@ export default async function Features({ lng }) {
               </div>
 
               <div>
-                <h4 className="!mb-1 !text-[#45c4a0] xl:!text-[1.1rem]">
+                <h4 className="!mb-1 !text-[#45c4a0] !font-medium xl:!text-[1.1rem]">
                   {t("home:features.features.blog1.title", "Real Time Data")}
                 </h4>
                 <p className="!mb-0 text-[#60697b] leading-relaxed !text-[0.95rem]">
@@ -269,7 +269,7 @@ export default async function Features({ lng }) {
               </div>
 
               <div>
-                <h4 className="!mb-1 !text-[#3f78e0] xl:!text-[1.1rem]">
+                <h4 className="!mb-1 !text-[#3f78e0] !font-medium xl:!text-[1.1rem]">
                   {t("home:features.features.blog2.title", "AWS Cloud")}
                 </h4>
                 <p className="!mb-0 text-[#60697b] leading-relaxed !text-[0.95rem]">
@@ -330,7 +330,7 @@ export default async function Features({ lng }) {
               </div>
 
               <div>
-                <h4 className="!mb-1 !text-[#e2626b]">
+                <h4 className="!mb-1 !font-medium !text-[#e2626b]">
                   {t("home:features.features.blog3.title", "Data Security")}
                 </h4>
                 <p className="!mb-0 text-[#60697b] leading-relaxed">

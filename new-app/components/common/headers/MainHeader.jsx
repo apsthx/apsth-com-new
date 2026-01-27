@@ -20,20 +20,20 @@ export default async function MainHeader({ lng }) {
   return (
     <header className="!absolute w-full">
       <div
-        className=" bg-gradient-to-br from-[#00B7B8] via-[#45c4a0] to-[#41c7a1] !text-white font-bold !text-[.75rem] !relative"
+        className=" bg-gradient-to-r from-[#41c7a1] via-[#00B7B8] to-[#41c7a1] !text-white font-bold !text-[.75rem] !relative"
         style={{ zIndex: 1 }}
       >
         {/* แก้จุดนี้: เอา whitespace-nowrap ออกในมือถือ และใช้ flex-wrap แทนถ้าจำเป็น */}
-        <div className="!mb-0 flex items-center justify-center flex-wrap md:flex-nowrap">
+        <div className="!mb-0 py-2 flex items-center justify-center flex-wrap md:flex-nowrap">
           {/* ส่วนหัวข้อคงที่ */}
-          <span className="flex-shrink-0">
-            ✨ {t("service_confidence.title", "ฟรี อัพเดทเวอร์ชั่น")}{" "}
+          <span className="flex-shrink-0  font-normal ">
+            *{t("service_confidence.title", "ฟรี อัพเดทเวอร์ชั่น")}*
             :&nbsp;{" "}
           </span>
 
           {/* ส่วนข้อความวิ่ง: ปรับ min-w ให้เล็กลงในมือถือ (xs) */}
           <span className="inline-block text-left min-w-[140px] xs:min-w-[160px] md:min-w-[220px]">
-            <span className="typer !text-white font-medium">
+            <span className="typer !text-white font-normal">
               <TypeWriter
                 strings={[
                   t(
@@ -91,17 +91,17 @@ export default async function MainHeader({ lng }) {
                 aria-label="Close"
               />
             </div>
-            <div className="offcanvas-body xl:!ml-auto lg:!ml-auto flex flex-col !h-full">
+            <div className="offcanvas-body xl:!ml-auto lg:!ml-auto flex flex-col !h-full ">
               <Nav color="#605dba" lng={lng} />
 
               {/* /.navbar-nav */}
               <div className="offcanvas-footer xl:!hidden lg:!hidden">
                 <div>
-                  <div className="flex gap-1">
+                  <div className="flex gap-1 ">
                     <a
                       target="_blank"
                       href="https://www.app-apsx.com/login"
-                      className="btn btn-xs !inline-flex items-center gap-1 !text-[#343f52] !bg-[#ffffff] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn   focus:!shadow-none active:!shadow-none btn-xs "
+                      className="!font-medium  !text-[#464c58] !tracking-wide btn btn-xs !inline-flex items-center gap-1  !bg-[#ffffff] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn   focus:!shadow-none active:!shadow-none btn-xs "
                     >
                       <i className="uil uil-signin text-[0.9rem]" />
                       <span className="font-medium">{labels.login}</span>
@@ -109,9 +109,9 @@ export default async function MainHeader({ lng }) {
                     <a
                       target="_blank"
                       href="https://www.app-apsx.com/register"
-                      className=" !relative !inline-flex items-center gap-1 !text-[#f5f5f6] !bg-[#00B7B8] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn  focus:!shadow-none active:!shadow-none btn-xs "
+                      className="!font-medium !text-[#ffffff] !tracking-wide !relative !inline-flex items-center gap-1 !bg-[#00B7B8] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn  focus:!shadow-none active:!shadow-none btn-xs "
                     >
-                      <span className="absolute -top-3 -right-3">
+                      <span className="absolute -top-3 -right-3  ">
                         <Badge
                           color="red"
                           variant="softText"
@@ -121,7 +121,7 @@ export default async function MainHeader({ lng }) {
                         </Badge>
                       </span>
                       <i className="uil uil-rocket text-[0.9rem]" />
-                      <span className="font-bold">{labels.free_trial}</span>
+                      <span className="">{labels.free_trial}</span>
                     </a>
                   </div>
                   <nav className="nav social !mt-4">
@@ -159,7 +159,9 @@ export default async function MainHeader({ lng }) {
                   className="btn btn-xs !inline-flex items-center gap-1 !text-[#343f52] !bg-[#ffffff] hover:!bg-[#e6e6e6] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn focus:!shadow-none active:!shadow-none btn-xs"
                 >
                   <i className="uil uil-signin text-[0.8rem]" />
-                  <span className="font-bold">{labels.login}</span>
+                  <span className="!font-medium  !text-[#464c58] !tracking-wide ">
+                    {labels.login}
+                  </span>
                 </a>
               </li>
               <li className="flex items-center justify-center navbar-collapse offcanvas offcanvas-nav offcanvas-start">
@@ -178,7 +180,9 @@ export default async function MainHeader({ lng }) {
                     </Badge>
                   </span>
                   <i className="uil uil-rocket text-[0.8rem]" />
-                  <span className="font-bold">{labels.free_trial}</span>
+                  <span className="!font-medium  !text-[#ffffff] !tracking-wide ">
+                    {labels.free_trial}
+                  </span>
                 </a>
               </li>
               <li className="nav-item xl:!hidden lg:!hidden">

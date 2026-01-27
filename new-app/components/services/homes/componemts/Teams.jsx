@@ -116,7 +116,7 @@ export default async function Teams({ lng }) {
           {/* 2. Description: คุมโทนสีเทาเข้ม-จาง แบบเดียวกันทั้งหมด */}
           <div className="max-w-[850px] mx-auto">
             <p className="mt-0 text-[1rem] xl:text-[1.1rem] text-[#343f52] opacity-70">
-              <strong className="font-bold text-[#019eff]">
+              <strong className="font-bold text-[#00B7B8]">
                 APSX Platform
               </strong>{" "}
               {t(
