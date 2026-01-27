@@ -9,11 +9,7 @@ import { useTranslation } from "@/app/i18n";
 export default async function MainFooter({ lng }) {
   const { t } = await useTranslation(lng);
   return (
-    <footer
-      data-cues="slideInUp"
-      data-delay={300}
-      className="bg-[#f5f5f6] opacity-100 !text-[#343f52]"
-    >
+    <footer className="bg-[#f5f5f6] opacity-100 !text-[#343f52]">
       <div className="container">
         {/* --- ส่วนบล็อกที่ซ้อนด้านบน (Upper Block / CTA) --- */}
         <div className="card relative z-[10] !mt-[-5rem] overflow-hidden !border-0 !rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-gradient-to-tr from-[#009c82] via-[#00b899] to-[#00ce9b]">

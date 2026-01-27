@@ -1,0 +1,12 @@
+{
+  "title": "User Manual (API Integration)",
+  "description": "User Manual (API Integration) for APSX Platform Clinic Software supporting businesses in Clinic, Spa, Wellness, Hospital, Beauty, Elderly Care Centers, Mental Health Clinics, Eye Clinics, and all types of medical facilities.",
+  "list1": "Retrieve various documents including invoices, deposit slips, receipts, and accounts receivable.",
+  "list2": "Access customer data including all customer information and complete OPD Card history.",
+  "list3": "Retrieve examination records, general checkups/lab tests, and lab results.",
+  "list4": "Access appointment data including adding appointments, complete appointment reports, and additional appointments.",
+  "list5": "Access all medication/equipment lists, remaining inventory, stock cycles, near-expiry items, and expired items.",
+  "list6": "Retrieve service usage records, remaining course packages, course redemptions",
+  "list7": "Doctor fees/staff fees and medication/equipment costs",
+  "list8": "Access all reports"
+}

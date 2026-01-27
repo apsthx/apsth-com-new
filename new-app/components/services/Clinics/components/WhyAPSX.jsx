@@ -117,28 +117,37 @@ export default async function WhyAPSX({ lng }) {
           ].map((item, index) => (
             <div
               data-cues="slideInDown"
-              data-delay={300}
+              data-delay={index * 50}
               key={index}
-              className="xl:w-1/5 lg:w-4/12 md:w-4/12 w-6/12 flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]"
+              /* xl: 5 คอลัมน์ (w-1/5)
+     lg/md: 3 คอลัมน์ (w-4/12)
+     sm: 2 คอลัมน์ (sm:w-6/12) -> ถ้าอยากให้จอเล็กกลางๆ เห็น 2
+     default: 1 คอลัมน์ (w-full) -> จอมือถือปกติเห็น 1 เต็มๆ
+  */
+              className="xl:w-1/5 lg:w-4/12 md:w-4/12 sm:w-6/12 w-full flex-[0_0_auto] px-[15px] max-w-full mt-[30px]"
             >
-              <div className="card !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !h-full border-0 !rounded-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group bg-white">
-                <div className="card-body flex flex-col items-center text-center p-6 xl:!p-8">
+              <div className="card !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !h-full border-0 !rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white overflow-hidden group">
+                <div className="card-body flex flex-col items-center text-center p-6 xl:!p-7">
                   {/* Icon Box */}
                   <div
-                    className={`w-14 h-14 flex items-center justify-center rounded-2xl ${item.bgColor} ${item.iconColor} mb-5 group-hover:scale-110 transition-transform duration-300 shadow-sm`}
+                    className={`w-14 h-14 flex items-center justify-center rounded-2xl ${item.bgColor || "bg-[#00b899]/10"} ${item.iconColor || "text-[#00b899]"} mb-5 group-hover:scale-110 transition-transform duration-300 shadow-sm`}
                   >
                     <i
-                      className={`uil ${item.icon} text-[1.8rem] leading-none`}
+                      className={`uil ${item.icon || "uil-file-info-alt"} text-[1.8rem] leading-none`}
                     />
                   </div>
 
-                  <h4 className="text-[1.05rem] font-bold text-[#343f52] mb-2 leading-tight">
+                  {/* Title */}
+                  <h4 className="text-[0.95rem] xl:text-[1.05rem] font-bold text-[#343f52] mb-2 leading-tight group-hover:text-[#00b899] transition-colors">
                     {item.title}
                   </h4>
 
-                  <p className="text-[0.85rem] text-[#60697b] leading-relaxed mb-0">
-                    {item.desc}
-                  </p>
+                  {/* Description (ถ้ามี) */}
+                  {item.desc && (
+                    <p className="text-[0.8rem] xl:text-[0.85rem] text-[#60697b] leading-relaxed mb-0 line-clamp-2">
+                      {item.desc}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
@@ -351,7 +360,7 @@ export default async function WhyAPSX({ lng }) {
           </div>
           <SlidesImages />
         </div>
-        <div className="mt-10  mx-auto">
+        <div className="mt-10  mx-auto py-20">
           {/* หัวข้อส่วนฟังก์ชัน */}
           <div
             data-cues="slideInDown"

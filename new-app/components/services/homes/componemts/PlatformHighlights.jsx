@@ -772,7 +772,7 @@ export default async function PlatformHighlights({ lng }) {
             className="p-8 flex flex-wrap mx-[-15px] md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px] items-center !mt-[7rem] 
              bg-white/40   
              border border-[#a4aec633] rounded-[2rem] mb-4 pb-12 transition-all duration-500
-             hover:shadow-[0_20px_80px_rgba(0,0,0,0.05)]"
+            "
           >
             <div className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!px-[35px] lg:!px-[20px] md:!px-[20px] !mt-[40px] relative">
               {/* Background Decorative Blob (ตัวช่วยเสริมให้พื้นหลังดูสวย) */}

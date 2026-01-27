@@ -40,7 +40,7 @@ export default async function Features({ lng }) {
               {/* 2. Description: คุมโทนสีเทาเข้ม-จาง แบบเดียวกันทั้งหมด */}
               <div className="max-w-[850px] mx-auto">
                 <p className="mt-0 text-[1rem] xl:text-[1.1rem] text-[#343f52] opacity-70">
-                  <strong className="font-bold text-[#019eff]">
+                  <strong className="font-bold text-[#00B7B8] ">
                     APSX Platform
                   </strong>{" "}
                   {t(
@@ -414,14 +414,14 @@ export default async function Features({ lng }) {
                     </figure>
 
                     <div className="post-header p-5">
-                      <p className="text-xs !text-[#3f78e0]">
+                      <p className="text-xs !text-[#00B7B8] ">
                         {t("home:category", "หมวดหมู่")}
                       </p>
 
-                      <div className="post-title h4 !mb-0 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-60%] before:w-3 before:h-[0.05rem] before:left-0 before:top-1/4 before:bg-[#3f78e0]">
+                      <div className="post-title h4 !mb-0 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-60%] before:w-3 before:h-[0.05rem] before:left-0 before:top-1/4 before:bg-[#00B7B8] ">
                         <p className="hover">
                           <Link
-                            className="!text-[#343f52] hover:!text-[#3f78e0] hover"
+                            className="!text-[#343f52] hover:!text-[#00B7B8]  hover"
                             href={item.link}
                           >
                             {item.title}

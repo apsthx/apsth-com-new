@@ -1,0 +1,16 @@
+{
+  "hero": {
+    "title": "User Manual (Documentation)",
+    "description": "User Manual (Documentation) for APSX Platform Clinic Software supporting businesses such as Clinics, Spas, Wellness, Hospitals, Beauty, Elderly Care Centers, Mental Health Clinics, Eye Clinics, and all types of clinics"
+  },
+  "documentation": {
+    "list1": {
+      "title": "System Setup Guide",
+      "description": "Quick setup guide and system configuration."
+    },
+    "list2": {
+      "title": "User Guide",
+      "description": "Step-by-step tutorials for all system functions."
+    }
+  }
+}

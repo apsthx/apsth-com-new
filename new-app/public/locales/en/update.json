@@ -1,0 +1,76 @@
+{
+  "hero": {
+    "title": "Update History (Change Log)",
+    "description": "Change Log of APSX Platform Clinic Program supporting businesses including Clinic, Spa, Wellness, Hospital, Beauty, Elderly care, Mental Health Clinic, Eye Clinic, and all types of clinics."
+  },
+  "blog": {
+    "blog1": {
+      "title": "Restructured + Rebuilt Entire System (Version X)",
+      "items": {
+        "item1": "New functions redesigned completely",
+        "item2": "Spa system",
+        "item3": "General appointment system (anonymous)",
+        "item4": "Identified appointment system (room & doctor locking)",
+        "item5": "Identified queue management system (room & doctor locking)",
+        "item6": "Patient data confidentiality (for doctors only)",
+        "item7": "Tasks Timeline system",
+        "item8": "Sales Pipeline system",
+        "item9": "Family genetic linkage system",
+        "item10": "Drug interaction alert system",
+        "item11": "Central warehouse system",
+        "item12": "New barcode system for check-in, check-out, stock checking, and new reports",
+        "item13": "Central admin system (for multi-branch): Dashboard for Admin, Manager, Doctors, and new Staff",
+        "item14": "Document notification system via Email",
+        "item15": "Online Registration via phone number",
+        "item16": "Lab & X-Ray system",
+        "item17": "IPD admission system (overnight)",
+        "item18": "New commission management system",
+        "item19": "New Username management system",
+        "item20": "Appointment notification via Email and SMS with confirmation link",
+        "item21": "New refund system",
+        "item22": "New course transfer system",
+        "item23": "New patient timeline system",
+        "item24": "Insurance claim report generation system",
+        "item25": "New ICD10 system",
+        "item26": "New disease diagnosis system",
+        "item27": "System for sending/fetching results supporting both Lab and X-Ray in real time",
+        "item28": "New accounting system",
+        "item29": "New documentation system",
+        "item30": "Patient folder system",
+        "item31": "Multi-examination room testing system",
+        "item32": "Coupon, membership card (limit), delivery fee rates, and tax rates system",
+        "item33": "System for retrieving data via ID card/passport",
+        "item34": "Master Data Template system"
+      }
+    },
+    "blog2": {
+      "title": "Restructured + Added functionalities for bundled medications, bundled courses, bundled tests, and more (V3.9)",
+      "items": {
+        "item1": "Added bundled medication, bundled course, and bundled test functionalities",
+        "item2": "Modified test procedures to allow bundling of medications and equipment for cost reduction",
+        "item3": "Updated course limits to allow specifying an end date within the course",
+        "item4": "Enable cross-branch receipt issuance",
+        "item5": "Allow cross-branch course deduction",
+        "item6": "Enable cross-branch appointment scheduling",
+        "item7": "Allow cross-branch OPD viewing",
+        "item8": "Added branch reports including: Course sales summary, Medication/equipment sales summary, Course usage report, Customer sales summary, Revenue summary report, and Income report",
+        "item9": "Revised medication consumption process in draft registration",
+        "item10": "Added payment via credit card/installment through PaySolutions",
+        "item11": "Added Cashback system configurable for points and discount coupons with tiered options applicable to customer groups (Coupons will be applied to subsequent bills)"
+      }
+    },
+    "blog3": {
+      "title": "Restructured receipt issuance + Added clinic holiday settings (V2.1 - V3.6)",
+      "items": {
+        "item1": "Introduced a process to generate cross-branch receipts with selection of customers from different branches – linking inspection data, lab results, images, important documents, and remaining course balances",
+        "item2": "Added clinic holiday settings allowing configuration and toggle on/off",
+        "item3": "Updated database to support bundled medications and courses, releasing soon",
+        "item4": "Added an option for medication selection to trigger allergy notifications",
+        "item5": "Modified bundled courses to allow selecting additional medications/equipment for cost reduction",
+        "item6": "Enabled continuous editing of draft receipts",
+        "item7": "When transactions originate from examination rooms during draft registration, a Lab Save button is displayed (if lab items exist)",
+        "item8": "Added an option to hide notes in receipt documents"
+      }
+    }
+  }
+}

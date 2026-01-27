@@ -1,0 +1,16 @@
+{
+  "hero": {
+    "title": "คู่มือการใช้งาน (Documentation)",
+    "description": "คู่มือการใช้งาน (Documentation) ของโปรแกรม คลินิก APSX Platform รองรับธุรกิจประเภท Clinic, Spa, Wellness, Hospital, Beauty, ศูนย์ดูแลผู้สูงอายุ, คลินิกสุขภาพจิต, คลินิกตา, ทุกประเภทคลินิก"
+  },
+  "documentation": {
+    "list1": {
+      "title": "คู่มือตั้งค่าระบบ",
+      "description": "รายละเอียดการตั้งค่าระบบเบื้องต้น"
+    },
+    "list2": {
+      "title": "คู่มือการใช้งาน",
+      "description": "สอนการใช้งานฟังก์ชันต่างๆ ในระบบ"
+    }
+  }
+}

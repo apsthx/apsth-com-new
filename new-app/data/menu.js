@@ -45,7 +45,7 @@ export const navMenu = [
   },
   {
     id: "contact_us",
-    href: "/contact_us",
+    href: "/contact",
     type: "link",
     label: "nav:contact_us",
     icon: "uil-envelope-alt",
@@ -66,7 +66,7 @@ export const ourServices = [
   },
   {
     id: "hospital_software",
-    href: "/hospital_software",
+    href: "/hospital",
     type: "link",
     label: "nav:services.hospital_software",
     icon: "uil-hospital",
@@ -75,7 +75,7 @@ export const ourServices = [
   },
   {
     id: "wellness_software",
-    href: "/wellness_software",
+    href: "/wellness",
     type: "link",
     label: "nav:services.wellness_software",
     icon: "uil-heart-medical",
@@ -84,7 +84,7 @@ export const ourServices = [
   },
   {
     id: "elderly_care_center_software",
-    href: "/elderly_care_center_software",
+    href: "/wellness",
     type: "link",
     label: "nav:services.elderly_care_center_software",
     icon: "uil-wheelchair",
@@ -93,7 +93,7 @@ export const ourServices = [
   },
   {
     id: "spa_Beauty_software",
-    href: "/spa_Beauty_software",
+    href: "/spa",
     type: "link",
     label: "nav:services.spa_Beauty_software",
     icon: "uil-flower",
@@ -105,7 +105,7 @@ export const ourServices = [
 export const ourCustomers = [
   {
     id: "our_customers",
-    href: "/our_customers",
+    href: "/customer",
     type: "link",
     label: "nav:customers.our_customers",
     icon: "uil-award",
@@ -129,7 +129,7 @@ export const ourCustomers = [
 export const documents = [
   {
     id: "api_integration",
-    href: "/api_integration",
+    href: "/api",
     type: "link",
     label: "nav:document.api_integration",
     icon: "uil-brackets-curly",
@@ -139,7 +139,7 @@ export const documents = [
   },
   {
     id: "documentation",
-    href: "/documentation",
+    href: "/docs",
     type: "link",
     label: "nav:document.documentation",
     icon: "uil-book-open",
@@ -149,7 +149,7 @@ export const documents = [
   },
   {
     id: "changelog",
-    href: "/changelog",
+    href: "/update",
     type: "link",
     label: "nav:document.changelog",
     icon: "uil-history",

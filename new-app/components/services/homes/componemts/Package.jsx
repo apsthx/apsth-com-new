@@ -130,7 +130,7 @@ export default async function Package({ lng }) {
   };
 
   return (
-    <section id="snippet-2" className="wrapper !bg-[#ffffff]  ">
+    <section id="price" className="wrapper !bg-[#ffffff]">
       <div className="container  py-16 xl:py-20 lg:py-20 md:py-20">
         <div
           data-cues="slideInDown"

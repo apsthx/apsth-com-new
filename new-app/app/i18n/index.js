@@ -18,7 +18,22 @@ const initI18next = async (lng) => {
       lng,
       fallbackLng: "th",
       defaultNS: "common", // เพิ่มบรรทัดนี้ถ้าไฟล์ชื่อ common.json
-      ns: ["common", "nav", "home", "metadata", "clinic", "footer"], // เพิ่มบรรทัดนี้
+      ns: [
+        "common",
+        "nav",
+        "home",
+        "metadata",
+        "clinic",
+        "hospital",
+        "wellness",
+        "spa",
+        "partner",
+        "api",
+        "docs",
+        "update",
+        "contact",
+        "footer",
+      ], // เพิ่มบรรทัดนี้
     });
   return i18nInstance;
 };

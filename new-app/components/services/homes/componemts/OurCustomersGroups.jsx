@@ -101,9 +101,9 @@ export default function OurCustomersGroups() {
         </div>
 
         {/* โลโก้หลัก */}
-        <div className="relative inline-block p-2 shadow-sm rounded-md bg-white transition-transform duration-300 group-hover:scale-110 cursor-pointer z-10">
+        <div className="relative inline-block p-2 shadow-sm rounded-full bg-white transition-transform duration-300 group-hover:scale-110 cursor-pointer z-10">
           <Image
-            className="object-contain"
+            className="object-contain rounded-full"
             src={imageSource}
             alt={item.name || "logo"}
             width={80}

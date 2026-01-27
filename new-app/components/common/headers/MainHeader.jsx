@@ -156,9 +156,9 @@ export default async function MainHeader({ lng }) {
                 <a
                   target="_blank"
                   href="https://www.app-apsx.com/login"
-                  className="btn btn-xs !inline-flex items-center gap-1 !text-[#343f52] !bg-[#f3f2f2] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn focus:!shadow-none active:!shadow-none btn-xs"
+                  className="btn btn-xs !inline-flex items-center gap-1 !text-[#343f52] !bg-[#ffffff] hover:!bg-[#e6e6e6] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn focus:!shadow-none active:!shadow-none btn-xs"
                 >
-                  <i className="uil uil-signin text-[0.9rem]" />
+                  <i className="uil uil-signin text-[0.8rem]" />
                   <span className="font-bold">{labels.login}</span>
                 </a>
               </li>
@@ -177,7 +177,7 @@ export default async function MainHeader({ lng }) {
                       {labels.free}
                     </Badge>
                   </span>
-                  <i className="uil uil-rocket text-[0.9rem]" />
+                  <i className="uil uil-rocket text-[0.8rem]" />
                   <span className="font-bold">{labels.free_trial}</span>
                 </a>
               </li>

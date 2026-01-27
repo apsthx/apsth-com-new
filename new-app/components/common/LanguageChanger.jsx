@@ -82,7 +82,7 @@ export default function LanguageSelect({ color = "#5eb9f0" }) {
         <img
           src={activeLangData.flag}
           alt={activeLangData.label}
-          className="w-5 h-auto rounded-sm object-cover"
+          className="w-4 h-auto rounded object-cover"
         />
         <span className="font-medium uppercase">{activeLangData.label}</span>
       </a>
@@ -130,7 +130,7 @@ export default function LanguageSelect({ color = "#5eb9f0" }) {
                 <img
                   src={languageConfig[code].flag}
                   alt={code}
-                  className="w-5 h-3.5 rounded-sm"
+                  className="w-5 h-3.5 rounded"
                 />
                 <span className="text-sm font-semibold">
                   {languageConfig[code].name}

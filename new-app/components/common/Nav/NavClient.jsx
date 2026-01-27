@@ -69,11 +69,14 @@ export default function NavClient({ color, labels, badges, locale }) {
     });
   };
 
+  // ... ส่วนบนคงเดิม ...
+
   return (
-    <ul className="navbar-nav " style={{ "--current-color": color }}>
-      <li className="nav-item dropdown ">
+    <ul className="navbar-nav" style={{ "--current-color": color }}>
+      {/* เมนูหลัก: เพิ่ม !px-1 หรือ !px-2 เพื่อให้เมนูหลักชิดกันมากขึ้น */}
+      <li className="nav-item dropdown">
         <a
-          className={`nav-link space-x-1 dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--hover-text)] ${
+          className={`nav-link space-x-1 dropdown-toggle !text-[.85rem] !tracking-[normal] !px-2 hover:!text-[var(--hover-text)] ${
             getActiveParent(ourServices) ? "!text-[var(--current-color)]" : ""
           } `}
           href="#"
@@ -87,30 +90,30 @@ export default function NavClient({ color, labels, badges, locale }) {
         <ul className="dropdown-menu">
           {labels.services.map((item) => (
             <li key={item.id} className="nav-item">
-              {/* hover:!text-[var(--current-color)] */}
               <a
-                className={`flex items-center space-x-2 dropdown-item  ${
+                className={`flex items-center gap-2 dropdown-item ${
                   item.href === pathname ? "!text-[var(--current-color)]" : ""
                 }`}
                 href={`/${locale}/${item.href}`}
                 style={{
-                  display: "flex", // บังคับเป็น flex
-                  alignItems: "center", // จัดกลางแนวตั้ง
-                  letterSpacing: "0.7px",
-                  paddingTop: "0.5rem", // ปรับ padding ให้สมดุล
-                  paddingBottom: "0.5rem",
+                  display: "flex",
+                  alignItems: "center",
+                  letterSpacing: "0.5px", // ลดระยะห่างตัวอักษรนิดนึง
+                  paddingTop: "0.35rem", // ลด padding บน
+                  paddingBottom: "0.35rem", // ลด padding ล่าง
                 }}
               >
-                <div className="flex items-center justify-center w-[1.2rem]">
-                  {/* หุ้ม Icon ด้วย div เพื่อคุมพื้นที่ให้เท่ากันทุกเมนู */}
+                <div className="flex items-center justify-center w-[1.1rem]">
                   <i
-                    className={`uil ${item.icon} text-[1rem] leading-none`}
+                    className={`uil ${item.icon} text-[0.95rem] leading-none`}
                     style={{ color: item.color }}
                   />
                 </div>
                 <span className="leading-none">{item.label}</span>
                 {item.id != "clinic_software" && (
-                  <Badge color="yellow" variant="softText">
+                  <Badge color="yellow" variant="softText" className="!ms-auto">
+                    {" "}
+                    {/* ดัน badge ไปขวาสุดเพื่อความสะอาด */}
                     {badges.new}
                   </Badge>
                 )}
@@ -118,11 +121,11 @@ export default function NavClient({ color, labels, badges, locale }) {
             </li>
           ))}
         </ul>
-        {/*/.dropdown-menu */}
       </li>
+
       <li className="nav-item dropdown">
         <a
-          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--hover-text)] ${
+          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] !px-2 hover:!text-[var(--hover-text)] ${
             getActiveParent(ourCustomers) ? "!text-[var(--current-color)]" : ""
           } `}
           href={`#`}
@@ -134,30 +137,31 @@ export default function NavClient({ color, labels, badges, locale }) {
         <ul className="dropdown-menu">
           {labels.customers.map((item) => (
             <li key={item.id} className="nav-item">
-              {/* hover:!text-[var(--current-color)] */}
               <a
-                className={`flex items-center space-x-2 dropdown-item  ${
+                className={`flex items-center gap-2 dropdown-item ${
                   item.href === pathname ? "!text-[var(--current-color)]" : ""
                 }`}
                 href={`/${locale}/${item.href}`}
                 style={{
-                  display: "flex", // บังคับเป็น flex
-                  alignItems: "center", // จัดกลางแนวตั้ง
-                  letterSpacing: "0.7px",
-                  paddingTop: "0.5rem", // ปรับ padding ให้สมดุล
-                  paddingBottom: "0.5rem",
+                  display: "flex",
+                  alignItems: "center",
+                  paddingTop: "0.35rem",
+                  paddingBottom: "0.35rem",
                 }}
               >
-                <div className="flex items-center justify-center w-[1.2rem]">
-                  {/* หุ้ม Icon ด้วย div เพื่อคุมพื้นที่ให้เท่ากันทุกเมนู */}
+                <div className="flex items-center justify-center w-[1.1rem]">
                   <i
-                    className={`uil ${item.icon} text-[1rem] leading-none`}
+                    className={`uil ${item.icon} text-[0.95rem] leading-none`}
                     style={{ color: item.color }}
                   />
                 </div>
-                <div className="grid gap-1">
-                  <span className="leading-none">{item.label}</span>
-                  <span className="leading-none text-[12px] font-medium">
+                <div className="grid gap-0">
+                  {" "}
+                  {/* เปลี่ยน gap-1 เป็น gap-0 เพื่อให้ sub text ชิดหัวข้อ */}
+                  <span className="leading-tight text-[0.85rem]">
+                    {item.label}
+                  </span>
+                  <span className="leading-none text-[11px] font-medium opacity-80">
                     {item.sub}
                   </span>
                 </div>
@@ -166,19 +170,20 @@ export default function NavClient({ color, labels, badges, locale }) {
           ))}
         </ul>
       </li>
-      <li className="nav-item ">
+
+      {/* เมนู Pricing & Contact: ใส่ !px-2 เพื่อให้ระยะเท่ากับ dropdown */}
+      <li className="nav-item">
         <a
-          className={`nav-link  !text-[.85rem] !tracking-[normal] hover:!text-[var(--hover-text)] 
-          after:!content-none after:!hidden  
-          `}
-          href="#"
+          className="nav-link !text-[.85rem] !tracking-[normal] !px-2 hover:!text-[var(--hover-text)] after:!hidden"
+          href={`/${locale}#price`}
         >
           {labels.priicing}
         </a>
       </li>
+
       <li className="nav-item dropdown">
         <a
-          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] hover:!text-[var(--hover-text)] ${
+          className={`nav-link dropdown-toggle !text-[.85rem] !tracking-[normal] !px-2 hover:!text-[var(--hover-text)] ${
             getActiveParent(documents) ? "!text-[var(--current-color)]" : ""
           } `}
           href="#"
@@ -189,30 +194,29 @@ export default function NavClient({ color, labels, badges, locale }) {
         <ul className="dropdown-menu">
           {labels.documents.map((item) => (
             <li key={item.id} className="nav-item">
-              {/* hover:!text-[var(--current-color)] */}
               <a
-                className={`flex items-center space-x-2 dropdown-item  ${
+                className={`flex items-center gap-2 dropdown-item ${
                   item.href === pathname ? "!text-[var(--current-color)]" : ""
                 }`}
-                href={item.href}
+                href={`/${locale}/${item.href}`}
                 style={{
-                  display: "flex", // บังคับเป็น flex
-                  alignItems: "center", // จัดกลางแนวตั้ง
-                  letterSpacing: "0.7px",
-                  paddingTop: "0.5rem", // ปรับ padding ให้สมดุล
-                  paddingBottom: "0.5rem",
+                  display: "flex",
+                  alignItems: "center",
+                  paddingTop: "0.35rem",
+                  paddingBottom: "0.35rem",
                 }}
               >
-                <div className="flex items-center justify-center w-[1.2rem]">
-                  {/* หุ้ม Icon ด้วย div เพื่อคุมพื้นที่ให้เท่ากันทุกเมนู */}
+                <div className="flex items-center justify-center w-[1.1rem]">
                   <i
-                    className={`uil ${item.icon} text-[1rem] leading-none`}
+                    className={`uil ${item.icon} text-[0.95rem] leading-none`}
                     style={{ color: item.color }}
                   />
                 </div>
-                <div className="grid gap-1">
-                  <span className="leading-none">{item.label}</span>
-                  <span className="leading-none text-[12px] font-medium">
+                <div className="grid gap-0">
+                  <span className="leading-tight text-[0.85rem]">
+                    {item.label}
+                  </span>
+                  <span className="leading-none text-[11px] font-medium opacity-80">
                     {item.sub}
                   </span>
                 </div>
@@ -221,12 +225,11 @@ export default function NavClient({ color, labels, badges, locale }) {
           ))}
         </ul>
       </li>
-      <li className="nav-item ">
+
+      <li className="nav-item">
         <a
-          className={`nav-link  !text-[.85rem] !tracking-[normal] hover:!text-[var(--hover-text)] 
-          after:!content-none after:!hidden  
-          `}
-          href="#"
+          className="nav-link !text-[.85rem] !tracking-[normal] !px-2 hover:!text-[var(--hover-text)] after:!hidden"
+          href={`/${locale}/contact`}
         >
           {labels.contact_us}
         </a>

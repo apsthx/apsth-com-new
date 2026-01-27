@@ -28,7 +28,7 @@ export default function FullWidthImageSlider() {
   return (
     <section className="wrapper !bg-[#ffffff] w-full">
       {/* เอา container ออกเพื่อให้กว้างเต็มหน้าจอ */}
-      <div className="w-full">
+      <div data-cues="slideInDown" data-delay={300} className="w-full">
         <div className="swiper-container w-full">
           <Swiper
             className="swiper-container w-full"

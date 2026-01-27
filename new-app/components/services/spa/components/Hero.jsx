@@ -15,8 +15,8 @@ export default async function Hero({ lng }) {
           {/* 1. Headline: Monochrome Style - สีเดียวแต่เล่นระดับความหนา (Weight) */}
           <h2 className="!text-[calc(1.4rem_+_1.5vw)] font-black !leading-[1.2] xl:!text-[2rem] text-[#343f52] tracking-tighter">
             {t(
-              "clinic:hero.title",
-              "โปรแกรม คลินิก ใช้งานง่าย ครบทุกฟังก์ชันในระบบเดียว",
+              "spa:hero.title",
+              "โปรแกรม Spa/Beauty ใช้งานง่าย ครบทุกฟังก์ชันในระบบเดียว",
             )}
           </h2>
 
@@ -24,8 +24,8 @@ export default async function Hero({ lng }) {
           <div className="max-w-[850px] mx-auto">
             <p className="mt-0 text-[0.8rem] xl:text-[1rem] text-[#343f52] opacity-70">
               {t(
-                "clinic:hero.description",
-                "โปรแกรม คลินิก รองรับการจัดการ คลินิก พร้อม ระบบบริหารจัดการที่ครบวงจร ที่จะช่วยให้คุณทำงานได้อย่างมีประสิทธิภาพ รองรับหลากหลาย ทุกประเภท ทุกขนาด ทุกสาขา",
+                "spa:hero.description",
+                "โปรแกรม Spa/Beauty รองรับการจัดการ Spa/Beauty พร้อม ระบบบริหารจัดการที่ครบวงจร ที่จะช่วยให้คุณทำงานได้อย่างมีประสิทธิภาพ รองรับหลากหลาย ทุกประเภท ทุกขนาด ทุกสาขา",
               )}
             </p>
           </div>
