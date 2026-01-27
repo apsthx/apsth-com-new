@@ -239,6 +239,33 @@ export default function NavClient({ color, labels, badges, locale }) {
         </a>
       </li>
       <LanguageSwitcher />
+      <div className="flex gap-1  xl:hidden mx-[-20px] !mt-2">
+        <a
+          target="_blank"
+          href="https://www.app-apsx.com/login"
+          className="!font-medium  !text-[#464c58] !tracking-wide btn btn-xs !inline-flex items-center gap-1  !bg-[#e9e7e7] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn   focus:!shadow-none active:!shadow-none btn-xs "
+        >
+          <i className="uil uil-signin text-[0.9rem]" />
+          <span className="font-medium">{labels.login}</span>
+        </a>
+        <a
+          target="_blank"
+          href="https://www.app-apsx.com/register"
+          className="!font-medium !text-[#ffffff] !tracking-wide !relative !inline-flex items-center gap-1 !bg-[#00B7B8] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn  focus:!shadow-none active:!shadow-none btn-xs "
+        >
+          <span className="absolute -top-3 -right-3  ">
+            <Badge
+              color="red"
+              variant="softText"
+              className="!text-[0.6rem] !px-1.5 !py-[1px] !leading-tight !shadow-sm !rounded-md"
+            >
+              {labels.free}
+            </Badge>
+          </span>
+          <i className="uil uil-rocket text-[0.9rem]" />
+          <span className="">{labels.free_trial}</span>
+        </a>
+      </div>
     </ul>
   );
 }
