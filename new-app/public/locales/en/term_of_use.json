@@ -1,0 +1,59 @@
+{
+  "title": "Terms of Service",
+  "description": "This Terms of Service is intended to inform about the legal rights and obligations between “us” (APSTH Co., Ltd.) as the “service provider” and “you” as the “user”. Please read it carefully for your benefit.",
+  "update_at": "Last updated on May 25, 2022",
+  "items": {
+    "section1": {
+      "title": "1. Collection of Personal Data",
+      "list1": "1.1 'Agreement' means the Terms of Service, contract, under the stipulated conditions, Privacy Policy",
+      "list2": "1.2 'Contracting Parties' refers to APSTH Co., Ltd. and users registered via www.apsth.com, the APSTH app, or any websites managed by the company.",
+      "list3": "1.3 'Service Fee' means the annual fee that the user is obligated to pay as per the contract at the price specified in the quotation.",
+      "list4": "1.4 'Data' means any information provided by a user or an authorized representative to APSTH Co., Ltd.",
+      "list5": "1.5 'Confidential Information' means any information exchanged between the contracting parties, whether verbal, written, or electronic, excluding publicly available data.",
+      "list6": "1.6 'Service' means the provision of software, system, or online clinic program services by APS Platform suitable for various business types such as Clinic, Spa, Wellness, Hospital, and Beauty.",
+      "list7": "1.7 'System Users' refer to individuals or other companies who are not contracting users with APSTH Co., Ltd. unless authorized by the user.",
+      "list8": "1.8 'User' means the contracting user with APSTH Co., Ltd., excluding system users.",
+      "list9": "1.9 'Contracting Parties' means APSTH Co., Ltd. and registered users.",
+      "list10": "1.10 'Website' refers to www.apsth.com and any other websites managed by the company."
+    },
+    "section2": {
+      "title": "2. Registration",
+      "list1": "2.1 Users must be at least 18 years old.",
+      "list2": "2.2 Users are responsible for maintaining the security of their username and password.",
+      "list3": "2.3 Users must not copy the content, modify it, or resell it.",
+      "list4": "2.4 Users agree that APSTH Co., Ltd. may modify submitted data.",
+      "list5": "2.5 Users must not attempt to hack or inject malicious code into the system.",
+      "list6": "2.6 APSTH Co., Ltd. does not guarantee that the Clinic system will be uninterrupted, maintenance-free, or error-free.",
+      "list7": "2.7 APSTH Co., Ltd. is not responsible for any data loss under any circumstances.",
+      "list8": "2.8 APSTH Co., Ltd. reserves the right to delete any account that violates rules, infringes intellectual property, or damages its reputation without prior notice."
+    },
+    "section3": {
+      "title": "3. Renewal",
+      "list1": "Contract renewal: The duration of service packages from www.apsth.com is defined in the order confirmation or quotation. APSTH Co., Ltd. will notify users before the service period expires."
+    },
+    "section4": {
+      "title": "4. Termination",
+      "list1": "Termination: Users may terminate the contract by sending a termination request to apsth456@gmail.com. Such termination will be effective at the end of the current service period. Immediate termination (before the service period ends) will not be eligible for a refund."
+    },
+    "section5": {
+      "title": "5. Package Purchase",
+      "list1": "5.1 New users receive a free trial for the number of days specified by APSTH Co., Ltd. This period cannot be extended.",
+      "list2": "5.2 Payment is required upfront. Once payment is received, APSTH Co., Ltd. will add service days equivalent to the payment amount. The added days cannot be altered until they are fully used.",
+      "list3": "5.3 Existing users will not be eligible for new promotions released after their sign-up date.",
+      "list4": "5.4 Existing users may not re-register or change their username to receive another free trial or promotion."
+    },
+    "section6": {
+      "title": "6. Refund/Service Change/Cancellation",
+      "list1": "6.1 For purchased packages, refund policy: APSTH Co., Ltd. reserves the right to deny refunds in all cases.",
+      "list2": "6.2 APSTH Co., Ltd. reserves the right to change prices without prior notice.",
+      "list3": "6.3 In case of service fee changes, existing users will be notified 30 days in advance. Long-term package users will not be affected in terms of previously purchased service days.",
+      "list4": "6.4 Cancellation policy: If a customer wishes to cancel an order (e.g., change of mind), APSTH Co., Ltd. reserves the right to cancel in all cases.",
+      "list5": "6.5 Delivery policy: After payment, product delivery via store/clinic pickup or shipping to the order address will take between 5-7 days, but not exceeding 10 days.",
+      "list6": "6.6 Return policy: APSTH Co., Ltd. reserves the right to deny returns in all cases."
+    },
+    "section7": {
+      "title": "7. Transfer of Usage Rights",
+      "list1": "APSTH Co., Ltd. does not permit the transfer of rights and obligations under this contract to any third party without express written consent."
+    }
+  }
+}

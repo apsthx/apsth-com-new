@@ -108,8 +108,8 @@ export const pricingPlans = [
     title: "Package N+",
     price3mo: 6750,
     price6mo: 13500,
-    price1yr: 21000,
-    oldPrice1yr: 27000,
+    price1yr: 27000,
+    oldPrice1yr: 0,
     features: createFeatures({
       title: "Package N+",
       branch: 1,
@@ -122,8 +122,8 @@ export const pricingPlans = [
     title: "Package B+",
     price3mo: 13500,
     price6mo: 27000,
-    price1yr: 42000,
-    oldPrice1yr: 48000,
+    price1yr: 48000,
+    oldPrice1yr: 0,
     features: createFeatures({
       title: "Package B+",
       branch: 2,
@@ -136,8 +136,8 @@ export const pricingPlans = [
     title: "Package PRO+",
     price3mo: 33750,
     price6mo: 67500,
-    price1yr: 105000,
-    oldPrice1yr: 120000,
+    price1yr: 120000,
+    oldPrice1yr: 0,
     features: createFeatures({
       title: "Package PRO+",
       branch: 5,

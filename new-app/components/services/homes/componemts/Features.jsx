@@ -10,7 +10,7 @@ export default async function Features({ lng }) {
   const { t } = await useTranslation(lng);
   return (
     <section className="wrapper overflow-hidden">
-      <div className="container py-[5rem] xl:!py-[5rem] lg:!py-[7rem] md:!py-[7rem]">
+      <div className="container py-[5rem] xl:!py-[2rem] lg:!py-[2rem] md:!py-[2rem]">
         <div
           data-cue="fadeIn"
           data-delay={300}
@@ -30,7 +30,7 @@ export default async function Features({ lng }) {
 
             <div className="w-full flex-[0_0_auto] !px-[15px] max-w-full !text-center">
               {/* 1. Headline: Monochrome Style - สีเดียวแต่เล่นระดับความหนา (Weight) */}
-              <h2 className="!text-[calc(1.4rem_+_1.5vw)] font-black !leading-[1.2] xl:!text-[2rem] !mb-4 text-[#343f52] tracking-tighter">
+              <h2 className="!text-[calc(1.4rem_+_1.5vw)] font-black !leading-[1.2] xl:!text-[2rem] !mb-2 text-[#343f52] tracking-tighter">
                 {t(
                   "home:features.title",
                   "ระบบที่ใช้งานง่ายมี ประสิทธิภาพและทันสมัย ที่สุดในตอนนี้",
@@ -39,8 +39,8 @@ export default async function Features({ lng }) {
 
               {/* 2. Description: คุมโทนสีเทาเข้ม-จาง แบบเดียวกันทั้งหมด */}
               <div className="max-w-[850px] mx-auto">
-                <p className="mt-0 text-[1rem] xl:text-[1.1rem] text-[#343f52] opacity-70">
-                  <strong className="font-bold text-[#00B7B8] ">
+                <p className="mt-0 text-[1rem] xl:text-[1.1rem] text-[#343f52]">
+                  <strong className="font-bold text-[#343f52]">
                     APSX Platform
                   </strong>{" "}
                   {t(
@@ -59,30 +59,25 @@ export default async function Features({ lng }) {
             data-delay={300}
             className="xl:w-7/12 lg:w-7/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !relative xl:px-0 lg:px-0 !mt-[50px]"
           >
-            {/* Blurry Background Layer */}
             <div
-              className="absolute pointer-events-none"
+              className="absolute inset-0 z-0 opacity-[0.5]"
               style={{
-                top: "50%",
-                left: "50%",
-                width: "140%",
-                transform: "translate(-50%, -50%)",
-                zIndex: -1,
+                backgroundImage: `
+                    linear-gradient(to right, #00B7B8 2px, transparent 1px),
+                    linear-gradient(to bottom, #00B7B8 2px, transparent 1px)
+                  `,
+                backgroundSize: "80px 80px", // ปรับขนาดช่องตารางที่นี่
+                maskImage:
+                  "radial-gradient(ellipse at center, black, transparent 80%)", // ทำให้ขอบจางลง
+                WebkitMaskImage:
+                  "radial-gradient(ellipse at center, black, transparent 80%)",
               }}
-            >
-              <Image
-                className="w-full opacity-50 lg:opacity-100"
-                alt="image"
-                src="/assets/img/photos/blurry.png"
-                width={1400}
-                height={1080}
-              />
-            </div>
+            />
 
             {/* Main Container */}
             <div className="relative p-2 sm:p-6 lg:p-10">
               {/* 1. Responsive Website (ลอยด้านบนซ้าย) - ซ่อนบนมือถือขนาดเล็กมากหรือปรับตำแหน่ง */}
-              <div className="absolute top-0 -left-2 sm:top-[10%] sm:-left-10 z-10 animate-bounce">
+              <div className="absolute top-0 -left-2 sm:top-[10%] sm:-left-10 z-10">
                 <div className="bg-white/90 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-xl border border-white/50 flex items-center gap-2">
                   <span className="w-2 h-2 bg-[#45c4a0] rounded-full"></span>
                   <span className="text-[0.7rem] sm:text-[0.85rem] font-bold text-[#343f52] whitespace-nowrap">
@@ -104,7 +99,7 @@ export default async function Features({ lng }) {
               </div>
 
               {/* 2. AI Suggestion (ลอยด้านบนขวา) */}
-              <div className="absolute -top-5 -right-2 sm:top-[-5%] sm:-right-5 z-10 animate-pulse">
+              <div className="absolute -top-5 -right-2 sm:top-[-5%] sm:-right-5 z-10">
                 <div className="bg-white/90 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-xl border border-white/50 flex items-center gap-2">
                   <span className="w-2 h-2 bg-[#fab758] rounded-full"></span>
                   <span className="text-[0.7rem] sm:text-[0.85rem] font-bold text-[#343f52] whitespace-nowrap">
@@ -168,14 +163,14 @@ export default async function Features({ lng }) {
             data-delay={300}
             className="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !ml-auto xl:px-0 lg:px-0 !mt-[50px]"
           >
-            <h2 className="!text-[calc(1.35rem_+_0.5vw)] font-extrabold xl:!text-[2rem] !leading-[1.2] !mb-4 xxl:!mt-[-2.5rem] bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
+            <h2 className="!text-[calc(1.35rem_+_0.5vw)] font-extrabold xl:!text-[2rem] !leading-[1.2] !mb-0 xxl:!mt-[-2.5rem] bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
               {t(
                 "home:features.features.title",
                 "ฟังก์ชันการใช้งาน (Features)",
               )}
             </h2>
 
-            <p className="!text-[1.1rem] !leading-[1.7] !mb-10 text-gray-600 max-w-[600px]">
+            <p className="!text-[1.1rem] !leading-[1.7] !mb-4 text-gray-600 max-w-[600px]">
               {t(
                 "home:features.features.description",
                 "ยกระดับการบริหารจัดการคลินิกด้วยเทคโนโลยี Cloud อัจฉริยะ ที่ออกแบบมาเพื่อความรวดเร็วและความปลอดภัยสูงสุดของข้อมูลคุณ",
@@ -184,7 +179,7 @@ export default async function Features({ lng }) {
             <div
               data-cues="slideInDown"
               data-delay={300}
-              className="flex flex-row !mb-6 items-start group"
+              className="flex flex-row !mb-2 items-start group"
             >
               <div className="flex-shrink-0">
                 {/* เพิ่ม transition และ hover effect ให้เหมือนกับชิ้นอื่นๆ ในชุด */}
@@ -234,7 +229,7 @@ export default async function Features({ lng }) {
             <div
               data-cues="slideInDown"
               data-delay={300}
-              className="flex flex-row !mb-6 items-start group"
+              className="flex flex-row !mb-2 items-start group"
             >
               <div className="flex-shrink-0">
                 <div className="svg-bg bg-white opacity-100 !rounded-[0.8rem] shadow-xl !mr-5 p-3 flex items-center justify-center w-[60px] h-[60px] transition-transform duration-300 group-hover:scale-110">
@@ -345,9 +340,9 @@ export default async function Features({ lng }) {
           {/*/column */}
         </div>
 
-        <div className="w-full !mt-[60px]">
+        <div className="w-full !mt-[0px]">
           {/* คอนเทนเนอร์หลัก: ใช้ flex-wrap เพื่อให้การ์ดตกลงมาเมื่อจอแคบลง */}
-          <div className="flex flex-wrap justify-center mx-[-15px] !mt-[-50px]">
+          <div className="flex flex-wrap justify-center mx-[-15px] !mt-[-150px]">
             {/* รายการการ์ด: วนลูปหรือวางต่อกัน */}
             {[
               {
@@ -391,54 +386,61 @@ export default async function Features({ lng }) {
                 data-cues="slideInDown"
                 data-delay={300}
                 key={index}
-                /* คลาสควบคุมขนาด: Mobile=100%, Tablet=50%, Desktop=33.33% */
-                className="w-full md:w-6/12 lg:w-4/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[50px]"
+                className="w-full md:w-6/12 lg:w-4/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[40px]"
               >
-                <div className="!rounded-[0.6rem] h-full shadow-lg bg-white overflow-hidden transition-all hover:-translate-y-1">
-                  <article className="post p-0">
-                    <figure className="overlay overlay-1 hover-scale group rounded-t !mb-0 overflow-hidden">
-                      <a href={item.link}>
+                <div className="h-full rounded-xl bg-white border border-[#a4aec633] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+                  <article className="post flex flex-col h-full">
+                    {/* 1. ส่วนรูปภาพ พร้อม Overlay ที่ดูแพงขึ้น */}
+                    <figure className="relative group overflow-hidden bg-gray-200 aspect-[4/3]">
+                      <Link href={item.link}>
                         <Image
-                          className="!transition-all !duration-[0.35s] !ease-in-out group-hover:scale-105 w-full h-auto"
+                          className="transition-transform duration-700 ease-out group-hover:scale-110 w-full h-full object-cover"
                           src={item.img}
                           alt={item.title}
-                          width={350}
-                          height={560}
+                          width={400}
+                          height={300}
                         />
-                      </a>
-                      <figcaption className="group-hover:opacity-100  absolute w-full h-full opacity-0 text-center px-4 py-3 inset-0 z-[5] pointer-events-none p-2 flex items-center justify-center">
-                        <h5 className="from-top !mb-0  shadow-2xl text-white">
+                      </Link>
+                      <figcaption className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                        <a
+                          href={item.link}
+                          className="bg-white/90 !text-[#343f52] px-5 py-2 rounded-full text-sm font-semibold tracking-wide shadow-sm"
+                        >
                           {t("home:read_more", "ดูรายละเอียด")}
-                        </h5>
+                        </a>
                       </figcaption>
                     </figure>
 
-                    <div className="post-header p-5">
-                      <p className="text-xs !text-[#00B7B8] ">
-                        {t("home:category", "หมวดหมู่")}
-                      </p>
-
-                      <div className="post-title h4 !mb-0 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-60%] before:w-3 before:h-[0.05rem] before:left-0 before:top-1/4 before:bg-[#00B7B8] ">
-                        <p className="hover">
-                          <Link
-                            className="!text-[#343f52] hover:!text-[#00B7B8]  hover"
-                            href={item.link}
+                    {/* 2. ส่วนเนื้อหา */}
+                    <div className="post-header p-6 flex flex-col flex-grow">
+                      {/* หมวดหมู่: ใช้ตัวพิมพ์ใหญ่/Tracking กว้างขึ้นเพื่อความ Formal */}
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-[10px] uppercase tracking-[0.15em] font-bold text-[#00B7B8]">
+                          {t("home:category", "หมวดหมู่")}
+                        </span>
+                        {item.id === "blog3" && (
+                          <Badge
+                            color="teal"
+                            variant="softText"
+                            className="!text-[9px] !px-2 !py-0.5 !font-bold !rounded-full uppercase tracking-tighter"
                           >
-                            {item.title}
-                          </Link>
-                        </p>
+                            {t("home:coming_soon", "Coming Soon")}
+                          </Badge>
+                        )}
                       </div>
-                      <br />
-                      {item.id === "blog3" && (
-                        <Badge
-                          color="teal"
-                          variant="softText"
-                          className="!text-[0.5rem] !px-1.5 !py-[5px] !leading-tight !shadow-sm !rounded-md"
+
+                      {/* ชื่อหัวข้อ: ปรับให้ใหญ่ขึ้นและเป็นทางการ */}
+                      <h3 className="text-xl font-bold leading-snug mb-3">
+                        <Link
+                          className="!text-[#343f52] hover:!text-[#00B7B8] transition-colors duration-200"
+                          href={item.link}
                         >
-                          {t("home:coming_soon", "เร็วๆ นี้")}
-                        </Badge>
-                      )}
-                      <p className="!text-[0.85rem] !leading-relaxed text-[#60697b] !mb-0">
+                          {item.title}
+                        </Link>
+                      </h3>
+
+                      {/* รายละเอียด: ปรับ line-height ให้โปร่งขึ้น */}
+                      <p className="text-[0.9rem] leading-relaxed text-[#60697b] line-clamp-3">
                         {item.description}
                       </p>
                     </div>

@@ -8,7 +8,7 @@ export default async function PlatformHighlights({ lng }) {
   const { t } = await useTranslation(lng);
   return (
     <section className="wrapper overflow-hidden">
-      <div className="container py-[0rem] xl:!py-[0rem] lg:!py-[0rem] md:!py-[0rem]">
+      <div className="container py-[0rem] xl:!py-[2rem] lg:!py-[0rem] md:!py-[0rem]">
         {/*/.row */}
         <div className="mt-0 flex flex-wrap mx-[-15px] xl:mx-0 lg:mx-0 items-center">
           <div className="container">
@@ -33,7 +33,7 @@ export default async function PlatformHighlights({ lng }) {
               >
                 <div className="flex flex-wrap !relative overlap-grid-2 group/container">
                   {/* รูปที่ 1: ด้านหลัง (Default z-[3]) */}
-                  <div className="item xl:w-[70%] xl:ml-[30%] lg:w-[70%] lg:ml-[30%] md:w-[70%] md:ml-[30%] w-full z-[3] relative transition-all duration-300 hover:z-[10] hover:scale-[1.02]">
+                  <div className="item xl:w-[70%] xl:ml-[30%] lg:w-[70%] lg:ml-[30%] md:w-[70%] md:ml-[30%] w-full z-[3] relative transition-all duration-300 hover:scale-[1.02]">
                     <figure className="!rounded-[1.2rem] shadow-[0_10px_30px_rgba(0,0,0,0.05)] border-[6px] border-white relative overflow-hidden bg-white">
                       <Image
                         className="w-full h-auto block" // เปลี่ยน object-cover เป็น block และให้มันกว้างเต็ม
@@ -46,7 +46,7 @@ export default async function PlatformHighlights({ lng }) {
                     </figure>
                   </div>
                   {/* รูปที่ 2: ด้านหน้า (Default z-[4]) */}
-                  <div className="item xl:w-[50%] xl:!mt-[-60%] xl:ml-0 lg:w-[55%] lg:!mt-[-40%] lg:ml-0 md:w-[55%] md:!mt-[-40%] md:ml-0 w-full -mt-[25%] z-[4] relative transition-all duration-300 hover:z-[10] hover:scale-[1.02]">
+                  <div className="item xl:w-[50%] xl:!mt-[-60%] xl:ml-0 lg:w-[55%] lg:!mt-[-40%] lg:ml-0 md:w-[55%] md:!mt-[-40%] md:ml-0 w-full -mt-[25%] z-[4] relative transition-all duration-300 hover:scale-[1.02]">
                     <figure className="!rounded-[1.2rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-[6px] border-white relative overflow-hidden">
                       <Image
                         className="w-full h-auto object-cover"
@@ -71,33 +71,11 @@ export default async function PlatformHighlights({ lng }) {
                 data-delay={300}
                 className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] !mt-[50px] max-w-full"
               >
-                <div className="flex items-center gap-4 !mb-4">
-                  {/* ส่วนของ Icon Box */}
-                  <div className="flex-shrink-0 p-3 bg-[#ffffff] rounded-xl flex items-center justify-center shadow-md">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 256 218.67"
-                      className="svg-inject icon-svg !w-[1.8rem] !h-[1.8rem] solid-mono !text-[#00b899]"
-                    >
-                      <path
-                        className="fill-[#00b899]"
-                        d="M88 208a48.06 48.06 0 01-48-48 45.85 45.85 0 012.26-14.48 10.66 10.66 0 1120.22 6.75 24.28 24.28 0 00-1.15 7.73 26.65 26.65 0 0052.56 6.22 10.67 10.67 0 0120.77 4.87A47.71 47.71 0 0188 208z"
-                      ></path>
-                      <path
-                        className="fill-[#00b899]"
-                        d="M248 210.67a8 8 0 01-2.22-.32L5.78 141A8 8 0 010 133.34v-48a8 8 0 015.78-7.68l240-69.32A8 8 0 01256 16v186.7a8 8 0 01-3.2 6.4 8.09 8.09 0 01-4.8 1.57z"
-                      ></path>
-                      <path
-                        className="fill-[#00b899]"
-                        d="M245.33 218.67A10.67 10.67 0 01234.66 208V10.67a10.67 10.67 0 1121.34 0V208a10.66 10.66 0 01-10.67 10.67zm-234.66-64A10.66 10.66 0 010 144V74.69a10.67 10.67 0 0121.34 0V144a10.67 10.67 0 01-10.67 10.67z"
-                      ></path>
-                    </svg>
-                  </div>
-
+                <div className="flex items-center gap-4 !mb-0">
                   {/* ส่วนของหัวข้อ */}
                   <h2 className="!text-[calc(1.2rem_+_0.66vw)] font-bold xl:!text-[1.8rem] !leading-none !m-0">
                     {t("home:platform_highlights.title", "จุดเด่น")}{" "}
-                    <span className="text-[#00b899]">APSX Platform</span>
+                    <span className="text-[#343f52]">APSX Platform</span>
                   </h2>
                 </div>
                 <p className="lead !text-[1.05rem] !leading-[1.6] font-medium">
@@ -107,7 +85,7 @@ export default async function PlatformHighlights({ lng }) {
                   )}
                 </p>
                 <p className="!mb-1">
-                  <strong className="font-bold text-[#00b899]">
+                  <strong className="font-bold text-[#343f52]">
                     APSX Platform
                   </strong>{" "}
                   {t(
@@ -211,7 +189,7 @@ export default async function PlatformHighlights({ lng }) {
 
             <div className="w-full mb-4">
               {/* คอนเทนเนอร์หลัก: ใช้ flex-wrap เพื่อให้การ์ดตกลงมาเมื่อจอแคบลง */}
-              <div className="flex flex-wrap justify-center mx-[-15px] !mt-[-100px]">
+              <div className="flex flex-wrap justify-center mx-[-15px] !mt-[-120px]">
                 {[
                   {
                     id: "blog1",
@@ -696,9 +674,9 @@ export default async function PlatformHighlights({ lng }) {
                       data-cues="slideInDown"
                       data-delay={300}
                       key={item.id}
-                      className="w-full md:w-6/12 lg:w-4/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[50px]"
+                      className=" w-full md:w-6/12 lg:w-4/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[50px]"
                     >
-                      <div className="!rounded-[0.6rem] h-full shadow-lg bg-white overflow-hidden transition-all hover:-translate-y-2 hover:shadow-xl">
+                      <div className="border border-[#a4aec633] !rounded-[0.6rem] h-full shadow-lg bg-white overflow-hidden transition-all hover:-translate-y-2 hover:shadow-xl">
                         <article className="post p-0">
                           <div className="post-header p-6">
                             <div className="flex justify-between items-center mb-3">
@@ -769,147 +747,11 @@ export default async function PlatformHighlights({ lng }) {
           <div
             data-cues="slideInDown"
             data-delay={300}
-            className="p-8 flex flex-wrap mx-[-15px] md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px] items-center !mt-[7rem] 
+            className="px-8 flex flex-wrap mx-[-15px] md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px] items-center !mt-[4rem] 
              bg-white/40   
-             border border-[#a4aec633] rounded-[2rem] mb-4 pb-12 transition-all duration-500
+             border border-[#a4aec633] rounded-lg mb-4 pb-12 transition-all duration-500 shadow-md
             "
           >
-            <div className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!px-[35px] lg:!px-[20px] md:!px-[20px] !mt-[40px] relative">
-              {/* Background Decorative Blob (ตัวช่วยเสริมให้พื้นหลังดูสวย) */}
-              <div className="absolute -top-10 -left-10 w-64 h-64 bg-teal-200/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
-              <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-indigo-200/20 rounded-full blur-3xl -z-10"></div>
-
-              <div className="flex flex-wrap mx-[-15px] xl:mx-[-12.5px] lg:mx-[-12.5px] md:mx-[-12.5px] !mt-[-25px]">
-                {/* 1. AI Analysis Icon (บน) */}
-                <div className="w-full flex-[0_0_auto] xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !px-[15px] max-w-full !mt-[25px]">
-                  <div
-                    className="group !rounded-[2.5rem] border border-white/80 
-                     xl:mx-8 lg:mx-6 md:mx-4 flex flex-col items-center justify-center p-12 
-                     bg-gradient-to-br from-white/90 via-[#f8fafc] to-[#eef2ff]/80 
-                     shadow-[0_20px_50px_rgba(0,0,0,0.04)] backdrop-blur-md 
-                     transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:border-blue-200"
-                  >
-                    {/* SVG Container with Animation */}
-                    <div className="relative mb-4 transform transition-transform duration-500 group-hover:scale-110">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="80"
-                        height="80"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="drop-shadow-xl"
-                      >
-                        <defs>
-                          <linearGradient
-                            id="aiGradient"
-                            x1="0%"
-                            y1="0%"
-                            x2="100%"
-                            y2="100%"
-                          >
-                            <stop offset="0%" stopColor="#00b899" />
-                            <stop offset="100%" stopColor="#60a5fa" />
-                          </linearGradient>
-                        </defs>
-                        <g stroke="url(#aiGradient)">
-                          <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .52 5.898 4 4 0 0 0 7.864.444A3 3 0 1 0 12 5Z" />
-                          <path d="M9 13a4.5 4.5 0 0 0 3-4" />
-                          <path d="M15 13a4.5 4.5 0 0 1-3-4" />
-                          <path d="M12 13v8" />
-                          <path d="M9 17h6" />
-                        </g>
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-bold text-[#1e293b] group-hover:text-blue-700 transition-colors">
-                      {t(
-                        "home:platform_highlights.ai_suggestion.ai_highlights.save_time.title",
-                        "ลดเวลาบันทึก",
-                      )}
-                    </h3>
-                    <p className="text-[#64748b] text-sm leading-relaxed text-center mt-2">
-                      {t(
-                        "home:platform_highlights.ai_suggestion.ai_highlights.save_time.description",
-                        "ประหยัดเวลาได้มากกว่า 50%",
-                      )}
-                    </p>
-                  </div>
-                </div>
-
-                {/* 2. AI Diagnostics (ล่างซ้าย) */}
-                <div className="xl:w-6/12 lg:w-6/12 md:w-6/12 w-full flex-[0_0_auto] xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !px-[15px] max-w-full !mt-[25px]">
-                  <div
-                    className="group bg-gradient-to-br from-[#f0fdfa] to-white border border-white shadow-lg backdrop-blur-sm
-                        rounded-[2rem] p-10 flex flex-col items-center justify-center h-full transition-all duration-500 hover:shadow-teal-100 hover:-translate-y-1"
-                  >
-                    <div className="p-4 bg-teal-50 rounded-2xl mb-3 group-hover:bg-teal-500 group-hover:text-white transition-all duration-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="40"
-                        height="40"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                      </svg>
-                    </div>
-                    <span className="font-bold text-[#0d9488] text-center">
-                      AI Diagnostics
-                    </span>
-                  </div>
-                </div>
-
-                {/* 3. Smart Robotics (ล่างขวา) */}
-                <div className="xl:w-6/12 lg:w-6/12 md:w-6/12 w-full flex-[0_0_auto] xl:!px-[12.5px] lg:!px-[12.5px] md:!px-[12.5px] !px-[15px] max-w-full !mt-[25px]">
-                  <div
-                    className="group bg-gradient-to-br from-[#f5f3ff] to-white border border-white shadow-lg backdrop-blur-sm
-                        rounded-[2rem] p-10 flex flex-col items-center justify-center h-full transition-all duration-500 hover:shadow-indigo-100 hover:-translate-y-1"
-                  >
-                    <div className="p-4 bg-indigo-50 rounded-2xl mb-3 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="40"
-                        height="40"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <rect width="16" height="12" x="4" y="8" rx="2" />
-                        <path d="M12 8V4H8" />
-                        <path d="M9 13v2" />
-                        <path d="M15 13v2" />
-                      </svg>
-                    </div>
-                    <span className="font-bold text-[#4f46e5] text-center">
-                      Smart Robotics
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Real-time Analysis Floating Badge */}
-              <div className="hidden lg:block absolute top-1/2 -left-16 z-20 animate-bounce">
-                <div className="flex items-center gap-3 bg-white/90 backdrop-blur-md px-5 py-3 rounded-2xl shadow-2xl border border-teal-100">
-                  <span className="relative flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-teal-500"></span>
-                  </span>
-                  <span className="text-xs font-black tracking-wider text-teal-800 uppercase">
-                    Real-time Analysis
-                  </span>
-                </div>
-              </div>
-            </div>
-
             {/*/column */}
             <div className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full xl:!px-[35px] lg:!px-[20px] md:!px-[20px] !mt-[80px]">
               <h2 className="!text-[0.8rem] !tracking-[0.02rem] uppercase !text-[#aab0bc] !mb-3 !leading-[1.35]">
@@ -925,6 +767,20 @@ export default async function PlatformHighlights({ lng }) {
                   {t("new", "ใหม่")} {t("free_label", "ใช้งานฟรี")}!
                 </span>
               </Badge>
+              <div className="flex items-end gap-2">
+                <p className="!text-lg font-bold text-[#1e293b] group-hover:text-blue-700 transition-colors">
+                  {t(
+                    "home:platform_highlights.ai_suggestion.ai_highlights.save_time.title",
+                    "ลดเวลาบันทึก",
+                  )}
+                </p>
+                <p className="text-[#64748b] text-sm leading-relaxed">
+                  {t(
+                    "home:platform_highlights.ai_suggestion.ai_highlights.save_time.description",
+                    "ประหยัดเวลาได้มากกว่า 50%",
+                  )}
+                </p>
+              </div>
               <div className="flex gap-1">
                 <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#f0f9ff] rounded-lg transition-transform group-hover:scale-110">
                   <i className="uil uil-robot text-[#00b899] text-[1.2rem] leading-none" />
@@ -978,176 +834,176 @@ export default async function PlatformHighlights({ lng }) {
                   </strong>{" "}
                 </p>
               </div>
-              <div className="!mt-[15px] ml-14">
-                <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <h4 className="!mb-1">
-                      {t(
-                        "home:platform_highlights.ai_suggestion.list.list1.title",
-                        "CC - Chief Complaint (อาการสำคัญ)",
-                      )}
-                    </h4>
-                  </div>
-                </div>
-                {/*/column */}
-                <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <h4 className="!mb-1">
-                      {t(
-                        "home:platform_highlights.ai_suggestion.list.list2.title",
-                        "PMH - Past Medical History (ประวัติการรักษา)",
-                      )}
-                    </h4>
-                  </div>
-                </div>
-                {/*/column */}
-                <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <h4 className="!mb-1">
-                      {t(
-                        "home:platform_highlights.ai_suggestion.list.list3.title",
-                        "PE - Physical Examination (การตรวจร่างกาย)",
-                      )}
-                    </h4>
-                  </div>
-                </div>
-                {/*/column */}
-                <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <h4 className="!mb-1">
-                      {t(
-                        "home:platform_highlights.ai_suggestion.list.list4.title",
-                        "NOTE - Note (บันทึกเพิ่มเติม)",
-                      )}
-                    </h4>
-                  </div>
-                </div>
-                {/*/column */}
-                <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <h4 className="!mb-1">
-                      {t(
-                        "home:platform_highlights.ai_suggestion.list.list5.title",
-                        "HPI - History of Present Illness (ประวัติอาการปัจจุบัน)",
-                      )}
-                    </h4>
-                  </div>
-                </div>
-                {/*/column */}
-                <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <h4 className="!mb-1">
-                      {t(
-                        "home:platform_highlights.ai_suggestion.list.list6.title",
-                        "DX - Diagnosis (การวินิจฉัยโรค)",
-                      )}
-                    </h4>
-                  </div>
-                </div>
-                {/*/column */}
-                <div className="flex flex-row">
-                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <div>
-                    <h4 className="!mb-1">
-                      {t(
-                        "home:platform_highlights.ai_suggestion.list.list7.title",
-                        "GA - General Appearance (ลักษณะทั่วไป)",
-                      )}
-                    </h4>
-                  </div>
+              {/*/.row */}
+            </div>
+            <div className="!mt-[15px] ml-14">
+              <div className="flex flex-row">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h4 className="!mb-1">
+                    {t(
+                      "home:platform_highlights.ai_suggestion.list.list1.title",
+                      "CC - Chief Complaint (อาการสำคัญ)",
+                    )}
+                  </h4>
                 </div>
               </div>
-              {/*/.row */}
+              {/*/column */}
+              <div className="flex flex-row">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h4 className="!mb-1">
+                    {t(
+                      "home:platform_highlights.ai_suggestion.list.list2.title",
+                      "PMH - Past Medical History (ประวัติการรักษา)",
+                    )}
+                  </h4>
+                </div>
+              </div>
+              {/*/column */}
+              <div className="flex flex-row">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h4 className="!mb-1">
+                    {t(
+                      "home:platform_highlights.ai_suggestion.list.list3.title",
+                      "PE - Physical Examination (การตรวจร่างกาย)",
+                    )}
+                  </h4>
+                </div>
+              </div>
+              {/*/column */}
+              <div className="flex flex-row">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h4 className="!mb-1">
+                    {t(
+                      "home:platform_highlights.ai_suggestion.list.list4.title",
+                      "NOTE - Note (บันทึกเพิ่มเติม)",
+                    )}
+                  </h4>
+                </div>
+              </div>
+              {/*/column */}
+              <div className="flex flex-row">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h4 className="!mb-1">
+                    {t(
+                      "home:platform_highlights.ai_suggestion.list.list5.title",
+                      "HPI - History of Present Illness (ประวัติอาการปัจจุบัน)",
+                    )}
+                  </h4>
+                </div>
+              </div>
+              {/*/column */}
+              <div className="flex flex-row">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h4 className="!mb-1">
+                    {t(
+                      "home:platform_highlights.ai_suggestion.list.list6.title",
+                      "DX - Diagnosis (การวินิจฉัยโรค)",
+                    )}
+                  </h4>
+                </div>
+              </div>
+              {/*/column */}
+              <div className="flex flex-row">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h4 className="!mb-1">
+                    {t(
+                      "home:platform_highlights.ai_suggestion.list.list7.title",
+                      "GA - General Appearance (ลักษณะทั่วไป)",
+                    )}
+                  </h4>
+                </div>
+              </div>
             </div>
             {/*/column */}
           </div>

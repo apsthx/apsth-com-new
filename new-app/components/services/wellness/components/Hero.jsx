@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { useTranslation } from "@/app/i18n";
 
 export default async function Hero({ lng }) {

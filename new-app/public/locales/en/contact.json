@@ -22,13 +22,13 @@
       "instagram": "APS Thailand",
       "facebook": "APS Thailand",
       "youtube": "APSX Platform Clinic Software"
-    },
-    "our_offices": {
-      "title": "Our Offices Across Thailand",
-      "office1": {
-        "title": "Khon Kaen (Head Office)",
-        "description": "I-CONNECT 888/8 Leuanadee Road, Moo 13, Ban Pet Subdistrict, Muang Khon Kaen District, Khon Kaen 40000"
-      }
+    }
+  },
+  "our_offices": {
+    "title": "Our Offices Across Thailand",
+    "office1": {
+      "title": "Khon Kaen (Head Office)",
+      "description": "I-CONNECT 888/8 Leuanadee Road, Moo 13, Ban Pet Subdistrict, Muang Khon Kaen District, Khon Kaen 40000"
     }
   }
 }

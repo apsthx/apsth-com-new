@@ -32,6 +32,10 @@ const initI18next = async (lng) => {
         "docs",
         "update",
         "contact",
+        "calendar",
+        "term_of_use",
+        "privacy_policy",
+        "sitemap",
         "footer",
       ], // เพิ่มบรรทัดนี้
     });

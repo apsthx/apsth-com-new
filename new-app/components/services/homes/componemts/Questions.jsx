@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { useTranslation } from "@/app/i18n";
 
 export default async function Questions({ lng }) {
@@ -8,7 +7,7 @@ export default async function Questions({ lng }) {
   return (
     <section id="snippet-2" className="wrapper !bg-[#ffffff] ">
       <div className="container  pb-16 xl:pb-20 lg:pb-20 md:pb-20">
-        <div className="flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-50px]">
+        <div className="flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-180px]">
           <div
             data-cues="slideInDown"
             data-delay={300}
@@ -35,7 +34,7 @@ export default async function Questions({ lng }) {
             </a>
             <a
               target="_blank"
-              href="/calendar"
+              href={`/${lng}/calendar`}
               className="btn btn-primary !text-white !font-medium !bg-[#5eb9f0] border-[#5eb9f0] hover:text-white hover:bg-[#5eb9f0] hover:!border-[#5eb9f0] active:text-white active:bg-[#5eb9f0] active:border-[#5eb9f0] disabled:text-white disabled:bg-[#5eb9f0] disabled:border-[#5eb9f0] !rounded-[50rem] hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]"
             >
               {t("home:hero.connect.book_a_demo", "Book a Demo")}

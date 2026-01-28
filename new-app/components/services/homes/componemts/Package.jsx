@@ -138,7 +138,7 @@ export default async function Package({ lng }) {
 
   return (
     <section id="price" className="wrapper !bg-[#ffffff]">
-      <div className="container  py-16 xl:py-20 lg:py-20 md:py-20">
+      <div className="container">
         <div
           data-cues="slideInDown"
           data-delay={300}

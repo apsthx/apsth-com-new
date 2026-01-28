@@ -101,7 +101,7 @@ export default function OurCustomersGroups() {
         </div>
 
         {/* โลโก้หลัก */}
-        <div className="relative inline-block p-2 shadow-sm rounded-full bg-white transition-transform duration-300 group-hover:scale-110 cursor-pointer z-10">
+        <div className="relative inline-block p-2 shadow-sm rounded-3xl bg-white transition-transform duration-300 group-hover:scale-110 cursor-pointer z-10">
           <Image
             className="object-contain rounded-full"
             src={imageSource}
@@ -147,27 +147,12 @@ export default function OurCustomersGroups() {
         }
       `}</style>
 
-      <div className="container !overflow-visible py-12 md:py-20">
-        {/* Grid Section */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-8 md:gap-10 items-center justify-items-center mb-16 !overflow-visible">
+      <div className="container !overflow-visible ">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-8 md:gap-10 items-center justify-items-center !overflow-visible">
           {loading
             ? Array.from({ length: 18 }).map((_, i) => <SkeletonCard key={i} />)
             : gridItems.map((item, index) => renderLogoItem(item, index))}
         </div>
-
-        {/* Marquee Section */}
-        {!loading && marqueeItems.length > 0 && (
-          <div className="marquee-viewport !overflow-visible">
-            <div className="animate-marquee !overflow-visible">
-              {marqueeItems.map((item, index) =>
-                renderLogoItem(item, index, true),
-              )}
-              {marqueeItems.map((item, index) =>
-                renderLogoItem(item, index, true),
-              )}
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

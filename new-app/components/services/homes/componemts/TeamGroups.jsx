@@ -6,19 +6,6 @@ export default function TeamGroups({ Teamsdata }) {
   return (
     <>
       <div className="!relative">
-        {/* Background Shapes */}
-        {/* <div
-          className="shape !rounded-[50%] !bg-[#fff8ee] rellax !w-[10rem] !h-[10rem] absolute z-[0]"
-          data-rellax-speed={1}
-          style={{ bottom: "-2rem", right: "-1.7rem" }}
-        />
-        <div
-          className="shape !rounded-[50%] bg-line red rellax !w-[8rem] !h-[8rem] absolute z-[0] opacity-50"
-          data-rellax-speed={1}
-          style={{ top: "-1rem", left: "-2rem" }}
-        /> */}
-
-        {/* 1. ลด gap-6 เหลือ gap-3 เพื่อให้การ์ดชิดกันมากขึ้น */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 relative z-[2] items-stretch">
           {Teamsdata.map((data) => (
             <div
@@ -28,7 +15,7 @@ export default function TeamGroups({ Teamsdata }) {
               key={data.id}
             >
               <div className="item-inner flex-1 flex flex-col group">
-                <div className="card h-full min-h-72 flex flex-col !bg-white/80 !backdrop-blur-sm !border !border-white/40 !shadow-[0_4px_20px_0_rgba(31,38,135,0.05)] !rounded-[1.2rem] transition-all duration-300 hover:translate-y-[-5px]">
+                <div className="card h-full min-h-72 flex flex-col !bg-white/80 !backdrop-blur-sm !border !border-[#a4aec633] !shadow-[0_4px_20px_0_rgba(31,38,135,0.05)] !rounded-xl transition-all duration-300 hover:translate-y-[-5px]">
                   {/* 2. ปรับ Padding ภายในให้กระชับ (p-6) */}
                   <div className="card-body p-10 flex-1 flex flex-col items-center text-center">
                     {/* Image Section - ลด margin bottom นิดหน่อย */}

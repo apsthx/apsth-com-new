@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { useTranslation } from "@/app/i18n";
 
 export default async function Certification({ lng }) {
@@ -10,13 +9,13 @@ export default async function Certification({ lng }) {
       <div
         data-cues="slideInDown"
         data-delay={300}
-        className="container pt-20 xl:pt-60 lg:pt-28 md:pt-28 pb-16 xl:pb-0 lg:pb-0 md:pb-5"
+        className="container pt-20 xl:pt-40 lg:pt-40 md:pt-40 pb-0 xl:pb-0 lg:pb-0 md:pb-5"
       >
         {/* แก้ไขจุดนี้: เปลี่ยนจาก bg-image/bg-overlay เป็น bg-gradient */}
         <div
           className="card !text-white !mt-[-1.25rem] xl:!mt-0 lg:!mt-0 xl:-translate-y-2/4 lg:-translate-y-2/4 !mb-lg-n50p !relative z-0 !rounded-[1.5rem] overflow-hidden shadow-2xl 
-  bg-gradient-to-t from-[#009c82] via-[#00b899] to-[#00ce9b]
-  before:content-[''] before:absolute before:inset-0 before:bg-white/10 before:z-[1]"
+          bg-gradient-to-t from-[#009c82] via-[#00b899] to-[#00ce9b]
+          before:content-[''] before:absolute before:inset-0 before:bg-white/10 before:z-[1]"
         >
           {/* แสง Glow ปรับโทนให้เข้ากับเขียวอมฟ้า */}
           <div className="absolute top-[-20%] right-[-10%] w-64 h-64 bg-white/20 rounded-full blur-3xl pointer-events-none"></div>

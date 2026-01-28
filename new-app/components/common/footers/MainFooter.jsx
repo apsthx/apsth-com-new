@@ -1,4 +1,3 @@
-import { footerLinks, footerLinks2 } from "@/data/footerLinks";
 import { socialLinks } from "@/data/socials";
 import Link from "next/link";
 import React from "react";
@@ -88,7 +87,7 @@ export default async function MainFooter({ lng }) {
                   <li>
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/clinic`}
                     >
                       {t("footer:services.clinic_software", "โปรแกรม คลินิก")}
                     </a>
@@ -96,7 +95,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/hospital`}
                     >
                       {t(
                         "footer:services.hospital_software",
@@ -107,7 +106,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/wellness`}
                     >
                       {t(
                         "footer:services.wellness_software",
@@ -118,7 +117,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/wellness`}
                     >
                       {t(
                         "footer:services.elderly_care_center_software",
@@ -129,7 +128,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/spa`}
                     >
                       {t(
                         "footer:services.spa_Beauty_software",
@@ -151,7 +150,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/customer`}
                     >
                       {t("footer:accounts.our_customer", "ลูกค้าของเรา")}
                     </a>
@@ -159,18 +158,15 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/calendar`}
                     >
-                      {t(
-                        "footer:accounts.system_demo",
-                        "ลูกDemo ระบบค้าของเรา",
-                      )}
+                      {t("footer:accounts.system_demo", "Demo ระบบค้าของเรา")}
                     </a>
                   </li>
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href="https://www.app-apsx.com/login"
                     >
                       {t("footer:accounts.login", "Login")}
                     </a>
@@ -178,7 +174,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/term-of-use`}
                     >
                       {t(
                         "footer:accounts.teams_of_service",
@@ -189,7 +185,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/privacy-policy`}
                     >
                       {t("footer:accounts.privacy_policy", "Privacy Policy")}
                     </a>
@@ -208,7 +204,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/docs`}
                     >
                       {t("footer:support.docs", "Docs")}
                     </a>
@@ -216,7 +212,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`https://page.line.me/gbc9405c`}
                     >
                       {t("footer:support.help_center", "Help Center")}
                     </a>
@@ -224,7 +220,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/update`}
                     >
                       {t("footer:support.changelog", "Changelog")}
                     </a>
@@ -232,7 +228,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/contact`}
                     >
                       {t("footer:support.connect", "ติดต่อเรา")}
                     </a>
@@ -240,7 +236,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`https://www.youtube.com/@apsthcom`}
                     >
                       {t("footer:support.vdo_tutorial", "VDO Tutorialcs")}
                     </a>
@@ -248,7 +244,7 @@ export default async function MainFooter({ lng }) {
                   <li className="mt-2">
                     <a
                       className="!text-[#343f52] hover:!text-[#00B7B8]"
-                      href="#"
+                      href={`/${lng}/sitemap`}
                     >
                       {t("footer:support.site_map", "Site Map")}
                     </a>

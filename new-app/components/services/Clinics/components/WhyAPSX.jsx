@@ -30,7 +30,7 @@ export default async function WhyAPSX({ lng }) {
             className="container mx-auto text-center mb-12"
           >
             {/* ส่วนหัวเล็ก - ใช้ Badge หรือ Text Uppercase */}
-            <h2 className="!text-[0.75rem] uppercase !text-[#3f78e0] font-bold !mb-4 !tracking-[0.1rem] bg-blue-50 inline-block px-3 py-1 rounded-md">
+            <h2 className="!text-[0.75rem] uppercase !text-[#9499a3] !font-medium !mb-4 !tracking-[0.1rem] bg-blue-50 inline-block px-3 py-1 rounded-md">
               {t(
                 "home:why_apsx.why_apsx.solution",
                 "ครอบคลุมทุกความต้องการของสถานพยาบาลยุคดิจิทัล",
@@ -71,8 +71,8 @@ export default async function WhyAPSX({ lng }) {
               ),
               /* ไอคอน uil-focus สื่อถึงความง่ายที่รวมจุดสนใจไว้ที่เดียว หรือ uil-user-check */
               icon: "uil-focus",
-              bgColor: "bg-[#fff9db]",
-              iconColor: "text-[#fab005]",
+              bgColor: "bg-[#edf9f6]",
+              iconColor: "text-[#45c4a0]",
             },
             {
               title: t(
@@ -85,8 +85,8 @@ export default async function WhyAPSX({ lng }) {
               ),
               /* uil-cloud-share สื่อถึงการเข้าถึงข้อมูลได้จากทุกที่ (Anywhere Access) */
               icon: "uil-cloud-share",
-              bgColor: "bg-[#e7f5ff]",
-              iconColor: "text-[#228be6]",
+              bgColor: "bg-[#edf9f6]",
+              iconColor: "text-[#45c4a0]",
             },
             {
               title: t(
@@ -98,8 +98,8 @@ export default async function WhyAPSX({ lng }) {
                 "อัปเดตฟังก์ชันใหม่อัตโนมัติ ไม่มีค่าใช้จ่ายเพิ่ม",
               ),
               icon: "uil-sync", // สัญลักษณ์การอัปเดต/หมุนเวียนข้อมูล
-              bgColor: "bg-[#f3f0ff]",
-              iconColor: "text-[#7950f2]",
+              bgColor: "bg-[#edf9f6]",
+              iconColor: "text-[#45c4a0]",
             },
             {
               title: t(
@@ -111,8 +111,8 @@ export default async function WhyAPSX({ lng }) {
                 "สอนการใช้งานฟรี พร้อมให้คำปรึกษา",
               ),
               icon: "uil-presentation-play", // สัญลักษณ์การสอน/พรีเซนต์งาน
-              bgColor: "bg-[#e3fafc]",
-              iconColor: "text-[#15aabf]",
+              bgColor: "bg-[#edf9f6]",
+              iconColor: "text-[#45c4a0]",
             },
           ].map((item, index) => (
             <div
@@ -120,10 +120,10 @@ export default async function WhyAPSX({ lng }) {
               data-delay={index * 50}
               key={index}
               /* xl: 5 คอลัมน์ (w-1/5)
-     lg/md: 3 คอลัมน์ (w-4/12)
-     sm: 2 คอลัมน์ (sm:w-6/12) -> ถ้าอยากให้จอเล็กกลางๆ เห็น 2
-     default: 1 คอลัมน์ (w-full) -> จอมือถือปกติเห็น 1 เต็มๆ
-  */
+              lg/md: 3 คอลัมน์ (w-4/12)
+              sm: 2 คอลัมน์ (sm:w-6/12) -> ถ้าอยากให้จอเล็กกลางๆ เห็น 2
+              default: 1 คอลัมน์ (w-full) -> จอมือถือปกติเห็น 1 เต็มๆ
+            */
               className="xl:w-1/5 lg:w-4/12 md:w-4/12 sm:w-6/12 w-full flex-[0_0_auto] px-[15px] max-w-full mt-[30px]"
             >
               <div className="card !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !h-full border-0 !rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white overflow-hidden group">
@@ -189,7 +189,7 @@ export default async function WhyAPSX({ lng }) {
             </div>
           ))}
         </div>
-        <div className="mt-10  mx-auto">
+        <div className="!mt-10  mx-auto">
           {/* หัวข้อส่วนฟังก์ชัน */}
           <div
             data-cues="slideInDown"
@@ -319,7 +319,7 @@ export default async function WhyAPSX({ lng }) {
           <div
             data-cues="slideInDown"
             data-delay={300}
-            className="flex flex-wrap mx-[-15px] justify-center mt-10"
+            className="flex flex-wrap mx-[-15px] justify-center !mt-10"
           >
             <div className="w-full px-[15px]">
               <div className="relative w-full overflow-hidden rounded-xl shadow-lg aspect-video">
@@ -334,7 +334,7 @@ export default async function WhyAPSX({ lng }) {
             </div>
           </div>
         </div>
-        <div className="container mt-12">
+        <div className="container !mt-12">
           <div
             data-cues="slideInDown"
             data-delay={300}

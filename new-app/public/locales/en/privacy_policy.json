@@ -1,0 +1,110 @@
+{
+  "privacy_policy": {
+    "title": "Customer Privacy Policy",
+    "description": "APS TH Co., Ltd. places great importance on protecting your personal data. This Privacy Policy explains our practices regarding the collection, use, and disclosure of personal data, as well as the rights of data subjects under applicable data protection laws.",
+    "last_updated": "TLast updated on May 25, 2022",
+    "items": {
+      "section1": {
+        "title": "1. Collection of Personal Data",
+        "list1": "1.1 We collect personal data provided directly by you through channels such as registration, telephone, email, and LINE Login.",
+        "list2": "1.2 We may also collect personal data about you from other sources, such as search engines, social media, government agencies, and other third parties."
+      },
+      "section2": {
+        "title": "2. Types of Personal Data Collected",
+        "list1": "2.1 Personal data such as name, surname, age, date of birth, nationality, identification number, passport, etc.",
+        "list2": "2.2 Contact information such as address, telephone number, email, etc.",
+        "list3": "2.3 Account details such as user account information and usage history.",
+        "list4": "2.4 Identification documents such as copies of ID cards or passports.",
+        "list5": "2.5 Transaction and financial data, including order history, credit card details, bank account information, etc.",
+        "list6": "2.6 Technical data such as IP address, Cookie ID, and website activity logs.",
+        "list7": "2.7 Other information, including images, videos, or any other data considered personal under applicable laws.",
+        "list8": "2.8 Sensitive personal data (e.g., race, religion, health, disability, sexual behavior, genetic data) will only be collected, used, or disclosed with your explicit consent unless required by law.",
+        "list9": "2.9 Biometric data such as facial recognition data, iris recognition data, and fingerprint data.",
+        "list10": "2.10 Any other information that may affect your personal data as declared by the Personal Data Protection Committee."
+      },
+      "section3": {
+        "title": "3. Minors",
+        "list1": "If you are under 20 years old or legally incapacitated, we may collect, use, or disclose your personal data. Parental or guardian consent may be required. Should we discover that personal data has been collected from a minor without such consent, we will delete the data from our servers."
+      },
+      "section4": {
+        "title": "4. Data Storage Methods",
+        "list1": "We store your personal data in both physical and electronic formats, including on servers located abroad and in Thailand."
+      },
+      "section5": {
+        "title": "5. Processing of Personal Data",
+        "list1": "5.1 We process your personal data for the following purposes:",
+        "list2": "5.2 To create and manage user accounts.",
+        "list3": "5.3 To deliver products or services.",
+        "list4": "5.4 To improve products, services, or user experience.",
+        "list5": "5.5 For internal administration.",
+        "list6": "5.6 For marketing and promotional purposes.",
+        "list7": "5.7 For post-sale services.",
+        "list8": "5.8 To collect feedback.",
+        "list9": "5.9 To settle payments for products or services.",
+        "list10": "5.10 To comply with our Terms of Service.",
+        "list11": "5.11 To abide by applicable laws and governmental regulations."
+      },
+      "section6": {
+        "title": "6. Retention Period of Personal Data",
+        "list1": "We will retain your personal data for as long as you remain our customer or as long as required to fulfill the purposes of this policy. After which, and if legally required, your data will be deleted, destroyed, or anonymized."
+      },
+      "section7": {
+        "title": "7. Rights of Data Subjects",
+        "list1": "7.1 Under applicable personal data protection laws, you have the following rights:",
+        "list2": "7.2 Right to withdraw consent: You may withdraw your consent at any time regarding the collection, use, or disclosure of your personal data.",
+        "list3": "7.3 Right to access: You have the right to access and request a copy of your personal data held by us, along with details on how it was obtained.",
+        "list4": "7.4 Right to data portability: You can request your personal data in a machine-readable format and, if possible, have it transferred to another data controller.",
+        "list5": "7.5 Right to object: You have the right to object to the processing of your personal data if the processing is not compatible with your expectations or is based on legitimate interests.",
+        "list6": "7.6 Right to erasure/destruction: You may request the deletion or destruction, or anonymization of your personal data if it is unlawfully processed or no longer necessary.",
+        "list7": "7.7 Right to restriction of processing: You can request a temporary suspension of processing while your request for data correction or objection is under review.",
+        "list8": "7.8 Right to rectification: You have the right to request that your personal data be corrected to ensure its accuracy and completeness.",
+        "list9": "7.9 Right to lodge a complaint: You may lodge a complaint with a relevant supervisory authority if you believe your personal data is mishandled.",
+        "list10": "7.10 For individuals in the European Economic Area (EEA), you also have the right to submit a complaint to your local data protection authority.",
+        "list11": "7.11 To exercise these rights, please contact our Data Protection Officer (DPO) using the details provided below. We will respond within 30 days of receiving your request."
+      },
+      "section8": {
+        "title": "8. California Consumer Privacy Act (CCPA)",
+        "list1": "Our practices regarding the processing of personal data in accordance with the California Consumer Privacy Act (CCPA) of 2018 are detailed in the CCPA Privacy Policy."
+      },
+      "section9": {
+        "title": "9. Tracking Technologies (Cookies)",
+        "list1": "9.1 To enhance your experience with our products or services, we utilize data analytics and marketing tools such as Google, Facebook, and pixel tracking codes.",
+        "list2": "9.2 Our website may display third-party advertisements (via Google AdSense, BuySellAds, etc.), whose providers may access your personal data solely for servicing the ads and are bound to confidentiality.",
+        "list3": "9.3 We do not use fully automated decision-making or profiling that significantly affects you without human oversight.",
+        "list4": "9.4 We may send newsletters or promotional emails. To stop receiving such communications, you may unsubscribe via the provided link or contact us directly."
+      },
+      "section10": {
+        "title": "10. Cookies for Enhanced User Experience",
+        "list1": "For an improved browsing experience, we use cookies or similar technologies to facilitate access to our products or services, deliver relevant advertisements, and track your site usage. If you prefer not to accept cookies, please configure your browser accordingly."
+      },
+      "section11": {
+        "title": "11. Data Security",
+        "list1": "We are committed to maintaining the confidentiality, integrity, and availability of your personal data, employing administrative, technical, and physical safeguards to protect against unauthorized access, alteration, and disclosure."
+      },
+      "section12": {
+        "title": "12. Notification of Data Breaches",
+        "list1": "In the event of a data breach concerning your personal data, we will notify the data protection authority within 72 hours of becoming aware of the breach. If the breach poses a high risk to your rights, we will also notify you promptly via appropriate channels such as our website, SMS, email, telephone, or mail."
+      },
+      "section13": {
+        "title": "13. Changes to the Privacy Policy",
+        "list1": "We may update this policy periodically. The current version, along with any updates, will be posted on our website."
+      },
+      "section14": {
+        "title": "14. Privacy Policies of Other Websites",
+        "list1": "This Privacy Policy applies exclusively to the products, services, and websites provided by us. For websites linked from our site, please refer to their own privacy policies, as we are not responsible for their data practices."
+      },
+      "contact": {
+        "title": "Contact Information",
+        "description": "If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us as follows:",
+        "controller_label": "Data Controller",
+        "company": "APS TH Co., Ltd.",
+        "address": "I-CONNECT, 888/8 Moo 13, Ban Ped, Mueang Khon Kaen, Khon Kaen 40000",
+        "email": "apsth456@gmail.com",
+        "website": "www.apsth.com",
+        "tel": "0981816769",
+        "dpo_label": "Data Protection Officer (DPO)",
+        "dpo_name": "Prasan Srisopa"
+      }
+    }
+  }
+}
