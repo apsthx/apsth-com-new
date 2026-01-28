@@ -1,35 +1,35 @@
-{ 
-   "services": {
+{
+  "services": {
     "clinic_software": "โปรแกรม คลินิก",
-    "hospital_software":"โปรแกรม โรงพยาบาล",
-    "wellness_software":"โปรแกรม Wellness",
-    "elderly_care_center_software":"โปรแกรม ศูนย์ดูแลผู้สูงอายุ",
-    "spa_Beauty_software":"โปรแกรม Spa/Beauty" 
+    "hospital_software": "โปรแกรม โรงพยาบาล",
+    "wellness_software": "โปรแกรม Wellness",
+    "elderly_care_center_software": "โปรแกรม ศูนย์ดูแลผู้สูงอายุ",
+    "spa_Beauty_software": "โปรแกรม Spa/Beauty"
   },
   "customers": {
     "our_customers": "ลูกค้าของเรา",
-    "partner":"Partner",
-    "sub_customers":{
-      "sub_our_customers":"ลูกค้าที่ใช้งานกับเรา",
-      "sub_partner":"Partner ที่ใช้งานกับเรา"
+    "partner": "Partner",
+    "sub_customers": {
+      "sub_our_customers": "ลูกค้าที่ใช้งานกับเรา",
+      "sub_partner": "Partner ที่ใช้งานกับเรา"
     }
-  }, 
+  },
   "document": {
-    "api_integration":  "API Integration",
-    "documentation":"Documentation",
-    "changelog":"Changelog",
-    "sub_document":{
-      "sub_api_integration":"คู่มือการใช้งาน API",
-      "sub_documentation":"คู่มือการใช้งาน", 
-      "sub_changelog":"log การอัพเดต"
+    "api_integration": "API Integration",
+    "documentation": "Documentation",
+    "changelog": "Changelog",
+    "sub_document": {
+      "sub_api_integration": "คู่มือการใช้งาน API",
+      "sub_documentation": "คู่มือการใช้งาน",
+      "sub_changelog": "log การอัพเดต"
     }
   },
   "our_services": "บริการของเรา",
   "our_customers": "ลูกค้าของเรา",
-  "priicing":"ราคา",
-  "docs":"เอกสาร",
-  "contact_us":"ติดต่อเรา",
-  "login":"เข้าสู่ระบบ",
-  "free_trial":"สมัครใช้งาน",
-  "free":"ฟรี"
+  "priicing": "ราคา",
+  "docs": "เอกสาร",
+  "contact_us": "ติดต่อเรา",
+  "login": "เข้าสู่ระบบ",
+  "free_trial": "สมัครใช้งาน",
+  "free": "ฟรี"
 }

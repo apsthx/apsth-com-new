@@ -25,7 +25,7 @@ export default async function SpaPage({ params }) {
         <div>
           <div className="grow shrink-0">
             <section className="wrapper overflow-hidden">
-              <div className="mt-10" />
+              <div className="mt-6" />
               <Hero lng={lng} />
               <PlatformHighlights lng={lng} />
               <WhyAPSX lng={lng} />

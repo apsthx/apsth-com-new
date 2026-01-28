@@ -8,9 +8,25 @@ import { useTranslation } from "@/app/i18n";
 export default async function Hero({ lng }) {
   const { t } = await useTranslation(lng);
   return (
-    <div className="pt-28 xl:pt-[4rem] lg:pt-[1rem] md:pt-[1rem] !text-center !relative !font-medium  !text-[#464c58] !tracking-wide ">
+    <div className="pt-28 xl:pt-[4rem] lg:pt-[1rem] md:pt-[1rem] !text-center !relative !font-medium !text-[#464c58] !tracking-wide overflow-hidden">
+      {/* --- Grid Background Layer --- */}
       <div
-        className="absolute"
+        className="absolute inset-0 z-0 opacity-[0.2]"
+        style={{
+          backgroundImage: `
+        linear-gradient(to right, #00B7B8 2px, transparent 1px),
+        linear-gradient(to bottom, #00B7B8 2px, transparent 1px)
+      `,
+          backgroundSize: "80px 80px", // ปรับขนาดช่องตารางที่นี่
+          maskImage:
+            "radial-gradient(ellipse at center, black, transparent 80%)", // ทำให้ขอบจางลง
+          WebkitMaskImage:
+            "radial-gradient(ellipse at center, black, transparent 80%)",
+        }}
+      />
+      {/* --- Blurry Background Image --- */}
+      {/* <div
+        className="absolute z-10 opacity-90"
         style={{
           top: "-15%",
           left: "50%",
@@ -25,7 +41,7 @@ export default async function Hero({ lng }) {
           width={1400}
           height={1080}
         />
-      </div>
+      </div> */}
       <div className="flex flex-wrap mx-[-15px] !relative px-4 lg:px-0">
         <section id="snippet-1" className="wrapper !bg-transparent  w-screen">
           <div className="container mt-0 sm:pt-0 xl:pt-20 lg:pt-20 md:pt-20 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
@@ -178,10 +194,10 @@ export default async function Hero({ lng }) {
                 <div className="flex flex-wrap mx-[-15px] xl:mx-[-25px] mt-[-20px]">
                   <div className="w-full flex flex-col gap-3 xl:!px-[25px] !px-[10px] !mt-[20px]">
                     {/* รายการที่ 1: Free Training */}
-                    <div className=" !bg-white card shadow-[0_2px_10px_rgba(0,0,0,0.04)] border-0 !rounded-[0.6rem] transition-all hover:shadow-md">
+                    {/* รายการที่ 1: Free Training */}
+                    <div className="!bg-white/60 backdrop-blur-md card shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-white/40 !rounded-[0.8rem] transition-all hover:shadow-lg hover:-translate-y-1">
                       <div className="!font-Kanit card-body !py-2.5 !px-3 flex flex-row items-center gap-3">
-                        {/* ไอคอนเล็กลงจาก w-12 เป็น w-10 */}
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#45c4a015] flex items-center justify-center">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#45c4a020] flex items-center justify-center border border-[#45c4a030]">
                           <i
                             className="uil uil-presentation-check text-[1.3rem]"
                             style={{ color: "#45c4a0" }}
@@ -189,13 +205,13 @@ export default async function Hero({ lng }) {
                         </div>
 
                         <div className="flex flex-col text-start">
-                          <p className="!mb-0 text-[0.95rem] font-medium text-[#343f52] leading-tight">
+                          <p className="!mb-0 text-[0.95rem] font-bold text-[#343f52] leading-tight">
                             {t(
                               "home:hero.free_essentials.free_training",
                               "สอนการใช้งานฟรี",
                             )}
                           </p>
-                          <p className="!mb-0 text-[0.75rem] text-[#60697b] leading-tight">
+                          <p className="!mb-0 text-[0.75rem] text-[#60697b] leading-tight opacity-80">
                             {t(
                               "home:hero.free_essentials.sub_free_training",
                               "สอนใช้งานฟรีจนกว่าจะเป็น โดยทีมผู้เชี่ยวชาญ",
@@ -206,10 +222,9 @@ export default async function Hero({ lng }) {
                     </div>
 
                     {/* รายการที่ 2: Free Updates */}
-                    <div className="!bg-white  card shadow-[0_2px_10px_rgba(0,0,0,0.04)] border-0 !rounded-[0.6rem] transition-all hover:shadow-md">
+                    <div className="!bg-white/60 backdrop-blur-md card shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-white/40 !rounded-[0.8rem] transition-all hover:shadow-lg hover:-translate-y-1">
                       <div className="!font-Kanit card-body !py-2.5 !px-3 flex flex-row items-center gap-3">
-                        {/* ไอคอนเล็กลงจาก w-12 เป็น w-10 */}
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#54a8c715] flex items-center justify-center">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#54a8c720] flex items-center justify-center border border-[#54a8c730]">
                           <i
                             className="uil uil-sync text-[1.3rem]"
                             style={{ color: "#54a8c7" }}
@@ -217,13 +232,13 @@ export default async function Hero({ lng }) {
                         </div>
 
                         <div className="flex flex-col text-start">
-                          <p className="!mb-0 text-[0.95rem] font-medium text-[#343f52] leading-tight">
+                          <p className="!mb-0 text-[0.95rem] font-bold text-[#343f52] leading-tight">
                             {t(
                               "home:hero.free_essentials.free_updates",
                               "อัพเดทเวอร์ชั่นฟรี",
                             )}
                           </p>
-                          <p className="!mb-0 text-[0.75rem] text-[#60697b] leading-tight">
+                          <p className="!mb-0 text-[0.75rem] text-[#60697b] leading-tight opacity-80">
                             {t(
                               "home:hero.free_essentials.sub_free_updates",
                               "อัปเดตฟีเจอร์ใหม่และระบบความปลอดภัยฟรี",

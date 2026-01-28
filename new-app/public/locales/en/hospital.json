@@ -1,6 +1,8 @@
 {
   "hero": {
-    "title": "Hospital System",
+    "title_part1": "Hospital Management System",
+    "title_part2": "Smart & Intelligent",
+    "title_part3": "Simple Management, All-in-One Solution",
     "description": "Supports clinic and hospital management with a comprehensive management system that helps you work efficiently. Compatible with various types, sizes, and branches."
   }
 }

@@ -352,7 +352,7 @@ export default async function Features({ lng }) {
             {[
               {
                 id: "blog1",
-                link: "/clinic",
+                link: `/${lng}/clinic`,
                 title: t(
                   "home:features.services.blog1.title",
                   "คลินิก / โรงพยาบาล",
@@ -365,7 +365,7 @@ export default async function Features({ lng }) {
               },
               {
                 id: "blog2",
-                link: "/wellness",
+                link: `/${lng}/wellness`,
                 title: t(
                   "home:features.services.blog2.title",
                   "Wellness / ศูนย์ดูแลผู้สูงอายุ",
@@ -378,7 +378,7 @@ export default async function Features({ lng }) {
               },
               {
                 id: "blog3",
-                link: "/spa",
+                link: `/${lng}/spa`,
                 title: t("home:features.services.blog3.title", "Spa / Beauty"),
                 description: t(
                   "home:features.services.blog3.description",

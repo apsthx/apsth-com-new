@@ -5,29 +5,54 @@ export default async function Hero({ lng }) {
   const { t } = await useTranslation(lng);
 
   return (
-    <section id="snippet-2" className="wrapper !bg-[#ffffff]  ">
-      <div className="container pt-28 xl:pt-[5rem] lg:pt-[5rem] md:pt-[5rem]">
+    <section id="snippet-2" className="wrapper !bg-[#ffffff] overflow-hidden">
+      <div className="container pt-20 pb-10 xl:pt-28 lg:pt-28 md:pt-24 !text-center !relative !font-medium !text-[#464c58] !tracking-wide overflow-hidden">
+        {/* --- Grid Background Layer --- */}
+        <div
+          className="absolute inset-0 z-0 opacity-[0.1]"
+          style={{
+            backgroundImage: `
+                linear-gradient(to right, #00B7B8 2px, transparent 1px),
+                linear-gradient(to bottom, #00B7B8 2px, transparent 1px)
+              `,
+            backgroundSize: "80px 80px", // ปรับขนาดช่องตารางที่นี่
+            maskImage:
+              "radial-gradient(ellipse at center, black, transparent 80%)", // ทำให้ขอบจางลง
+            WebkitMaskImage:
+              "radial-gradient(ellipse at center, black, transparent 80%)",
+          }}
+        />
         <div
           data-cues="slideInDown"
           data-delay={300}
-          className="w-full flex-[0_0_auto] !px-[15px] max-w-full !text-center"
+          className="w-full max-w-[900px] mx-auto !px-[15px] !text-center"
         >
-          {/* 1. Headline: Monochrome Style - สีเดียวแต่เล่นระดับความหนา (Weight) */}
-          <h2 className="!text-[calc(1.4rem_+_1.5vw)] font-black !leading-[1.2] xl:!text-[2rem] !mb-4 text-[#343f52] tracking-tighter">
+          {/* 2. Headline: เน้นความหนักแน่นของคำว่า 'ลูกค้าของเรา' */}
+          <h2 className="text-[2.2rem] md:text-[2.6rem] xl:text-[3rem] font-black !leading-[1.1] !mb-2 text-[#343f52] tracking-tighter">
             {t("home:our_customers.title", "ลูกค้าของเรา")}
           </h2>
 
-          {/* 2. Description: คุมโทนสีเทาเข้ม-จาง แบบเดียวกันทั้งหมด */}
-          <div className="max-w-[850px] mx-auto">
-            <p className="mt-0 text-[1rem] xl:text-[1.1rem] text-[#343f52] opacity-70">
-              <strong className="font-bold text-[#00B7B8] ">
+          {/* 3. Description: เล่นระดับสีให้ APSX Platform โดดเด่น และใช้ฟอนต์อ่านง่าย */}
+          <div className="max-w-[800px] mx-auto">
+            <p className="text-[1.05rem] xl:text-[1.2rem] text-[#60697b] leading-relaxed font-light">
+              <span className="font-extrabold text-[#00B7B8] bg-[#00B7B8]/5 px-2 py-0.5 rounded-md">
                 APSX Platform
-              </strong>{" "}
+              </span>{" "}
               {t(
                 "home:our_customers.description",
-                "ลูกค้าของเรามีมากกว่า 1,000 สาขา ทุกประเภทธุรกิจ คลินิก สปา ศูนย์สุขภาพ โรงพยาบาล ธุรกิจความงาม ศูนย์ดูแลผู้สูงอายุ และอื่นๆ ที่ไว้วางใจใช้บริการกับเรา",
+                "ภูมิใจที่ได้เป็นเบื้องหลังความสำเร็จของลูกค้ามากกว่า 1,000 สาขา ครอบคลุมทุกประเภทธุรกิจสุขภาพและความงามทั่วประเทศ",
               )}
             </p>
+          </div>
+        </div>
+        <div
+          data-cues="slideInDown"
+          data-delay={300}
+          className="text-center bg-[#f0f8fe]/30 py-2 rounded-xl"
+        >
+          <div className="text-2xl font-bold text-[#e2626b]">1,000+</div>
+          <div className="text-[0.65rem] uppercase tracking-widest font-black">
+            Branches
           </div>
         </div>
       </div>

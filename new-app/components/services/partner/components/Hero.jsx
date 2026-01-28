@@ -5,29 +5,59 @@ export default async function Hero({ lng }) {
   const { t } = await useTranslation(lng);
 
   return (
-    <section id="snippet-2" className="wrapper !bg-[#ffffff]  ">
-      <div className="container pt-28 xl:pt-[5rem] lg:pt-[5rem] md:pt-[5rem]">
+    <section id="snippet-2" className="wrapper !bg-[#ffffff] overflow-hidden">
+      <div className="container pt-20 pb-10 xl:pt-28 lg:pt-28 md:pt-24 !text-center !relative !font-medium !text-[#464c58] !tracking-wide overflow-hidden">
+        {/* --- Grid Background Layer --- */}
+        <div
+          className="absolute inset-0 z-0 opacity-[0.1]"
+          style={{
+            backgroundImage: `
+                linear-gradient(to right, #00B7B8 2px, transparent 1px),
+                linear-gradient(to bottom, #00B7B8 2px, transparent 1px)
+              `,
+            backgroundSize: "80px 80px", // ปรับขนาดช่องตารางที่นี่
+            maskImage:
+              "radial-gradient(ellipse at center, black, transparent 80%)", // ทำให้ขอบจางลง
+            WebkitMaskImage:
+              "radial-gradient(ellipse at center, black, transparent 80%)",
+          }}
+        />
         <div
           data-cues="slideInDown"
           data-delay={300}
-          className="w-full flex-[0_0_auto] !px-[15px] max-w-full !text-center"
+          className="w-full max-w-[900px] mx-auto !text-center !px-[15px]"
         >
-          {/* 1. Headline: Monochrome Style - สีเดียวแต่เล่นระดับความหนา (Weight) */}
-          <h2 className="!text-[calc(1.4rem_+_1.5vw)] font-black !leading-[1.2] xl:!text-[2rem] !mb-4 text-[#343f52] tracking-tighter">
+          {/* 1. Badge เล็กๆ ด้านบนเพิ่มความเก๋ */}
+          <div className="inline-block px-4 py-1.5 mb-6 text-[0.75rem] font-bold tracking-widest text-[#00B7B8] uppercase bg-[#00B7B8]/10 rounded-full">
+            Our Ecosystem
+          </div>
+
+          {/* 2. Headline: เน้นคำสำคัญด้วยสี Branding */}
+          <h2 className="text-[2rem] md:text-[2.5rem] xl:text-[3rem] font-black !leading-[1.15] !mb-6 text-[#343f52] tracking-tight">
             {t(
-              "partner:hero.title",
-              "เรารวบรวมเครื่องมือที่คุณทำงานเข้าด้วยกันผ่าน Partner ของเรา",
-            )}
+              "partner:hero.title_start",
+              "เรารวบรวมเครื่องมือให้ทำงานเข้าด้วยกันผ่าน",
+            )}{" "}
+            <span className="text-[#00B7B8] relative">
+              Partner
+              <span className="absolute bottom-1 left-0 w-full h-[6px] bg-[#00B7B8]/20 -z-10"></span>
+            </span>{" "}
+            {t("partner:hero.title_end", "ของเรา")}
           </h2>
 
-          {/* 2. Description: คุมโทนสีเทาเข้ม-จาง แบบเดียวกันทั้งหมด */}
-          <div className="max-w-[850px] mx-auto">
-            <p className="mt-0 text-[1rem] xl:text-[1.1rem] text-[#343f52] opacity-70">
+          {/* 3. Description: ปรับ Line-height และ Opacity ให้นุ่มนวลขึ้น */}
+          <div className="max-w-[780px] mx-auto">
+            <p className="text-[1.05rem] xl:text-[1.15rem] text-[#60697b] leading-[1.8] font-light">
               {t(
                 "partner:hero.description",
-                "เพื่อทำให้เวิร์กโฟลว์ของคุณสมบูรณ์แบบ ผ่าน Partner ของเรา ที่จะช่วยให้คุณทำงานได้อย่างมีประสิทธิภาพ รองรับหลากหลายประเภทธุรกิจ อาทิเช่น Clinic Spa Wellness Hospital Beauty ศูนย์ดูแลผู้สูงอายุ",
+                "เพื่อทำให้เวิร์กโฟลว์ของคุณสมบูรณ์แบบ ผ่านพาร์ทเนอร์ที่จะช่วยให้คุณทำงานได้อย่างมีประสิทธิภาพ รองรับหลากหลายประเภทธุรกิจ อาทิเช่น Clinic, Spa, Wellness, Hospital และศูนย์ดูแลผู้สูงอายุ",
               )}
             </p>
+          </div>
+
+          {/* 4. ตกแต่งด้วยปุ่มหรือ Link ถ้าต้องการ (Optional) */}
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <div className="w-12 h-1 bg-[#00B7B8] rounded-full opacity-30"></div>
           </div>
         </div>
       </div>

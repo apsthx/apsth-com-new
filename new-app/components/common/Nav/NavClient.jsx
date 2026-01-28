@@ -239,25 +239,26 @@ export default function NavClient({ color, labels, badges, locale }) {
         </a>
       </li>
       <LanguageSwitcher />
-      <div className="flex gap-1  xl:hidden mx-[-20px] !mt-2">
+      <div className="flex lg:!hidden gap-2 !mt-4 items-center">
         <a
           target="_blank"
           href="https://www.app-apsx.com/login"
-          className="!font-medium  !text-[#464c58] !tracking-wide btn btn-xs !inline-flex items-center gap-1  !bg-[#e9e7e7] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn   focus:!shadow-none active:!shadow-none btn-xs "
+          className="!font-medium !text-[#464c58] !tracking-wide btn btn-xs !inline-flex items-center gap-1 !bg-[#0000000a] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-xl !py-2 !px-4 transition-all focus:!shadow-none active:!shadow-none"
         >
           <i className="uil uil-signin text-[0.9rem]" />
           <span className="font-medium">{labels.login}</span>
         </a>
+
         <a
           target="_blank"
           href="https://www.app-apsx.com/register"
-          className="!font-medium !text-[#ffffff] !tracking-wide !relative !inline-flex items-center gap-1 !bg-[#00B7B8] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn  focus:!shadow-none active:!shadow-none btn-xs "
+          className="!font-medium !text-[#ffffff] !tracking-wide !relative !inline-flex items-center gap-1 !bg-[#00B7B8] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-xl !py-2 !px-4 transition-all focus:!shadow-none active:!shadow-none"
         >
-          <span className="absolute -top-3 -right-3  ">
+          <span className="absolute -top-2.5 -right-2">
             <Badge
               color="red"
               variant="softText"
-              className="!text-[0.6rem] !px-1.5 !py-[1px] !leading-tight !shadow-sm !rounded-md"
+              className="!text-[10px] !px-1.5 !py-[2px] !leading-tight !shadow-sm !rounded-md"
             >
               {labels.free}
             </Badge>

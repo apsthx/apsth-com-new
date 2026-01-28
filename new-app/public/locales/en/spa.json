@@ -1,6 +1,8 @@
 {
   "hero": {
-    "title": "Spa/Beauty Program",
+    "title_part1": "Spa & Beauty Management Software",
+    "title_part2": "User-Friendly & Intuitive",
+    "title_part3": "Complete All-in-One Solution",
     "description": "Supports Spa/Beauty management along with a comprehensive management system that helps you work efficiently, accommodating all types, sizes, and branches."
   }
 }

@@ -1247,7 +1247,7 @@ textarea.form-control.is-invalid {
   outline: 0;
 }
 .offcanvas.offcanvas-start {
-  @apply w-[15rem] border-r-[0] border-r-[transparent] -translate-x-full border-solid left-0 top-0;
+  @apply w-[20rem] border-r-[0] border-r-[transparent] -translate-x-full border-solid left-0 top-0;
 }
 .offcanvas.offcanvas-end {
   @apply w-[15rem] border-l-[0] border-l-[transparent] translate-x-full border-solid right-0 top-0;

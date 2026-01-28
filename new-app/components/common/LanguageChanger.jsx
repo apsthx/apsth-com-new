@@ -13,13 +13,13 @@ export default function LanguageSelect({ color = "#5eb9f0" }) {
       code: "th",
       label: "TH",
       name: "ภาษาไทย",
-      flag: "https://flagcdn.com/w40/th.png",
+      flag: "/assets/national_flag/th.webp",
     },
     en: {
       code: "en",
       label: "EN",
       name: "English",
-      flag: "https://flagcdn.com/w40/gb.png",
+      flag: "/assets/national_flag/en.webp",
     },
   };
 
@@ -132,7 +132,7 @@ export default function LanguageSelect({ color = "#5eb9f0" }) {
                 <img
                   src={languageConfig[code].flag}
                   alt={code}
-                  className="w-5 h-3.5 rounded"
+                  className=" w-4 h-4 rounded"
                 />
                 <span className="text-sm !font-medium  !text-[#464c58] !tracking-wide">
                   {languageConfig[code].name}

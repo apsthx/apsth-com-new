@@ -24,7 +24,7 @@ export default async function MainHeader({ lng }) {
         style={{ zIndex: 1 }}
       >
         {/* แก้จุดนี้: เอา whitespace-nowrap ออกในมือถือ และใช้ flex-wrap แทนถ้าจำเป็น */}
-        <div className="!mb-0 py-2 flex items-center justify-center flex-wrap md:flex-nowrap">
+        <div className="  !mb-0 py-2 hidden lg:flex  items-center justify-center flex-wrap md:flex-nowrap">
           {/* ส่วนหัวข้อคงที่ */}
           <span className="flex-shrink-0  font-normal ">
             *{t("service_confidence.title", "ฟรี อัพเดทเวอร์ชั่น")}*
@@ -54,7 +54,7 @@ export default async function MainHeader({ lng }) {
       <nav
         className="navbar navbar-expand-lg center-nav sticky-top 
           !backdrop-blur-md 
-        !bg-white/50  
+        !bg-white/80  
           !border-b !border-[#f5f5f549] shadow shadow-[#b1b1b131] "
       >
         <div className="container xl:!flex-row lg:!flex-row !flex-nowrap items-center">
@@ -70,8 +70,8 @@ export default async function MainHeader({ lng }) {
               />
             </Link>
           </div>
-          <div className="navbar-collapse offcanvas offcanvas-nav offcanvas-start !bg-white">
-            <div className="offcanvas-header xl:!hidden lg:!hidden flex items-center justify-between flex-row p-6">
+          <div className="navbar-collapse offcanvas offcanvas-nav offcanvas-start !bg-white xl:!bg-transparent  ">
+            <div className="offcanvas-header xl:!hidden lg:!hidden flex items-center justify-between flex-row py-2 px-8">
               <div className="navbar-brand w-full">
                 <Link href={`/`}>
                   <Image
@@ -86,7 +86,7 @@ export default async function MainHeader({ lng }) {
               </div>
               <button
                 type="button"
-                className="btn-close btn-close-white !mr-[-0.75rem] m-0 p-0 leading-none !text-[#343f52] transition-all duration-[0.2s] ease-in-out border-0 motion-reduce:transition-none before:text-[1.05rem] before:text-white before:content-['\ed3b'] before:w-[1.8rem] before:h-[1.8rem] before:leading-[1.8rem] before:shadow-none before:transition-[background] before:duration-[0.2s] before:ease-in-out before:!flex before:justify-center before:items-center before:m-0 before:p-0 before:rounded-[100%] hover:no-underline bg-inherit before:bg-[rgba(255,255,255,.08)] before:font-Unicons hover:before:bg-[rgba(0,0,0,.11)]"
+                className="btn-close btn-close-white !mr-[-0.75rem] m-0 p-0 leading-none !text-[#000102] transition-all duration-[0.2s] ease-in-out border-0 motion-reduce:transition-none before:text-[1.05rem] before:text-[#000102] before:content-['\ed3b'] before:w-[1.8rem] before:h-[1.8rem] before:leading-[1.8rem] before:shadow-none before:transition-[background] before:duration-[0.2s] before:ease-in-out before:!flex before:justify-center before:items-center before:m-0 before:p-0 before:rounded-[100%] hover:no-underline bg-inherit before:!bg-[rgba(0,0,0,0.03)] before:font-Unicons hover:before:bg-[rgba(0,0,0,0.38)]"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               />
@@ -123,39 +123,87 @@ export default async function MainHeader({ lng }) {
           {/* /.navbar-collapse */}
           <div className="navbar-other w-full !flex !ml-auto ">
             <ul className="navbar-nav space-x-1 !flex-row !items-center !ml-auto ">
-              <li className="flex items-center justify-center navbar-collapse offcanvas offcanvas-nav offcanvas-start">
-                <a
-                  target="_blank"
-                  href="https://www.app-apsx.com/login"
-                  className="btn btn-xs !inline-flex items-center gap-1 !text-[#343f52] !bg-[#ffffff] hover:!bg-[#e6e6e6] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn focus:!shadow-none active:!shadow-none btn-xs"
-                >
-                  <i className="uil uil-signin text-[0.8rem]" />
-                  <span className="!font-medium  !text-[#464c58] !tracking-wide ">
-                    {labels.login}
-                  </span>
-                </a>
-              </li>
-              <li className="flex items-center justify-center navbar-collapse offcanvas offcanvas-nav offcanvas-start">
-                <a
-                  target="_blank"
-                  href="https://www.app-apsx.com/register"
-                  className="!relative !inline-flex items-center gap-1 !text-[#f5f5f6] !bg-[#00B7B8] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-xl !py-1 !px-3 transition-all btn  focus:!shadow-none active:!shadow-none btn-xs"
-                >
-                  <span className="absolute -top-3 -right-3">
-                    <Badge
-                      color="red"
-                      variant="softText"
-                      className="!text-[0.6rem] !px-1.5 !py-[1px] !leading-tight !shadow-sm !rounded-md"
-                    >
-                      {labels.free}
-                    </Badge>
-                  </span>
-                  <i className="uil uil-rocket text-[0.8rem]" />
-                  <span className="!font-medium  !text-[#ffffff] !tracking-wide ">
-                    {labels.free_trial}
-                  </span>
-                </a>
-              </li>
+              <>
+                {/* --- 1. ส่วนที่จะแสดงเฉพาะจอ lg (Dropdown เพื่อกันล้น) --- */}
+                <li className="nav-item dropdown hidden lg:block xl:hidden">
+                  <a
+                    className="nav-link dropdown-toggle !relative !inline-flex items-center gap-1 !bg-[#00B7B8] !text-white !rounded-xl !py-1.5 !px-3"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    <i className="uil uil-rocket" />
+                    <span className="!font-medium lg:!text-[0.75rem]">
+                      {labels.free_trial}
+                    </span>
+                    <span className="absolute -top-2 -right-2">
+                      <Badge
+                        color="red"
+                        variant="softText"
+                        className="!text-[10px] !px-1.5 !py-[1px !font-medium]"
+                      >
+                        {labels.free}
+                      </Badge>
+                    </span>
+                  </a>
+                  <ul className="dropdown-menu !right-0 !left-auto !border-none !shadow-xl !rounded-xl space-y-1">
+                    <li>
+                      <a
+                        className="dropdown-item flex items-center gap-2 !py-2 !bg-[#00000005] rounded-md"
+                        href="https://www.app-apsx.com/login"
+                        target="_blank"
+                      >
+                        <i className="uil uil-signin" />{" "}
+                        <span className="!font-medium">{labels.login}</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="dropdown-item flex items-center gap-2 !py-2 !text-[#00B7B8] !bg-[#00b8b821] rounded-md"
+                        href="https://www.app-apsx.com/register"
+                        target="_blank"
+                      >
+                        <i className="uil uil-rocket" />{" "}
+                        <span className="!font-medium">
+                          {labels.free_trial}
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                {/* --- 2. ส่วนที่จะแสดงเฉพาะจอใหญ่ xl ขึ้นไป (แยกปุ่มปกติ) --- */}
+                <li className="hidden xl:flex items-center gap-2">
+                  {/* ปุ่ม Login */}
+                  <a
+                    target="_blank"
+                    href="https://www.app-apsx.com/login"
+                    className="!font-medium !text-[#464c58] !tracking-wide btn btn-xs !inline-flex items-center gap-1 !bg-[#0000000a] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-xl !py-2 !px-3 transition-all"
+                  >
+                    <i className="uil uil-signin text-[0.8rem]" />
+                    <span>{labels.login}</span>
+                  </a>
+
+                  {/* ปุ่ม Register */}
+                  <a
+                    target="_blank"
+                    href="https://www.app-apsx.com/register"
+                    className="!relative !inline-flex items-center gap-1 !text-white !bg-[#00B7B8] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-xl !py-2 !px-3 transition-all"
+                  >
+                    <span className="absolute -top-2.5 -right-2">
+                      <Badge
+                        color="red"
+                        variant="softText"
+                        className="!text-[10px] !px-1.5 !py-[1px] !rounded-md"
+                      >
+                        {labels.free}
+                      </Badge>
+                    </span>
+                    <i className="uil uil-rocket text-[0.8rem]" />
+                    <span className="!font-medium">{labels.free_trial}</span>
+                  </a>
+                </li>
+              </>
               <li className="nav-item xl:!hidden lg:!hidden ">
                 <button className="hamburger offcanvas-nav-btn ">
                   <span />

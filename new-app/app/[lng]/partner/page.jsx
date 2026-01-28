@@ -24,7 +24,7 @@ export default async function CustomerPage({ params }) {
         <div>
           <div className="grow shrink-0">
             <section className="wrapper overflow-hidden">
-              <div className="mt-10" />
+              <div className="!mt-0" />
               <Hero lng={lng} />
               <Patner lng={lng} />
             </section>

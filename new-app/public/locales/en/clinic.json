@@ -1,6 +1,8 @@
 {
   "hero": {
-    "title": "Clinic Software",
+    "title_part1": "Clinic Management Software",
+    "title_part2": "User-Friendly",
+    "title_part3": "All-in-One Solution",
     "description": "Supporting clinic and hospital management with a comprehensive management system that helps you work efficiently. Compatible with various types, sizes, and branches of medical facilities."
   },
   "system_functions": {

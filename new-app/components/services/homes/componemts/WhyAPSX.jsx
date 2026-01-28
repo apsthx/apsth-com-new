@@ -123,7 +123,12 @@ export default async function WhyAPSX({ lng }) {
               data-cues="slideInDown"
               data-delay={300}
               key={index}
-              className="xl:w-1/5 lg:w-4/12 md:w-4/12 w-6/12 flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]"
+              /* w-full: จอเล็กสุด (Mobile) แสดง 1 แถว 1 อัน
+                sm:w-6/12: จอ Tablet แนวตั้ง แสดง 2 อัน
+                md:w-4/12: จอ Tablet แนวนอน แสดง 3 อัน
+                xl:w-1/5: จอคอมพิวเตอร์ แสดง 5 อัน
+              */
+              className="w-full sm:w-6/12 md:w-4/12 xl:w-1/5 flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]"
             >
               <div className="card !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !h-full border-0 !rounded-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group bg-white">
                 <div className="card-body flex flex-col items-center text-center p-6 xl:!p-8">
@@ -361,13 +366,13 @@ export default async function WhyAPSX({ lng }) {
               {[
                 {
                   id: "blog1",
-                  link: "/clinic",
+                  link: `/${lng}/clinic`,
                   img: "/assets/homes/apsx1.webp",
                   title: "APSX Security Dashboard",
                 },
                 {
                   id: "blog2",
-                  link: "/wellness",
+                  link: `/${lng}/clinic`,
                   img: "/assets/homes/apsx2.webp",
                   title: "Authentication Process",
                 },
@@ -445,13 +450,13 @@ export default async function WhyAPSX({ lng }) {
               {[
                 {
                   id: "blog1",
-                  link: "/clinic",
+                  link: `/${lng}/clinic`,
                   img: "/assets/homes/apsx3.webp",
                   title: "APSX Security Dashboard",
                 },
                 {
                   id: "blog2",
-                  link: "/wellness",
+                  link: `/${lng}/clinic`,
                   img: "/assets/homes/apsx4.webp",
                   title: "Authentication Process",
                 },
@@ -530,31 +535,19 @@ export default async function WhyAPSX({ lng }) {
               {[
                 {
                   id: "blog1",
-                  link: "/clinic",
+                  link: `/${lng}/clinic`,
                   img: "/assets/homes/apsx5.webp",
                   title: "APSX Security Dashboard",
                 },
                 {
                   id: "blog2",
-                  link: "/wellness",
+                  link: `/${lng}/clinic`,
                   img: "/assets/homes/apsx6.webp",
                   title: "Authentication Process",
                 },
                 {
                   id: "blog3",
-                  link: "/wellness",
-                  img: "/assets/homes/apsx7.webp",
-                  title: "Authentication Process",
-                },
-                {
-                  id: "blog4",
-                  link: "/wellness",
-                  img: "/assets/homes/apsx7.webp",
-                  title: "Authentication Process",
-                },
-                {
-                  id: "blog5",
-                  link: "/wellness",
+                  link: `/${lng}/clinic`,
                   img: "/assets/homes/apsx7.webp",
                   title: "Authentication Process",
                 },
@@ -631,7 +624,7 @@ export default async function WhyAPSX({ lng }) {
               {[
                 {
                   id: "blog1",
-                  link: "/clinic",
+                  link: "https://paysolutions.asia/",
                   title: t(
                     "home:why_apsx.partner.blog1.title",
                     "Pay Solutions",
@@ -644,7 +637,7 @@ export default async function WhyAPSX({ lng }) {
                 },
                 {
                   id: "blog2",
-                  link: "/wellness",
+                  link: "https://dietz.asia/",
                   title: t("home:why_apsx.partner.blog2.title", "Dietz.asia"),
                   description: t(
                     "home:why_apsx.partner.blog2.description",
@@ -654,7 +647,7 @@ export default async function WhyAPSX({ lng }) {
                 },
                 {
                   id: "blog3",
-                  link: "/spa",
+                  link: "#",
                   title: t("home:why_apsx.partner.blog3.title", "LIS/LAB Plus"),
                   description: t(
                     "home:why_apsx.partner.blog3.description",
@@ -664,7 +657,7 @@ export default async function WhyAPSX({ lng }) {
                 },
                 {
                   id: "blog4",
-                  link: "/spa",
+                  link: "https://www.nhso.go.th/",
                   title: t(
                     "home:why_apsx.partner.blog4.title",
                     "ระบบแฟ้มเบิกค่าใช้จ่าย (e-Claim)",
@@ -677,7 +670,7 @@ export default async function WhyAPSX({ lng }) {
                 },
                 {
                   id: "blog5",
-                  link: "/spa",
+                  link: "https://www.peakaccount.com/",
                   title: t("home:why_apsx.partner.blog5.title", "PEAK)"),
                   description: t(
                     "home:why_apsx.partner.blog5.description",
@@ -695,7 +688,11 @@ export default async function WhyAPSX({ lng }) {
                   <div className="!rounded-[0.6rem] h-full shadow-lg bg-white overflow-hidden transition-all hover:-translate-y-1 flex flex-col">
                     <article className="post p-0 flex flex-col h-full">
                       <figure className="overlay overlay-1 hover-scale group rounded-t !mb-0 overflow-hidden relative aspect-[4/3] w-full bg-white">
-                        <Link href={item.link} className="w-full h-full block">
+                        <Link
+                          target="_blank"
+                          href={item.link}
+                          className="w-full h-full block"
+                        >
                           <Image
                             /* บังคับสไตล์ผ่าน className ให้ขยายเต็มพื้นที่ทุกทิศทาง */
                             className="!transition-all !duration-[0.35s] !ease-in-out group-hover:scale-110 !w-full !h-full !max-w-none !object-cover"
@@ -720,6 +717,7 @@ export default async function WhyAPSX({ lng }) {
                       <div className="post-header p-5 flex-grow">
                         <div className="post-title h4 !mb-2 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-50%] before:w-3 before:h-[2px] before:left-0 before:top-1/2 before:bg-[#00B7B8]">
                           <Link
+                            target="_blank"
                             className="!text-[#343f52] hover:!text-[#00B7B8] transition-colors"
                             href={item.link}
                           >

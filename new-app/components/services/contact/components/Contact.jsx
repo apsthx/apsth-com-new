@@ -18,8 +18,11 @@ export default async function Contact({ lng }) {
                 <div className="w-full flex-[0_0_auto] max-w-full !text-start">
                   {/* 1. Headline: เพิ่มขีดข้างสีแบรนด์เพื่อความโดดเด่น */}
                   <div className="flex items-center mb-3">
-                    <h2 className="!text-[calc(1.305rem_+_0.66vw)] font-bold xl:!text-[2.2rem] !leading-[1.1] !text-start !mb-0 text-slate-800 dark:text-white uppercase tracking-tight">
+                    <h2 className=" flex items-center gap-2 !text-[calc(1.305rem_+_0.66vw)] font-bold xl:!text-[2.2rem] !leading-[1.1] !text-start !mb-0 text-slate-800 dark:text-white uppercase tracking-tight">
                       {t("contact:hero.title", "ติดต่อเรา")}
+                      <span className="inline-block px-3 py-1 text-[0.5rem] font-bold tracking-[0.2em] text-[#00B7B8] uppercase bg-[#00B7B8]/10 rounded-md">
+                        Get in Touch
+                      </span>
                     </h2>
                   </div>
 
