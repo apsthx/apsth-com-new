@@ -1,22 +1,23 @@
 import { useTranslation } from "@/app/i18n";
 
 import SlidesImages from "./SlidesImages";
+import ImageGallery from "./ImageGallery";
 
 export default async function WhyAPSX({ lng }) {
   const { t } = await useTranslation(lng);
   return (
     <section id="snippet-3" className="wrapper !bg-[#ffffff] ">
-      <div className="container pt-20 xl:pt-28 lg:pt-28 md:pt-28 ">
+      <div className="container pt-4 xl:pt-10 lg:pt-28 md:pt-28 ">
         <div className="container mb-12">
           <div
             data-cues="slideInDown"
             data-delay={300}
             className="flex justify-center mb-6"
           >
-            <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#45c4a0]">
+            <span className="flex items-center gap-2 px-4 py-1.5 text-[0.6rem] xl:text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#2bc29d]">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#45c4a0] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#45c4a0]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2bc29d] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2bc29d]"></span>
               </span>
               {t(
                 "home:why_apsx.why_apsx.why_apsx",
@@ -72,7 +73,7 @@ export default async function WhyAPSX({ lng }) {
               /* ไอคอน uil-focus สื่อถึงความง่ายที่รวมจุดสนใจไว้ที่เดียว หรือ uil-user-check */
               icon: "uil-focus",
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#45c4a0]",
+              iconColor: "text-[#2bc29d]",
             },
             {
               title: t(
@@ -86,7 +87,7 @@ export default async function WhyAPSX({ lng }) {
               /* uil-cloud-share สื่อถึงการเข้าถึงข้อมูลได้จากทุกที่ (Anywhere Access) */
               icon: "uil-cloud-share",
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#45c4a0]",
+              iconColor: "text-[#2bc29d]",
             },
             {
               title: t(
@@ -99,7 +100,7 @@ export default async function WhyAPSX({ lng }) {
               ),
               icon: "uil-sync", // สัญลักษณ์การอัปเดต/หมุนเวียนข้อมูล
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#45c4a0]",
+              iconColor: "text-[#2bc29d]",
             },
             {
               title: t(
@@ -112,7 +113,7 @@ export default async function WhyAPSX({ lng }) {
               ),
               icon: "uil-presentation-play", // สัญลักษณ์การสอน/พรีเซนต์งาน
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#45c4a0]",
+              iconColor: "text-[#2bc29d]",
             },
           ].map((item, index) => (
             <div
@@ -124,13 +125,13 @@ export default async function WhyAPSX({ lng }) {
               sm: 2 คอลัมน์ (sm:w-6/12) -> ถ้าอยากให้จอเล็กกลางๆ เห็น 2
               default: 1 คอลัมน์ (w-full) -> จอมือถือปกติเห็น 1 เต็มๆ
             */
-              className="xl:w-1/5 lg:w-4/12 md:w-4/12 sm:w-6/12 w-full flex-[0_0_auto] px-[15px] max-w-full mt-[30px]"
+              className=" mb-2 xl:w-1/5 lg:w-4/12 md:w-4/12 sm:w-6/12 w-full flex-[0_0_auto] px-[15px] max-w-full mt-[30px]"
             >
               <div className="card !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !h-full border-0 !rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white overflow-hidden group">
                 <div className="card-body flex flex-col items-center text-center p-6 xl:!p-7">
                   {/* Icon Box */}
                   <div
-                    className={`w-14 h-14 flex items-center justify-center rounded-2xl ${item.bgColor || "bg-[#00b899]/10"} ${item.iconColor || "text-[#00b899]"} mb-5 group-hover:scale-110 transition-transform duration-300 shadow-sm`}
+                    className={`w-14 h-14 flex items-center justify-center rounded-2xl   ${item.iconColor || "text-[#2bc29d]"} mb-5 group-hover:scale-110 transition-transform duration-300`}
                   >
                     <i
                       className={`uil ${item.icon || "uil-file-info-alt"} text-[1.8rem] leading-none`}
@@ -138,7 +139,7 @@ export default async function WhyAPSX({ lng }) {
                   </div>
 
                   {/* Title */}
-                  <h4 className="text-[0.95rem] xl:text-[1.05rem] font-bold text-[#343f52] mb-2 leading-tight group-hover:text-[#00b899] transition-colors">
+                  <h4 className="text-[0.95rem] xl:text-[1.05rem] font-bold text-[#343f52] mb-2 leading-tight group-hover:text-[#2bc29d] transition-colors">
                     {item.title}
                   </h4>
 
@@ -153,7 +154,8 @@ export default async function WhyAPSX({ lng }) {
             </div>
           ))}
         </div>
-        <div className="flex flex-wrap mx-[-15px] justify-center ">
+        <ImageGallery />
+        {/* <div className="flex flex-wrap mx-[-15px] justify-center ">
           {[
             {
               image: "/assets/clinic/career-img-1.jpg",
@@ -177,18 +179,16 @@ export default async function WhyAPSX({ lng }) {
               key={index}
               className="xl:w-1/5 lg:w-4/12 md:w-6/12 w-6/12 flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px] py-4"
             >
-              {/* Container ของรูปภาพ - ไม่มีเงา เน้นความเรียบง่าย */}
               <div className="group relative aspect-square flex items-center justify-center rounded overflow-hidden transition-all duration-300 hover:scale-105 bg-transparent">
                 <img
                   src={item.image}
                   alt={`icon-${index}`}
-                  // ใช้ object-contain ถ้าเป็นโลโก้เพื่อให้เห็นขอบครบ หรือ object-cover ถ้าอยากให้เต็มพื้นที่
                   className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
         <div className="!mt-10  mx-auto">
           {/* หัวข้อส่วนฟังก์ชัน */}
           <div
@@ -303,9 +303,9 @@ export default async function WhyAPSX({ lng }) {
                 key={index}
                 className="xl:w-12/12 w-full px-[15px] mb-3"
               >
-                <div className="flex items-center p-4 bg-white rounded-xl border border-[#e7eaf3] transition-all duration-300 hover:border-[#00b899] hover:shadow-md group">
+                <div className="flex items-center p-4 bg-white rounded-xl border border-[#e7eaf3] transition-all duration-300 hover:border-[#2bc29d] hover:shadow-md group">
                   {/* Icon Checkmark สีเขียวมินต์ */}
-                  <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#00b899]/10 text-[#00b899] mr-4 transition-all group-hover:bg-[#00b899] group-hover:text-white">
+                  <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#2bc29d]/10 text-[#2bc29d] mr-4 transition-all group-hover:bg-[#2bc29d] group-hover:text-white">
                     <i className="uil uil-check text-[1rem]"></i>
                   </div>
 
@@ -360,7 +360,7 @@ export default async function WhyAPSX({ lng }) {
           </div>
           <SlidesImages />
         </div>
-        <div className="mt-10  mx-auto py-20">
+        <div className="mt-4  mx-auto py-10">
           {/* หัวข้อส่วนฟังก์ชัน */}
           <div
             data-cues="slideInDown"
@@ -554,9 +554,9 @@ export default async function WhyAPSX({ lng }) {
                 key={index}
                 className="xl:w-1/2 lg:w-1/2 w-full px-[15px] mb-3"
               >
-                <div className="flex items-center p-4 bg-white rounded-xl border border-[#e7eaf3] transition-all duration-300 hover:border-[#00b899] hover:shadow-md group h-full">
+                <div className="flex items-center p-4 bg-white rounded-xl border border-[#e7eaf3] transition-all duration-300 hover:border-[#2bc29d] hover:shadow-md group h-full">
                   {/* Icon Checkmark สีเขียวมินต์ */}
-                  <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#00b899]/10 text-[#00b899] mr-4 transition-all group-hover:bg-[#00b899] group-hover:text-white">
+                  <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#2bc29d]/10 text-[#2bc29d] mr-4 transition-all group-hover:bg-[#2bc29d] group-hover:text-white">
                     <i className="uil uil-check text-[1rem]"></i>
                   </div>
 

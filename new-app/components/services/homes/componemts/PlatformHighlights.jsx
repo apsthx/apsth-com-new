@@ -8,7 +8,7 @@ export default async function PlatformHighlights({ lng }) {
   const { t } = await useTranslation(lng);
   return (
     <section className="wrapper overflow-hidden">
-      <div className="container py-[0rem] xl:!py-[2rem] lg:!py-[0rem] md:!py-[0rem]">
+      <div className="container py-[2rem] xl:!py-[2rem] lg:!py-[0rem] md:!py-[0rem]">
         {/*/.row */}
         <div className="mt-0 flex flex-wrap mx-[-15px] xl:mx-0 lg:mx-0 items-center">
           <div className="container">
@@ -17,10 +17,10 @@ export default async function PlatformHighlights({ lng }) {
               data-delay={300}
               className="flex justify-center mb-6"
             >
-              <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#45c4a0]">
+              <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#2bc29d]">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#45c4a0] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#45c4a0]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2bc29d] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2bc29d]"></span>
                 </span>
                 Highlights APSX Platform
               </span>
@@ -100,7 +100,7 @@ export default async function PlatformHighlights({ lng }) {
                       {/* OPD System */}
                       <li className="flex items-start !mt-5 first:!mt-0 group">
                         <span className=" flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-medkit text-[#00b899] text-[1.2rem] leading-none" />
+                          <i className="uil uil-medkit text-[#2bc29d] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
                           {t(
@@ -113,7 +113,7 @@ export default async function PlatformHighlights({ lng }) {
                       {/* Inventory */}
                       <li className="flex items-start !mt-5 group">
                         <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-store text-[#00b899] text-[1.2rem] leading-none" />
+                          <i className="uil uil-store text-[#2bc29d] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
                           {t(
@@ -126,7 +126,7 @@ export default async function PlatformHighlights({ lng }) {
                       {/* Reports */}
                       <li className="flex items-start !mt-5 group">
                         <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-chart-line text-[#00b899] text-[1.2rem] leading-none" />
+                          <i className="uil uil-chart-line text-[#2bc29d] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
                           {t(
@@ -144,7 +144,7 @@ export default async function PlatformHighlights({ lng }) {
                       {/* CRM */}
                       <li className="flex items-start !mt-5 first:!mt-0 group">
                         <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-users-alt text-[#00b899] text-[1.2rem] leading-none" />
+                          <i className="uil uil-users-alt text-[#2bc29d] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
                           {t(
@@ -157,7 +157,7 @@ export default async function PlatformHighlights({ lng }) {
                       {/* Multi-Branch */}
                       <li className="flex items-start !mt-5 group">
                         <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-layers text-[#00b899] text-[1.2rem] leading-none" />
+                          <i className="uil uil-layers text-[#2bc29d] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
                           {t(
@@ -170,7 +170,7 @@ export default async function PlatformHighlights({ lng }) {
                       {/* Security */}
                       <li className="flex items-start !mt-5 group">
                         <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-shield-check text-[#00b899] text-[1.2rem] leading-none" />
+                          <i className="uil uil-shield-check text-[#2bc29d] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
                           {t(
@@ -682,9 +682,9 @@ export default async function PlatformHighlights({ lng }) {
                             <div className="flex justify-between items-center mb-3">
                               <div className="flex items-center">
                                 <i
-                                  className={`${item.icon} text-[#00b899] text-[1.2rem] mr-2`}
+                                  className={`${item.icon} text-[#2bc29d] text-[1.2rem] mr-2`}
                                 ></i>
-                                <p className="text-[0.65rem] font-bold uppercase tracking-widest text-[#00b899] !mb-0">
+                                <p className="text-[0.65rem] font-bold uppercase tracking-widest text-[#2bc29d] !mb-0">
                                   {item.category}
                                 </p>
                               </div>
@@ -707,7 +707,7 @@ export default async function PlatformHighlights({ lng }) {
                               {transformedFeatures.map((feature, fIdx) => (
                                 <li key={fIdx} className="flex items-start">
                                   {/* ไอคอนติ๊กถูก SVG */}
-                                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
                                     <svg
                                       xmlns="http://www.w3.org/2000/svg"
                                       viewBox="0 0 20 20"
@@ -747,7 +747,7 @@ export default async function PlatformHighlights({ lng }) {
           <div
             data-cues="slideInDown"
             data-delay={300}
-            className="px-8 flex flex-wrap mx-[-15px] md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px] items-center !mt-[4rem] 
+            className="px-8 flex flex-wrap mx-[-15px] md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px] items-center !mt-[1rem] xl:!mt-[4rem] 
              bg-white/40   
              border border-[#a4aec633] rounded-lg mb-4 pb-12 transition-all duration-500 shadow-md
             "
@@ -783,7 +783,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               <div className="flex gap-1">
                 <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#f0f9ff] rounded-lg transition-transform group-hover:scale-110">
-                  <i className="uil uil-robot text-[#00b899] text-[1.2rem] leading-none" />
+                  <i className="uil uil-robot text-[#2bc29d] text-[1.2rem] leading-none" />
                 </span>
                 <div>
                   <h3 className="xl:!text-[2.1rem] !text-[calc(1.335rem_+_1.02vw)] !leading-[1.2] font-semibold !mb-1">
@@ -802,7 +802,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
 
               <div className="flex gap-1 ">
-                <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#eff6ff] rounded-lg text-[#00b899]">
+                <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#eff6ff] rounded-lg text-[#2bc29d]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -822,14 +822,14 @@ export default async function PlatformHighlights({ lng }) {
                   </svg>
                 </span>
                 <p>
-                  <strong className="text-[#d16b86]">
+                  <strong className="text-[#d152a5]">
                     {t("new_feature_label", "ฟีเจอร์ใหม่ล่าสุด")}!
                   </strong>{" "}
                   {t(
                     "home:platform_highlights.ai_suggestion.description",
                     "ระบบ AI ช่วยแนะนำข้อความในการบันทึกเวชระเบียน ลดเวลาการพิมพ์ลดข้อผิดพลาด และใช้ศัพท์ทางการแพทย์ที่ถูกต้อง ใช้งานง่าย สะดวก รวดเร็ว และที่สำคัญ",
                   )}
-                  <strong className="text-[#00b899]">
+                  <strong className="text-[#2bc29d]">
                     {t("free_label", "ใช้งานฟรี")}!
                   </strong>{" "}
                 </p>
@@ -838,7 +838,7 @@ export default async function PlatformHighlights({ lng }) {
             </div>
             <div className="!mt-[15px] ml-14">
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -862,7 +862,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               {/*/column */}
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -886,7 +886,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               {/*/column */}
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -910,7 +910,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               {/*/column */}
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -934,7 +934,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               {/*/column */}
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -958,7 +958,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               {/*/column */}
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -982,7 +982,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               {/*/column */}
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b899]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"

@@ -74,25 +74,25 @@ export default async function Patner({ lng }) {
               key={index}
               className="w-full md:w-6/12 lg:w-4/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[50px]"
             >
-              <div className="!rounded-[0.6rem] h-full shadow-lg bg-white overflow-hidden transition-all hover:-translate-y-1 flex flex-col">
+              <div className="!rounded-[0.6rem] h-full shadow-lg bg-white overflow-hidden transition-all hover:-translate-y-1 flex flex-col group">
                 <article className="post p-0 flex flex-col h-full">
-                  <figure className="overlay overlay-1 hover-scale group rounded-t !mb-0 overflow-hidden relative aspect-[4/3] w-full bg-white">
+                  <figure className="hover-scale rounded-t !mb-0 overflow-hidden relative aspect-[4/3] w-full bg-white">
                     <Link href={item.link} className="w-full h-full block">
                       <Image
-                        /* บังคับสไตล์ผ่าน className ให้ขยายเต็มพื้นที่ทุกทิศทาง */
-                        className="!transition-all !duration-[0.35s] !ease-in-out group-hover:scale-110 !w-full !h-full !max-w-none !object-cover"
+                        /* เพิ่ม group-hover:blur-sm เพื่อให้รูปเบลอตอนเอาเมาส์วาง */
+                        className="!transition-all !duration-500 !ease-in-out group-hover:scale-110 group-hover:blur-[3px] !w-full !h-full !max-w-none !object-cover"
                         src={item.img}
                         alt={item.title || "Feature Image"}
                         width={600}
                         height={450}
-                        priority={true} // ช่วยให้โหลดรูปทันทีและคำนวณขนาดได้แม่นยำขึ้น
+                        priority={true}
                       />
                     </Link>
 
-                    {/* Overlay ดูรายละเอียด */}
-                    <figcaption className="group-hover:opacity-100 absolute w-full h-full opacity-0 inset-0 z-[5] pointer-events-none flex items-center justify-center bg-[#343f52]/20 transition-all duration-300">
-                      <div className="from-top">
-                        <span className="  text-[#343f52] px-5 py-2 rounded-full font-bold text-[0.8rem] shadow-xl">
+                    {/* Overlay ดูรายละเอียด แบบกระจกขุ่น (Glassmorphism) */}
+                    <figcaption className="group-hover:opacity-100 absolute w-full h-full opacity-0 inset-0 z-[5] pointer-events-none flex items-center justify-center bg-black/10 backdrop-blur-[2px] transition-all duration-300">
+                      <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <span className="bg-white/80 backdrop-blur-md text-[#343f52] px-6 py-2 rounded-full font-bold text-[0.85rem] shadow-2xl border border-white/50">
                           {t("home:read_more", "ดูรายละเอียด")}
                         </span>
                       </div>
@@ -100,9 +100,9 @@ export default async function Patner({ lng }) {
                   </figure>
 
                   <div className="post-header p-5 flex-grow">
-                    <div className="post-title h4 !mb-2 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-50%] before:w-3 before:h-[2px] before:left-0 before:top-1/2 before:bg-[#3f78e0]">
+                    <div className="post-title h4 !mb-2 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-50%] before:w-3 before:h-[2px] before:left-0 before:top-1/2 before:bg-[#2bc29d]">
                       <Link
-                        className="!text-[#343f52] hover:!text-[#3f78e0] transition-colors"
+                        className="!text-[#343f52] hover:!text-[#2bc29d] transition-colors"
                         href={item.link}
                       >
                         {item.title}
@@ -122,7 +122,6 @@ export default async function Patner({ lng }) {
                     </div>
 
                     <p className="!text-[0.85rem] !leading-relaxed text-[#60697b] !mb-0 line-clamp-3">
-                      {/* line-clamp-3 ช่วยให้เนื้อหายาวเท่ากัน ไม่ทำให้ความสูงการ์ดเบี้ยว */}
                       {item.description}
                     </p>
                   </div>

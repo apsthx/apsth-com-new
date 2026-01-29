@@ -2,6 +2,16 @@ import React from "react";
 import Link from "next/link";
 import { useTranslation } from "@/app/i18n";
 
+export async function generateMetadata({ params }) {
+  const { lng } = await params;
+  const { t } = await useTranslation(lng);
+
+  return {
+    title: t("metadata:home.meta.title"),
+    description: t("metadata:home.meta.description"),
+  };
+}
+
 export default async function SiteMap({ params }) {
   const { lng } = await params;
   const { t } = await useTranslation(lng, "sitemap");

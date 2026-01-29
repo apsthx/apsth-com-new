@@ -11,11 +11,11 @@ export default async function Hero({ lng }) {
     <div className="pt-28 xl:pt-[4rem] lg:pt-[1rem] md:pt-[1rem] !text-center !relative !font-medium !text-[#464c58] !tracking-wide overflow-hidden">
       {/* --- Grid Background Layer --- */}
       <div
-        className="absolute inset-0 z-0 opacity-[0.2]"
+        className="absolute inset-0 z-0 opacity-[0.3]"
         style={{
           backgroundImage: `
-                    linear-gradient(to right, #00B7B8 2px, transparent 1px),
-                    linear-gradient(to bottom, #00B7B8 2px, transparent 1px)
+                    linear-gradient(to right, #37d5af 2px, transparent 1px),
+                    linear-gradient(to bottom, #37d5af 2px, transparent 1px)
                   `,
           backgroundSize: "80px 80px", // ปรับขนาดช่องตารางที่นี่
           maskImage:
@@ -42,14 +42,14 @@ export default async function Hero({ lng }) {
           height={1080}
         />
       </div> */}
-      <div className="flex flex-wrap mx-[-15px] !relative px-4 lg:px-0">
+      <div className=" flex flex-wrap mx-[-15px] !relative px-4 lg:px-0">
         <section id="snippet-1" className="wrapper !bg-transparent  w-screen">
           <div className="container mt-0 sm:pt-0 xl:pt-20 lg:pt-20 md:pt-20 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
-            <div className="flex flex-col mt-0 pt-0 lg:flex-row mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] items-center">
+            <div className=" flex flex-col mt-0 pt-0 lg:flex-row mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] items-center">
               <div
                 data-cue="fadeIn"
                 className="
-                  mt-8 relative order-2 lg:order-1 
+                  !mt-8 xl:mt-0 relative order-2 lg:order-1 
                   w-full md:w-10/12 lg:w-6/12 xl:w-7/12 flex-[0_0_auto] max-w-full
                   bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-xl
                   border border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.1)] 
@@ -77,39 +77,39 @@ export default async function Hero({ lng }) {
                   {/* --- ส่วนของ Labels ที่เพิ่มความพรีเมียม --- */}
 
                   {/* 1. เจ้าของกิจการ */}
-                  <div className="absolute top-[8%] left-[5%] md:top-[20%] md:-left-[80px] flex items-center group z-10 animate-float-slow">
-                    <div className="tracking-[0.1em] leading-none font-medium bg-[#00abe9] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] shadow-[0_10px_20px_rgba(61,140,168,0.4)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
+                  <div className="absolute top-[8%] left-[5%] md:top-[15%] md:-left-[80px] flex items-center group z-10 animate-float-slow">
+                    <div className="tracking-[0.1em] leading-none font-medium bg-[#3b73e1] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] shadow-[0_10px_20px_rgba(61,140,168,0.4)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
                       {t(
                         "home:hero.user_ecosystem.role_owner",
                         "เจ้าของกิจการ",
                       )}
                     </div>
-                    <div className="hidden md:block w-3 h-[2px] bg-gradient-to-r from-[#00abe9] to-transparent"></div>
+                    <div className="hidden md:block w-3 h-[2px] bg-gradient-to-r from-[#3b73e1] to-transparent"></div>
                   </div>
 
                   {/* 2. แพทย์/พยาบาล (เน้นตรงกลางบน) */}
                   <div className="absolute -top-6 left-1/2 -translate-x-1/2 md:top-[-25px] md:right-[15%] md:left-auto flex flex-col items-center z-10 animate-float">
-                    <div className="tracking-[0.1em] leading-none font-medium bg-[#f5a803] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] shadow-[0_10px_20px_rgba(230,155,46,0.4)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
+                    <div className="tracking-[0.1em] leading-none font-medium bg-[#f0a51b] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] shadow-[0_10px_20px_rgba(230,155,46,0.4)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
                       {t(
                         "home:hero.user_ecosystem.role_medical_professional",
                         "แพทย์/พยาบาล",
                       )}
                     </div>
-                    <div className="w-[2px] h-4 bg-gradient-to-b from-[#f5a803] to-transparent"></div>
+                    <div className="w-[2px] h-4 bg-gradient-to-b from-[#f0a51b] to-transparent"></div>
                   </div>
 
                   {/* 3. ผู้จัดการ */}
                   <div className="absolute bottom-[25%] left-[5%] md:bottom-[35%] md:-left-[50px] flex items-center z-10 animate-float-delayed">
-                    <div className="tracking-[0.1em] leading-none font-medium bg-[#05b471] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] shadow-[0_10px_20px_rgba(47,158,126,0.4)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
+                    <div className="tracking-[0.1em] leading-none font-medium bg-[#01c965] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] shadow-[0_10px_20px_rgba(47,158,126,0.4)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
                       {t("home:hero.user_ecosystem.role_manager", "ผู้จัดการ")}
                     </div>
-                    <div className="hidden md:block w-3 h-[2px] bg-gradient-to-r from-[#05b471] to-transparent"></div>
+                    <div className="hidden md:block w-3 h-[2px] bg-gradient-to-r from-[#01c965] to-transparent"></div>
                   </div>
 
                   {/* 4. พนักงาน */}
                   <div className="absolute bottom-[8%] right-[5%] md:bottom-12 md:-right-16 flex items-center z-10 animate-float">
-                    <div className="hidden md:block w-4 h-[2px] bg-gradient-to-l from-[#ff0095] to-transparent"></div>
-                    <div className="tracking-[0.1em] leading-none font-medium bg-[#ff0095] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] shadow-[0_10px_20px_rgba(199,77,149,0.4)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
+                    <div className="hidden md:block w-4 h-[2px] bg-gradient-to-l from-[#d152a5] to-transparent"></div>
+                    <div className="tracking-[0.1em] leading-none font-medium bg-[#d152a5] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] shadow-[0_10px_20px_rgba(199,77,149,0.4)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
                       {t("home:hero.user_ecosystem.role_staff", "พนักงาน")}
                     </div>
                   </div>
@@ -128,7 +128,7 @@ export default async function Hero({ lng }) {
                   className="flex flex-col"
                 >
                   <h2 className="!text-[calc(1.365rem_+_1.38vw)] !leading-[1.2] xl:!text-[2.4rem] !mb-0">
-                    <span className="!font-Kanit rotator-fade ppercase tracking-[0.15rem] text-[#45c4a0] !font-medium text-[0.85rem] mb-2 block">
+                    <span className="!font-Kanit rotator-fade ppercase tracking-[0.15rem] text-[#2bc29d] !font-medium text-[0.85rem] mb-2 block">
                       {/* import AnimatedText from "../common/AnimatedText"; */}
                       <AnimatedText
                         strings={[
@@ -166,7 +166,7 @@ export default async function Hero({ lng }) {
                   <Link
                     target="_blank"
                     href="https://page.line.me/gbc9405c"
-                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#00dd00] border border-[#04cc04] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 hover:!bg-[#04cc04] transition-all duration-300 !rounded-xl px-5 py-2 gap-2"
+                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#01c965] border border-[#01c965] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 hover:!bg-[#01b85c] transition-all duration-300 !rounded-xl px-5 py-2 gap-2"
                   >
                     <i
                       className="uil uil-line text-[1.3rem] leading-none"
@@ -181,7 +181,7 @@ export default async function Hero({ lng }) {
                   <Link
                     target="_blank"
                     href={`/${lng}/calendar`}
-                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#5eb9f0] hover:!bg-[#4baeeb]  border border-[#4baeeb] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 transition-all duration-300 !rounded-xl px-5 py-2 gap-2"
+                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#2bc2bb] hover:!bg-[#26beb7]  border border-[#2bc2bb] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 transition-all duration-300 !rounded-xl px-5 py-2 gap-2"
                   >
                     <i
                       className="uil uil-calendar-alt text-[1.3rem] leading-none"
@@ -196,12 +196,12 @@ export default async function Hero({ lng }) {
                   <div className="w-full flex flex-col gap-3 xl:!px-[25px] !px-[10px] !mt-[20px]">
                     {/* รายการที่ 1: Free Training */}
                     {/* รายการที่ 1: Free Training */}
-                    <div className="!bg-white/60 backdrop-blur-md card shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-white/40 !rounded-[0.8rem] transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div className="!bg-white/60 backdrop-blur-md card shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-white/40 !rounded-[0.8rem] transition-all hover:shadow-lg">
                       <div className="!font-Kanit card-body !py-2.5 !px-3 flex flex-row items-center gap-3">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#45c4a020] flex items-center justify-center border border-[#45c4a030]">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-lg   flex items-center justify-center border border-[#45c4a030]">
                           <i
                             className="uil uil-presentation-check text-[1.3rem]"
-                            style={{ color: "#45c4a0" }}
+                            style={{ color: "#01c965" }}
                           />
                         </div>
 
@@ -223,12 +223,12 @@ export default async function Hero({ lng }) {
                     </div>
 
                     {/* รายการที่ 2: Free Updates */}
-                    <div className="!bg-white/60 backdrop-blur-md card shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-white/40 !rounded-[0.8rem] transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div className="!bg-white/60 backdrop-blur-md card shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-white/40 !rounded-[0.8rem] transition-all hover:shadow-lg">
                       <div className="!font-Kanit card-body !py-2.5 !px-3 flex flex-row items-center gap-3">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#54a8c720] flex items-center justify-center border border-[#54a8c730]">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-lg  flex items-center justify-center border border-[#54a8c730]">
                           <i
                             className="uil uil-sync text-[1.3rem]"
-                            style={{ color: "#54a8c7" }}
+                            style={{ color: "#4ba9cd" }}
                           />
                         </div>
 

@@ -142,7 +142,7 @@ export default async function Package({ lng }) {
         <div
           data-cues="slideInDown"
           data-delay={300}
-          className="w-full flex-[0_0_auto] !px-[15px] max-w-full !text-center"
+          className="w-full flex-[0_0_auto] pt-16 xl:pt-0 !px-[15px] max-w-full !text-center"
         >
           {/* 1. Headline: Monochrome Style - สีเดียวแต่เล่นระดับความหนา (Weight) */}
           <h2 className="!text-[calc(1.4rem_+_1.5vw)] font-black !leading-[1.2] xl:!text-[2rem] text-[#343f52] tracking-tighter">

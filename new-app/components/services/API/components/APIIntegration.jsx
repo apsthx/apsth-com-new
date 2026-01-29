@@ -54,11 +54,11 @@ export default async function APIIntegration({ lng }) {
           <div className="xl:w-6/12 lg:w-6/12 w-full xl:!px-[35px] lg:!px-[20px] !px-[15px] max-w-full xl:order-2 lg:order-2 mb-10 lg:mb-0">
             <div className="relative group">
               {/* 1. แสง Neon Glow ด้านหลัง - ใช้ 2 สีผสมกันเพื่อความล้ำ */}
-              <div className="absolute -top-10 -right-10 w-72 h-72 bg-[#00B7B8]/20 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
+              <div className="absolute -top-10 -right-10 w-72 h-72 bg-[#2bc29d]/20 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
               <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px] pointer-events-none"></div>
 
               {/* 2. กรอบรูปภาพแบบล้ำๆ - เพิ่ม Gradient Border */}
-              <div className="relative p-[1px] bg-gradient-to-br from-[#00B7B8]/50 to-transparent rounded-[2.2rem] overflow-hidden transition-all duration-500 group-hover:scale-[1.01]">
+              <div className="relative p-[1px] bg-gradient-to-br from-[#2bc29d]/50 to-transparent rounded-[2.2rem] overflow-hidden transition-all duration-500 group-hover:scale-[1.01]">
                 <figure className="m-0 p-2 bg-white/80 backdrop-blur-md rounded-[2.1rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden">
                   <Image
                     className="w-full h-auto rounded-[1.6rem] transform transition-transform duration-1000 group-hover:scale-105"
@@ -74,7 +74,7 @@ export default async function APIIntegration({ lng }) {
                     className="absolute inset-0 opacity-[0.03] pointer-events-none"
                     style={{
                       backgroundImage:
-                        "linear-gradient(#00B7B8 1px, transparent 1px), linear-gradient(90deg, #00B7B8 1px, transparent 1px)",
+                        "linear-gradient(#2bc29d 1px, transparent 1px), linear-gradient(90deg, #2bc29d 1px, transparent 1px)",
                       backgroundSize: "20px 20px",
                     }}
                   ></div>
@@ -84,7 +84,7 @@ export default async function APIIntegration({ lng }) {
               {/* 4. Floating Badge แบบ Glassmorphism */}
               <div className="absolute -bottom-6 -left-4 md:-left-8 bg-white/70 backdrop-blur-xl p-5 rounded-[1.5rem] shadow-[0_20px_40px_rgba(0,0,0,0.1)] flex items-center gap-4 border border-white/50 transition-all duration-500 group-hover:-translate-y-2">
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#00B7B8] to-[#00d4d6] flex items-center justify-center text-white shadow-[0_8px_20px_rgba(0,183,184,0.3)]">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#2bc29d] to-[#00d4d6] flex items-center justify-center text-white shadow-[0_8px_20px_rgba(0,183,184,0.3)]">
                     <i className="uil uil-brackets-curly text-2xl"></i>
                   </div>
                   {/* จุดเขียวกะพริบ (Active Status) */}
@@ -94,7 +94,7 @@ export default async function APIIntegration({ lng }) {
                   </span>
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase font-black text-[#00B7B8] m-0 tracking-[0.15em] leading-none mb-1.5">
+                  <p className="text-[10px] uppercase font-black text-[#2bc29d] m-0 tracking-[0.15em] leading-none mb-1.5">
                     Endpoint Secure
                   </p>
                   <p className="text-sm font-bold text-slate-800 m-0 flex items-center gap-2">
@@ -104,16 +104,16 @@ export default async function APIIntegration({ lng }) {
               </div>
 
               {/* 5. ตกแต่งด้วยเส้นเท่ๆ (Decorative Lines) */}
-              <div className="absolute top-1/2 -right-6 w-12 h-[2px] bg-gradient-to-r from-[#00B7B8] to-transparent opacity-50 hidden md:block"></div>
+              <div className="absolute top-1/2 -right-6 w-12 h-[2px] bg-gradient-to-r from-[#2bc29d] to-transparent opacity-50 hidden md:block"></div>
             </div>
           </div>
 
           {/* ฝั่งเนื้อหา */}
           <div className="xl:w-6/12 lg:w-6/12 w-full xl:!px-[35px] lg:!px-[20px] !px-[15px] max-w-full">
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-lg bg-[#00B7B8]/10 text-[#00B7B8] text-[0.7rem] font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-lg bg-[#2bc29d]/10 text-[#2bc29d] text-[0.7rem] font-bold uppercase tracking-wider">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00B7B8] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00B7B8]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2bc29d] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2bc29d]"></span>
               </span>
               Developer Ready
             </div>
@@ -122,7 +122,7 @@ export default async function APIIntegration({ lng }) {
               {t("api:title", "คู่มือการใช้งาน (API Integration)")}
             </h2>
 
-            <p className="text-[1rem] text-[#60697b] leading-relaxed mb-8 opacity-90 border-l-4 border-[#00B7B8]/20 pl-4">
+            <p className="text-[1rem] text-[#60697b] leading-relaxed mb-8 opacity-90 border-l-4 border-[#2bc29d]/20 pl-4">
               {t(
                 "api:description",
                 "ยกระดับการจัดการคลินิกด้วยการเชื่อมต่อข้อมูลผ่านระบบ API",
@@ -133,7 +133,7 @@ export default async function APIIntegration({ lng }) {
               {apiLists.map((item, index) => (
                 <div key={index} className="group cursor-default">
                   <div className="flex items-start p-3 rounded-xl transition-all duration-300 hover:bg-slate-50">
-                    <div className="flex-shrink-0 w-5 h-5 mt-0.5 flex items-center justify-center rounded-full bg-[#00B7B8]/10 text-[#00B7B8] transition-all group-hover:scale-110">
+                    <div className="flex-shrink-0 w-5 h-5 mt-0.5 flex items-center justify-center rounded-full bg-[#2bc29d]/10 text-[#2bc29d] transition-all group-hover:scale-110">
                       <i className="uil uil-check text-[0.9rem] font-bold"></i>
                     </div>
                     <span className="ml-3 text-[0.85rem] font-medium text-[#464c58] leading-snug">
@@ -149,7 +149,7 @@ export default async function APIIntegration({ lng }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://documenter.getpostman.com/view/40820836/2sB3QDwDGH"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#00B7B8] !text-white font-bold text-[0.9rem] transition-all duration-300 hover:bg-[#00B7B8] hover:shadow-lg hover:shadow-[#00B7B8]/20 hover:-translate-y-1"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#2bc29d] !text-white font-bold text-[0.9rem] transition-all duration-300 hover:bg-[#2bc29d] hover:shadow-lg hover:shadow-[#2bc29d]/20 hover:-translate-y-1"
               >
                 <span>View Documentation</span>
                 <i className="uil uil-external-link-alt"></i>

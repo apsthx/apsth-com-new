@@ -14,7 +14,7 @@ export default async function OurCustomers({ lng }) {
           className="w-full flex-[0_0_auto] !px-[15px] max-w-full !text-center"
         >
           {/* 1. Headline: Monochrome Style - สีเดียวแต่เล่นระดับความหนา (Weight) */}
-          <h2 className="!text-[calc(1.4rem_+_1.5vw)] font-black !leading-[1.2] xl:!text-[2rem] !mb-2 text-[#343f52] tracking-tighter">
+          <h2 className="!z-[0] !text-[calc(1.4rem_+_1.5vw)] font-black !leading-[1.2] xl:!text-[2rem] !mb-2 text-[#343f52] tracking-tighter">
             {t("home:our_customers.title", "ลูกค้าของเรา")}
           </h2>
 
@@ -31,7 +31,7 @@ export default async function OurCustomers({ lng }) {
             </p>
           </div>
         </div>
-        <div className="bg-[#29bbb4] p-12 md:p-10 rounded-3xl">
+        <div className="bg-[#29bbb4] p-4 xl:p-12 md:p-10 rounded-3xl">
           <OurCustomersGroups />
         </div>
       </div>

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
-export default function LanguageSelect({ color = "#5eb9f0" }) {
+export default function LanguageSelect({ color = "#252b31" }) {
   const pathname = usePathname();
   const router = useRouter();
 

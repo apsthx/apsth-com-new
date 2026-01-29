@@ -1,6 +1,16 @@
 import React from "react";
 import { useTranslation } from "@/app/i18n";
 
+export async function generateMetadata({ params }) {
+  const { lng } = await params;
+  const { t } = await useTranslation(lng);
+
+  return {
+    title: t("metadata:home.meta.title"),
+    description: t("metadata:home.meta.description"),
+  };
+}
+
 export default async function PrivacyPolicy({ params }) {
   const { lng } = await params;
   const { t } = await useTranslation(lng);
@@ -52,7 +62,7 @@ export default async function PrivacyPolicy({ params }) {
                 {sections.map((sectionKey, index) => (
                   <div key={sectionKey} className={index !== 0 ? "mt-12" : ""}>
                     <h2 className="h4 mb-4 text-[#343f52] font-bold flex items-center">
-                      <span className="w-1 h-6 bg-[#00B7B8]  me-3"></span>
+                      <span className="w-1 h-6 bg-[#2bc29d]  me-3"></span>
                       {t(
                         `privacy_policy:privacy_policy.items.${sectionKey}.title`,
                         "",
@@ -114,7 +124,7 @@ export default async function PrivacyPolicy({ params }) {
                       </p>
                       <p className="mt-2 text-sm">
                         Email:{" "}
-                        <span className="text-[#00B7B8]">
+                        <span className="text-[#2bc29d]">
                           {t(
                             "privacy_policy:privacy_policy.items.contact.email",
                             "apsth456@gmail.com",
@@ -131,8 +141,8 @@ export default async function PrivacyPolicy({ params }) {
                     </div>
 
                     {/* DPO */}
-                    <div className="col-md-6 border-start-md border-[#00B7B8]/10">
-                      <p className="mb-1 font-bold text-[#343f52] underline decoration-[#00B7B8]">
+                    <div className="col-md-6 border-start-md border-[#2bc29d]/10">
+                      <p className="mb-1 font-bold text-[#343f52] underline decoration-[#2bc29d]">
                         {t(
                           "privacy_policy:privacy_policy.items.contact.dpo_label",
                           "เจ้าหน้าที่คุ้มครองข้อมูล (DPO)",
@@ -152,7 +162,7 @@ export default async function PrivacyPolicy({ params }) {
                       </p>
                       <p className="text-sm">
                         Email:{" "}
-                        <span className="text-[#00B7B8]">
+                        <span className="text-[#2bc29d]">
                           {t(
                             "privacy_policy:privacy_policy.items.contact.email",
                             "apsth456@gmail.com",

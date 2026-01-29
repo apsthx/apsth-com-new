@@ -20,11 +20,11 @@ export default async function MainHeader({ lng }) {
   return (
     <header className="!absolute w-full">
       <div
-        className=" bg-gradient-to-r from-[#41c7a1] via-[#00B7B8] to-[#41c7a1] !text-white font-bold !text-[.75rem] !relative"
+        className=" bg-gradient-to-r from-[#2bc29d] via-[#29bd98] to-[#2bc29d] !text-white font-bold !text-[.75rem] !relative"
         style={{ zIndex: 1 }}
       >
         {/* แก้จุดนี้: เอา whitespace-nowrap ออกในมือถือ และใช้ flex-wrap แทนถ้าจำเป็น */}
-        <div className="  !mb-0 py-2 hidden lg:flex  items-center justify-center flex-wrap md:flex-nowrap">
+        <div className="  !mb-0 py-1.5 hidden lg:flex  items-center justify-center flex-wrap md:flex-nowrap">
           {/* ส่วนหัวข้อคงที่ */}
           <span className="flex-shrink-0  font-normal ">
             *{t("service_confidence.title", "ฟรี อัพเดทเวอร์ชั่น")}*
@@ -127,7 +127,7 @@ export default async function MainHeader({ lng }) {
                 {/* --- 1. ส่วนที่จะแสดงเฉพาะจอ lg (Dropdown เพื่อกันล้น) --- */}
                 <li className="nav-item dropdown hidden lg:block xl:hidden">
                   <a
-                    className="nav-link dropdown-toggle !relative !inline-flex items-center gap-1 !bg-[#00B7B8] !text-white !rounded-xl !py-1.5 !px-3"
+                    className="nav-link dropdown-toggle !relative !inline-flex items-center gap-1 !bg-[#2bc2bb] !text-white !rounded-xl !py-1.5 !px-3"
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -140,7 +140,7 @@ export default async function MainHeader({ lng }) {
                       <Badge
                         color="red"
                         variant="softText"
-                        className="!text-[10px] !px-1.5 !py-[1px !font-medium]"
+                        className="!text-[10px] !px-1.5 !py-[3px] !font-medium]"
                       >
                         {labels.free}
                       </Badge>
@@ -159,7 +159,7 @@ export default async function MainHeader({ lng }) {
                     </li>
                     <li>
                       <a
-                        className="dropdown-item flex items-center gap-2 !py-2 !text-[#00B7B8] !bg-[#00b8b821] rounded-md"
+                        className="dropdown-item flex items-center gap-2 !py-2 !text-white !bg-[#2bc2bb] rounded-md"
                         href="https://www.app-apsx.com/register"
                         target="_blank"
                       >
@@ -178,7 +178,7 @@ export default async function MainHeader({ lng }) {
                   <a
                     target="_blank"
                     href="https://www.app-apsx.com/login"
-                    className="!font-medium !text-[#464c58] !tracking-wide btn btn-xs !inline-flex items-center gap-1 !bg-[#0000000a] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-xl !py-2 !px-3 transition-all"
+                    className="!font-medium !text-[#464c58] !tracking-wide !inline-flex items-center gap-1 !bg-[#f5f5f7] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-xl !py-2 !px-3 transition-all"
                   >
                     <i className="uil uil-signin text-[0.8rem]" />
                     <span>{labels.login}</span>
@@ -188,13 +188,13 @@ export default async function MainHeader({ lng }) {
                   <a
                     target="_blank"
                     href="https://www.app-apsx.com/register"
-                    className="!relative !inline-flex items-center gap-1 !text-white !bg-[#00B7B8] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-xl !py-2 !px-3 transition-all"
+                    className="!relative !inline-flex items-center gap-1 !text-white !bg-[#2bc2bb] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-xl !py-2 !px-3 transition-all"
                   >
                     <span className="absolute -top-2.5 -right-2">
                       <Badge
                         color="red"
                         variant="softText"
-                        className="!text-[10px] !px-1.5 !py-[1px] !rounded-md"
+                        className="!text-[10px] !px-1.5 !py-[3px] !rounded-md"
                       >
                         {labels.free}
                       </Badge>

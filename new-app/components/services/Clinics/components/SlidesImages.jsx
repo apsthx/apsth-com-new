@@ -26,7 +26,7 @@ export default function FullWidthImageSlider() {
   ];
 
   return (
-    <section className="wrapper !bg-[#ffffff] w-full">
+    <section className="wrapper !bg-[#ececec00] w-full">
       {/* เอา container ออกเพื่อให้กว้างเต็มหน้าจอ */}
       <div data-cues="slideInDown" data-delay={300} className="w-full">
         <div className="swiper-container w-full">
@@ -85,7 +85,7 @@ export default function FullWidthImageSlider() {
         .swiper-pagination-bullet {
           width: 10px;
           height: 10px;
-          background: #fff;
+          background: #f5f5f6;
           opacity: 0.7;
         }
         .swiper-pagination-bullet-active {

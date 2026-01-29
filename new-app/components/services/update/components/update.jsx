@@ -9,7 +9,7 @@ export default async function Update({ lng }) {
       <div className="container pt-20 xl:pt-28 pb-16">
         {/* --- Header Section --- */}
         <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 mb-4 text-[0.7rem] font-bold tracking-[0.2em] text-[#00B7B8] uppercase bg-[#00B7B8]/10 rounded-lg">
+          <div className="inline-block px-3 py-1 mb-4 text-[0.7rem] font-bold tracking-[0.2em] text-[#2bc29d] uppercase bg-[#2bc29d]/10 rounded-lg">
             What's New
           </div>
           <h2 className="text-[2rem] xl:text-[2.6rem] font-black text-[#343f52] mb-4">
@@ -79,13 +79,13 @@ export default async function Update({ lng }) {
                     >
                       {/* Version Badge */}
                       <div
-                        className={`flex-shrink-0 px-3 py-1 rounded-md text-[0.65rem] font-medium tracking-tighter uppercase ${isFirst ? "bg-[#00B7B8] text-white" : "bg-[#f5f5f6] text-[#343f52]"}`}
+                        className={`flex-shrink-0 px-3 py-1 rounded-md text-[0.65rem] font-medium tracking-tighter uppercase ${isFirst ? "bg-[#2bc29d] text-white" : "bg-[#f5f5f6] text-[#343f52]"}`}
                       >
                         {blog.version}
                       </div>
 
                       {/* Title */}
-                      <span className="!text-[0.95rem] md:text-lg text-[#343f52] group-hover:text-[#00B7B8] transition-colors leading-snug grow">
+                      <span className="!text-[0.95rem] md:text-lg text-[#343f52] group-hover:text-[#2bc29d] transition-colors leading-snug grow">
                         {blog.title}
                       </span>
                     </button>
@@ -102,7 +102,7 @@ export default async function Update({ lng }) {
                           {blog.items &&
                             Object.values(blog.items).map((text, i) => (
                               <li key={i} className="flex items-center gap-3">
-                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#00B7B8] flex-shrink-0" />
+                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#2bc29d] flex-shrink-0" />
                                 <span className="text-[0.95rem] text-[#60697b] leading-relaxed">
                                   {text}
                                 </span>

@@ -9,11 +9,11 @@ export default async function Hero({ lng }) {
       <div className="container pt-20 pb-10 xl:pt-28 lg:pt-28 md:pt-24 !text-center !relative !font-medium !text-[#464c58] !tracking-wide overflow-hidden">
         {/* --- Grid Background Layer --- */}
         <div
-          className="absolute inset-0 z-0 opacity-[0.1]"
+          className="absolute inset-0 z-0 opacity-[0.3]"
           style={{
             backgroundImage: `
-                linear-gradient(to right, #00B7B8 2px, transparent 1px),
-                linear-gradient(to bottom, #00B7B8 2px, transparent 1px)
+                linear-gradient(to right, #37d5af 2px, transparent 1px),
+                linear-gradient(to bottom, #37d5af 2px, transparent 1px)
               `,
             backgroundSize: "80px 80px", // ปรับขนาดช่องตารางที่นี่
             maskImage:
@@ -28,7 +28,7 @@ export default async function Hero({ lng }) {
           className="w-full max-w-[900px] mx-auto !text-center !px-[15px]"
         >
           {/* 1. Badge เล็กๆ ด้านบนเพิ่มความเก๋ */}
-          <div className="inline-block px-4 py-1.5 mb-6 text-[0.75rem] font-bold tracking-widest text-[#00B7B8] uppercase bg-[#00B7B8]/10 rounded-full">
+          <div className="inline-block px-4 py-1.5 mb-6 text-[0.75rem] font-bold tracking-widest text-[#2bc29d] uppercase bg-[#2bc29d]/10 rounded-full">
             Our Ecosystem
           </div>
 
@@ -38,9 +38,9 @@ export default async function Hero({ lng }) {
               "partner:hero.title_start",
               "เรารวบรวมเครื่องมือให้ทำงานเข้าด้วยกันผ่าน",
             )}{" "}
-            <span className="text-[#00B7B8] relative">
+            <span className="text-[#2bc29d] relative">
               Partner
-              <span className="absolute bottom-1 left-0 w-full h-[6px] bg-[#00B7B8]/20 -z-10"></span>
+              <span className="absolute bottom-1 left-0 w-full h-[6px] bg-[#2bc29d]/20 -z-10"></span>
             </span>{" "}
             {t("partner:hero.title_end", "ของเรา")}
           </h2>
@@ -57,7 +57,7 @@ export default async function Hero({ lng }) {
 
           {/* 4. ตกแต่งด้วยปุ่มหรือ Link ถ้าต้องการ (Optional) */}
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <div className="w-12 h-1 bg-[#00B7B8] rounded-full opacity-30"></div>
+            <div className="w-12 h-1 bg-[#2bc29d] rounded-full opacity-30"></div>
           </div>
         </div>
       </div>

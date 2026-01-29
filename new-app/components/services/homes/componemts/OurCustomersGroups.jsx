@@ -70,10 +70,10 @@ export default function OurCustomersGroups() {
         <div
           className="absolute bottom-full left-1/2 -translate-x-1/2 mb-6 pointer-events-none 
                         opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100
-                        transition-all duration-300 origin-bottom w-[200px]"
+                        transition-all duration-300 origin-bottom w-[200px] z-50"
           style={{ zIndex: 99999 }} // บังคับให้อยู่บนสุดของระนาบ
         >
-          <div className="relative rounded-[1.2rem] bg-white/95 backdrop-blur-md border border-white/40 shadow-[0_20px_40px_rgba(0,0,0,0.2)] p-3 text-center">
+          <div className="relative rounded-[1.2rem] bg-white backdrop-blur-md border border-white/40 shadow-[0_20px_40px_rgba(0,0,0,0.2)] p-3 text-center">
             <div className="relative inline-block mb-1 p-0.5 rounded-full bg-gradient-to-tr from-indigo-500/20 to-purple-500/20">
               <Image
                 className="rounded-full object-contain border-2 border-white"
@@ -148,7 +148,7 @@ export default function OurCustomersGroups() {
       `}</style>
 
       <div className="container !overflow-visible ">
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-8 md:gap-10 items-center justify-items-center !overflow-visible">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-8 md:gap-10 items-center justify-items-center !overflow-visible">
           {loading
             ? Array.from({ length: 18 }).map((_, i) => <SkeletonCard key={i} />)
             : gridItems.map((item, index) => renderLogoItem(item, index))}

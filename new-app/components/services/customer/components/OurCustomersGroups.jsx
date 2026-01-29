@@ -109,8 +109,8 @@ export default function OurCustomersGroups() {
 
   return (
     <section className="wrapper !overflow-visible">
-      <div className="container !overflow-visible py-10">
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-4 md:gap-5 items-center justify-items-center !overflow-visible">
+      <div className="container !overflow-visible">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-4 md:gap-5 items-center justify-items-center !overflow-visible">
           {loading
             ? Array.from({ length: 40 }).map((_, i) => <SkeletonCard key={i} />)
             : items.map((item, index) => renderLogoItem(item, index))}

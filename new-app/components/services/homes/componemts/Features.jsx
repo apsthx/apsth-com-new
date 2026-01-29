@@ -10,7 +10,7 @@ export default async function Features({ lng }) {
   const { t } = await useTranslation(lng);
   return (
     <section className="wrapper overflow-hidden">
-      <div className="container py-[5rem] xl:!py-[2rem] lg:!py-[2rem] md:!py-[2rem]">
+      <div className="container pb-[1rem] py-[0rem] xl:!py-[2rem] lg:!py-[2rem] md:!py-[2rem]">
         <div
           data-cue="fadeIn"
           data-delay={300}
@@ -19,10 +19,10 @@ export default async function Features({ lng }) {
           <div className="w-full flex-[0_0_auto] !px-[15px] max-w-full !text-center">
             {/* 1. Modern Pill Badge: เพิ่ม Animation เล็กๆ (ถ้ามี Tailwind Config) */}
             <div className="flex justify-center mb-6">
-              <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#45c4a0]">
+              <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#2bc29d]">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#45c4a0] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#45c4a0]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2bc29d] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2bc29d]"></span>
                 </span>
                 Features
               </span>
@@ -63,8 +63,8 @@ export default async function Features({ lng }) {
               className="absolute inset-0 z-0 opacity-[0.5]"
               style={{
                 backgroundImage: `
-                    linear-gradient(to right, #00B7B8 2px, transparent 1px),
-                    linear-gradient(to bottom, #00B7B8 2px, transparent 1px)
+                    linear-gradient(to right, #2bc29d 2px, transparent 1px),
+                    linear-gradient(to bottom, #2bc29d 2px, transparent 1px)
                   `,
                 backgroundSize: "80px 80px", // ปรับขนาดช่องตารางที่นี่
                 maskImage:
@@ -79,7 +79,7 @@ export default async function Features({ lng }) {
               {/* 1. Responsive Website (ลอยด้านบนซ้าย) - ซ่อนบนมือถือขนาดเล็กมากหรือปรับตำแหน่ง */}
               <div className="absolute top-0 -left-2 sm:top-[10%] sm:-left-10 z-10">
                 <div className="bg-white/90 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-xl border border-white/50 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#45c4a0] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#2bc29d] rounded-full"></span>
                   <span className="text-[0.7rem] sm:text-[0.85rem] font-bold text-[#343f52] whitespace-nowrap">
                     Responsive Website
                   </span>
@@ -101,7 +101,7 @@ export default async function Features({ lng }) {
               {/* 2. AI Suggestion (ลอยด้านบนขวา) */}
               <div className="absolute -top-5 -right-2 sm:top-[-5%] sm:-right-5 z-10">
                 <div className="bg-white/90 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-xl border border-white/50 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#fab758] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#f0a51b] rounded-full"></span>
                   <span className="text-[0.7rem] sm:text-[0.85rem] font-bold text-[#343f52] whitespace-nowrap">
                     AI Suggestion
                   </span>
@@ -123,7 +123,7 @@ export default async function Features({ lng }) {
               {/* 3. Customer Data Tools (ลอยด้านล่างขวา) */}
               <div className="absolute -bottom-2 -right-2 sm:bottom-[10%] sm:-right-10 z-10">
                 <div className="bg-white/90 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl shadow-xl border border-white/50 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#3f78e0] rounded-full"></span>
+                  <span className="w-2 h-2 bg-[#3b73e1] rounded-full"></span>
                   <span className="text-[0.7rem] sm:text-[0.85rem] font-bold text-[#343f52] whitespace-nowrap">
                     Customer Data Tools
                   </span>
@@ -192,12 +192,12 @@ export default async function Features({ lng }) {
                     <g>
                       {/* ขอบนาฬิกาหลัก (Primary - สีเขียวแบรนด์) */}
                       <path
-                        fill="#45c4a0"
+                        fill="#2bc29d"
                         d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"
                       />
                       {/* เข็มนาฬิกาสื่อถึงความเร็ว (Secondary - สีเหลืองทอง) */}
                       <path
-                        fill="#fab758"
+                        fill="#f0a51b"
                         d="M128,72a8,8,0,0,0-8,8v44.69L98.34,146.34a8,8,0,0,0,11.32,11.32l24-24A8,8,0,0,0,136,128V80A8,8,0,0,0,128,72Z"
                       />
                       {/* ตกแต่งเงาภายในให้ดูมีมิติ */}
@@ -205,17 +205,17 @@ export default async function Features({ lng }) {
                         cx="128"
                         cy="128"
                         r="40"
-                        fill="#45c4a0"
+                        fill="#2bc29d"
                         opacity="0.1"
                       />
-                      <circle fill="#45c4a0" cx="128" cy="128" r="12" />
+                      <circle fill="#2bc29d" cx="128" cy="128" r="12" />
                     </g>
                   </svg>
                 </div>
               </div>
 
               <div>
-                <h4 className="!mb-1 !text-[#45c4a0] !font-medium xl:!text-[1.1rem]">
+                <h4 className="!mb-1 !text-[#01c965] !font-medium xl:!text-[1.1rem]">
                   {t("home:features.features.blog1.title", "Real Time Data")}
                 </h4>
                 <p className="!mb-0 text-[#60697b] leading-relaxed !text-[0.95rem]">
@@ -241,7 +241,7 @@ export default async function Features({ lng }) {
                     <g>
                       {/* ฐานก้อนเมฆและส่วนโครงสร้าง (สีหลัก - Primary) */}
                       <path
-                        fill="#3f78e0"
+                        fill="#3b73e1"
                         d="M160,216H80a72,72,0,0,1,0-144,71.07,71.07,0,0,1,16,1.83,88,88,0,1,1,133.56,92.68A64,64,0,0,1,160,216Z"
                       />
                       {/* ส่วนเงาหรือ Highlight เพื่อความมีมิติ (สีรอง - Secondary) */}
@@ -264,7 +264,7 @@ export default async function Features({ lng }) {
               </div>
 
               <div>
-                <h4 className="!mb-1 !text-[#3f78e0] !font-medium xl:!text-[1.1rem]">
+                <h4 className="!mb-1 !text-[#3b73e1] !font-medium xl:!text-[1.1rem]">
                   {t("home:features.features.blog2.title", "AWS Cloud")}
                 </h4>
                 <p className="!mb-0 text-[#60697b] leading-relaxed !text-[0.95rem]">
@@ -295,11 +295,11 @@ export default async function Features({ lng }) {
                         width="176"
                         height="128"
                         rx="20"
-                        fill="#e2626b"
+                        fill="#d93d4d"
                       />
                       {/* ห่วงกุญแจ (สีรอง - Secondary) */}
                       <path
-                        fill="#e2626b"
+                        fill="#d93d4d"
                         opacity="0.65"
                         d="M80,88V56a48,48,0,0,1,96,0V88H152V56a24,24,0,0,0-48,0V88Z"
                       />
@@ -325,7 +325,7 @@ export default async function Features({ lng }) {
               </div>
 
               <div>
-                <h4 className="!mb-1 !font-medium !text-[#e2626b]">
+                <h4 className="!mb-1 !font-medium !text-[#d93d4d]">
                   {t("home:features.features.blog3.title", "Data Security")}
                 </h4>
                 <p className="!mb-0 text-[#60697b] leading-relaxed">
@@ -415,7 +415,7 @@ export default async function Features({ lng }) {
                     <div className="post-header p-6 flex flex-col flex-grow">
                       {/* หมวดหมู่: ใช้ตัวพิมพ์ใหญ่/Tracking กว้างขึ้นเพื่อความ Formal */}
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-[10px] uppercase tracking-[0.15em] font-bold text-[#00B7B8]">
+                        <span className="text-[10px] uppercase tracking-[0.15em] font-bold text-[#2bc29d]">
                           {t("home:category", "หมวดหมู่")}
                         </span>
                         {item.id === "blog3" && (
@@ -432,7 +432,7 @@ export default async function Features({ lng }) {
                       {/* ชื่อหัวข้อ: ปรับให้ใหญ่ขึ้นและเป็นทางการ */}
                       <h3 className="text-xl font-bold leading-snug mb-3">
                         <Link
-                          className="!text-[#343f52] hover:!text-[#00B7B8] transition-colors duration-200"
+                          className="!text-[#343f52] hover:!text-[#2bc29d] transition-colors duration-200"
                           href={item.link}
                         >
                           {item.title}

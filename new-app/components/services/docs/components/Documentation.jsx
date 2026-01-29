@@ -7,12 +7,12 @@ export default async function Documentation({ lng }) {
   return (
     <section id="snippet-1" className="wrapper !bg-[#ffffff] overflow-hidden">
       {/* Background Decor (Glow จางๆ ด้านข้าง) */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#00B7B8]/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#2bc29d]/5 rounded-full blur-[100px] pointer-events-none -z-10"></div>
 
       <div className="container pt-20 xl:pt-28 pb-16">
         {/* --- Section Header --- */}
         <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 mb-4 text-[0.7rem] font-bold tracking-[0.15em] text-[#00B7B8] uppercase bg-[#00B7B8]/10 rounded-lg">
+          <div className="inline-block px-3 py-1 mb-4 text-[0.7rem] font-bold tracking-[0.15em] text-[#2bc29d] uppercase bg-[#2bc29d]/10 rounded-lg">
             Learning Center
           </div>
           <h2 className="text-[2.2rem] xl:text-[2.6rem] font-black text-[#343f52] !leading-[1.2] mb-4">
@@ -87,10 +87,10 @@ export default async function Documentation({ lng }) {
                   {/* Content Area */}
                   <div className="p-8 flex flex-col grow">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-[#00B7B8]/10 text-[#00B7B8] flex items-center justify-center transition-all group-hover:bg-[#00B7B8] group-hover:text-white">
+                      <div className="w-10 h-10 rounded-xl bg-[#2bc29d]/10 text-[#2bc29d] flex items-center justify-center transition-all group-hover:bg-[#2bc29d] group-hover:text-white">
                         <i className={`uil ${item.icon} text-xl`}></i>
                       </div>
-                      <h3 className="text-[1.15rem] font-bold text-[#343f52] m-0 group-hover:text-[#00B7B8] transition-colors">
+                      <h3 className="text-[1.15rem] font-bold text-[#343f52] m-0 group-hover:text-[#2bc29d] transition-colors">
                         {item.title}
                       </h3>
                     </div>
@@ -104,7 +104,7 @@ export default async function Documentation({ lng }) {
                         href={item.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-[0.85rem] font-medium !text-[#343f52] hover:!text-[#00B7B8] group/link"
+                        className="inline-flex items-center gap-2 text-[0.85rem] font-medium !text-[#343f52] hover:!text-[#2bc29d] group/link"
                       >
                         {t("docs:open_with_yt", "เปิดดูใน YouTube")}
                         <i className="uil uil-arrow-right text-lg transition-transform group-hover/link:translate-x-1"></i>

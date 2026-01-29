@@ -12,11 +12,11 @@ export default async function Hero({ lng }) {
       <div className="container pt-20 pb-10 xl:pt-28 lg:pt-28 md:pt-24 !text-center !relative !font-medium !text-[#464c58] !tracking-wide overflow-hidden">
         {/* --- Grid Background Layer --- */}
         <div
-          className="absolute inset-0 z-0 opacity-[0.1]"
+          className="absolute inset-0 z-0 opacity-[0.3]"
           style={{
             backgroundImage: `
-                linear-gradient(to right, #00B7B8 2px, transparent 1px),
-                linear-gradient(to bottom, #00B7B8 2px, transparent 1px)
+                linear-gradient(to right, #37d5af 2px, transparent 1px),
+                linear-gradient(to bottom, #37d5af 2px, transparent 1px)
               `,
             backgroundSize: "80px 80px", // ปรับขนาดช่องตารางที่นี่
             maskImage:
@@ -33,9 +33,9 @@ export default async function Hero({ lng }) {
           {/* 2. Headline: ใช้การเน้นคำด้วยสีแบรนด์และสไตล์ที่ดูหรูหรา */}
           <h2 className="text-[1.8rem] md:text-[2.6rem] xl:!text-[2rem] font-black !leading-[1.25] !mb-8 text-[#343f52] tracking-[0.02em]">
             {t("spa:hero.title_part1", "ยกระดับธุรกิจ")}{" "}
-            <span className=" text-[#00B7B8] relative inline-block">
+            <span className=" text-[#2bc29d] relative inline-block">
               {t("spa:hero.title_part2", "ใช้งานง่าย")}
-              <span className="absolute bottom-1 left-0 w-full h-[8px] bg-[#00B7B8]/15 -z-10"></span>
+              <span className="absolute bottom-1 left-0 w-full h-[8px] bg-[#2bc29d]/15 -z-10"></span>
             </span>
             <br className="hidden md:block" />
             {t("spa:hero.title_part3", "ครบทุกฟังก์ชันในระบบเดียว")}
@@ -49,37 +49,6 @@ export default async function Hero({ lng }) {
                 "โปรแกรมบริหารจัดการสปาและคลินิกความงามยุคใหม่ ที่ออกแบบมาเพื่อช่วยลดความซับซ้อนในการทำงาน เพิ่มเวลาให้คุณดูแลลูกค้าได้มากขึ้น รองรับทุกฟังก์ชันตั้งแต่จองคิวจนถึงสรุปยอดขาย",
               )}
             </p>
-          </div>
-
-          {/* 4. Trust Badges: เล็กๆ ด้านล่างเพื่อเพิ่มความมั่นใจ */}
-          <div
-            data-cues="slideInDown"
-            data-delay={300}
-            className="mt-12 flex flex-wrap justify-center items-center gap-x-10 gap-y-4 transition-all duration-500"
-          >
-            {/* Security - สีน้ำเงิน/กรมท่า สื่อถึงความปลอดภัย */}
-            <div className="flex items-center gap-2 group cursor-default">
-              <i className="uil uil-shield-check text-2xl text-[#00B7B8] group-hover:text-[#00B7B8] transition-colors duration-300"></i>
-              <span className="text-[0.7rem] font-bold uppercase tracking-widest text-[#00B7B8] group-hover:text-slate-800 dark:group-hover:text-white transition-colors duration-300">
-                High Security
-              </span>
-            </div>
-
-            {/* Cloud - สีฟ้า/Cyan สื่อถึงระบบออนไลน์และก้อนเมฆ */}
-            <div className="flex items-center gap-2 group cursor-default">
-              <i className="uil uil-cloud-database-tree text-2xl text-[#00B7B8] group-hover:text-[#00B7B8] transition-colors duration-300"></i>
-              <span className="text-[0.7rem] font-bold uppercase tracking-widest text-[#00B7B8] group-hover:text-slate-800 dark:group-hover:text-white transition-colors duration-300">
-                Cloud System
-              </span>
-            </div>
-
-            {/* Real-time - สีเขียว/มิ้นท์ สื่อถึงความสดใหม่และการทำงานตลอดเวลา */}
-            <div className="flex items-center gap-2 group cursor-default">
-              <i className="uil uil-sync text-2xl text-[#00B7B8] group-hover:text-[#00B7B8] transition-colors duration-300"></i>
-              <span className="text-[0.7rem] font-bold uppercase tracking-widest text-[#00B7B8] group-hover:text-slate-800 dark:group-hover:text-white transition-colors duration-300">
-                Real-time Data
-              </span>
-            </div>
           </div>
         </div>
       </div>
