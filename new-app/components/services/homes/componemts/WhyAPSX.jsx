@@ -17,7 +17,7 @@ export default async function WhyAPSX({ lng }) {
             data-delay={300}
             className="flex justify-center mb-6"
           >
-            <span className="flex items-center gap-2 px-4 py-1.5 text-[0.6rem] xl:text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#2bc29d]">
+            <span className="flex items-center gap-2 px-4 py-1.5 text-[0.6rem] xl:text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#00b6b6]">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2bc29d] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2bc29d]"></span>
@@ -76,7 +76,7 @@ export default async function WhyAPSX({ lng }) {
               /* ไอคอน uil-focus สื่อถึงความง่ายที่รวมจุดสนใจไว้ที่เดียว หรือ uil-user-check */
               icon: "uil-focus",
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#2bc29d]",
+              iconColor: "text-[#00b6b6]",
             },
             {
               title: t(
@@ -90,7 +90,7 @@ export default async function WhyAPSX({ lng }) {
               /* uil-cloud-share สื่อถึงการเข้าถึงข้อมูลได้จากทุกที่ (Anywhere Access) */
               icon: "uil-cloud-share",
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#2bc29d]",
+              iconColor: "text-[#00b6b6]",
             },
             {
               title: t(
@@ -103,7 +103,7 @@ export default async function WhyAPSX({ lng }) {
               ),
               icon: "uil-sync", // สัญลักษณ์การอัปเดต/หมุนเวียนข้อมูล
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#2bc29d]",
+              iconColor: "text-[#00b6b6]",
             },
             {
               title: t(
@@ -116,7 +116,7 @@ export default async function WhyAPSX({ lng }) {
               ),
               icon: "uil-presentation-play", // สัญลักษณ์การสอน/พรีเซนต์งาน
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#2bc29d]",
+              iconColor: "text-[#00b6b6]",
             },
           ].map((item, index) => (
             <div
@@ -229,7 +229,7 @@ export default async function WhyAPSX({ lng }) {
               ),
               icon: "uil-store", // เปลี่ยนเป็นรูปหน้าร้านเพื่อให้เข้ากับคำว่า Shop
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#2bc29d]",
+              iconColor: "text-[#00b6b6]",
             },
             {
               title: t(
@@ -243,7 +243,7 @@ export default async function WhyAPSX({ lng }) {
 
               icon: "uil-chart-line",
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#2bc29d]",
+              iconColor: "text-[#00b6b6]",
             },
             {
               title: t(
@@ -256,7 +256,7 @@ export default async function WhyAPSX({ lng }) {
               ),
               icon: "uil-layers", // สื่อถึงชั้นเลเยอร์ของ UI ที่สวยงาม
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#2bc29d]",
+              iconColor: "text-[#00b6b6]",
             },
             {
               title: t(
@@ -269,7 +269,7 @@ export default async function WhyAPSX({ lng }) {
               ),
               icon: "uil-analytics", // สื่อถึงการวิเคราะห์และคาดการณ์
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#2bc29d]",
+              iconColor: "text-[#00b6b6]",
             },
             {
               title: t(
@@ -282,7 +282,7 @@ export default async function WhyAPSX({ lng }) {
               ),
               icon: "uil-folder-medical", // สื่อถึงการเก็บไฟล์ทางการแพทย์ (Lab/X-ray)
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#2bc29d]",
+              iconColor: "text-[#00b6b6]",
             },
             {
               title: t(
@@ -295,7 +295,7 @@ export default async function WhyAPSX({ lng }) {
               ),
               icon: "uil-setting", // สื่อถึงการตั้งค่าและแอดมิน
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#2bc29d]",
+              iconColor: "text-[#00b6b6]",
             },
           ].map((item, index) => (
             <div
@@ -730,10 +730,10 @@ export default async function WhyAPSX({ lng }) {
                       {/* ส่วนเนื้อหา (Content Section) */}
                       <div className="post-header p-6 flex flex-col flex-grow">
                         {/* Title พร้อมเส้นตกแต่งที่สะอาดตาขึ้น */}
-                        <div className="post-title h4 !mb-2 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-50%] before:w-3 before:h-[2px] before:left-0 before:top-1/2 before:bg-[#2bc29d]">
+                        <div className="post-title h4 !mb-2 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-50%] before:w-3 before:h-[2px] before:left-0 before:top-1/2 before:bg-[#00b6b6]">
                           <Link
                             target="_blank"
-                            className="!text-[#343f52] hover:!text-[#2bc29d] transition-colors"
+                            className="!text-[#343f52] hover:!text-[#00b6b6] transition-colors"
                             href={item.link}
                           >
                             {item.title}
@@ -746,7 +746,7 @@ export default async function WhyAPSX({ lng }) {
                             <Badge
                               color="teal"
                               variant="softText"
-                              className="!text-[0.6rem] !px-2.5 !py-[4px] !leading-tight !shadow-sm !rounded-md font-bold"
+                              className="!text-[12px] !px-3 !py-2 !font-medium  !leading-tight !shadow-sm !rounded-full"
                             >
                               {t("home:coming_soon", "เร็วๆ นี้")}
                             </Badge>
@@ -763,7 +763,7 @@ export default async function WhyAPSX({ lng }) {
                     </article>
 
                     {/* แถบสีด้านล่างสุดเพิ่มลูกเล่นความเป็นทางการ */}
-                    <div className="h-[2px] w-0 bg-[#2bc29d] group-hover:w-full transition-all duration-700 ease-in-out" />
+                    <div className="h-[2px] w-0 bg-[#00b6b6] group-hover:w-full transition-all duration-700 ease-in-out" />
                   </div>
                 </div>
               ))}

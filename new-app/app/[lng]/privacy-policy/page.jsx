@@ -142,7 +142,7 @@ export default async function PrivacyPolicy({ params }) {
                 {sections.map((sectionKey, index) => (
                   <div key={sectionKey} className={index !== 0 ? "mt-12" : ""}>
                     <h2 className="h4 mb-4 text-[#343f52] font-bold flex items-center">
-                      <span className="w-1 h-6 bg-[#2bc29d]  me-3"></span>
+                      <span className="w-1 h-6 bg-[#00b8b8]  me-3"></span>
                       {t(
                         `privacy_policy:privacy_policy.items.${sectionKey}.title`,
                         "",
@@ -204,7 +204,7 @@ export default async function PrivacyPolicy({ params }) {
                       </p>
                       <p className="mt-2 text-sm">
                         Email:{" "}
-                        <span className="text-[#2bc29d]">
+                        <span className="text-[#00b8b8]">
                           {t(
                             "privacy_policy:privacy_policy.items.contact.email",
                             "apsth456@gmail.com",
@@ -221,8 +221,8 @@ export default async function PrivacyPolicy({ params }) {
                     </div>
 
                     {/* DPO */}
-                    <div className="col-md-6 border-start-md border-[#2bc29d]/10">
-                      <p className="mb-1 font-bold text-[#343f52] underline decoration-[#2bc29d]">
+                    <div className="col-md-6 border-start-md border-[#00b8b8]/10">
+                      <p className="mb-1 font-bold text-[#343f52] underline decoration-[#00b8b8]">
                         {t(
                           "privacy_policy:privacy_policy.items.contact.dpo_label",
                           "เจ้าหน้าที่คุ้มครองข้อมูล (DPO)",
@@ -242,7 +242,7 @@ export default async function PrivacyPolicy({ params }) {
                       </p>
                       <p className="text-sm">
                         Email:{" "}
-                        <span className="text-[#2bc29d]">
+                        <span className="text-[#00b8b8]">
                           {t(
                             "privacy_policy:privacy_policy.items.contact.email",
                             "apsth456@gmail.com",

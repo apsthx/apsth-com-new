@@ -20,7 +20,7 @@ export default async function MainHeader({ lng }) {
   return (
     <header className="!absolute w-full">
       <div
-        className=" bg-gradient-to-r from-[#2bc29d] via-[#29bd98] to-[#2bc29d] !text-white font-bold !text-[.75rem] !relative"
+        className=" bg-gradient-to-r from-[#00b8b8] via-[#00bebe] to-[#00b8b8] !text-white font-bold !text-[.75rem] !relative"
         style={{ zIndex: 1 }}
       >
         {/* แก้จุดนี้: เอา whitespace-nowrap ออกในมือถือ และใช้ flex-wrap แทนถ้าจำเป็น */}
@@ -188,7 +188,7 @@ export default async function MainHeader({ lng }) {
                   <a
                     target="_blank"
                     href="https://www.app-apsx.com/register"
-                    className="!relative !inline-flex items-center gap-1 !text-white !bg-[#2bc2bb] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-lg !py-2 !px-3 transition-all"
+                    className="!relative !inline-flex items-center gap-1 !text-white !bg-[#00b6b6] hover:!bg-[#039494] !border-none !shadow-none !rounded-lg !py-2 !px-3 transition-all"
                   >
                     <span className="absolute -top-2.5 -right-2">
                       <Badge

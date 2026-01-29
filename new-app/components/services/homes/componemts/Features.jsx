@@ -19,9 +19,9 @@ export default async function Features({ lng }) {
           <div className="w-full flex-[0_0_auto] !px-[15px] max-w-full !text-center">
             {/* 1. Modern Pill Badge: เพิ่ม Animation เล็กๆ (ถ้ามี Tailwind Config) */}
             <div className="flex justify-center mb-6">
-              <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#2bc29d]">
+              <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#01a5a5]">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2bc29d] opacity-75"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full !bg-[#2bc29d] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2bc29d]"></span>
                 </span>
                 Features
@@ -215,7 +215,7 @@ export default async function Features({ lng }) {
               </div>
 
               <div>
-                <h4 className="!mb-1 !text-[#01c965] !font-medium xl:!text-[1.1rem]">
+                <h4 className="!mb-1 !text-[#02a353] !font-medium xl:!text-[1.1rem]">
                   {t("home:features.features.blog1.title", "Real Time Data")}
                 </h4>
                 <p className="!mb-0 text-[#60697b] leading-relaxed !text-[0.95rem]">
@@ -415,16 +415,16 @@ export default async function Features({ lng }) {
                     <div className="post-header p-6 flex flex-col flex-grow">
                       {/* หมวดหมู่: ใช้ตัวพิมพ์ใหญ่/Tracking กว้างขึ้นเพื่อความ Formal */}
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-[10px] uppercase tracking-[0.15em] font-bold text-[#2bc29d]">
+                        <span className="text-[10px] uppercase tracking-[0.15em] font-bold text-[#00b6b6]">
                           {t("home:category", "หมวดหมู่")}
                         </span>
                         {item.id === "blog3" && (
                           <Badge
                             color="teal"
                             variant="softText"
-                            className="!text-[9px] !px-2 !py-0.5 !font-bold !rounded-full uppercase tracking-tighter"
+                            className="!text-[12px] !px-2 !py-2 !font-medium !rounded-full uppercase tracking-tighter"
                           >
-                            {t("home:coming_soon", "Coming Soon")}
+                            {t("home:coming_soon", "เร็วๆ นี้")}
                           </Badge>
                         )}
                       </div>
@@ -432,7 +432,7 @@ export default async function Features({ lng }) {
                       {/* ชื่อหัวข้อ: ปรับให้ใหญ่ขึ้นและเป็นทางการ */}
                       <h3 className="text-xl font-bold leading-snug mb-3">
                         <Link
-                          className="!text-[#343f52] hover:!text-[#2bc29d] transition-colors duration-200"
+                          className="!text-[#343f52] hover:!text-[#00b6b6] transition-colors duration-200"
                           href={item.link}
                         >
                           {item.title}

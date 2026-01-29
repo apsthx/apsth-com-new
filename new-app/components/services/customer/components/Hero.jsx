@@ -35,7 +35,7 @@ export default async function Hero({ lng }) {
           {/* 3. Description: เล่นระดับสีให้ APSX Platform โดดเด่น และใช้ฟอนต์อ่านง่าย */}
           <div className="max-w-[800px] mx-auto">
             <p className="text-[1.05rem] xl:text-[1.2rem] text-[#60697b] leading-relaxed font-light">
-              <span className="font-extrabold text-[#2bc29d] bg-[#2bc29d]/5 px-2 py-0.5 rounded-md">
+              <span className="font-extrabold text-[#00b8b8] bg-[#00b8b8]/5 px-2 py-0.5 rounded-md">
                 APSX Platform
               </span>{" "}
               {t(

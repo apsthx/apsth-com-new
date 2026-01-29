@@ -90,7 +90,7 @@ export default async function Contact({ lng }) {
                       <div className="p-8">
                         {/* Tel Support Section */}
                         <div className="flex flex-row mb-0">
-                          <div className="mr-4 text-[#2bc29d] text-2xl">
+                          <div className="mr-4 text-[#00b8b8] text-2xl">
                             <i className="uil uil-phone-volume"></i>
                           </div>
                           <div>
@@ -107,7 +107,7 @@ export default async function Contact({ lng }) {
                                   "ต้องการความช่วยเหลือ? โทรติดต่อทีมสนับสนุนของเราได้ที่ เวลาทำการ",
                                 )}
                               </p>
-                              <p className="font-semibold flex items-center text-sm text-[#2bc29d]">
+                              <p className="font-semibold flex items-center text-sm text-[#00b8b8]">
                                 <i className="uil uil-clock mr-2 "></i>
                                 {t(
                                   "contact:map.tel_support.business_days",
@@ -124,7 +124,7 @@ export default async function Contact({ lng }) {
                                 {/* เบอร์มือถือ */}
                                 <a
                                   href="tel:0981816769"
-                                  className="flex items-center text-slate-800 dark:text-slate-200 font-bold group hover:!text-[#2bc29d] transition-colors w-fit"
+                                  className="flex items-center text-slate-800 dark:text-slate-200 font-bold group hover:!text-[#00b8b8] transition-colors w-fit"
                                 >
                                   <span className="w-16 text-slate-400 font-normal group-hover:text-slate-400">
                                     Mobile:
@@ -138,7 +138,7 @@ export default async function Contact({ lng }) {
                                 {/* เบอร์สำนักงาน */}
                                 <a
                                   href="tel:043002488"
-                                  className="flex items-center text-slate-800 dark:text-slate-200 font-bold group hover:!text-[#2bc29d] transition-colors w-fit"
+                                  className="flex items-center text-slate-800 dark:text-slate-200 font-bold group hover:!text-[#00b8b8] transition-colors w-fit"
                                 >
                                   <span className="w-16 text-slate-400 font-normal group-hover:text-slate-400">
                                     Office:
@@ -155,7 +155,7 @@ export default async function Contact({ lng }) {
 
                         {/* Chat Support Section */}
                         <div className="flex flex-row mt-4">
-                          <div className="mr-4 text-[#2bc29d] text-2xl">
+                          <div className="mr-4 text-[#00b8b8] text-2xl">
                             <i className="uil uil-comments-alt"></i>
                           </div>
                           <div className="w-full !space-y-2">
@@ -239,10 +239,10 @@ export default async function Contact({ lng }) {
                                   </div>
 
                                   <div className="flex flex-col min-w-0 ">
-                                    <span className="text-[9px] uppercase font-bold text-[#2bc29d] leading-none mb-0.5">
+                                    <span className="text-[9px] uppercase font-bold text-[#00b8b8] leading-none mb-0.5">
                                       {item.label}
                                     </span>
-                                    <span className="text-[13px] hover:!text-[#2bc29d] font-semibold text-[#343f52] truncate group-hover:text-slate-900">
+                                    <span className="text-[13px] hover:!text-[#00b8b8] font-semibold text-[#343f52] truncate group-hover:text-slate-900">
                                       {item.value}
                                     </span>
                                   </div>
@@ -312,12 +312,12 @@ export default async function Contact({ lng }) {
                       </figure>
 
                       <div className="post-header p-6">
-                        <h3 className="!text-[1.2rem] font-bold !mb-3 text-slate-800 hover:text-[#2bc29d] transition-colors cursor-default">
+                        <h3 className="!text-[1.2rem] font-bold !mb-3 text-slate-800 hover:text-[#00b8b8] transition-colors cursor-default">
                           {item.title}
                         </h3>
 
                         <div className="flex items-start">
-                          <i className="uil uil-map-marker text-[#2bc29d] mr-2 text-xl"></i>
+                          <i className="uil uil-map-marker text-[#00b8b8] mr-2 text-xl"></i>
                           <p className="!text-[0.9rem] !leading-relaxed text-slate-500 !mb-4">
                             {item.description}
                           </p>
@@ -327,7 +327,7 @@ export default async function Contact({ lng }) {
                           <a
                             target="_blank"
                             href="https://maps.app.goo.gl/ad23H3AgMrEVZLsx8"
-                            className="!text-[0.85rem] font-bold !text-[#2bc29d] flex items-center group"
+                            className="!text-[0.85rem] font-bold !text-[#00b8b8] flex items-center group"
                           >
                             Google Maps
                             <i className="uil uil-arrow-right ml-1 transition-transform group-hover:translate-x-1"></i>

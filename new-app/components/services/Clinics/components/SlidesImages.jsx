@@ -63,7 +63,7 @@ export default function FullWidthImageSlider() {
       <style jsx global>{`
         .swiper-button-next,
         .swiper-button-prev {
-          color: #00b899 !important;
+          color: #00b6b6 !important;
           background: rgba(255, 255, 255, 0.9);
           width: 50px !important;
           height: 50px !important;
@@ -78,7 +78,7 @@ export default function FullWidthImageSlider() {
         }
         .swiper-button-next:hover,
         .swiper-button-prev:hover {
-          background: #00b899;
+          background: #00b6b6;
           color: #fff !important;
           transform: scale(1.1);
         }
@@ -89,7 +89,7 @@ export default function FullWidthImageSlider() {
           opacity: 0.7;
         }
         .swiper-pagination-bullet-active {
-          background: #00b899 !important;
+          background: #00b6b6 !important;
           width: 30px;
           border-radius: 10px;
           opacity: 1;

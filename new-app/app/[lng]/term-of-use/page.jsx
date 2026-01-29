@@ -132,7 +132,7 @@ export default async function TermsOfService({ params }) {
               <div className="card-body p-8 md:p-12">
                 {sections.map((sectionKey, index) => (
                   <div key={sectionKey} className={index !== 0 ? "mt-10" : ""}>
-                    <h3 className="h4 mb-4 text-[#343f52] font-bold border-s-4 border-[#2bc29d] ps-3">
+                    <h3 className="h4 mb-4 text-[#343f52] font-bold border-s-4 border-[#00b8b8] ps-3">
                       {t(`term_of_use:items.${sectionKey}.title`, "")}
                     </h3>
 
@@ -151,7 +151,7 @@ export default async function TermsOfService({ params }) {
                             key={listKey}
                             className="flex items-start mb-3 text-[#60697b] leading-relaxed"
                           >
-                            <span className="me-2 text-[#2bc29d]">•</span>
+                            <span className="me-2 text-[#00b8b8]">•</span>
                             <span>{content}</span>
                           </li>
                         ) : null;

@@ -11,7 +11,7 @@ export default async function MainFooter({ lng }) {
     <footer className="bg-[#f5f5f6] opacity-100 !text-[#343f52]">
       <div className="container">
         {/* --- ส่วนบล็อกที่ซ้อนด้านบน (Upper Block / CTA) --- */}
-        <div className="card relative z-[10] !mt-[-5rem] overflow-hidden !border-0 !rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-gradient-to-tr from-[#2bc29d] via-[#2ec09b] to-[#2fc09c]">
+        <div className="card relative z-[10] !mt-[-5rem] overflow-hidden !border-0 !rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-gradient-to-tr from-[#009999] via-[#00b6b6] to-[#00c4c4]">
           {/* ลูกเล่นแสง Ambient ด้านหลัง */}
           <div className="absolute top-[-50%] left-[-10%] w-80 h-80 bg-white/10 blur-[80px] rounded-full"></div>
           <div className="absolute bottom-[-20%] right-[-5%] w-64 h-64 bg-blue-400/20 blur-[60px] rounded-full"></div>

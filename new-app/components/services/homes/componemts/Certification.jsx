@@ -14,7 +14,7 @@ export default async function Certification({ lng }) {
         {/* แก้ไขจุดนี้: เปลี่ยนจาก bg-image/bg-overlay เป็น bg-gradient */}
         <div
           className="card !text-white !mt-[-1.25rem] xl:!mt-0 lg:!mt-0 xl:-translate-y-2/4 lg:-translate-y-2/4 !mb-lg-n50p !relative z-0 !rounded-[1.5rem] overflow-hidden shadow-2xl 
-          bg-gradient-to-t from-[#2bc29d] via-[#2ec09b] to-[#2fc09c]
+          bg-gradient-to-t from-[#009999] via-[#00b6b6] to-[#00c4c4]
           before:content-[''] before:absolute before:inset-0 before:bg-white/10 before:z-[1]"
         >
           {/* แสง Glow ปรับโทนให้เข้ากับเขียวอมฟ้า */}

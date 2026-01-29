@@ -110,7 +110,7 @@ export default async function APIIntegration({ lng }) {
 
           {/* ฝั่งเนื้อหา */}
           <div className="xl:w-6/12 lg:w-6/12 w-full xl:!px-[35px] lg:!px-[20px] !px-[15px] max-w-full">
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-lg bg-[#2bc29d]/10 text-[#2bc29d] text-[0.7rem] font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-lg bg-[#00b8b8]/10 text-[#00b8b8] text-[0.7rem] font-bold uppercase tracking-wider">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2bc29d] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2bc29d]"></span>
@@ -133,7 +133,7 @@ export default async function APIIntegration({ lng }) {
               {apiLists.map((item, index) => (
                 <div key={index} className="group cursor-default">
                   <div className="flex items-start p-3 rounded-xl transition-all duration-300 hover:bg-slate-50">
-                    <div className="flex-shrink-0 w-5 h-5 mt-0.5 flex items-center justify-center rounded-full bg-[#2bc29d]/10 text-[#2bc29d] transition-all group-hover:scale-110">
+                    <div className="flex-shrink-0 w-5 h-5 mt-0.5 flex items-center justify-center rounded-full bg-[#00b8b8]/10 text-[#00b8b8] transition-all group-hover:scale-110">
                       <i className="uil uil-check text-[0.9rem] font-bold"></i>
                     </div>
                     <span className="ml-3 text-[0.85rem] font-medium text-[#464c58] leading-snug">

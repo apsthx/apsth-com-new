@@ -17,7 +17,7 @@ export default async function PlatformHighlights({ lng }) {
               data-delay={300}
               className="flex justify-center mb-6"
             >
-              <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#2bc29d]">
+              <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#00b6b6]">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2bc29d] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2bc29d]"></span>
@@ -100,7 +100,7 @@ export default async function PlatformHighlights({ lng }) {
                       {/* OPD System */}
                       <li className="flex items-start !mt-5 first:!mt-0 group">
                         <span className=" flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-medkit text-[#2bc29d] text-[1.2rem] leading-none" />
+                          <i className="uil uil-medkit text-[#00b6b6] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
                           {t(
@@ -113,7 +113,7 @@ export default async function PlatformHighlights({ lng }) {
                       {/* Inventory */}
                       <li className="flex items-start !mt-5 group">
                         <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-store text-[#2bc29d] text-[1.2rem] leading-none" />
+                          <i className="uil uil-store text-[#00b6b6] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
                           {t(
@@ -126,7 +126,7 @@ export default async function PlatformHighlights({ lng }) {
                       {/* Reports */}
                       <li className="flex items-start !mt-5 group">
                         <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-chart-line text-[#2bc29d] text-[1.2rem] leading-none" />
+                          <i className="uil uil-chart-line text-[#00b6b6] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
                           {t(
@@ -144,7 +144,7 @@ export default async function PlatformHighlights({ lng }) {
                       {/* CRM */}
                       <li className="flex items-start !mt-5 first:!mt-0 group">
                         <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-users-alt text-[#2bc29d] text-[1.2rem] leading-none" />
+                          <i className="uil uil-users-alt text-[#00b6b6] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
                           {t(
@@ -157,7 +157,7 @@ export default async function PlatformHighlights({ lng }) {
                       {/* Multi-Branch */}
                       <li className="flex items-start !mt-5 group">
                         <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-layers text-[#2bc29d] text-[1.2rem] leading-none" />
+                          <i className="uil uil-layers text-[#00b6b6] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
                           {t(
@@ -170,7 +170,7 @@ export default async function PlatformHighlights({ lng }) {
                       {/* Security */}
                       <li className="flex items-start !mt-5 group">
                         <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-shield-check text-[#2bc29d] text-[1.2rem] leading-none" />
+                          <i className="uil uil-shield-check text-[#00b6b6] text-[1.2rem] leading-none" />
                         </span>
                         <span className="text-[#60697b] font-medium leading-relaxed self-center">
                           {t(
@@ -682,9 +682,9 @@ export default async function PlatformHighlights({ lng }) {
                             <div className="flex justify-between items-center mb-3">
                               <div className="flex items-center">
                                 <i
-                                  className={`${item.icon} text-[#2bc29d] text-[1.2rem] mr-2`}
+                                  className={`${item.icon} text-[#00b6b6] text-[1.2rem] mr-2`}
                                 ></i>
-                                <p className="text-[0.65rem] font-bold uppercase tracking-widest text-[#2bc29d] !mb-0">
+                                <p className="text-[0.65rem] font-bold uppercase tracking-widest text-[#00b6b6] !mb-0">
                                   {item.category}
                                 </p>
                               </div>
@@ -707,7 +707,7 @@ export default async function PlatformHighlights({ lng }) {
                               {transformedFeatures.map((feature, fIdx) => (
                                 <li key={fIdx} className="flex items-start">
                                   {/* ไอคอนติ๊กถูก SVG */}
-                                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
+                                  <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b6b6]">
                                     <svg
                                       xmlns="http://www.w3.org/2000/svg"
                                       viewBox="0 0 20 20"
@@ -838,7 +838,7 @@ export default async function PlatformHighlights({ lng }) {
             </div>
             <div className="!mt-[15px] ml-14">
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b6b6]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -862,7 +862,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               {/*/column */}
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b6b6]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -886,7 +886,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               {/*/column */}
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b6b6]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -910,7 +910,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               {/*/column */}
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b6b6]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -934,7 +934,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               {/*/column */}
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b6b6]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -958,7 +958,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               {/*/column */}
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b6b6]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -982,7 +982,7 @@ export default async function PlatformHighlights({ lng }) {
               </div>
               {/*/column */}
               <div className="flex flex-row">
-                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#2bc29d]">
+                <span className="flex-shrink-0 w-4 h-4 mt-[3px] mr-2 text-[#00b6b6]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"

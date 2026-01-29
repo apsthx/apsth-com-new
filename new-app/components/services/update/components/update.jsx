@@ -79,13 +79,13 @@ export default async function Update({ lng }) {
                     >
                       {/* Version Badge */}
                       <div
-                        className={`flex-shrink-0 px-3 py-1 rounded-md text-[0.65rem] font-medium tracking-tighter uppercase ${isFirst ? "bg-[#2bc29d] text-white" : "bg-[#f5f5f6] text-[#343f52]"}`}
+                        className={`flex-shrink-0 px-3 py-1 rounded-md text-[0.65rem] font-medium tracking-tighter uppercase ${isFirst ? "bg-[#00b8b8] text-white" : "bg-[#f5f5f6] text-[#343f52]"}`}
                       >
                         {blog.version}
                       </div>
 
                       {/* Title */}
-                      <span className="!text-[0.95rem] md:text-lg text-[#343f52] group-hover:text-[#2bc29d] transition-colors leading-snug grow">
+                      <span className="!text-[0.95rem] md:text-lg text-[#343f52] group-hover:text-[#00b8b8] transition-colors leading-snug grow">
                         {blog.title}
                       </span>
                     </button>
@@ -102,7 +102,7 @@ export default async function Update({ lng }) {
                           {blog.items &&
                             Object.values(blog.items).map((text, i) => (
                               <li key={i} className="flex items-center gap-3">
-                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#2bc29d] flex-shrink-0" />
+                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#00b8b8] flex-shrink-0" />
                                 <span className="text-[0.95rem] text-[#60697b] leading-relaxed">
                                   {text}
                                 </span>

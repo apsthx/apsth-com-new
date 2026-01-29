@@ -72,7 +72,7 @@ export default function Package({ translations }) {
                           </span>
                         </div>
 
-                        <h4 className="!text-lg font-bold mb-6 !text-[#2bc2bb] uppercase !tracking-[0.1em]">
+                        <h4 className="!text-lg font-bold mb-6 !text-[#02b3b3] uppercase !tracking-[0.1em]">
                           {plan.title}
                         </h4>
 
@@ -91,7 +91,7 @@ export default function Package({ translations }) {
                                 <div
                                   className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${
                                     feature.included
-                                      ? "bg-[#2bc29c13] text-[#2bc29d]"
+                                      ? "bg-[#00b6b60e] text-[#00b6ad]"
                                       : "bg-[#f5f5f6] text-[#9499a3]"
                                   }`}
                                 >
