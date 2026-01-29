@@ -81,7 +81,7 @@ export default async function Hero({ lng }) {
                   </div>
 
                   {/* 3. ผู้จัดการ */}
-                  <div className="absolute bottom-[25%] left-[5%] md:bottom-[35%] md:-left-[50px] flex items-center z-10 animate-float-delayed">
+                  <div className="absolute !bottom-[25%] left-[5%] md:bottom-[35%] md:-left-[50px] flex items-center z-10 animate-float-delayed">
                     <div className="tracking-[0.1em] leading-none font-medium bg-[#01c965] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] shadow-[0_10px_20px_rgba(47,158,126,0.4)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
                       {t("home:hero.user_ecosystem.role_manager", "ผู้จัดการ")}
                     </div>
