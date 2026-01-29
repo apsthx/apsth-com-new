@@ -8,7 +8,7 @@ import { useTranslation } from "@/app/i18n";
 export default async function Hero({ lng }) {
   const { t } = await useTranslation(lng);
   return (
-    <div className="pt-28 xl:pt-[4rem] lg:pt-[1rem] md:pt-[1rem] !text-center !relative !font-medium !text-[#464c58] !tracking-wide overflow-hidden">
+    <div className="pt-20 xl:pt-[1rem] lg:pt-[1rem] md:pt-[1rem] !text-center !relative !font-medium !text-[#464c58] !tracking-wide overflow-hidden">
       {/* --- Grid Background Layer --- */}
       <div
         className="absolute inset-0 z-0 opacity-[0.3]"
@@ -24,24 +24,6 @@ export default async function Hero({ lng }) {
             "radial-gradient(ellipse at center, black, transparent 80%)",
         }}
       />
-      {/* --- Blurry Background Image --- */}
-      {/* <div
-        className="absolute z-10 opacity-90"
-        style={{
-          top: "-15%",
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-        data-cue="fadeIn"
-      >
-        <Image
-          className="!rounded-[0.8rem]"
-          alt="image"
-          src="/assets/img/photos/blurry.png"
-          width={1400}
-          height={1080}
-        />
-      </div> */}
       <div className=" flex flex-wrap mx-[-15px] !relative px-4 lg:px-0">
         <section id="snippet-1" className="wrapper !bg-transparent  w-screen">
           <div className="container mt-0 sm:pt-0 xl:pt-20 lg:pt-20 md:pt-20 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
@@ -166,7 +148,7 @@ export default async function Hero({ lng }) {
                   <Link
                     target="_blank"
                     href="https://page.line.me/gbc9405c"
-                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#01c965] border border-[#01c965] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 hover:!bg-[#01b85c] transition-all duration-300 !rounded-xl px-5 py-2 gap-2"
+                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#01c965] border border-[#01c965] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 hover:!bg-[#01b85c] transition-all duration-300 !rounded-lg px-5 py-2 gap-2"
                   >
                     <i
                       className="uil uil-line text-[1.3rem] leading-none"
@@ -181,7 +163,7 @@ export default async function Hero({ lng }) {
                   <Link
                     target="_blank"
                     href={`/${lng}/calendar`}
-                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#2bc2bb] hover:!bg-[#26beb7]  border border-[#2bc2bb] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 transition-all duration-300 !rounded-xl px-5 py-2 gap-2"
+                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#2bc2bb] hover:!bg-[#26beb7]  border border-[#2bc2bb] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 transition-all duration-300 !rounded-lg px-5 py-2 gap-2"
                   >
                     <i
                       className="uil uil-calendar-alt text-[1.3rem] leading-none"

@@ -127,7 +127,7 @@ export default async function MainHeader({ lng }) {
                 {/* --- 1. ส่วนที่จะแสดงเฉพาะจอ lg (Dropdown เพื่อกันล้น) --- */}
                 <li className="nav-item dropdown hidden lg:block xl:hidden">
                   <a
-                    className="nav-link dropdown-toggle !relative !inline-flex items-center gap-1 !bg-[#2bc2bb] !text-white !rounded-xl !py-1.5 !px-3"
+                    className="nav-link dropdown-toggle !relative !inline-flex items-center gap-1 !bg-[#2bc2bb] !text-white !rounded-lg !py-1.5 !px-3"
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -149,7 +149,7 @@ export default async function MainHeader({ lng }) {
                   <ul className="dropdown-menu !right-0 !left-auto !border-none !shadow-xl !rounded-xl space-y-1">
                     <li>
                       <a
-                        className="dropdown-item flex items-center gap-2 !py-2 !bg-[#00000005] rounded-md"
+                        className="dropdown-item flex items-center gap-2 !py-2 !bg-[#00000005] rounded-lg"
                         href="https://www.app-apsx.com/login"
                         target="_blank"
                       >
@@ -159,7 +159,7 @@ export default async function MainHeader({ lng }) {
                     </li>
                     <li>
                       <a
-                        className="dropdown-item flex items-center gap-2 !py-2 !text-white !bg-[#2bc2bb] rounded-md"
+                        className="dropdown-item flex items-center gap-2 !py-2 !text-white !bg-[#2bc2bb] rounded-lg"
                         href="https://www.app-apsx.com/register"
                         target="_blank"
                       >
@@ -178,7 +178,7 @@ export default async function MainHeader({ lng }) {
                   <a
                     target="_blank"
                     href="https://www.app-apsx.com/login"
-                    className="!font-medium !text-[#464c58] !tracking-wide !inline-flex items-center gap-1 !bg-[#f5f5f7] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-xl !py-2 !px-3 transition-all"
+                    className="!font-medium !text-[#464c58] !tracking-wide !inline-flex items-center gap-1 !bg-[#f5f5f7] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-lg !py-2 !px-3 transition-all"
                   >
                     <i className="uil uil-signin text-[0.8rem]" />
                     <span>{labels.login}</span>
@@ -188,7 +188,7 @@ export default async function MainHeader({ lng }) {
                   <a
                     target="_blank"
                     href="https://www.app-apsx.com/register"
-                    className="!relative !inline-flex items-center gap-1 !text-white !bg-[#2bc2bb] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-xl !py-2 !px-3 transition-all"
+                    className="!relative !inline-flex items-center gap-1 !text-white !bg-[#2bc2bb] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-lg !py-2 !px-3 transition-all"
                   >
                     <span className="absolute -top-2.5 -right-2">
                       <Badge
