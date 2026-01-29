@@ -20,7 +20,7 @@ export default async function MainHeader({ lng }) {
   return (
     <header className="!absolute w-full">
       <div
-        className=" bg-gradient-to-r from-[#00b8b8] via-[#00bebe] to-[#00b8b8] !text-white font-bold !text-[.75rem] !relative"
+        className=" bg-gradient-to-r from-[#1bb59b] via-[#27c2a0] to-[#1bb5a8] !text-white font-bold !text-[.75rem] !relative"
         style={{ zIndex: 1 }}
       >
         {/* แก้จุดนี้: เอา whitespace-nowrap ออกในมือถือ และใช้ flex-wrap แทนถ้าจำเป็น */}
@@ -127,7 +127,7 @@ export default async function MainHeader({ lng }) {
                 {/* --- 1. ส่วนที่จะแสดงเฉพาะจอ lg (Dropdown เพื่อกันล้น) --- */}
                 <li className="nav-item dropdown hidden lg:block xl:hidden">
                   <a
-                    className="nav-link dropdown-toggle !relative !inline-flex items-center gap-1 !bg-[#2bc2bb] !text-white !rounded-lg !py-1.5 !px-3"
+                    className="nav-link dropdown-toggle !relative !inline-flex items-center gap-1 !bg-[#1bb59b] hover:!bg-[#1bb5a8] !text-white !rounded-lg !py-1.5 !px-3"
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
@@ -159,7 +159,7 @@ export default async function MainHeader({ lng }) {
                     </li>
                     <li>
                       <a
-                        className="dropdown-item flex items-center gap-2 !py-2 !text-white !bg-[#2bc2bb] rounded-lg"
+                        className="dropdown-item flex items-center gap-2 !py-2 !text-white !bg-[#1bb59b]  rounded-lg"
                         href="https://www.app-apsx.com/register"
                         target="_blank"
                       >
@@ -188,13 +188,13 @@ export default async function MainHeader({ lng }) {
                   <a
                     target="_blank"
                     href="https://www.app-apsx.com/register"
-                    className="!relative !inline-flex items-center gap-1 !text-white !bg-[#00b6b6] hover:!bg-[#039494] !border-none !shadow-none !rounded-lg !py-2 !px-3 transition-all"
+                    className="!relative !inline-flex items-center gap-1 !text-white !bg-[#1bb59b] hover:!bg-[#1bb5a8] !border-none !shadow-none !rounded-lg !py-2 !px-3 transition-all"
                   >
                     <span className="absolute -top-2.5 -right-2">
                       <Badge
                         color="red"
                         variant="softText"
-                        className="!text-[10px] !px-1.5 !py-[3px] !rounded-md"
+                        className="!text-[14px] !px-2 !py-[4px] !rounded-full"
                       >
                         {labels.free}
                       </Badge>

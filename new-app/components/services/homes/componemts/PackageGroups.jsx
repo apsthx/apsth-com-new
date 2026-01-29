@@ -91,7 +91,7 @@ export default function Package({ translations }) {
                                 <div
                                   className={`flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${
                                     feature.included
-                                      ? "bg-[#00b6b60e] text-[#00b6ad]"
+                                      ? "bg-[#1bb59b0e] text-[#00b6ad]"
                                       : "bg-[#f5f5f6] text-[#9499a3]"
                                   }`}
                                 >

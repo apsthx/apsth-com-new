@@ -111,7 +111,7 @@ export default async function ContactPage({ params }) {
       <div className="relative z-10">
         <section className="wrapper">
           {/* จัดระยะห่างให้ดูหายใจออก (Spacious) */}
-          <div className="pt-16 pb-20 md:pt-10 md:pb-16">
+          <div className="pt-0 pb-20 md:pt-10 md:pb-16">
             <div className="container">
               <Contact lng={lng} />
             </div>

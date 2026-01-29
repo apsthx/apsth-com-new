@@ -8,7 +8,7 @@ export default async function Contact({ lng }) {
   const { t } = await useTranslation(lng);
   return (
     <section id="snippet-1" className="wrapper !bg-[#ffffff]">
-      <div className="container pt-20 xl:pt-5 lg:pt-10 md:pt-10">
+      <div className="container pt-5 xl:pt-5 lg:pt-10 md:pt-10">
         <section id="snippet-6" className="wrapper !bg-[#ffffff] mt-16">
           <div className="container pb-16 xl:pb-20 lg:pb-20 md:pb-20">
             <div className="flex flex-wrap mx-[-15px]">

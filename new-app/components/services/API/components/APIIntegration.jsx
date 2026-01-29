@@ -144,7 +144,7 @@ export default async function APIIntegration({ lng }) {
               ))}
             </div>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 !mb-16 xl:!mb-4">
               <a
                 target="_blank"
                 rel="noopener noreferrer"

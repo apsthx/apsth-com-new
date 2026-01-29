@@ -11,7 +11,7 @@ export default async function MainFooter({ lng }) {
     <footer className="bg-[#f5f5f6] opacity-100 !text-[#343f52]">
       <div className="container">
         {/* --- ส่วนบล็อกที่ซ้อนด้านบน (Upper Block / CTA) --- */}
-        <div className="card relative z-[10] !mt-[-5rem] overflow-hidden !border-0 !rounded-[1.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-gradient-to-tr from-[#009999] via-[#00b6b6] to-[#00c4c4]">
+        <div className="card relative z-[10] !mt-[-5rem] overflow-hidden !border-0 !rounded-[0.9rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] bg-gradient-to-tr from-[#1bb59b] via-[#27c2a0] to-[#1bb5a8]">
           {/* ลูกเล่นแสง Ambient ด้านหลัง */}
           <div className="absolute top-[-50%] left-[-10%] w-80 h-80 bg-white/10 blur-[80px] rounded-full"></div>
           <div className="absolute bottom-[-20%] right-[-5%] w-64 h-64 bg-blue-400/20 blur-[60px] rounded-full"></div>
@@ -37,7 +37,7 @@ export default async function MainFooter({ lng }) {
                 <a
                   target="_blank"
                   href="https://www.app-apsx.com/register"
-                  className="btn btn-white !bg-white !text-[#2bc29d] !border-0 !rounded-[50rem] px-10 py-3 font-bold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
+                  className="btn btn-white !bg-white !text-[#2bc29d] !border-0 !rounded-md px-10 py-3 font-bold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
                 >
                   {t("start_to_free", "สมัครใช้งานฟรี")}
                 </a>

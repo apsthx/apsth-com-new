@@ -252,7 +252,7 @@ export default function NavClient({ color, labels, badges, locale }) {
         <a
           target="_blank"
           href="https://www.app-apsx.com/register"
-          className="!font-medium !text-[#ffffff] !tracking-wide !relative !inline-flex items-center gap-1 !bg-[#2bc2bb] hover:!bg-[#01a5a5] !border-none !shadow-none !rounded-lg !py-2 !px-4 transition-all focus:!shadow-none active:!shadow-none"
+          className="!font-medium !text-[#ffffff] !tracking-wide !relative !inline-flex items-center gap-1 !bg-[#1bb59b] hover:!bg-[#1bb5a8] !border-none !shadow-none !rounded-lg !py-2 !px-4 transition-all focus:!shadow-none active:!shadow-none"
         >
           <span className="absolute -top-2.5 -right-2">
             <Badge

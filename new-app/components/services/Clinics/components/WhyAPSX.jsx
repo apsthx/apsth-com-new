@@ -7,14 +7,14 @@ export default async function WhyAPSX({ lng }) {
   const { t } = await useTranslation(lng);
   return (
     <section id="snippet-3" className="wrapper !bg-[#ffffff] ">
-      <div className="container pt-4 xl:pt-10 lg:pt-28 md:pt-28 ">
+      <div className="container !mb-16 xl:!mb-4 pt-4 xl:pt-10 lg:pt-28 md:pt-28 ">
         <div className="container mb-12">
           <div
             data-cues="slideInDown"
             data-delay={300}
             className="flex justify-center mb-6"
           >
-            <span className="flex items-center gap-2 px-4 py-1.5 text-[0.6rem] xl:text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#00b6b6]">
+            <span className="flex items-center gap-2 px-4 py-1.5 text-[0.6rem] xl:text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#1bb59b]">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2bc29d] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2bc29d]"></span>
@@ -73,7 +73,7 @@ export default async function WhyAPSX({ lng }) {
               /* ไอคอน uil-focus สื่อถึงความง่ายที่รวมจุดสนใจไว้ที่เดียว หรือ uil-user-check */
               icon: "uil-focus",
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#00b6b6]",
+              iconColor: "text-[#1bb59b]",
             },
             {
               title: t(
@@ -87,7 +87,7 @@ export default async function WhyAPSX({ lng }) {
               /* uil-cloud-share สื่อถึงการเข้าถึงข้อมูลได้จากทุกที่ (Anywhere Access) */
               icon: "uil-cloud-share",
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#00b6b6]",
+              iconColor: "text-[#1bb59b]",
             },
             {
               title: t(
@@ -100,7 +100,7 @@ export default async function WhyAPSX({ lng }) {
               ),
               icon: "uil-sync", // สัญลักษณ์การอัปเดต/หมุนเวียนข้อมูล
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#00b6b6]",
+              iconColor: "text-[#1bb59b]",
             },
             {
               title: t(
@@ -113,7 +113,7 @@ export default async function WhyAPSX({ lng }) {
               ),
               icon: "uil-presentation-play", // สัญลักษณ์การสอน/พรีเซนต์งาน
               bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#00b6b6]",
+              iconColor: "text-[#1bb59b]",
             },
           ].map((item, index) => (
             <div
@@ -131,7 +131,7 @@ export default async function WhyAPSX({ lng }) {
                 <div className="card-body flex flex-col items-center text-center p-6 xl:!p-7">
                   {/* Icon Box */}
                   <div
-                    className={`w-14 h-14 flex items-center justify-center rounded-2xl   ${item.iconColor || "text-[#00b6b6]"} mb-5 group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-14 h-14 flex items-center justify-center rounded-2xl   ${item.iconColor || "text-[#1bb59b]"} mb-5 group-hover:scale-110 transition-transform duration-300`}
                   >
                     <i
                       className={`uil ${item.icon || "uil-file-info-alt"} text-[1.8rem] leading-none`}
@@ -139,7 +139,7 @@ export default async function WhyAPSX({ lng }) {
                   </div>
 
                   {/* Title */}
-                  <h4 className="text-[0.95rem] xl:text-[1.05rem] font-bold text-[#343f52] mb-2 leading-tight group-hover:text-[#00b6b6] transition-colors">
+                  <h4 className="text-[0.95rem] xl:text-[1.05rem] font-bold text-[#343f52] mb-2 leading-tight group-hover:text-[#1bb59b] transition-colors">
                     {item.title}
                   </h4>
 
@@ -303,9 +303,9 @@ export default async function WhyAPSX({ lng }) {
                 key={index}
                 className="xl:w-12/12 w-full px-[15px] mb-3"
               >
-                <div className="flex items-center p-4 bg-white rounded-xl border border-[#e7eaf3] transition-all duration-300 hover:border-[#00b6b6] hover:shadow-md group">
+                <div className="flex items-center p-4 bg-white rounded-xl border border-[#e7eaf3] transition-all duration-300 hover:border-[#1bb59b] hover:shadow-md group">
                   {/* Icon Checkmark สีเขียวมินต์ */}
-                  <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#00b6b6]/10 text-[#00b6b6] mr-4 transition-all group-hover:bg-[#00b6b6] group-hover:text-white">
+                  <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#1bb59b]/10 text-[#1bb59b] mr-4 transition-all group-hover:bg-[#1bb59b] group-hover:text-white">
                     <i className="uil uil-check text-[1rem]"></i>
                   </div>
 
@@ -554,9 +554,9 @@ export default async function WhyAPSX({ lng }) {
                 key={index}
                 className="xl:w-1/2 lg:w-1/2 w-full px-[15px] mb-3"
               >
-                <div className="flex items-center p-4 bg-white rounded-xl border border-[#e7eaf3] transition-all duration-300 hover:border-[#00b6b6] hover:shadow-md group h-full">
+                <div className="flex items-center p-4 bg-white rounded-xl border border-[#e7eaf3] transition-all duration-300 hover:border-[#1bb59b] hover:shadow-md group h-full">
                   {/* Icon Checkmark สีเขียวมินต์ */}
-                  <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#00b6b6]/10 text-[#00b6b6] mr-4 transition-all group-hover:bg-[#00b6b6] group-hover:text-white">
+                  <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#1bb59b]/10 text-[#1bb59b] mr-4 transition-all group-hover:bg-[#1bb59b] group-hover:text-white">
                     <i className="uil uil-check text-[1rem]"></i>
                   </div>
 

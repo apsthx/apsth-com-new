@@ -19,7 +19,7 @@ export default async function Features({ lng }) {
           <div className="w-full flex-[0_0_auto] !px-[15px] max-w-full !text-center">
             {/* 1. Modern Pill Badge: เพิ่ม Animation เล็กๆ (ถ้ามี Tailwind Config) */}
             <div className="flex justify-center mb-6">
-              <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#01a5a5]">
+              <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#1bb59b]">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full !bg-[#2bc29d] opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2bc29d]"></span>

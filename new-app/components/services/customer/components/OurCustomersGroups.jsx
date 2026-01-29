@@ -52,7 +52,7 @@ export default function OurCustomersGroups() {
     return (
       <div
         key={`${item.id}-${index}`}
-        className={`group relative flex justify-center items-center transition-all duration-500 ease-out w-full
+        className={`group relative flex justify-center items-center transition-all duration-500 ease-out w-full 
         ${showImages ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
         style={{
           transitionDelay: `${Math.min(index * 10, 800)}ms`,
@@ -108,7 +108,7 @@ export default function OurCustomersGroups() {
   };
 
   return (
-    <section className="wrapper !overflow-visible">
+    <section className="wrapper !overflow-visible ">
       <div className="container !overflow-visible">
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-4 md:gap-5 items-center justify-items-center !overflow-visible">
           {loading

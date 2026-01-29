@@ -14,7 +14,7 @@ export const navMenu = [
     label: "nav:our_services",
     icon: "uil-apps",
     unicode: "'\\eb3c'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
   },
   {
     id: "our_customers",
@@ -23,7 +23,7 @@ export const navMenu = [
     label: "nav:our_customers",
     icon: "uil-users-alt",
     unicode: "'\\ec50'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
   },
   {
     id: "priicing",
@@ -32,7 +32,7 @@ export const navMenu = [
     label: "nav:priicing",
     icon: "uil-tag-alt",
     unicode: "'\\ec13'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
   },
   {
     id: "docs",
@@ -41,7 +41,7 @@ export const navMenu = [
     label: "nav:docs",
     icon: "uil-file-alt",
     unicode: "'\\eb99'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
   },
   {
     id: "contact_us",
@@ -50,7 +50,7 @@ export const navMenu = [
     label: "nav:contact_us",
     icon: "uil-envelope-alt",
     unicode: "'\\eb9d'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
   },
 ];
 
@@ -62,7 +62,7 @@ export const ourServices = [
     label: "nav:services.clinic_software",
     icon: "uil-medical-square",
     unicode: "'\\ebf3'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
   },
   {
     id: "hospital_software",
@@ -71,7 +71,7 @@ export const ourServices = [
     label: "nav:services.hospital_software",
     icon: "uil-hospital",
     unicode: "'\\ebd8'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
   },
   {
     id: "wellness_software",
@@ -80,7 +80,7 @@ export const ourServices = [
     label: "nav:services.wellness_software",
     icon: "uil-heart-medical",
     unicode: "'\\ebcd'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
   },
   {
     id: "elderly_care_center_software",
@@ -89,7 +89,7 @@ export const ourServices = [
     label: "nav:services.elderly_care_center_software",
     icon: "uil-wheelchair",
     unicode: "'\\ec6c'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
   },
   {
     id: "spa_Beauty_software",
@@ -98,7 +98,7 @@ export const ourServices = [
     label: "nav:services.spa_Beauty_software",
     icon: "uil-flower",
     unicode: "'\\ebae'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
   },
 ];
 
@@ -110,7 +110,7 @@ export const ourCustomers = [
     label: "nav:customers.our_customers",
     icon: "uil-award",
     unicode: "'\\eadf'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
     sub: "nav:customers.sub_customers.sub_our_customers",
   },
   {
@@ -121,7 +121,7 @@ export const ourCustomers = [
     // เปลี่ยนมาใช้ uil-user-check (ผู้ใช้งานที่มีเครื่องหมายถูก) สื่อถึง Partner ที่ผ่านการตรวจสอบแล้ว
     icon: "uil-user-check",
     unicode: "'\\ec4c'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
     sub: "nav:customers.sub_customers.sub_partner",
   },
 ];
@@ -134,7 +134,7 @@ export const documents = [
     label: "nav:document.api_integration",
     icon: "uil-brackets-curly",
     unicode: "'\\eb4d'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
     sub: "nav:document.sub_document.sub_api_integration",
   },
   {
@@ -144,7 +144,7 @@ export const documents = [
     label: "nav:document.documentation",
     icon: "uil-book-open",
     unicode: "'\\eb47'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
     sub: "nav:document.sub_document.sub_documentation",
   },
   {
@@ -154,7 +154,7 @@ export const documents = [
     label: "nav:document.changelog",
     icon: "uil-history",
     unicode: "'\\ebd1'",
-    color: "#2bc2bb",
+    color: "#1bb5a8",
     sub: "nav:document.sub_document.sub_changelog",
   },
 ];

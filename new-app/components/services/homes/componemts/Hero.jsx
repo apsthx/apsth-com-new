@@ -82,10 +82,10 @@ export default async function Hero({ lng }) {
 
                   {/* 3. ผู้จัดการ */}
                   <div className="absolute !bottom-[25%] left-[5%] md:bottom-[35%] md:-left-[50px] flex items-center z-10 animate-float-delayed">
-                    <div className="tracking-[0.1em] leading-none font-medium bg-[#01c965] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] shadow-[0_10px_20px_rgba(47,158,126,0.4)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
+                    <div className="tracking-[0.1em] leading-none font-medium bg-[#0fb467] text-white px-4 py-1.5 md:py-2 rounded-full text-[11px] md:text-[13px] shadow-[0_10px_20px_rgba(47,158,126,0.4)] hover:scale-105 transition-transform cursor-default whitespace-nowrap">
                       {t("home:hero.user_ecosystem.role_manager", "ผู้จัดการ")}
                     </div>
-                    <div className="hidden md:block w-3 h-[2px] bg-gradient-to-r from-[#01c965] to-transparent"></div>
+                    <div className="hidden md:block w-3 h-[2px] bg-gradient-to-r from-[#0fb467] to-transparent"></div>
                   </div>
 
                   {/* 4. พนักงาน */}
@@ -148,7 +148,7 @@ export default async function Hero({ lng }) {
                   <Link
                     target="_blank"
                     href="https://page.line.me/gbc9405c"
-                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#01c965] border border-[#01c965] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 hover:!bg-[#01b85c] transition-all duration-300 !rounded-lg px-5 py-2 gap-2"
+                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#0fb467] border border-[#01c965] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 hover:!bg-[#01b85c] transition-all duration-300 !rounded-lg px-5 py-2 gap-2"
                   >
                     <i
                       className="uil uil-line text-[1.3rem] leading-none"
@@ -163,7 +163,7 @@ export default async function Hero({ lng }) {
                   <Link
                     target="_blank"
                     href={`/${lng}/calendar`}
-                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#00b6b6] hover:!bg-[#039797]  border border-[#2bc2bb] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 transition-all duration-300 !rounded-lg px-5 py-2 gap-2"
+                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#1bb5a8] hover:!bg-[#039797]  border border-[#1bb5a8] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 transition-all duration-300 !rounded-lg px-5 py-2 gap-2"
                   >
                     <i
                       className="uil uil-calendar-alt text-[1.3rem] leading-none"

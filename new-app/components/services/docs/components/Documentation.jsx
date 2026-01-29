@@ -87,10 +87,10 @@ export default async function Documentation({ lng }) {
                   {/* Content Area */}
                   <div className="p-8 flex flex-col grow">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-[#00b8b8]/10 text-[#00b8b8] flex items-center justify-center transition-all group-hover:bg-[#00b8b8] group-hover:text-white">
+                      <div className="w-10 h-10 rounded-xl bg-[#1bb59b]/10 text-[#1bb59b] flex items-center justify-center transition-all group-hover:bg-[#1bb59b] group-hover:text-white">
                         <i className={`uil ${item.icon} text-xl`}></i>
                       </div>
-                      <h3 className="text-[1.15rem] font-bold text-[#343f52] m-0 group-hover:text-[#00b8b8] transition-colors">
+                      <h3 className="text-[1.15rem] font-bold text-[#343f52] m-0 group-hover:text-[#1bb59b] transition-colors">
                         {item.title}
                       </h3>
                     </div>
@@ -104,7 +104,7 @@ export default async function Documentation({ lng }) {
                         href={item.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-[0.85rem] font-medium !text-[#343f52] hover:!text-[#00b8b8] group/link"
+                        className="inline-flex items-center gap-2 text-[0.85rem] font-medium !text-[#343f52] hover:!text-[#1bb59b] group/link"
                       >
                         {t("docs:open_with_yt", "เปิดดูใน YouTube")}
                         <i className="uil uil-arrow-right text-lg transition-transform group-hover/link:translate-x-1"></i>

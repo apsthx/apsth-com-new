@@ -97,14 +97,14 @@ export default async function CustomerPage({ params }) {
   const { lng } = await params;
 
   return (
-    <main className="bg-white min-h-screen">
+    <main className="bg-white min-h-screen ">
       {/* 1. ส่วนของ Background ตกแต่งด้านหลัง (Optional: สร้าง Gradient จางๆ) */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden ">
         <div className="absolute top-0 left-0 w-full h-[500px] opacity-20 pointer-events-none" />
 
         {/* 2. เนื้อหาหลัก */}
-        <div className="relative z-10">
-          <section className="wrapper">
+        <div className="relative z-10  !mb-16 xl:!mb-4">
+          <section className="wrapper !pb-16 xl:!pb-4">
             {/* ปรับระยะห่างให้ Hero ดูเด่นขึ้น */}
             <div className="">
               <Hero lng={lng} />

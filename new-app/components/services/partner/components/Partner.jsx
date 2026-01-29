@@ -100,9 +100,9 @@ export default async function Patner({ lng }) {
                   </figure>
 
                   <div className="post-header p-5 flex-grow">
-                    <div className="post-title h4 !mb-2 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-50%] before:w-3 before:h-[2px] before:left-0 before:top-1/2 before:bg-[#2bc29d]">
+                    <div className="post-title h4 !mb-2 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-50%] before:w-3 before:h-[2px] before:left-0 before:top-1/2 before:bg-[#1bb59b]">
                       <Link
-                        className="!text-[#343f52] hover:!text-[#2bc29d] transition-colors"
+                        className="!text-[#343f52] hover:!text-[#1bb59b] transition-colors"
                         href={item.link}
                       >
                         {item.title}

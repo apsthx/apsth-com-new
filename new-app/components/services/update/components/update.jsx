@@ -6,7 +6,7 @@ export default async function Update({ lng }) {
 
   return (
     <section id="snippet-1" className="wrapper !bg-[#ffffff] overflow-hidden">
-      <div className="container pt-20 xl:pt-28 pb-16">
+      <div className="container pt-20 xl:pt-28 pb-16 mb-16 xl:4">
         {/* --- Header Section --- */}
         <div className="text-center mb-16">
           <div className="inline-block px-3 py-1 mb-4 text-[0.7rem] font-bold tracking-[0.2em] text-[#2bc29d] uppercase bg-[#2bc29d]/10 rounded-lg">

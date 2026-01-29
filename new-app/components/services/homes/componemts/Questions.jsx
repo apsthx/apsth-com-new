@@ -25,20 +25,37 @@ export default async function Questions({ lng }) {
                 "มุ่งเน้นที่ธุรกิจของคุณให้ APS จัดการให้คุณมีธุรกิจที่ต้องดำเนินการเลิกกังวลเกี่ยวกับจุดบกพร่องปล่อยให้เป็นหน้าที่เราให้เราดูแลคุณ",
               )}
             </p>
-            <a
-              target="_blank"
-              href="https://page.line.me/gbc9405c"
-              className="mr-2 btn btn-primary !text-white !font-medium !bg-[#01c965] border-[#01c965] hover:text-white hover:bg-[#01c965] hover:!border-[#01c965] active:text-white active:bg-[#01c965] active:border-[#01c965] disabled:text-white disabled:bg-[#01c965] disabled:border-[#01c965] !rounded-[50rem] hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]"
-            >
-              {t("home:hero.connect.line", "ID: @apsth")}
-            </a>
-            <a
-              target="_blank"
-              href={`/${lng}/calendar`}
-              className="btn btn-primary !text-white !font-medium !bg-[#2bc2bb] border-[#2bc2bb] hover:text-white hover:bg-[#2bc2bb] hover:!border-[#2bc2bb] active:text-white active:bg-[#2bc2bb] active:border-[#2bc2bb] disabled:text-white disabled:bg-[#2bc2bb] disabled:border-[#2bc2bb] !rounded-[50rem] hover:translate-y-[-0.15rem] hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]"
-            >
-              {t("home:hero.connect.book_a_demo", "Book a Demo")}
-            </a>
+            <div className="mt-9 flex flex-col md:flex-row justify-start items-center mb-6 px-4 gap-3 md:gap-3">
+              {/* ปุ่ม Line ID - ขนาดกะทัดรัด */}
+              <a
+                target="_blank"
+                href="https://page.line.me/gbc9405c"
+                className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#0fb467] border border-[#01c965] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 hover:!bg-[#01b85c] transition-all duration-300 !rounded-lg px-5 py-2 gap-2"
+              >
+                <i
+                  className="uil uil-line text-[1.3rem] leading-none"
+                  style={{ color: "#ffffff" }}
+                />
+                <span className="!font-Kanit font-medium  text-[0.95rem]">
+                  {t("home:hero.connect.line", "Line: @apsth")}
+                </span>
+              </a>
+
+              {/* ปุ่ม Book a Demo - ขนาดกะทัดรัด */}
+              <a
+                target="_blank"
+                href={`/${lng}/calendar`}
+                className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#1bb5a8] hover:!bg-[#039797]  border border-[#1bb5a8] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 transition-all duration-300 !rounded-lg px-5 py-2 gap-2"
+              >
+                <i
+                  className="uil uil-calendar-alt text-[1.3rem] leading-none"
+                  style={{ color: "#ffffff" }}
+                />
+                <span className="!font-Kanit font-medium text-[0.95rem]">
+                  {t("home:hero.connect.book_a_demo", "Book a Demo")}
+                </span>
+              </a>
+            </div>
           </div>
           {/*/column */}
           <div
