@@ -88,5 +88,93 @@
       "twitter_title": "APSX Software | Next-Gen Healthcare Platform",
       "twitter_description": "Complete management solution for modern clinics and hospitals. Cloud-based, efficient, and reliable."
     }
+  },
+  "api": {
+    "meta": {
+      "title": "API Documentaion - APSX Platform For Clinic, Spa, Wellness, Hospital, Elderly Care Center",
+      "description": "APSX Platform Clinic Software supporting businesses in Clinic, Spa, Wellness, Hospital, Beauty, Elderly Care Centers, Mental Health Clinics, Eye Clinics, and all types of medical facilities",
+      "keywords": "Clinic Software, Clinic Management System, Clinic Program, Dental Clinic Software, Medical Clinic System, Clinic Software Pricing, Hospital Management, Spa Software, Wellness Platform, Elderly Care Center System, Aesthetic Clinic Software, Specialist Clinic System, General Practice Software, Nursing and Midwifery Clinic, Physical Therapy Software, Thai-Chinese Traditional Medicine, Internal Medicine, Beauty Clinic, Mother and Child Clinic, Addiction Treatment, Eye Clinic, Medical Prescription, OPD Card System, Clinic POS, APSX, apsth",
+      "og_title": "APSX Software | All-in-One Medical & Wellness Management System",
+      "og_description": "Empower your healthcare business with APSX Platform. Advanced features for Clinic, Spa, Hospital, and Elderly Care Centers.",
+      "twitter_title": "APSX Software | Next-Gen Healthcare Platform",
+      "twitter_description": "Complete management solution for modern clinics and hospitals. Cloud-based, efficient, and reliable."
+    }
+  },
+  "docs": {
+    "meta": {
+      "title": "User Manual - APSX Platform For Clinic, Spa, Wellness, Hospital, Elderly Care Center",
+      "description": "APSX Platform Clinic Software supporting businesses in Clinic, Spa, Wellness, Hospital, Beauty, Elderly Care Centers, Mental Health Clinics, Eye Clinics, and all types of medical facilities",
+      "keywords": "Clinic Software, Clinic Management System, Clinic Program, Dental Clinic Software, Medical Clinic System, Clinic Software Pricing, Hospital Management, Spa Software, Wellness Platform, Elderly Care Center System, Aesthetic Clinic Software, Specialist Clinic System, General Practice Software, Nursing and Midwifery Clinic, Physical Therapy Software, Thai-Chinese Traditional Medicine, Internal Medicine, Beauty Clinic, Mother and Child Clinic, Addiction Treatment, Eye Clinic, Medical Prescription, OPD Card System, Clinic POS, APSX, apsth",
+      "og_title": "APSX Software | All-in-One Medical & Wellness Management System",
+      "og_description": "Empower your healthcare business with APSX Platform. Advanced features for Clinic, Spa, Hospital, and Elderly Care Centers.",
+      "twitter_title": "APSX Software | Next-Gen Healthcare Platform",
+      "twitter_description": "Complete management solution for modern clinics and hospitals. Cloud-based, efficient, and reliable."
+    }
+  },
+  "update": {
+    "meta": {
+      "title": "Update Version - APSX Platform For Clinic, Spa, Wellness, Hospital, Elderly Care Center",
+      "description": "APSX Platform Clinic Software supporting businesses in Clinic, Spa, Wellness, Hospital, Beauty, Elderly Care Centers, Mental Health Clinics, Eye Clinics, and all types of medical facilities",
+      "keywords": "Clinic Software, Clinic Management System, Clinic Program, Dental Clinic Software, Medical Clinic System, Clinic Software Pricing, Hospital Management, Spa Software, Wellness Platform, Elderly Care Center System, Aesthetic Clinic Software, Specialist Clinic System, General Practice Software, Nursing and Midwifery Clinic, Physical Therapy Software, Thai-Chinese Traditional Medicine, Internal Medicine, Beauty Clinic, Mother and Child Clinic, Addiction Treatment, Eye Clinic, Medical Prescription, OPD Card System, Clinic POS, APSX, apsth",
+      "og_title": "APSX Software | All-in-One Medical & Wellness Management System",
+      "og_description": "Empower your healthcare business with APSX Platform. Advanced features for Clinic, Spa, Hospital, and Elderly Care Centers.",
+      "twitter_title": "APSX Software | Next-Gen Healthcare Platform",
+      "twitter_description": "Complete management solution for modern clinics and hospitals. Cloud-based, efficient, and reliable."
+    }
+  },
+  "contact_us": {
+    "meta": {
+      "title": "Contact Us - APSX Platform For Clinic, Spa, Wellness, Hospital, Elderly Care Center",
+      "description": "APSX Platform Clinic Software supporting businesses in Clinic, Spa, Wellness, Hospital, Beauty, Elderly Care Centers, Mental Health Clinics, Eye Clinics, and all types of medical facilities",
+      "keywords": "Clinic Software, Clinic Management System, Clinic Program, Dental Clinic Software, Medical Clinic System, Clinic Software Pricing, Hospital Management, Spa Software, Wellness Platform, Elderly Care Center System, Aesthetic Clinic Software, Specialist Clinic System, General Practice Software, Nursing and Midwifery Clinic, Physical Therapy Software, Thai-Chinese Traditional Medicine, Internal Medicine, Beauty Clinic, Mother and Child Clinic, Addiction Treatment, Eye Clinic, Medical Prescription, OPD Card System, Clinic POS, APSX, apsth",
+      "og_title": "APSX Software | All-in-One Medical & Wellness Management System",
+      "og_description": "Empower your healthcare business with APSX Platform. Advanced features for Clinic, Spa, Hospital, and Elderly Care Centers.",
+      "twitter_title": "APSX Software | Next-Gen Healthcare Platform",
+      "twitter_description": "Complete management solution for modern clinics and hospitals. Cloud-based, efficient, and reliable."
+    }
+  },
+  "term_of_use": {
+    "meta": {
+      "title": "Terms of Service - APSX Platform For Clinic, Spa, Wellness, Hospital, Elderly Care Center",
+      "description": "APSX Platform Clinic Software supporting businesses in Clinic, Spa, Wellness, Hospital, Beauty, Elderly Care Centers, Mental Health Clinics, Eye Clinics, and all types of medical facilities",
+      "keywords": "Clinic Software, Clinic Management System, Clinic Program, Dental Clinic Software, Medical Clinic System, Clinic Software Pricing, Hospital Management, Spa Software, Wellness Platform, Elderly Care Center System, Aesthetic Clinic Software, Specialist Clinic System, General Practice Software, Nursing and Midwifery Clinic, Physical Therapy Software, Thai-Chinese Traditional Medicine, Internal Medicine, Beauty Clinic, Mother and Child Clinic, Addiction Treatment, Eye Clinic, Medical Prescription, OPD Card System, Clinic POS, APSX, apsth",
+      "og_title": "APSX Software | All-in-One Medical & Wellness Management System",
+      "og_description": "Empower your healthcare business with APSX Platform. Advanced features for Clinic, Spa, Hospital, and Elderly Care Centers.",
+      "twitter_title": "APSX Software | Next-Gen Healthcare Platform",
+      "twitter_description": "Complete management solution for modern clinics and hospitals. Cloud-based, efficient, and reliable."
+    }
+  },
+  "privacy_policy": {
+    "meta": {
+      "title": "Privacy Policy - APSX Platform For Clinic, Spa, Wellness, Hospital, Elderly Care Center",
+      "description": "APSX Platform Clinic Software supporting businesses in Clinic, Spa, Wellness, Hospital, Beauty, Elderly Care Centers, Mental Health Clinics, Eye Clinics, and all types of medical facilities",
+      "keywords": "Clinic Software, Clinic Management System, Clinic Program, Dental Clinic Software, Medical Clinic System, Clinic Software Pricing, Hospital Management, Spa Software, Wellness Platform, Elderly Care Center System, Aesthetic Clinic Software, Specialist Clinic System, General Practice Software, Nursing and Midwifery Clinic, Physical Therapy Software, Thai-Chinese Traditional Medicine, Internal Medicine, Beauty Clinic, Mother and Child Clinic, Addiction Treatment, Eye Clinic, Medical Prescription, OPD Card System, Clinic POS, APSX, apsth",
+      "og_title": "APSX Software | All-in-One Medical & Wellness Management System",
+      "og_description": "Empower your healthcare business with APSX Platform. Advanced features for Clinic, Spa, Hospital, and Elderly Care Centers.",
+      "twitter_title": "APSX Software | Next-Gen Healthcare Platform",
+      "twitter_description": "Complete management solution for modern clinics and hospitals. Cloud-based, efficient, and reliable."
+    }
+  },
+  "site_map": {
+    "meta": {
+      "title": "Site Map - APSX Platform For Clinic, Spa, Wellness, Hospital, Elderly Care Center",
+      "description": "APSX Platform Clinic Software supporting businesses in Clinic, Spa, Wellness, Hospital, Beauty, Elderly Care Centers, Mental Health Clinics, Eye Clinics, and all types of medical facilities",
+      "keywords": "Clinic Software, Clinic Management System, Clinic Program, Dental Clinic Software, Medical Clinic System, Clinic Software Pricing, Hospital Management, Spa Software, Wellness Platform, Elderly Care Center System, Aesthetic Clinic Software, Specialist Clinic System, General Practice Software, Nursing and Midwifery Clinic, Physical Therapy Software, Thai-Chinese Traditional Medicine, Internal Medicine, Beauty Clinic, Mother and Child Clinic, Addiction Treatment, Eye Clinic, Medical Prescription, OPD Card System, Clinic POS, APSX, apsth",
+      "og_title": "APSX Software | All-in-One Medical & Wellness Management System",
+      "og_description": "Empower your healthcare business with APSX Platform. Advanced features for Clinic, Spa, Hospital, and Elderly Care Centers.",
+      "twitter_title": "APSX Software | Next-Gen Healthcare Platform",
+      "twitter_description": "Complete management solution for modern clinics and hospitals. Cloud-based, efficient, and reliable."
+    }
+  },
+  "schedule_demo": {
+    "meta": {
+      "title": "Schedule Demo - APSX Platform Clinic Wellness ศูนย์ดูแลผู้สูงอายุ",
+      "description": "APSX Platform Clinic Software supporting businesses in Clinic, Spa, Wellness, Hospital, Beauty, Elderly Care Centers, Mental Health Clinics, Eye Clinics, and all types of medical facilities",
+      "keywords": "Clinic Software, Clinic Management System, Clinic Program, Dental Clinic Software, Medical Clinic System, Clinic Software Pricing, Hospital Management, Spa Software, Wellness Platform, Elderly Care Center System, Aesthetic Clinic Software, Specialist Clinic System, General Practice Software, Nursing and Midwifery Clinic, Physical Therapy Software, Thai-Chinese Traditional Medicine, Internal Medicine, Beauty Clinic, Mother and Child Clinic, Addiction Treatment, Eye Clinic, Medical Prescription, OPD Card System, Clinic POS, APSX, apsth",
+      "og_title": "APSX Software | All-in-One Medical & Wellness Management System",
+      "og_description": "Empower your healthcare business with APSX Platform. Advanced features for Clinic, Spa, Hospital, and Elderly Care Centers.",
+      "twitter_title": "APSX Software | Next-Gen Healthcare Platform",
+      "twitter_description": "Complete management solution for modern clinics and hospitals. Cloud-based, efficient, and reliable."
+    }
   }
 }

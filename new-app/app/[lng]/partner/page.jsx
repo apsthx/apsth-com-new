@@ -55,7 +55,7 @@ export async function generateMetadata({ params }) {
       locale: lng === "th" ? "th_TH" : "en_US",
       images: [
         {
-          url: "/assets/images/og-main.jpg",
+          url: "/assets/img/logo/apsx_icon.png",
           width: 1200,
           height: 630,
           alt: page.title,
@@ -90,7 +90,7 @@ export async function generateMetadata({ params }) {
     },
     icons: {
       icon: "/favicon.ico",
-      apple: "/assets/images/logo/logo.svg",
+      apple: "/assets/img/logo/apsx_icon.png",
     },
   };
 }
