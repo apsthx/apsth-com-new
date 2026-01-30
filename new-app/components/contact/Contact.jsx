@@ -290,7 +290,7 @@ export default async function Contact({ lng }) {
                     "contact:our_offices.office1.description",
                     "I-CONNECT 888/8 ถนน เหล่านาดี หมู่ 13 ตำบล บ้านเป็ด อำเภอ เมืองขอนแก่น จังหวัด ขอนแก่น 40000",
                   ),
-                  img: "/assets/contact/location-1.jpg",
+                  img: "/assets/img/contact/location-1.jpg",
                 },
                 // คุณสามารถเพิ่มรายการสาขาอื่นตรงนี้ได้เลย
               ].map((item, index) => (

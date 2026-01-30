@@ -37,8 +37,8 @@ export default async function PlatformHighlights({ lng }) {
                     <figure className="!rounded-[1.2rem] shadow-[0_10px_30px_rgba(0,0,0,0.05)] border-[6px] border-white relative overflow-hidden bg-white">
                       <Image
                         className="w-full h-auto block" // เปลี่ยน object-cover เป็น block และให้มันกว้างเต็ม
-                        src="/assets/homes/platform_highlight1.webp"
-                        alt="platform highlight 1"
+                        src="/assets/img/platform/platform_highlight2.webp"
+                        alt="platform highlight 2"
                         width={450}
                         height={450}
                         priority
@@ -50,8 +50,8 @@ export default async function PlatformHighlights({ lng }) {
                     <figure className="!rounded-[1.2rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-[6px] border-white relative overflow-hidden">
                       <Image
                         className="w-full h-auto object-cover"
-                        src="/assets/homes/platform_highlight2.webp"
-                        alt="platform highlight 2"
+                        src="/assets/img/platform/platform_highlight1.webp"
+                        alt="platform highlight 1"
                         width={450}
                         height={450}
                       />

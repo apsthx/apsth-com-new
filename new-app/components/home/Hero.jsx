@@ -49,8 +49,8 @@ export default async function Hero({ lng }) {
                 >
                   <Image
                     className="rounded-[1.5rem] h-auto w-full shadow-2xl border border-white/20"
-                    src="/assets/homes/hero.webp"
-                    alt="image"
+                    src="/assets/img/hero/home_hero.webp"
+                    alt="home_hero"
                     width={1200}
                     height={800}
                     priority

@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import { OurTeams } from "@/data/our_team";
 
-export default function TeamGroups({ Teamsdata }) {
+export default function OurTeam() {
   return (
     <>
       <div className="!relative">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 relative z-[2] items-stretch">
-          {Teamsdata.map((data) => (
+          {OurTeams.map((data) => (
             <div
               data-cues="slideInDown"
               data-delay={300}
@@ -24,9 +25,9 @@ export default function TeamGroups({ Teamsdata }) {
                         className="rounded-full border-2 border-white shadow-sm object-cover"
                         src={data.imageSrc}
                         alt={data.name}
-                        width={80} // ลดขนาดรูปลงนิดหน่อยเพื่อให้สมดุลกับ gap ที่แคบลง
-                        height={80}
-                        style={{ width: "80px", height: "80px" }}
+                        width={200} // ลดขนาดรูปลงนิดหน่อยเพื่อให้สมดุลกับ gap ที่แคบลง
+                        height={200}
+                        style={{ width: "200px", height: "200px" }}
                       />
                     </div>
 

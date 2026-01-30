@@ -1,6 +1,6 @@
 import React from "react";
 
-import APIIntegration from "@/components/services/API/components/APIIntegration";
+import APIIntegration from "@/components/api/APIIntegration";
 
 import { useTranslation } from "@/app/i18n";
 

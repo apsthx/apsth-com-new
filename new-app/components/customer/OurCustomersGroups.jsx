@@ -92,14 +92,14 @@ export default function OurCustomersGroups() {
         </div>
 
         {/* โลโก้ - สีจริง 100% */}
-        <div className="relative inline-block p-2 shadow-sm rounded-full bg-white transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1 cursor-pointer z-10">
+        <div className="relative inline-blocka p-1 border-2 border-[#eeeeee] shadow-sm rounded-3xl bg-white transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1 cursor-pointer z-10">
           <Image
-            className="object-contain rounded-full transition-transform duration-300 group-hover:scale-105"
+            className="object-cover rounded-3xl transition-transform duration-300 group-hover:scale-105"
             src={imageSource}
             alt={item.name || "logo"}
-            width={75}
-            height={75}
-            style={{ width: "4.5rem", height: "4.5rem" }}
+            width={50}
+            height={50}
+            style={{ width: "4rem", height: "4rem" }}
             unoptimized
           />
         </div>

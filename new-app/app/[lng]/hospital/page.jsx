@@ -1,8 +1,8 @@
 import React from "react";
 
-import PlatformHighlights from "@/components/services/homes/componemts/PlatformHighlights";
-import Hero from "@/components/services/hospital/components/Hero";
-import WhyAPSX from "@/components/services/Clinics/components/WhyAPSX";
+import PlatformHighlights from "@/components/home/PlatformHighlights";
+import Hero from "@/components/hospital/Hero";
+import WhyAPSX from "@/components/clinic/WhyAPSX";
 
 import { useTranslation } from "@/app/i18n";
 

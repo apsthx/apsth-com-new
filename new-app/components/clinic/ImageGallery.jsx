@@ -3,11 +3,11 @@ import React, { useState, useEffect } from "react";
 
 const ImageGallery = () => {
   const images = [
-    { image: "/assets/clinic/career-img-1.jpg" },
-    { image: "/assets/clinic/career-img-2.jpg" },
-    { image: "/assets/clinic/career-img-3.jpg" },
-    { image: "/assets/clinic/career-img-4.jpg" },
-    { image: "/assets/clinic/career-img-5.jpg" },
+    { image: "/assets/img/clinic/career-img-1.jpg" },
+    { image: "/assets/img/clinic/career-img-2.jpg" },
+    { image: "/assets/img/clinic/career-img-3.jpg" },
+    { image: "/assets/img/clinic/career-img-4.jpg" },
+    { image: "/assets/img/clinic/career-img-5.jpg" },
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(null);

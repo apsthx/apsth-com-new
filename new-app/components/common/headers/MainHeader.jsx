@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../Nav/Nav";
+import Nav from "../nav/Nav";
 import Link from "next/link";
 import Image from "next/image";
 import { socialLinks } from "@/data/socials";

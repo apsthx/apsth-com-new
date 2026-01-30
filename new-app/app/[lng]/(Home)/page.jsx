@@ -1,14 +1,14 @@
 import React from "react";
 
-import Features from "@/components/services/homes/componemts/Features";
-import PlatformHighlights from "@/components/services/homes/componemts/PlatformHighlights";
-import Hero from "@/components/services/homes/componemts/Hero";
-import WhyAPSX from "@/components/services/homes/componemts/WhyAPSX";
-import Package from "@/components/services/homes/componemts/Package";
-import OurCustomers from "@/components/services/homes/componemts/OurCustomers";
-import Teams from "@/components/services/homes/componemts/Teams";
-import Certification from "@/components/services/homes/componemts/Certification";
-import Questions from "@/components/services/homes/componemts/Questions";
+import Features from "@/components/home/Features";
+import PlatformHighlights from "@/components/home/PlatformHighlights";
+import Hero from "@/components/home/Hero";
+import WhyAPSX from "@/components/home/WhyAPSX";
+import Package from "@/components/home/Package";
+import OurCustomers from "@/components/home/OurCustomers";
+import Teams from "@/components/home/Teams";
+import Certification from "@/components/home/Certification";
+import Questions from "@/components/home/Questions";
 
 import { useTranslation } from "@/app/i18n";
 

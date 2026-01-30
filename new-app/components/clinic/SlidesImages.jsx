@@ -12,15 +12,15 @@ import "swiper/css/navigation";
 export default function FullWidthImageSlider() {
   const slidesData = [
     {
-      src: "/assets/clinic/input_opd_card/carousel-img-1.jpg",
+      src: "/assets/img/clinic/input_opd_card/carousel-img-1.jpg",
       alt: "System Overview 1",
     },
     {
-      src: "/assets/clinic/input_opd_card/carousel-img-2.jpg",
+      src: "/assets/img/clinic/input_opd_card/carousel-img-2.jpg",
       alt: "System Overview 2",
     },
     {
-      src: "/assets/clinic/input_opd_card/carousel-img-3.jpg",
+      src: "/assets/img/clinic/input_opd_card/carousel-img-3.jpg",
       alt: "System Overview 3",
     },
   ];

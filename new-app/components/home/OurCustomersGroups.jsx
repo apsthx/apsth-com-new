@@ -100,15 +100,16 @@ export default function OurCustomersGroups() {
           </div>
         </div>
 
-        {/* โลโก้หลัก */}
-        <div className="relative inline-block p-2 shadow-sm rounded-3xl bg-white transition-transform duration-300 group-hover:scale-110 cursor-pointer z-10">
+        {/* โลโก้ - สีจริง 100% */}
+        <div className="relative inline-blocka p-1 border-2 border-[#eeeeee] shadow-sm rounded-3xl bg-white transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1 cursor-pointer z-10">
           <Image
-            className="object-contain rounded-full"
+            className="object-cover rounded-3xl transition-transform duration-300 group-hover:scale-105"
             src={imageSource}
             alt={item.name || "logo"}
-            width={80}
-            height={80}
-            style={{ width: "5rem", height: "5rem" }}
+            width={50}
+            height={50}
+            style={{ width: "4rem", height: "4rem" }}
+            unoptimized
           />
         </div>
       </div>
@@ -148,7 +149,7 @@ export default function OurCustomersGroups() {
       `}</style>
 
       <div className="container !overflow-visible ">
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-9 gap-8 md:gap-10 items-center justify-items-center !overflow-visible">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-11 gap-2 md:gap-10 items-center justify-items-center !overflow-visible">
           {loading
             ? Array.from({ length: 18 }).map((_, i) => <SkeletonCard key={i} />)
             : gridItems.map((item, index) => renderLogoItem(item, index))}

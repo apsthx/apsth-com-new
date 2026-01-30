@@ -1,6 +1,6 @@
 import React from "react";
 
-import Update from "@/components/services/update/components/update";
+import Update from "@/components/update/update";
 
 import { useTranslation } from "@/app/i18n";
 

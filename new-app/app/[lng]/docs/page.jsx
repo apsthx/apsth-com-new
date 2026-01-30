@@ -1,6 +1,6 @@
 import React from "react";
 
-import Documentation from "@/components/services/docs/components/Documentation";
+import Documentation from "@/components/docs/Documentation";
 
 import { useTranslation } from "@/app/i18n";
 

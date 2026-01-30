@@ -1,5 +1,5 @@
 import React from "react";
-import Contact from "@/components/services/contact/components/Contact";
+import Contact from "@/components/contact/Contact";
 import { useTranslation } from "@/app/i18n";
 
 export async function generateMetadata({ params }) {

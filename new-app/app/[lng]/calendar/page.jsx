@@ -1,7 +1,7 @@
 import React from "react";
 
-import Hero from "@/components/services/calendar/components/Hero";
-import GoogleCalendar from "@/components/services/calendar/components/GoogleCalendar";
+import Hero from "@/components/calendar/Hero";
+import GoogleCalendar from "@/components/calendar/GoogleCalendar";
 
 import { useTranslation } from "@/app/i18n";
 

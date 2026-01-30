@@ -2,12 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { useTranslation } from "@/app/i18n";
+import { getFeedbackData, getFeatures } from "@/data/features";
 
 // components
 import Badge from "@/components/common/Badges";
 
 export default async function Features({ lng }) {
   const { t } = await useTranslation(lng);
+  const feedbackItems = getFeedbackData(t, lng);
+  const features = getFeatures(t, lng);
   return (
     <section className="wrapper overflow-hidden">
       <div className="container pb-[1rem] py-[0rem] xl:!py-[2rem] lg:!py-[2rem] md:!py-[2rem]">
@@ -147,7 +150,7 @@ export default async function Features({ lng }) {
                 <figure className="m-0 p-0 overflow-hidden rounded-[1rem] sm:rounded-[1.2rem]">
                   <Image
                     className="h-auto w-full object-cover"
-                    src="/assets/homes/features1.webp"
+                    src="/assets/img/features/apsx_platform_features.webp"
                     alt="APSX Platform Features"
                     width={752}
                     height={590}
@@ -161,7 +164,7 @@ export default async function Features({ lng }) {
           <div
             data-cue="fadeIn"
             data-delay={300}
-            className="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !ml-auto xl:px-0 lg:px-0 !mt-[50px]"
+            className="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !ml-auto xl:px-0 lg:px-0 !mt-[60px]"
           >
             <h2 className="!text-[calc(1.35rem_+_0.5vw)] font-extrabold xl:!text-[2rem] !leading-[1.2] !mb-0 xxl:!mt-[-2.5rem] bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
               {t(
@@ -176,221 +179,59 @@ export default async function Features({ lng }) {
                 "ยกระดับการบริหารจัดการคลินิกด้วยเทคโนโลยี Cloud อัจฉริยะ ที่ออกแบบมาเพื่อความรวดเร็วและความปลอดภัยสูงสุดของข้อมูลคุณ",
               )}
             </p>
-            <div
-              data-cues="slideInDown"
-              data-delay={300}
-              className="flex flex-row !mb-2 items-start group"
-            >
-              <div className="flex-shrink-0">
-                {/* เพิ่ม transition และ hover effect ให้เหมือนกับชิ้นอื่นๆ ในชุด */}
-                <div className="svg-bg bg-white opacity-100 !rounded-[0.8rem] shadow-xl !mr-5 p-3 flex items-center justify-center w-[60px] h-[60px] transition-transform duration-300 group-hover:scale-110">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 256"
-                    className="w-full h-full"
-                  >
-                    <g>
-                      {/* ขอบนาฬิกาหลัก (Primary - สีเขียวแบรนด์) */}
-                      <path
-                        fill="#2bc29d"
-                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z"
-                      />
-                      {/* เข็มนาฬิกาสื่อถึงความเร็ว (Secondary - สีเหลืองทอง) */}
-                      <path
-                        fill="#f0a51b"
-                        d="M128,72a8,8,0,0,0-8,8v44.69L98.34,146.34a8,8,0,0,0,11.32,11.32l24-24A8,8,0,0,0,136,128V80A8,8,0,0,0,128,72Z"
-                      />
-                      {/* ตกแต่งเงาภายในให้ดูมีมิติ */}
-                      <circle
-                        cx="128"
-                        cy="128"
-                        r="40"
-                        fill="#2bc29d"
-                        opacity="0.1"
-                      />
-                      <circle fill="#2bc29d" cx="128" cy="128" r="12" />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="!mb-1 !text-[#02a353] !font-medium xl:!text-[1.1rem]">
-                  {t("home:features.features.blog1.title", "Real Time Data")}
-                </h4>
-                <p className="!mb-0 text-[#60697b] leading-relaxed !text-[0.95rem]">
-                  {t(
-                    "home:features.features.blog1.description",
-                    "การส่งข้อมูลสะดวกและรวดเร็ว อัปเดตทันที (Sync) ลดระยะเวลาและช่วยให้การตัดสินใจบริหารงานแม่นยำในทุกวินาที",
-                  )}
-                </p>
-              </div>
-            </div>
-            <div
-              data-cues="slideInDown"
-              data-delay={300}
-              className="flex flex-row !mb-2 items-start group"
-            >
-              <div className="flex-shrink-0">
-                <div className="svg-bg bg-white opacity-100 !rounded-[0.8rem] shadow-xl !mr-5 p-3 flex items-center justify-center w-[60px] h-[60px] transition-transform duration-300 group-hover:scale-110">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 256"
-                    className="w-full h-full"
-                  >
-                    <g>
-                      {/* ฐานก้อนเมฆและส่วนโครงสร้าง (สีหลัก - Primary) */}
-                      <path
-                        fill="#3b73e1"
-                        d="M160,216H80a72,72,0,0,1,0-144,71.07,71.07,0,0,1,16,1.83,88,88,0,1,1,133.56,92.68A64,64,0,0,1,160,216Z"
-                      />
-                      {/* ส่วนเงาหรือ Highlight เพื่อความมีมิติ (สีรอง - Secondary) */}
-                      <path
-                        fill="#5eb9f0"
-                        opacity="0.65"
-                        d="M160,88a63.26,63.26,0,0,1,64,64,64,64,0,0,1-10.44,34.68A88,88,0,0,0,80,72a72.1,72.1,0,0,0-4,0.11A88.11,88.11,0,0,1,160,88Z"
-                      />
-                      {/* จุดเชื่อมต่อสื่อถึงการประมวลผล (ถ้าต้องการเพิ่มความเท่) */}
-                      <circle
-                        fill="#ffffff"
-                        cx="128"
-                        cy="136"
-                        r="8"
-                        opacity="0.8"
-                      />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="!mb-1 !text-[#3b73e1] !font-medium xl:!text-[1.1rem]">
-                  {t("home:features.features.blog2.title", "AWS Cloud")}
-                </h4>
-                <p className="!mb-0 text-[#60697b] leading-relaxed !text-[0.95rem]">
-                  {t(
-                    "home:features.features.blog2.description",
-                    "ข้อมูลคลินิกถูกรักษาไว้ที่ AWS Cloud ด้วยมาตรฐานความปลอดภัยที่ได้รับการยอมรับจากองค์กรชั้นนำทั่วโลก",
-                  )}
-                </p>
-              </div>
-            </div>
-            <div
-              data-cues="slideInDown"
-              data-delay={300}
-              className="flex flex-row items-start !mb-6 group"
-            >
-              <div className="flex-shrink-0">
-                <div className="svg-bg bg-white opacity-100 !rounded-[0.8rem] shadow-xl !mr-5 p-3 flex items-center justify-center w-[60px] h-[60px] transition-transform duration-300 group-hover:scale-110">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 256 256"
-                    className="w-full h-full"
-                  >
-                    <g>
-                      {/* ตัวบอดี้แม่กุญแจ (สีหลัก - Primary) */}
-                      <rect
-                        x="40"
-                        y="88"
-                        width="176"
-                        height="128"
-                        rx="20"
-                        fill="#d93d4d"
-                      />
-                      {/* ห่วงกุญแจ (สีรอง - Secondary) */}
-                      <path
-                        fill="#d93d4d"
-                        opacity="0.65"
-                        d="M80,88V56a48,48,0,0,1,96,0V88H152V56a24,24,0,0,0-48,0V88Z"
-                      />
-                      {/* รูกุญแจตรงกลางเพื่อความสวยงาม */}
-                      <circle
-                        cx="128"
-                        cy="152"
-                        r="12"
-                        fill="#ffffff"
-                        opacity="0.9"
-                      />
-                      <rect
-                        x="124"
-                        y="160"
-                        width="8"
-                        height="20"
-                        fill="#ffffff"
-                        opacity="0.9"
-                      />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="!mb-1 !font-medium !text-[#d93d4d]">
-                  {t("home:features.features.blog3.title", "Data Security")}
-                </h4>
-                <p className="!mb-0 text-[#60697b] leading-relaxed">
-                  {t(
-                    "home:features.features.blog3.description",
-                    "Web Application Security เข้ารหัสแบบ SSL 256-bit ข้อมูลของคุณจะได้รับการป้องกันด้วยมาตรฐานความปลอดภัยระดับสูงสุด",
-                  )}
-                </p>
-              </div>
-            </div>
           </div>
-          {/*/column */}
+          <div
+            data-cues="slideInDown"
+            data-delay={300}
+            className="flex flex-row !gap-4 !mb-4 !mt-4 items-start group"
+          >
+            {/*/column */}
+            {features.map((item, index) => (
+              <div
+                key={item.id}
+                data-cues="slideInDown"
+                data-delay={300}
+                className={`flex flex-row items-start group ${
+                  index === features.length - 1 ? "!mb-6" : "!mb-2"
+                }`}
+              >
+                {/* ส่วนของ Icon SVG */}
+                <div className="flex-shrink-0">
+                  <div className="svg-bg bg-white opacity-100 !rounded-[0.8rem] shadow-xl !mr-5 p-3 flex items-center justify-center w-[60px] h-[60px] transition-transform duration-300">
+                    {item.icon}
+                  </div>
+                </div>
+
+                {/* ส่วนของเนื้อหาข้อความ */}
+                <div>
+                  <h4
+                    className="!mb-1 !font-medium xl:!text-[1.1rem]"
+                    style={{ color: item.color }} // ดึงสีจาก Data มาใช้โดยตรง
+                  >
+                    {item.title}
+                  </h4>
+                  <p className="!mb-0 text-[#60697b] leading-relaxed !text-[0.95rem]">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="w-full !mt-[0px]">
           {/* คอนเทนเนอร์หลัก: ใช้ flex-wrap เพื่อให้การ์ดตกลงมาเมื่อจอแคบลง */}
           <div className="flex flex-wrap justify-center mx-[-15px] !mt-[-150px]">
-            {/* รายการการ์ด: วนลูปหรือวางต่อกัน */}
-            {[
-              {
-                id: "blog1",
-                link: `/${lng}/clinic`,
-                title: t(
-                  "home:features.services.blog1.title",
-                  "คลินิก / โรงพยาบาล",
-                ),
-                description: t(
-                  "home:features.services.blog1.description",
-                  "โปรแกรม คลินิก/โรงพยาบาล รองรับ ประเภทบริการ เช่น เฉพาะทาง เวชกรรม ตรวจโรคทั่วไป การผดุงครรภ์ กายภาพบำบัด แพทย์แผนไทย-จีน อายุรกรรม บําบัดยาเสพติด สุขภาพจิตและตา ความงาม และอื่นๆ",
-                ),
-                img: "/assets/homes/features_clinic.webp",
-              },
-              {
-                id: "blog2",
-                link: `/${lng}/wellness`,
-                title: t(
-                  "home:features.services.blog2.title",
-                  "Wellness / ศูนย์ดูแลผู้สูงอายุ",
-                ),
-                description: t(
-                  "home:features.services.blog3.description",
-                  "โปรแกรม Wellness/ศูนย์ดูแลผู้สูงอายุ รองรับประเภทบริการ เช่น ศูนย์ดูแลผู้สูงอายุ ศูนย์ดูแลสุขภาพ Wellness ศูนย์ดูแลผู้ป่วยเฉพาะทาง ศูนย์ดูแลผู้ป่วยเรื้อรัง และอื่นๆ",
-                ),
-                img: "/assets/homes/features_wellnss.webp",
-              },
-              {
-                id: "blog3",
-                link: `/${lng}/spa`,
-                title: t("home:features.services.blog3.title", "Spa / Beauty"),
-                description: t(
-                  "home:features.services.blog3.description",
-                  "รองรับการจัดการ สปา/ธุรกิจความงาม ในแต่ละประเภทบริการ เช่น ร้านสปา ร้านทำเล็บ ร้านทำผม ร้านเสริมสวย ร้านสักลาย ร้านนวด ร้านออนเซ็น ร้านซาวน่า และอื่นๆ",
-                ),
-                img: "/assets/homes/features_spa_beauty.webp",
-              },
-            ].map((item, index) => (
+            {feedbackItems.map((item, index) => (
               <div
                 data-cues="slideInDown"
                 data-delay={300}
-                key={index}
+                key={item.id} // ใช้ item.id แทน index จะดีกว่าในเชิง Performance
                 className="w-full md:w-6/12 lg:w-4/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[40px]"
               >
                 <div className="h-full rounded-xl bg-white border border-[#a4aec633] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
                   <article className="post flex flex-col h-full">
-                    {/* 1. ส่วนรูปภาพ พร้อม Overlay ที่ดูแพงขึ้น */}
+                    {/* 1. ส่วนรูปภาพ */}
                     <figure className="relative group overflow-hidden bg-gray-200 aspect-[4/3]">
                       <Link href={item.link}>
                         <Image
@@ -402,18 +243,17 @@ export default async function Features({ lng }) {
                         />
                       </Link>
                       <figcaption className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                        <a
+                        <Link
                           href={item.link}
                           className="bg-white/90 !text-[#343f52] px-5 py-2 rounded-full text-sm font-semibold tracking-wide shadow-sm"
                         >
                           {t("home:read_more", "ดูรายละเอียด")}
-                        </a>
+                        </Link>
                       </figcaption>
                     </figure>
 
                     {/* 2. ส่วนเนื้อหา */}
                     <div className="post-header p-6 flex flex-col flex-grow">
-                      {/* หมวดหมู่: ใช้ตัวพิมพ์ใหญ่/Tracking กว้างขึ้นเพื่อความ Formal */}
                       <div className="flex items-center justify-between mb-3">
                         <span className="text-[10px] uppercase tracking-[0.15em] font-bold text-[#00b6b6]">
                           {t("home:category", "หมวดหมู่")}
@@ -429,7 +269,6 @@ export default async function Features({ lng }) {
                         )}
                       </div>
 
-                      {/* ชื่อหัวข้อ: ปรับให้ใหญ่ขึ้นและเป็นทางการ */}
                       <h3 className="text-xl font-bold leading-snug mb-3">
                         <Link
                           className="!text-[#343f52] hover:!text-[#00b6b6] transition-colors duration-200"
@@ -439,7 +278,6 @@ export default async function Features({ lng }) {
                         </Link>
                       </h3>
 
-                      {/* รายละเอียด: ปรับ line-height ให้โปร่งขึ้น */}
                       <p className="text-[0.9rem] leading-relaxed text-[#60697b] line-clamp-3">
                         {item.description}
                       </p>

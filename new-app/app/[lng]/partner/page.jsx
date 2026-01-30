@@ -1,7 +1,7 @@
 import React from "react";
 
-import Hero from "@/components/services/partner/components/Hero";
-import Patner from "@/components/services/partner/components/Partner";
+import Hero from "@/components/partner/Hero";
+import Patner from "@/components/partner/Partner";
 
 import { useTranslation } from "@/app/i18n";
 

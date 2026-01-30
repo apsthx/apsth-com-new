@@ -13,13 +13,13 @@ export default function LanguageSelect({ color = "#252b31" }) {
       code: "th",
       label: "TH",
       name: "ภาษาไทย",
-      flag: "/assets/national_flag/th.webp",
+      flag: "/assets/img/national_flag/th.webp",
     },
     en: {
       code: "en",
       label: "EN",
       name: "English",
-      flag: "/assets/national_flag/en.webp",
+      flag: "/assets/img/national_flag/en.webp",
     },
   };
 

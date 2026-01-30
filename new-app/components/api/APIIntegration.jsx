@@ -62,7 +62,7 @@ export default async function APIIntegration({ lng }) {
                 <figure className="m-0 p-2 bg-white/80 backdrop-blur-md rounded-[2.1rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] overflow-hidden">
                   <Image
                     className="w-full h-auto rounded-[1.6rem] transform transition-transform duration-1000 group-hover:scale-105"
-                    src="/assets/api/saas-img-1.jpg"
+                    src="/assets/img/api/saas-img-1.jpg"
                     alt="API System Overview"
                     width={800}
                     height={538}

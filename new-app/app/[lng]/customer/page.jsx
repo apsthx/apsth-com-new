@@ -1,6 +1,6 @@
 import React from "react";
-import Hero from "@/components/services/customer/components/Hero";
-import OurCustomersGroups from "@/components/services/customer/components/OurCustomersGroups";
+import Hero from "@/components/customer/Hero";
+import OurCustomersGroups from "@/components/customer/OurCustomersGroups";
 import { useTranslation } from "@/app/i18n";
 
 export async function generateMetadata({ params }) {

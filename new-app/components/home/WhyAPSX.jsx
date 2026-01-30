@@ -367,13 +367,13 @@ export default async function WhyAPSX({ lng }) {
                 {
                   id: "blog1",
                   link: `/${lng}/clinic`,
-                  img: "/assets/homes/apsx1.webp",
+                  img: "/assets/img/platform/factor_login1.webp",
                   title: "APSX Security Dashboard",
                 },
                 {
                   id: "blog2",
                   link: `/${lng}/clinic`,
-                  img: "/assets/homes/apsx2.webp",
+                  img: "/assets/img/platform/factor_login2.webp",
                   title: "Authentication Process",
                 },
               ].map((item, index) => (
@@ -455,13 +455,13 @@ export default async function WhyAPSX({ lng }) {
                 {
                   id: "blog1",
                   link: `/${lng}/clinic`,
-                  img: "/assets/homes/apsx3.webp",
+                  img: "/assets/img/platform/face_verification_system1.webp",
                   title: "APSX Security Dashboard",
                 },
                 {
                   id: "blog2",
                   link: `/${lng}/clinic`,
-                  img: "/assets/homes/apsx4.webp",
+                  img: "/assets/img/platform/face_verification_system2.webp",
                   title: "Authentication Process",
                 },
               ].map((item, index) => (
@@ -544,19 +544,19 @@ export default async function WhyAPSX({ lng }) {
                 {
                   id: "blog1",
                   link: `/${lng}/clinic`,
-                  img: "/assets/homes/apsx5.webp",
+                  img: "/assets/img/platform/system_add_on1.webp",
                   title: "APSX Security Dashboard",
                 },
                 {
                   id: "blog2",
                   link: `/${lng}/clinic`,
-                  img: "/assets/homes/apsx6.webp",
+                  img: "/assets/img/platform/system_add_on2.webp",
                   title: "Authentication Process",
                 },
                 {
                   id: "blog3",
                   link: `/${lng}/clinic`,
-                  img: "/assets/homes/apsx7.webp",
+                  img: "/assets/img/platform/system_add_on3.webp",
                   title: "Authentication Process",
                 },
               ].map((item, index) => (
@@ -646,7 +646,7 @@ export default async function WhyAPSX({ lng }) {
                     "home:why_apsx.partner.blog1.description",
                     "ระบบตัดบัตรออนไลน์ รองรับช่องทางชำระเงินออนไลน์ที่หลากหลาย",
                   ),
-                  img: "/assets/homes/apsx8.webp",
+                  img: "/assets/img/partners/partner_paysoltions.jpg",
                 },
                 {
                   id: "blog2",
@@ -656,7 +656,7 @@ export default async function WhyAPSX({ lng }) {
                     "home:why_apsx.partner.blog2.description",
                     "ระบบ Telemedicine ครบวงจรสำหรับคลินิก พร้อมการขออนุญาต ช่วยดูแลผู้ป่วยออนไลน์ได้ตามกฎหมาย",
                   ),
-                  img: "/assets/homes/apsx9.png",
+                  img: "/assets/img/partners/partner_dietz.jpg",
                 },
                 {
                   id: "blog3",
@@ -666,7 +666,7 @@ export default async function WhyAPSX({ lng }) {
                     "home:why_apsx.partner.blog3.description",
                     "ระบบดึงผล Lab/X-Ray ผ่านระบบ LIS มาแสดงผลในระบบ อัตโนมัติ",
                   ),
-                  img: "/assets/homes/apsx10.webp",
+                  img: "/assets/img/partners/partner_labplus.jpg",
                 },
                 {
                   id: "blog4",
@@ -679,7 +679,7 @@ export default async function WhyAPSX({ lng }) {
                     "home:why_apsx.partner.blog4.description",
                     "รองรับการเบิกค่าใช้จ่าย สาธารณสุข (e-Claim) 16 แฟ้ม",
                   ),
-                  img: "/assets/homes/apsx11.webp",
+                  img: "/assets/img/partners/partner_eclaim.jpg",
                 },
                 {
                   id: "blog5",
@@ -689,7 +689,7 @@ export default async function WhyAPSX({ lng }) {
                     "home:why_apsx.partner.blog5.description",
                     "โปรแกรมบัญชีออนไลน์ ที่ครอบคลุมการใช้งานที่สุดในไทย ให้เจ้าของธุรกิจรับรู้สภาพการเงินที่แท้จริง",
                   ),
-                  img: "/assets/homes/apsx12.jpg",
+                  img: "/assets/img/partners/partner_peak.jpg",
                 },
               ].map((item, index) => (
                 <div
