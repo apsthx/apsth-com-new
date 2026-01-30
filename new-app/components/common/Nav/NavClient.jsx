@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import { ourServices, ourCustomers, documents } from "@/data/menu";
 import { usePathname } from "next/navigation";
+import Button from "@/components/common/Button";
 
 import LanguageSwitcher from "@/components/common/LanguageChanger";
 
@@ -240,32 +241,33 @@ export default function NavClient({ color, labels, badges, locale }) {
       </li>
       <LanguageSwitcher />
       <div className="flex lg:!hidden gap-2 !mt-4 items-center">
-        <a
+        <Button
           target="_blank"
+          rounded="lg"
+          color="gray"
           href="https://www.app-apsx.com/login"
-          className="!font-medium !text-[#464c58] !tracking-wide btn btn-xs !inline-flex items-center gap-1 !bg-[#0000000a] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-lg !py-2 !px-4 transition-all focus:!shadow-none active:!shadow-none"
         >
-          <i className="uil uil-signin text-[0.9rem]" />
-          <span className="font-medium">{labels.login}</span>
-        </a>
-
-        <a
+          <i className="uil uil-signin text-[0.8rem]" />
+          <span className="!font-medium !text-[14px]">{labels.login}</span>
+        </Button>
+        <Button
           target="_blank"
-          href="https://www.app-apsx.com/register"
-          className="!font-medium !text-[#ffffff] !tracking-wide !relative !inline-flex items-center gap-1 !bg-[#1bb59b] hover:!bg-[#1bb5a8] !border-none !shadow-none !rounded-lg !py-2 !px-4 transition-all focus:!shadow-none active:!shadow-none"
+          rounded="lg"
+          color="dark"
+          href={`https://www.app-apsx.com/register`}
         >
-          <span className="absolute -top-2.5 -right-2">
+          <span className="absolute -top-2 right-6">
             <Badge
               color="red"
               variant="softText"
-              className="!text-[10px] !px-1.5 !py-[2px] !leading-tight !shadow-sm !rounded-md"
+              className="!text-[10px] !px-2 !py-[4px] !rounded-full"
             >
               {labels.free}
             </Badge>
           </span>
-          <i className="uil uil-rocket text-[0.9rem]" />
-          <span className="">{labels.free_trial}</span>
-        </a>
+          <i className="uil uil-rocket text-[0.8rem]" />
+          <span className="!font-medium !text-[14px]">{labels.free_trial}</span>
+        </Button>
       </div>
     </ul>
   );

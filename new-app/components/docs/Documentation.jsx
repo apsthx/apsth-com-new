@@ -1,8 +1,15 @@
 import React from "react";
 import { useTranslation } from "@/app/i18n";
+import { getDocPlaylists } from "@/data/docs";
 
 export default async function Documentation({ lng }) {
   const { t } = await useTranslation(lng);
+  const playlistItems = getDocPlaylists(t);
+  const getYouTubePlaylistId = (url) => {
+    const regExp = /[&?]list=([^&]+)/;
+    const match = url.match(regExp);
+    return match ? match[1] : null;
+  };
 
   return (
     <section id="snippet-1" className="wrapper !bg-[#ffffff] overflow-hidden">
@@ -30,86 +37,49 @@ export default async function Documentation({ lng }) {
 
         {/* --- Documentation Grid --- */}
         <div className="flex flex-wrap justify-center mx-[-15px] !mt-[-20px]">
-          {[
-            {
-              id: "list1",
-              link: "https://youtube.com/playlist?list=PLMNmwfPqdKEp82IPrpirPNVnGB6T_fzIj&si=wxROFkRhnhvWL1H_",
-              title: t("docs:documentation.list1.title", "คู่มือตั้งค่าระบบ"),
-              description: t(
-                "docs:documentation.list1.description",
-                "รายละเอียดการตั้งค่าระบบเบื้องต้นสำหรับผู้เริ่มต้น",
-              ),
-              icon: "uil-setting",
-            },
-            {
-              id: "list2",
-              link: "https://youtube.com/playlist?list=PLMNmwfPqdKEpe_Sv71sdutQyf5ZKD5ode&si=w-jUW7uUjXRGG2Ux",
-              title: t("docs:documentation.list2.title", "คู่มือการใช้งาน"),
-              description: t(
-                "docs:documentation.list2.description",
-                "เจาะลึกฟังก์ชันการทำงานต่างๆ ของ APSX Platform",
-              ),
-              icon: "uil-book-open",
-            },
-          ].map((item, index) => {
-            const getYouTubePlaylistId = (url) => {
-              const regExp = /[&?]list=([^&]+)/;
-              const match = url.match(regExp);
-              return match ? match[1] : null;
-            };
-
+          {playlistItems.map((item) => {
             const playlistId = getYouTubePlaylistId(item.link);
 
             return (
               <div
-                key={index}
+                key={item.id}
                 className="w-full md:w-6/12 lg:w-5/12 px-[15px] mb-8"
               >
                 <div className="group h-full bg-white rounded-[1.5rem] border border-[#a4aec633] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 overflow-hidden flex flex-col">
-                  {/* YouTube Player Container */}
-                  <div className="relative overflow-hidden aspect-video bg-slate-900 group-hover:brightness-110 transition-all duration-500">
-                    {playlistId ? (
+                  {/* YouTube Player */}
+                  <div className="relative aspect-video bg-slate-900">
+                    {playlistId && (
                       <iframe
-                        className="absolute top-0 left-0 w-full h-full scale-[1.01]"
-                        src={`https://www.youtube.com/embed/videoseries?list=${playlistId}`}
+                        className="absolute top-0 left-0 w-full h-full"
+                        src={`https://www.youtube-nocookie.com/embed/videoseries?list=${playlistId}`}
                         title={item.title}
-                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
+                        loading="lazy"
                       ></iframe>
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center bg-slate-100">
-                        <i className="uil uil-video-slash text-2xl text-slate-300"></i>
-                      </div>
                     )}
                   </div>
 
-                  {/* Content Area */}
+                  {/* Text Content */}
                   <div className="p-8 flex flex-col grow">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-[#1bb59b]/10 text-[#1bb59b] flex items-center justify-center transition-all group-hover:bg-[#1bb59b] group-hover:text-white">
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:text-white"
+                        style={{
+                          backgroundColor: `${item.color}15`,
+                          color: item.color,
+                        }}
+                      >
                         <i className={`uil ${item.icon} text-xl`}></i>
                       </div>
-                      <h3 className="text-[1.15rem] font-bold text-[#343f52] m-0 group-hover:text-[#1bb59b] transition-colors">
+                      <h3 className="text-[1.15rem] font-bold text-[#343f52] m-0 group-hover:text-[#1bb59b]">
                         {item.title}
                       </h3>
                     </div>
-
-                    <p className="text-[0.9rem] text-[#60697b] leading-[1.6] mb-6 font-light">
+                    <p className="text-[0.9rem] text-[#60697b] font-light mb-6">
                       {item.description}
                     </p>
-
-                    <div className="mt-auto">
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-[0.85rem] font-medium !text-[#343f52] hover:!text-[#1bb59b] group/link"
-                      >
-                        {t("docs:open_with_yt", "เปิดดูใน YouTube")}
-                        <i className="uil uil-arrow-right text-lg transition-transform group-hover/link:translate-x-1"></i>
-                      </a>
-                    </div>
+                    {/* ... ลิงก์เปิด YouTube ... */}
                   </div>
                 </div>
               </div>

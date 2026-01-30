@@ -39,7 +39,7 @@ export default function Package({ translations }) {
       </div>
 
       <section className="relative z-10 wrapper !bg-transparent w-full">
-        <div className="container mx-auto px-4 md:px-6 !max-w-[1400px]">
+        <div className=" mx-auto px-4 md:px-6 !max-w-[1400px]">
           {/* ตัดส่วน Billing Switcher ออกเพื่อให้ล็อกที่รายปีอย่างเดียว */}
 
           <div className="mt-2 w-full">
@@ -50,7 +50,7 @@ export default function Package({ translations }) {
 
                 return (
                   <div key={index} className="group">
-                    <div className="  h-full relative bg-white/40 backdrop-blur-xl !border border-[#a4aec633] shadow-xl rounded-md transition-all duration-500 hover:-translate-y-2 hover:bg-white/70 overflow-hidden flex flex-col">
+                    <div className="h-full relative bg-white/40 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:bg-white/70 overflow-hidden flex flex-col border-2 border-[#a4aec633] rounded-lg shadow-md">
                       <div className="card-body p-6 md:p-8 flex flex-col items-center text-center h-full">
                         {/* --- ราคา (คงสไตล์เดิม) --- */}
                         <div className="mb-4">

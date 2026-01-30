@@ -51,7 +51,7 @@ const ImageGallery = () => {
               />
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <div className="bg-white/30 backdrop-blur-lg p-3 rounded-full border border-white/40 text-white shadow-2xl scale-75 group-hover:scale-100 transition-transform duration-300">
+                <div className="bg-white/30 backdrop-blur-lg p-3 rounded-full border border-white/40 !text-[#1bb59b] shadow-2xl scale-75 group-hover:scale-100 transition-transform duration-300">
                   <svg
                     width="24"
                     height="24"
@@ -77,7 +77,7 @@ const ImageGallery = () => {
         >
           {/* Close Button (Glass Style) */}
           <button
-            className="absolute top-6 right-6 w-14 h-14 flex items-center justify-center !rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 hover:rotate-90 transition-all duration-300 z-[100]"
+            className="absolute top-6 right-6 w-14 h-14 flex items-center justify-center !rounded-full bg-white/10 border border-white/20 !text-black hover:bg-white/20 hover:rotate-90 transition-all duration-300 z-[100]"
             onClick={() => setSelectedIndex(null)}
           >
             <svg

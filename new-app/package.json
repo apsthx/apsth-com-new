@@ -13,6 +13,7 @@
     "@tailwindcss/postcss": "^4.0.3",
     "bootstrap": "^5.3.0",
     "clipboard": "^2.0.11",
+    "framer-motion": "^12.29.2",
     "glightbox": "^3.2.0",
     "i18next": "^25.8.0",
     "i18next-resources-to-backend": "^1.2.1",

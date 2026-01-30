@@ -2,6 +2,7 @@ import { socialLinks } from "@/data/socials";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import GridBackground from "@/components/common/background/GridBackground";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -17,6 +18,12 @@ export default async function MainFooter({ lng }) {
           <div className="absolute bottom-[-20%] right-[-5%] w-64 h-64 bg-blue-400/20 blur-[60px] rounded-full"></div>
 
           <div className="card-body p-10 xl:p-12 relative z-10">
+            <GridBackground
+              gridColor="#f5f5f6"
+              gridSize="60px"
+              lineThickness="2px"
+              opacity={0.3}
+            />
             <div className="flex flex-wrap items-center mx-[-15px]">
               <div className="xl:w-8/12 lg:w-8/12 w-full flex-[0_0_auto] px-[15px] max-w-full text-center lg:text-left">
                 <h3 className="h1 !mb-2 !text-white !leading-[1.2] drop-shadow-sm">

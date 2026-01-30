@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { useTranslation } from "@/app/i18n";
-import { getFeedbackData, getFeatures } from "@/data/features";
+import { getFeedbackData, getFeaturesData } from "@/data/features";
 
 // components
 import Badge from "@/components/common/Badges";
@@ -10,10 +10,10 @@ import Badge from "@/components/common/Badges";
 export default async function Features({ lng }) {
   const { t } = await useTranslation(lng);
   const feedbackItems = getFeedbackData(t, lng);
-  const features = getFeatures(t, lng);
+  const featuresItems = getFeaturesData(t, lng);
   return (
-    <section className="wrapper overflow-hidden">
-      <div className="container pb-[1rem] py-[0rem] xl:!py-[2rem] lg:!py-[2rem] md:!py-[2rem]">
+    <section className="container wrapper overflow-hidden">
+      <div className="pb-[1rem] py-[0rem] xl:!py-[2rem] lg:!py-[2rem] md:!py-[2rem]">
         <div
           data-cue="fadeIn"
           data-delay={300}
@@ -77,7 +77,7 @@ export default async function Features({ lng }) {
               }}
             />
 
-            {/* Main Container */}
+            {/* Main  */}
             <div className="relative p-2 sm:p-6 lg:p-10">
               {/* 1. Responsive Website (ลอยด้านบนซ้าย) - ซ่อนบนมือถือขนาดเล็กมากหรือปรับตำแหน่ง */}
               <div className="absolute top-0 -left-2 sm:top-[10%] sm:-left-10 z-10">
@@ -183,34 +183,33 @@ export default async function Features({ lng }) {
           <div
             data-cues="slideInDown"
             data-delay={300}
-            className="flex flex-row !gap-4 !mb-4 !mt-4 items-start group"
+            className="flex flex-wrap justify-center gap-4 mx-[-15px] !mt-4"
           >
-            {/*/column */}
-            {features.map((item, index) => (
+            {featuresItems.map((item, index) => (
               <div
                 key={item.id}
                 data-cues="slideInDown"
                 data-delay={300}
-                className={`flex flex-row items-start group ${
-                  index === features.length - 1 ? "!mb-6" : "!mb-2"
-                }`}
+                className="bg-white w-full p-4 lg:w-3/10 px-[15px]  flex flex-row items-start group mb-4 border border-[#a4aec633] rounded-lg shadow-md"
               >
                 {/* ส่วนของ Icon SVG */}
                 <div className="flex-shrink-0">
-                  <div className="svg-bg bg-white opacity-100 !rounded-[0.8rem] shadow-xl !mr-5 p-3 flex items-center justify-center w-[60px] h-[60px] transition-transform duration-300">
-                    {item.icon}
+                  <div className="border border-[#a4aec633] bg-white  rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] mr-4 p-3 flex items-center justify-center w-[55px] h-[55px] transition-all duration-300">
+                    <div className="w-full h-full flex items-center justify-center">
+                      {item.icon}
+                    </div>
                   </div>
                 </div>
 
                 {/* ส่วนของเนื้อหาข้อความ */}
-                <div>
+                <div className="flex-grow">
                   <h4
-                    className="!mb-1 !font-medium xl:!text-[1.1rem]"
-                    style={{ color: item.color }} // ดึงสีจาก Data มาใช้โดยตรง
+                    className="mb-1 font-bold text-[1.05rem]"
+                    style={{ color: item.color }}
                   >
                     {item.title}
                   </h4>
-                  <p className="!mb-0 text-[#60697b] leading-relaxed !text-[0.95rem]">
+                  <p className="mb-0 text-[#60697b] leading-relaxed text-[0.9rem]">
                     {item.description}
                   </p>
                 </div>

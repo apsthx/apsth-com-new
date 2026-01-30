@@ -1,7 +1,7 @@
 import React from "react";
 
 import Features from "@/components/home/Features";
-import PlatformHighlights from "@/components/home/PlatformHighlights";
+import PlatformHighlights from "@/components/PlatformHighlights";
 import Hero from "@/components/home/Hero";
 import WhyAPSX from "@/components/home/WhyAPSX";
 import Package from "@/components/home/Package";
@@ -9,6 +9,9 @@ import OurCustomers from "@/components/home/OurCustomers";
 import Teams from "@/components/home/Teams";
 import Certification from "@/components/home/Certification";
 import Questions from "@/components/home/Questions";
+import ServicesAPSXPlatform from "@/components/ServicesAPSXPlatform";
+import ServiceDesign from "@/components/ServiceDesign";
+import Analytics from "@/components/Analytics";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -104,27 +107,19 @@ export async function generateMetadata({ params }) {
 export default async function HomePage({ params }) {
   const { lng } = await params;
   return (
-    <>
-      <div className="color-grape font-space demo30 ">
-        {/* className="!bg-[#f0f0f8]" */}
-        <div>
-          <div className="grow shrink-0">
-            <section className="wrapper overflow-hidden">
-              <Hero lng={lng} />
-              {/* /.container */}
-              <Features lng={lng} />
-              <PlatformHighlights lng={lng} />
-              <WhyAPSX lng={lng} />
-              <Package lng={lng} />
-              <OurCustomers lng={lng} />
-              <Teams lng={lng} />
-              <Certification lng={lng} />
-              <Questions lng={lng} />
-              {/* /.container */}
-            </section>
-          </div>
-        </div>
-      </div>
-    </>
+    <div className="w-full relative bg-white">
+      <Hero lng={lng} />
+      <Analytics lng={lng} />
+      <ServicesAPSXPlatform />
+      <ServiceDesign />
+      <Features lng={lng} />
+      <PlatformHighlights lng={lng} />
+      <WhyAPSX lng={lng} />
+      <Package lng={lng} />
+      <OurCustomers lng={lng} />
+      <Teams lng={lng} />
+      <Certification lng={lng} />
+      <Questions lng={lng} />
+    </div>
   );
 }

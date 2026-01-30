@@ -148,7 +148,7 @@ export default function OurCustomersGroups() {
         }
       `}</style>
 
-      <div className="container !overflow-visible ">
+      <div className=" !overflow-visible ">
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-11 gap-2 md:gap-10 items-center justify-items-center !overflow-visible">
           {loading
             ? Array.from({ length: 18 }).map((_, i) => <SkeletonCard key={i} />)

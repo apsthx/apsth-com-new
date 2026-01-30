@@ -5,11 +5,14 @@ export default async function Certification({ lng }) {
   const { t } = await useTranslation(lng);
 
   return (
-    <section id="snippet-4" className="wrapper !bg-[#ffffff]">
+    <section
+      id="snippet-4"
+      className="container wrapper !bg-[#ffffff] overflow-hidden"
+    >
       <div
         data-cues="slideInDown"
         data-delay={300}
-        className="container pt-0 xl:pt-60 lg:pt-40 md:pt-40 pb-0 xl:pb-0 lg:pb-0 md:pb-5"
+        className=" pt-0 xl:pt-60 lg:pt-40 md:pt-40 pb-0 xl:pb-0 lg:pb-0 md:pb-5"
       >
         {/* แก้ไขจุดนี้: เปลี่ยนจาก bg-image/bg-overlay เป็น bg-gradient */}
         <div

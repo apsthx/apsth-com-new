@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "@/app/i18n";
+import { getSystemUpdates } from "@/data/docs";
 
 export default async function Update({ lng }) {
   const { t } = await useTranslation(lng);
@@ -28,43 +29,15 @@ export default async function Update({ lng }) {
         {/* --- Accordion Update List --- */}
         <div className="max-w-[900px] mx-auto">
           <div className="accordion accordion-wrapper" id="accordion-update">
-            {[
-              {
-                id: "blog1",
-                version: "Version X",
-                tag: "Latest",
-                title: t(
-                  "update:blog.blog1.title",
-                  "ปรับโครงสร้าง + เขียนระบบใหม่ทั้งหมด",
-                ),
-                items: t("update:blog.blog1.items", { returnObjects: true }),
-              },
-              {
-                id: "blog2",
-                version: "V3.9",
-                tag: "Stable",
-                title: t(
-                  "update:blog.blog2.title",
-                  "ฟังก์ชันยาชุด คอร์สชุด และตรวจชุด",
-                ),
-                items: t("update:blog.blog2.items", { returnObjects: true }),
-              },
-              {
-                id: "blog3",
-                version: "V2.1 - V3.6",
-                tag: "Legacy",
-                title: t(
-                  "update:blog.blog3.title",
-                  "ระบบใบเสร็จ + ตั้งค่าวันหยุดคลินิก",
-                ),
-                items: t("update:blog.blog3.items", { returnObjects: true }),
-              },
-            ].map((blog, index) => {
+            {getSystemUpdates(t).map((blog, index) => {
               const isFirst = index === 0;
+              const items = Array.isArray(blog.items)
+                ? blog.items
+                : Object.values(blog.items || {});
 
               return (
                 <div
-                  className="card accordion-item mb-5 border-0 shadow-[0_5px_20px_rgba(0,0,0,0.03)] rounded-2xl overflow-hidden"
+                  className="card accordion-item mb-5 border-0 shadow-[0_5px_25px_rgba(0,0,0,0.04)] rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_10px_35px_rgba(0,0,0,0.07)]"
                   key={blog.id}
                 >
                   <div
@@ -72,20 +45,23 @@ export default async function Update({ lng }) {
                     id={`heading-${blog.id}`}
                   >
                     <button
-                      className={`accordion-button flex items-center gap-4 !p-6 !shadow-none font-bold text-left w-full transition-all ${!isFirst ? "collapsed" : ""} group`}
+                      className={`accordion-button flex items-center gap-3 md:gap-4 !p-5 md:!p-6 !shadow-none font-bold text-left w-full transition-all ${!isFirst ? "collapsed" : ""} group`}
                       data-bs-toggle="collapse"
                       data-bs-target={`#collapse-${blog.id}`}
                       aria-expanded={isFirst}
                     >
-                      {/* Version Badge */}
+                      {/* Version Badge - ทำให้ดูเด่นขึ้น */}
                       <div
-                        className={`flex-shrink-0 px-3 py-1 rounded-md text-[0.65rem] font-medium tracking-tighter uppercase ${isFirst ? "bg-[#00b8b8] text-white" : "bg-[#f5f5f6] text-[#343f52]"}`}
+                        className={`flex-shrink-0 px-3 py-1 rounded-lg text-[0.7rem] font-bold tracking-wider uppercase transition-colors ${
+                          isFirst
+                            ? "bg-[#00b8b8] text-white"
+                            : "bg-slate-100 text-slate-500"
+                        }`}
                       >
                         {blog.version}
                       </div>
 
-                      {/* Title */}
-                      <span className="!text-[0.95rem] md:text-lg text-[#343f52] group-hover:text-[#00b8b8] transition-colors leading-snug grow">
+                      <span className="text-[1rem] md:text-lg text-[#343f52] group-hover:text-[#00b8b8] transition-colors leading-snug grow pr-6">
                         {blog.title}
                       </span>
                     </button>
@@ -96,18 +72,22 @@ export default async function Update({ lng }) {
                     className={`accordion-collapse collapse ${isFirst ? "show" : ""}`}
                     data-bs-parent="#accordion-update"
                   >
-                    <div className="card-body p-[0_2rem_2rem_5rem]">
-                      <div className="relative pl-6 py-2 before:content-[''] before:absolute before:left-0 before:top-0 before:w-[2px] before:h-full before:bg-gradient-to-b before:from-[#a4aec666] before:to-transparent">
+                    {/* ปรับ Padding บน Mobile (p-4) ให้ต่างจาก Desktop (p-8) */}
+                    <div className="card-body p-5 pt-0 md:p-[0_2rem_2.5rem_5.5rem]">
+                      <div className="relative pl-6 py-2 before:content-[''] before:absolute before:left-0 before:top-0 before:w-[2px] before:h-full before:bg-gradient-to-b before:from-[#00b8b866] before:to-transparent">
                         <ul className="list-unstyled m-0 space-y-4">
-                          {blog.items &&
-                            Object.values(blog.items).map((text, i) => (
-                              <li key={i} className="flex items-center gap-3">
-                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#00b8b8] flex-shrink-0" />
-                                <span className="text-[0.95rem] text-[#60697b] leading-relaxed">
-                                  {text}
-                                </span>
-                              </li>
-                            ))}
+                          {items.map((text, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start gap-3 group/item"
+                            >
+                              {/* จุด Bullet ที่ดูดีขึ้น */}
+                              <div className="!mt-2 w-2 h-2 rounded-full border-2 border-[#00b8b8] bg-white flex-shrink-0 group-hover/item:bg-[#00b8b8] transition-colors" />
+                              <span className="text-[0.95rem] text-[#60697b] leading-relaxed">
+                                {text}
+                              </span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>

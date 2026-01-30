@@ -137,8 +137,11 @@ export default async function Package({ lng }) {
   };
 
   return (
-    <section id="price" className="wrapper !bg-[#ffffff]">
-      <div className="container">
+    <section
+      id="price"
+      className="container wrapper !bg-[#ffffff] overflow-hidden"
+    >
+      <div className="">
         <div
           data-cues="slideInDown"
           data-delay={300}

@@ -38,7 +38,7 @@ export default async function RootLayout({ children, params }) {
           <MainHeader lng={lng} />
           <div className="xl:pb-12 pb-10" />
           {/* ส่วนเนื้อหาหลัก */}
-          <main className="flex-grow ">{children}</main>
+          <main className="flex-grow">{children}</main>
 
           <div className="xl:pb-52 lg:pb-96 md:pb-96" />
           <MainFooter lng={lng} />

@@ -2,16 +2,31 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { useTranslation } from "@/app/i18n";
-
+import {
+  getWhyApsx,
+  getApsxWhyFeatures,
+  getSecurityFactors,
+  getVerificationSystems,
+  getSystemAddons,
+} from "@/data/features";
+import PartnerItems from "@/components/Partner";
 // components
 import Badge from "@/components/common/Badges";
 
 export default async function WhyAPSX({ lng }) {
   const { t } = await useTranslation(lng);
+  const whyApsxItems = getWhyApsx(t);
+  const whyFeaturesItems = getApsxWhyFeatures(t);
+  const securityItems = getSecurityFactors(lng);
+  const verificationItems = getVerificationSystems(lng);
+  const addonItems = getSystemAddons(lng);
   return (
-    <section id="snippet-3" className="wrapper !bg-[#ffffff] ">
-      <div className="container pt-0 xl:pt-6 lg:pt-6 md:pt-6 ">
-        <div className="container mb-12">
+    <section
+      id="snippet-3"
+      className="container wrapper !bg-[#ffffff] overflow-hidden"
+    >
+      <div className=" pt-0 xl:pt-6 lg:pt-6 md:pt-6 ">
+        <div className=" mb-12">
           <div
             data-cues="slideInDown"
             data-delay={300}
@@ -31,7 +46,7 @@ export default async function WhyAPSX({ lng }) {
           <div
             data-cues="slideInDown"
             data-delay={300}
-            className="container mx-auto text-center mb-2"
+            className=" mx-auto text-center mb-2"
           >
             {/* ส่วนหัวเล็ก - ใช้ Badge หรือ Text Uppercase */}
             <h2 className="!text-[0.75rem] uppercase !text-[#9499a3] !font-normal !mb-4 !tracking-[0.1rem] bg-blue-50 inline-block px-3 py-1 rounded-md">
@@ -61,80 +76,19 @@ export default async function WhyAPSX({ lng }) {
           </div>
         </div>
         {/* /.row */}
-        <div className="flex flex-wrap mx-[-15px] justify-center !mt-[-40px]">
-          {/* ข้อมูล Cards: ใช้งานง่าย, รวดเร็ว, ปลอดภัย, อัจฉริยะ, คุ้มค่า */}
-          {[
-            {
-              title: t(
-                "home:why_apsx.why_apsx.apsx_items.blog1.title",
-                "ใช้งานง่าย",
-              ),
-              desc: t(
-                "home:why_apsx.why_apsx.apsx_items.blog1.description",
-                "UI/UX ออกแบบมาให้สะดวก ไม่ซับซ้อน",
-              ),
-              /* ไอคอน uil-focus สื่อถึงความง่ายที่รวมจุดสนใจไว้ที่เดียว หรือ uil-user-check */
-              icon: "uil-focus",
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-            {
-              title: t(
-                "home:why_apsx.why_apsx.apsx_items.blog2.title",
-                "Cloud-Based",
-              ),
-              desc: t(
-                "home:why_apsx.why_apsx.apsx_items.blog2.description",
-                "ใช้งานได้ทุกที่ ทุกเวลา บน AWS Cloud",
-              ),
-              /* uil-cloud-share สื่อถึงการเข้าถึงข้อมูลได้จากทุกที่ (Anywhere Access) */
-              icon: "uil-cloud-share",
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-            {
-              title: t(
-                "home:why_apsx.why_apsx.apsx_items.blog3.title",
-                "อัปเดตฟรี",
-              ),
-              desc: t(
-                "home:why_apsx.why_apsx.apsx_items.blog3.description",
-                "อัปเดตฟังก์ชันใหม่อัตโนมัติ ไม่มีค่าใช้จ่ายเพิ่ม",
-              ),
-              icon: "uil-sync", // สัญลักษณ์การอัปเดต/หมุนเวียนข้อมูล
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-            {
-              title: t(
-                "home:why_apsx.why_apsx.apsx_items.blog4.title",
-                "ฝึกอบรมฟรี",
-              ),
-              desc: t(
-                "home:why_apsx.why_apsx.apsx_items.blog4.description",
-                "สอนการใช้งานฟรี พร้อมให้คำปรึกษา",
-              ),
-              icon: "uil-presentation-play", // สัญลักษณ์การสอน/พรีเซนต์งาน
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-          ].map((item, index) => (
+        <div className="flex flex-wrap justify-center mx-[-15px]">
+          {whyApsxItems.map((item, index) => (
             <div
               data-cues="slideInDown"
               data-delay={300}
-              key={index}
-              /* w-full: จอเล็กสุด (Mobile) แสดง 1 แถว 1 อัน
-                sm:w-6/12: จอ Tablet แนวตั้ง แสดง 2 อัน
-                md:w-4/12: จอ Tablet แนวนอน แสดง 3 อัน
-                xl:w-1/5: จอคอมพิวเตอร์ แสดง 5 อัน
-              */
-              className="  w-full sm:w-6/12 md:w-4/12 xl:w-1/5 flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]"
+              key={item.id} // แนะนำให้ใช้ item.id เพื่อความเสถียรของ React
+              className="w-full sm:w-6/12 md:w-4/12 xl:w-1/5 flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]"
             >
-              <div className="card !border !border-[#a4aec633] !shadow-md !h-full !rounded-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group bg-white">
+              <div className="card !h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group bg-white !border !border-[#a4aec633] !rounded-lg !shadow-md">
                 <div className="card-body flex flex-col items-center text-center p-6 xl:!p-8">
-                  {/* Icon Box */}
+                  {/* Icon Box: ใช้ bgColor และ iconColor จาก Array ข้อมูล */}
                   <div
-                    className={`w-14 h-14 flex items-center justify-center rounded-2xl ${item.iconColor} mb-5 group-hover:scale-105 transition-transform duration-300`}
+                    className={`w-14 h-14 flex items-center justify-center rounded-2xl ${item.bgColor} ${item.iconColor} mb-5 group-hover:scale-110 transition-transform duration-300`}
                   >
                     <i
                       className={`uil ${item.icon} text-[2rem] leading-none`}
@@ -155,11 +109,11 @@ export default async function WhyAPSX({ lng }) {
         </div>
         {/*/.row */}
       </div>
-      <div className="container !mt-16">
+      <div className=" !mt-16">
         <div
           data-cues="slideInDown"
           data-delay={300}
-          className="container mx-auto text-center mb-12"
+          className=" mx-auto text-center mb-12"
         >
           <div className="max-w-[900px] mx-auto">
             {/* หัวข้อหลัก - เน้นความโดดเด่นของ APSX */}
@@ -181,11 +135,11 @@ export default async function WhyAPSX({ lng }) {
         </div>
       </div>
 
-      <div className="container">
+      <div className="">
         <div
           data-cues="slideInDown"
           data-delay={300}
-          className="container mx-auto text-center mb-12"
+          className=" mx-auto text-center mb-12"
         >
           {/* ส่วนหัวเล็ก - ใช้ Badge หรือ Text Uppercase */}
           <h2 className="!text-[0.75rem] uppercase !text-[#9499a3] !font-normal !mb-4 !tracking-[0.1rem] bg-blue-50 inline-block px-3 py-1 rounded-md">
@@ -214,101 +168,19 @@ export default async function WhyAPSX({ lng }) {
           </div>
         </div>
 
-        {/* /.row */}
-        <div className="flex flex-wrap mx-[-15px] justify-center !mt-[-30px]">
-          {/* ข้อมูล Cards: ใช้งานง่าย, รวดเร็ว, ปลอดภัย, อัจฉริยะ, คุ้มค่า */}
-          {[
-            {
-              title: t(
-                "home:why_apsx.what_new_apsx.what_new_items.blog1.title",
-                "Simple Control Shop",
-              ),
-              desc: t(
-                "home:why_apsx.what_new_apsx.what_new_items.blog1.description",
-                "สามารถดูยอดขายได้หลายสาขารวมไปถึงการจัดการได้ง่ายใน User เดียวเท่านั้น",
-              ),
-              icon: "uil-store", // เปลี่ยนเป็นรูปหน้าร้านเพื่อให้เข้ากับคำว่า Shop
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-            {
-              title: t(
-                "home:why_apsx.what_new_apsx.what_new_items.blog2.title",
-                "Top Sales Products And Services",
-              ),
-              desc: t(
-                "home:why_apsx.what_new_apsx.what_new_items.blog2.description",
-                "สามารถดูยอดขายได้หลายสาขา และสามารถดูยอดขายแยกตามประเภทสินค้าได้ รายบุคคล รายเดือน รายปี และสามารถดูยอดขายแยกตามช่วงเวลาได้",
-              ),
-
-              icon: "uil-chart-line",
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-            {
-              title: t(
-                "home:why_apsx.what_new_apsx.what_new_items.blog3.title",
-                "User Interface สวยงามใช้งานง่าย",
-              ),
-              desc: t(
-                "home:why_apsx.what_new_apsx.what_new_items.blog3.description",
-                "ระบบถูกออกแบบมาเพื่อให้ใช้งานง่ายไม่ซับซ้อนไม่ยุ่งยาก เทคโนโลยีใหม่ในยุคนี้",
-              ),
-              icon: "uil-layers", // สื่อถึงชั้นเลเยอร์ของ UI ที่สวยงาม
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-            {
-              title: t(
-                "home:why_apsx.what_new_apsx.what_new_items.blog3.title",
-                "Forecasting การวิเคราะห์ยอดขาย",
-              ),
-              desc: t(
-                "home:why_apsx.what_new_apsx.what_new_items.blog3.description",
-                "ก่อนเริ่มกิจกรรมทางการตลาดใดๆ คุณต้องประเมินว่ากิจกรรมนั้นจะประสบความสำเร็จและได้ผลเพียงใด",
-              ),
-              icon: "uil-analytics", // สื่อถึงการวิเคราะห์และคาดการณ์
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-            {
-              title: t(
-                "home:why_apsx.what_new_apsx.what_new_items.blog3.title",
-                "ระบบจัดการไฟล์",
-              ),
-              desc: t(
-                "home:why_apsx.what_new_apsx.what_new_items.blog3.description",
-                "สามารถจัดการไฟล์ได้อย่างมีประสิทธิภาพ ได้แก่ Lab, X-ray, สลีปใบเสร็จ, รูปภาพ, เอกสารอื่นๆ",
-              ),
-              icon: "uil-folder-medical", // สื่อถึงการเก็บไฟล์ทางการแพทย์ (Lab/X-ray)
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-            {
-              title: t(
-                "home:why_apsx.what_new_apsx.what_new_items.blog3.title",
-                "ระบบจัดการ Admin",
-              ),
-              desc: t(
-                "home:why_apsx.what_new_apsx.what_new_items.blog3.description",
-                "ที่มีความยืดหยุ่นสูง สามารถจัดการทั้งหมดภายใน User เดียวเท่านั้น รวมไปถึงการจัดการ สิทธิ์การใช้งาน ตั้งค่าระบบ และส่วนอื่นๆ",
-              ),
-              icon: "uil-setting", // สื่อถึงการตั้งค่าและแอดมิน
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-          ].map((item, index) => (
+        <div className="flex flex-wrap justify-center mx-[-15px]">
+          {whyFeaturesItems.map((item) => (
             <div
               data-cues="slideInDown"
               data-delay={300}
-              key={index}
-              className="xl:w-4/12 lg:w-4/12 md:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full min-h-72 !mt-[30px]"
+              key={item.id}
+              className="xl:w-4/12 lg:w-4/12 md:w-6/12 w-full flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]"
             >
-              <div className=" !border !border-[#a4aec633] card !shadow-md !h-full !rounded-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group bg-white">
-                <div className=" card-body flex flex-col items-center text-center p-6 xl:!p-8">
-                  {/* Icon Box: ปรับขนาดเล็กลงให้ดูมินิมอล */}
+              <div className="!border !border-[#a4aec633] !rounded-lg !shadow-md card !h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group bg-white">
+                <div className="card-body flex flex-col items-center text-center p-6 xl:!p-8 h-full">
+                  {/* Icon Box */}
                   <div
-                    className={`w-12 h-12 flex items-center justify-center rounded-md  ${item.iconColor} mb-4 group-hover:scale-105 transition-transform duration-300`}
+                    className={`w-12 h-12 flex items-center justify-center rounded-md ${item.iconColor} mb-4 group-hover:scale-110 transition-transform duration-300`}
                   >
                     <i
                       className={`uil ${item.icon} text-[2rem] leading-none`}
@@ -328,7 +200,7 @@ export default async function WhyAPSX({ lng }) {
           ))}
         </div>
         <section id="snippet-2" className="wrapper ">
-          <div className="container pt-20 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
+          <div className=" pt-20 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
             {/* --- ส่วนข้อความด้านบน (1 Column เต็มความกว้าง) --- */}
             <div
               className="max-w-[850px] mb-12 mx-auto text-center" // เพิ่ม mx-auto และ text-center เพื่อจัดกึ่งกลาง
@@ -363,40 +235,27 @@ export default async function WhyAPSX({ lng }) {
 
             {/* --- ส่วนรายการรูปภาพด้านล่าง (เรียง 2 Columns) --- */}
             <div className="flex flex-wrap mx-[-15px] !mt-[-30px]">
-              {[
-                {
-                  id: "blog1",
-                  link: `/${lng}/clinic`,
-                  img: "/assets/img/platform/factor_login1.webp",
-                  title: "APSX Security Dashboard",
-                },
-                {
-                  id: "blog2",
-                  link: `/${lng}/clinic`,
-                  img: "/assets/img/platform/factor_login2.webp",
-                  title: "Authentication Process",
-                },
-              ].map((item, index) => (
+              {securityItems.map((item) => (
                 <div
                   data-cues="slideInDown"
                   data-delay={300}
-                  key={index}
-                  className="w-full md:w-6/12 lg:w-6/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[30px]"
+                  key={item.id}
+                  className="w-full md:w-6/12 lg:w-6/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[30px] "
                 >
-                  <div className="group relative !rounded-[1.2rem] shadow-[0_10px_30px_rgba(30,34,40,0.04)] bg-white overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-[#a4aec633]">
+                  <div className="group relative  bg-white overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border-2 border-[#a4aec633] rounded-lg shadow-md">
                     <article className="post p-0">
                       <figure className="relative !mb-0 overflow-hidden cursor-pointer">
                         <Link href={item.link}>
                           <Image
                             className="!transition-all !duration-700 !ease-in-out group-hover:scale-110 group-hover:blur-[2px] w-full h-auto object-cover"
                             src={item.img}
-                            alt={item.title || "Feature Image"}
+                            alt={item.title || "Security Feature"}
                             width={600}
                             height={400}
                           />
                         </Link>
 
-                        {/* Overlay */}
+                        {/* Overlay: แสดงเมื่อ Hover */}
                         <figcaption className="absolute inset-0 z-[5] flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-900/10 backdrop-blur-[2px] transition-all duration-500 pointer-events-none">
                           <div className="bg-white/90 border border-white px-7 py-2.5 rounded-full shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out flex items-center gap-2">
                             <span className="text-[0.9rem] font-bold tracking-wide text-slate-800">
@@ -413,7 +272,7 @@ export default async function WhyAPSX({ lng }) {
           </div>
         </section>
         <section id="snippet-2" className="wrapper ">
-          <div className="container pb-16 xl:pb-20 lg:pb-20 md:pb-20">
+          <div className=" pb-16 xl:pb-20 lg:pb-20 md:pb-20">
             {/* --- ส่วนข้อความด้านบน (1 Column เต็มความกว้าง) --- */}
 
             <div
@@ -451,40 +310,27 @@ export default async function WhyAPSX({ lng }) {
 
             {/* --- ส่วนรายการรูปภาพด้านล่าง (เรียง 2 Columns) --- */}
             <div className="flex flex-wrap mx-[-15px] !mt-[-30px]">
-              {[
-                {
-                  id: "blog1",
-                  link: `/${lng}/clinic`,
-                  img: "/assets/img/platform/face_verification_system1.webp",
-                  title: "APSX Security Dashboard",
-                },
-                {
-                  id: "blog2",
-                  link: `/${lng}/clinic`,
-                  img: "/assets/img/platform/face_verification_system2.webp",
-                  title: "Authentication Process",
-                },
-              ].map((item, index) => (
+              {verificationItems.map((item) => (
                 <div
                   data-cues="slideInDown"
                   data-delay={300}
-                  key={index}
+                  key={item.id}
                   className="w-full md:w-6/12 lg:w-6/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[30px]"
                 >
-                  <div className="group relative bg-white border border-[#a4aec633] !rounded-[1.2rem] shadow-[0_10px_35px_rgba(30,34,40,0.05)] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+                  <div className="group relative bg-white overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border-2 border-[#a4aec633] rounded-lg shadow-md">
                     <article className="post p-0 m-0">
-                      <figure className="relative !mb-0 overflow-hidden cursor-pointer">
+                      <figure className="relative !mb-0 overflow-hidden cursor-pointer aspect-[3/2]">
                         <Link href={item.link}>
                           <Image
-                            className="!transition-all !duration-700 !ease-in-out group-hover:scale-110 group-hover:blur-sm w-full h-auto object-cover"
+                            className="!transition-all !duration-700 !ease-in-out group-hover:scale-110 group-hover:blur-sm w-full h-full object-cover"
                             src={item.img}
-                            alt={item.title || "Image Feature"}
+                            alt={item.title || "Face Verification System"}
                             width={600}
                             height={400}
                           />
                         </Link>
 
-                        {/* Overlay ส่วนที่ทำให้เกิดการเบลอและปุ่ม */}
+                        {/* Overlay with Button Effect */}
                         <figcaption className="absolute inset-0 z-[5] opacity-0 group-hover:opacity-100 bg-slate-900/10 backdrop-blur-[2px] transition-all duration-500 flex items-center justify-center pointer-events-none">
                           <div className="bg-white/95 border border-white/20 px-7 py-2.5 rounded-full shadow-xl transform translate-y-6 group-hover:translate-y-0 transition-all duration-500 ease-out flex items-center gap-2">
                             <span className="text-[0.9rem] font-bold tracking-wide text-slate-800">
@@ -502,7 +348,7 @@ export default async function WhyAPSX({ lng }) {
         </section>
 
         <section id="snippet-2" className="wrapper ">
-          <div className="container pb-16 xl:pb-20 lg:pb-20 md:pb-20">
+          <div className=" pb-16 xl:pb-20 lg:pb-20 md:pb-20">
             {/* --- ส่วนข้อความด้านบน (1 Column เต็มความกว้าง) --- */}
 
             <div
@@ -540,48 +386,27 @@ export default async function WhyAPSX({ lng }) {
 
             {/* --- ส่วนรายการรูปภาพด้านล่าง (เรียง 2 Columns) --- */}
             <div className="flex flex-wrap mx-[-15px] !mt-[-30px]">
-              {[
-                {
-                  id: "blog1",
-                  link: `/${lng}/clinic`,
-                  img: "/assets/img/platform/system_add_on1.webp",
-                  title: "APSX Security Dashboard",
-                },
-                {
-                  id: "blog2",
-                  link: `/${lng}/clinic`,
-                  img: "/assets/img/platform/system_add_on2.webp",
-                  title: "Authentication Process",
-                },
-                {
-                  id: "blog3",
-                  link: `/${lng}/clinic`,
-                  img: "/assets/img/platform/system_add_on3.webp",
-                  title: "Authentication Process",
-                },
-              ].map((item, index) => (
+              {addonItems.map((item) => (
                 <div
                   data-cues="slideInDown"
                   data-delay={300}
-                  key={index}
-                  /* แก้ไขเป็น 3 คอลัมน์ (lg:w-4/12) ตามโจทย์ใหม่ของคุณ */
+                  key={item.id}
                   className="w-full md:w-6/12 lg:w-4/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[30px]"
                 >
-                  <div className="group relative !rounded-[1.2rem] shadow-[0_12px_40px_rgba(30,34,40,0.04)] bg-white overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-[#a4aec633]">
+                  <div className="group relative bg-white overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border-2 border-[#a4aec633] rounded-lg shadow-md ">
                     <article className="post p-0 m-0">
-                      <figure className="relative !mb-0 overflow-hidden cursor-pointer">
+                      <figure className="relative !mb-0 overflow-hidden cursor-pointer aspect-[16/10]">
                         <Link href={item.link}>
                           <Image
-                            /* เพิ่ม group-hover:blur-sm เพื่อให้ภาพเบลอเมื่อเอาเมาส์วาง */
-                            className="!transition-all !duration-700 !ease-in-out group-hover:scale-110 group-hover:blur-sm w-full h-auto object-cover"
+                            className="!transition-all !duration-700 !ease-in-out group-hover:scale-110 group-hover:blur-sm w-full h-full object-cover"
                             src={item.img}
-                            alt={item.title || "Feature Image"}
+                            alt={item.title || "System Add-on"}
                             width={600}
                             height={400}
                           />
                         </Link>
 
-                        {/* Overlay ที่มีความเบลอแบบกระจก (Backdrop Blur) */}
+                        {/* Overlay with Glassmorphism */}
                         <figcaption className="absolute inset-0 z-[5] opacity-0 group-hover:opacity-100 bg-slate-900/15 backdrop-blur-[1px] transition-all duration-500 flex items-center justify-center pointer-events-none">
                           <div className="bg-white/95 border border-white px-7 py-2.5 rounded-full shadow-2xl transform translate-y-6 group-hover:translate-y-0 transition-all duration-500 ease-out flex items-center gap-2">
                             <span className="text-[0.9rem] font-bold tracking-tight text-slate-800">
@@ -599,7 +424,7 @@ export default async function WhyAPSX({ lng }) {
         </section>
 
         <section id="snippet-2" className="wrapper ">
-          <div className="container xl:pb-20 lg:pb-20 md:pb-20">
+          <div className=" xl:pb-20 lg:pb-20 md:pb-20">
             {/* --- ส่วนข้อความด้านบน (1 Column เต็มความกว้าง) --- */}
 
             <div
@@ -633,149 +458,15 @@ export default async function WhyAPSX({ lng }) {
             </div>
 
             {/* --- ส่วนรายการรูปภาพด้านล่าง (เรียง 2 Columns) --- */}
-            <div className="flex flex-wrap mx-[-15px] !mt-[-30px]">
-              {[
-                {
-                  id: "blog1",
-                  link: "https://paysolutions.asia/",
-                  title: t(
-                    "home:why_apsx.partner.blog1.title",
-                    "Pay Solutions",
-                  ),
-                  description: t(
-                    "home:why_apsx.partner.blog1.description",
-                    "ระบบตัดบัตรออนไลน์ รองรับช่องทางชำระเงินออนไลน์ที่หลากหลาย",
-                  ),
-                  img: "/assets/img/partners/partner_paysoltions.jpg",
-                },
-                {
-                  id: "blog2",
-                  link: "https://dietz.asia/",
-                  title: t("home:why_apsx.partner.blog2.title", "Dietz.asia"),
-                  description: t(
-                    "home:why_apsx.partner.blog2.description",
-                    "ระบบ Telemedicine ครบวงจรสำหรับคลินิก พร้อมการขออนุญาต ช่วยดูแลผู้ป่วยออนไลน์ได้ตามกฎหมาย",
-                  ),
-                  img: "/assets/img/partners/partner_dietz.jpg",
-                },
-                {
-                  id: "blog3",
-                  link: "#",
-                  title: t("home:why_apsx.partner.blog3.title", "LIS/LAB Plus"),
-                  description: t(
-                    "home:why_apsx.partner.blog3.description",
-                    "ระบบดึงผล Lab/X-Ray ผ่านระบบ LIS มาแสดงผลในระบบ อัตโนมัติ",
-                  ),
-                  img: "/assets/img/partners/partner_labplus.jpg",
-                },
-                {
-                  id: "blog4",
-                  link: "https://www.nhso.go.th/",
-                  title: t(
-                    "home:why_apsx.partner.blog4.title",
-                    "ระบบแฟ้มเบิกค่าใช้จ่าย (e-Claim)",
-                  ),
-                  description: t(
-                    "home:why_apsx.partner.blog4.description",
-                    "รองรับการเบิกค่าใช้จ่าย สาธารณสุข (e-Claim) 16 แฟ้ม",
-                  ),
-                  img: "/assets/img/partners/partner_eclaim.jpg",
-                },
-                {
-                  id: "blog5",
-                  link: "https://www.peakaccount.com/",
-                  title: t("home:why_apsx.partner.blog5.title", "PEAK)"),
-                  description: t(
-                    "home:why_apsx.partner.blog5.description",
-                    "โปรแกรมบัญชีออนไลน์ ที่ครอบคลุมการใช้งานที่สุดในไทย ให้เจ้าของธุรกิจรับรู้สภาพการเงินที่แท้จริง",
-                  ),
-                  img: "/assets/img/partners/partner_peak.jpg",
-                },
-              ].map((item, index) => (
-                <div
-                  data-cues="slideInDown"
-                  data-delay={300}
-                  key={index}
-                  className="w-full md:w-6/12 lg:w-4/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[50px]"
-                >
-                  <div className="group h-full !rounded-[1rem] border border-[#a4aec633] shadow-[0_10px_35px_rgba(30,34,40,0.05)] bg-white overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1.5 flex flex-col">
-                    <article className="post p-0 flex flex-col h-full">
-                      {/* ส่วนรูปภาพพร้อม Effect Blur และ Overlay */}
-                      <figure className="relative aspect-[4/3] w-full !mb-0 overflow-hidden bg-slate-100 cursor-pointer">
-                        <Link
-                          target="_blank"
-                          href={item.link}
-                          className="w-full h-full block"
-                        >
-                          <Image
-                            className="!transition-all !duration-700 !ease-in-out group-hover:scale-110 group-hover:blur-sm !w-full !h-full !object-cover"
-                            src={item.img}
-                            alt={item.title || "Feature Image"}
-                            width={600}
-                            height={450}
-                            priority={true}
-                          />
-                        </Link>
-
-                        {/* Overlay ดูรายละเอียด (Professional Glassmorphism) */}
-                        <figcaption className="absolute inset-0 z-[5] opacity-0 group-hover:opacity-100 bg-slate-900/10 backdrop-blur-[2px] transition-all duration-500 flex items-center justify-center pointer-events-none">
-                          <div className="bg-white/95 border border-white px-5 py-2 rounded-full shadow-2xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                            <span className="text-[#343f52] font-bold text-[0.8rem] tracking-tight">
-                              {t("home:read_more", "ดูรายละเอียด")}
-                            </span>
-                          </div>
-                        </figcaption>
-                      </figure>
-
-                      {/* ส่วนเนื้อหา (Content Section) */}
-                      <div className="post-header p-6 flex flex-col flex-grow">
-                        {/* Title พร้อมเส้นตกแต่งที่สะอาดตาขึ้น */}
-                        <div className="post-title h4 !mb-2 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-50%] before:w-3 before:h-[2px] before:left-0 before:top-1/2 before:bg-[#1bb59b]">
-                          <Link
-                            target="_blank"
-                            className="!text-[#343f52] hover:!text-[#1bb59b] transition-colors"
-                            href={item.link}
-                          >
-                            {item.title}
-                          </Link>
-                        </div>
-
-                        {/* Badge สถานะ */}
-                        {item.id === "blog5" && (
-                          <div className="mb-2">
-                            <Badge
-                              color="teal"
-                              variant="softText"
-                              className="!text-[12px] !px-3 !py-2 !font-medium  !leading-tight !shadow-sm !rounded-full"
-                            >
-                              {t("home:coming_soon", "เร็วๆ นี้")}
-                            </Badge>
-                          </div>
-                        )}
-
-                        {/* Description พร้อมจำกัดบรรทัดเพื่อให้ Layout ไม่เบี้ยว */}
-                        <p className="!text-[0.85rem] !leading-relaxed text-[#64748b] !mb-0 line-clamp-3 font-medium">
-                          {item.description}
-                        </p>
-
-                        {/* ส่วนท้ายของการ์ด (ถ้าต้องการเพิ่มวันที่หรือผู้เขียน) */}
-                      </div>
-                    </article>
-
-                    {/* แถบสีด้านล่างสุดเพิ่มลูกเล่นความเป็นทางการ */}
-                    <div className="h-[2px] w-0 bg-[#1bb59b] group-hover:w-full transition-all duration-700 ease-in-out" />
-                  </div>
-                </div>
-              ))}
-            </div>
+            <PartnerItems lng={lng} />
           </div>
         </section>
 
         {/*/.row */}
       </div>
-      {/* /.container */}
+      {/* /. */}
 
-      {/* /.container */}
+      {/* /. */}
     </section>
   );
 }

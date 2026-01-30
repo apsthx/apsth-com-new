@@ -1,7 +1,7 @@
 import React from "react";
 
 import Hero from "@/components/partner/Hero";
-import Patner from "@/components/partner/Partner";
+import PartnerItems from "@/components/Partner";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -102,10 +102,12 @@ export default async function CustomerPage({ params }) {
         {/* className="!bg-[#f0f0f8]" */}
         <div>
           <div className="grow shrink-0">
-            <section className="wrapper overflow-hidden">
+            <section className="wrapper overflow-hidden  mb-14">
               <div className="!mt-0" />
               <Hero lng={lng} />
-              <Patner lng={lng} />
+              <div className="container pb-10">
+                <PartnerItems lng={lng} />
+              </div>
             </section>
           </div>
         </div>

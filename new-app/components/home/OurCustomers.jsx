@@ -6,8 +6,11 @@ export default async function OurCustomers({ lng }) {
   const { t } = await useTranslation(lng);
 
   return (
-    <section id="snippet-2" className="wrapper !bg-[#ffffff]  ">
-      <div className="container  pb-16 xl:pb-20 lg:pb-20 md:pb-20">
+    <section
+      id="snippet-2"
+      className="container wrapper !bg-[#ffffff]  overflow-hidden"
+    >
+      <div className="  pb-16 xl:pb-20 lg:pb-20 md:pb-20">
         <div
           data-cues="slideInDown"
           data-delay={300}

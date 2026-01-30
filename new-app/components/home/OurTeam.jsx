@@ -6,7 +6,7 @@ import { OurTeams } from "@/data/our_team";
 export default function OurTeam() {
   return (
     <>
-      <div className="!relative">
+      <div className="container !relative">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 relative z-[2] items-stretch">
           {OurTeams.map((data) => (
             <div
@@ -16,7 +16,7 @@ export default function OurTeam() {
               key={data.id}
             >
               <div className="item-inner flex-1 flex flex-col group">
-                <div className="card h-full min-h-72 flex flex-col !bg-white/80 !backdrop-blur-sm !border !border-[#a4aec633] !shadow-[0_4px_20px_0_rgba(31,38,135,0.05)] !rounded-xl transition-all duration-300 hover:translate-y-[-5px]">
+                <div className="card h-full min-h-72 flex flex-col !bg-white/80 !backdrop-blur-sm transition-all duration-300 hover:translate-y-[-5px] !border !border-[#a4aec633] !rounded-lg !shadow-md">
                   {/* 2. ปรับ Padding ภายในให้กระชับ (p-6) */}
                   <div className="card-body p-10 flex-1 flex flex-col items-center text-center">
                     {/* Image Section - ลด margin bottom นิดหน่อย */}

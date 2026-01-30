@@ -2,42 +2,35 @@ import React from "react";
 import Image from "next/image";
 import AnimatedText from "@/components/common/AnimatedText";
 import Link from "next/link";
-
+import Button from "../common/Button";
+import GridBackground from "../common/background/GridBackground";
 import { useTranslation } from "@/app/i18n";
 
 export default async function Hero({ lng }) {
   const { t } = await useTranslation(lng);
   return (
-    <div className="pt-20 xl:pt-[1rem] lg:pt-[1rem] md:pt-[1rem] !text-center !relative !font-medium !text-[#464c58] !tracking-wide overflow-hidden">
-      {/* --- Grid Background Layer --- */}
-      <div
-        className="absolute inset-0 z-0 opacity-[0.3]"
-        style={{
-          backgroundImage: `
-                    linear-gradient(to right, #37d5af 2px, transparent 1px),
-                    linear-gradient(to bottom, #37d5af 2px, transparent 1px)
-                  `,
-          backgroundSize: "80px 80px", // ปรับขนาดช่องตารางที่นี่
-          maskImage:
-            "radial-gradient(ellipse at center, black, transparent 80%)", // ทำให้ขอบจางลง
-          WebkitMaskImage:
-            "radial-gradient(ellipse at center, black, transparent 80%)",
-        }}
+    <div className="pt-20 xl:pt-[1rem] lg:pt-[1rem] md:pt-[1rem] !text-center !relative !font-medium !text-[#464c58] !tracking-wide">
+      <GridBackground
+        gridColor="#37d5af"
+        gridSize="80px"
+        lineThickness="2px"
+        opacity={0.3}
       />
-      <div className=" flex flex-wrap mx-[-15px] !relative px-4 lg:px-0">
-        <section id="snippet-1" className="wrapper !bg-transparent  w-screen">
-          <div className="container mt-0 sm:pt-0 xl:pt-20 lg:pt-20 md:pt-20 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
+      <div className="container flex flex-wrap mx-[-15px] !relative px-4 lg:px-0">
+        <section id="snippet-1" className="wrapper !bg-transparent w-screen">
+          <div className="mt-0 sm:pt-0 xl:pt-20 lg:pt-20 md:pt-20 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
             <div className=" flex flex-col mt-0 pt-0 lg:flex-row mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] items-center">
               <div
                 data-cue="fadeIn"
                 className="
-                  !mt-8 xl:mt-0 relative order-2 lg:order-1 
-                  w-full md:w-10/12 lg:w-6/12 xl:w-7/12 flex-[0_0_auto] max-w-full
-                  bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-xl
-                  border border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.1)] 
-                  p-3 sm:p-5 rounded-[2.5rem] lg:mt-0
-                  hover:scale-[101%] transition-transform cursor-default whitespace-nowrap duration-500
-                "
+                    !mt-8 xl:mt-0 relative order-2 lg:order-1
+                    w-full md:w-8/12 lg:w-5/12 xl:w-6/12 flex-[0_0_auto] max-w-full
+                    mx-auto
+                    bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-xl
+                    border border-white/40 shadow-[0_20px_50px_rgba(0,0,0,0.1)]
+                    p-3 sm:p-5 rounded-[2.5rem] lg:mt-0
+                    hover:scale-[101%] transition-transform cursor-default whitespace-nowrap duration-500
+                  "
               >
                 {/* เพิ่มวงเรืองแสง (Glow) ด้านหลังรูปเพื่อความโดดเด่น */}
                 <div className=" absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 bg-blue-400/10 blur-[100px] rounded-full"></div>
@@ -145,34 +138,35 @@ export default async function Hero({ lng }) {
 
                 <div className="mt-9 flex flex-col md:flex-row justify-center items-center mb-6 px-4 gap-3 md:gap-3">
                   {/* ปุ่ม Line ID - ขนาดกะทัดรัด */}
-                  <Link
+                  <Button
                     target="_blank"
+                    rounded="md"
+                    color="dark"
                     href="https://page.line.me/gbc9405c"
-                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#0fb467] border border-[#01c965] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 hover:!bg-[#01b85c] transition-all duration-300 !rounded-lg px-5 py-2 gap-2"
                   >
                     <i
-                      className="uil uil-line text-[1.3rem] leading-none"
+                      className="uil uil-line text-[1.3rem] leading-none mr-2"
                       style={{ color: "#ffffff" }}
                     />
                     <span className="!font-Kanit font-medium  text-[0.95rem]">
                       {t("home:hero.connect.line", "Line: @apsth")}
                     </span>
-                  </Link>
-
-                  {/* ปุ่ม Book a Demo - ขนาดกะทัดรัด */}
-                  <Link
+                  </Button>
+                  <Button
                     target="_blank"
+                    rounded="md"
+                    color="gray"
                     href={`/${lng}/calendar`}
-                    className="btn w-full md:w-auto !inline-flex items-center justify-center !text-white !bg-[#1bb5a8] hover:!bg-[#039797]  border border-[#1bb5a8] !shadow-none hover:!shadow-md hover:!-translate-y-0.5 transition-all duration-300 !rounded-lg px-5 py-2 gap-2"
                   >
                     <i
-                      className="uil uil-calendar-alt text-[1.3rem] leading-none"
-                      style={{ color: "#ffffff" }}
+                      className="uil uil-calendar-alt text-[1.3rem] leading-none mr-2"
+                      style={{ color: "#343f52" }}
                     />
-                    <span className="!font-Kanit font-medium text-[0.95rem]">
+                    <span className="!font-Kanit font-medium text-[#343f52] text-[0.95rem]">
                       {t("home:hero.connect.book_a_demo", "Book a Demo")}
                     </span>
-                  </Link>
+                  </Button>
+                  {/* ปุ่ม Book a Demo - ขนาดกะทัดรัด */}
                 </div>
                 <div className="flex flex-wrap mx-[-15px] xl:mx-[-25px] mt-[-20px]">
                   <div className="w-full flex flex-col gap-3 xl:!px-[25px] !px-[10px] !mt-[20px]">
@@ -237,9 +231,9 @@ export default async function Hero({ lng }) {
             </div>
             {/*/.row */}
           </div>
-          {/* /.container */}
+          {/* /. */}
 
-          {/* /.container */}
+          {/* /. */}
         </section>
         {/* /column */}
       </div>

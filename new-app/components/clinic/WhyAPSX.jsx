@@ -2,9 +2,17 @@ import { useTranslation } from "@/app/i18n";
 
 import SlidesImages from "./SlidesImages";
 import ImageGallery from "./ImageGallery";
+import {
+  getWhyApsx,
+  getSystemFunctions,
+  getClinicReports,
+} from "@/data/features";
 
 export default async function WhyAPSX({ lng }) {
   const { t } = await useTranslation(lng);
+  const whyApsxItems = getWhyApsx(t);
+  const functionItems = getSystemFunctions(t);
+  const reportItems = getClinicReports(t);
   return (
     <section id="snippet-3" className="wrapper !bg-[#ffffff] ">
       <div className="container !mb-16 xl:!mb-4 pt-4 xl:pt-10 lg:pt-28 md:pt-28 ">
@@ -58,143 +66,44 @@ export default async function WhyAPSX({ lng }) {
           </div>
         </div>
         {/* /.row */}
-        <div className="flex flex-wrap mx-[-15px] justify-center !mt-[-30px]">
-          {/* ข้อมูล Cards: ใช้งานง่าย, รวดเร็ว, ปลอดภัย, อัจฉริยะ, คุ้มค่า */}
-          {[
-            {
-              title: t(
-                "home:why_apsx.why_apsx.apsx_items.blog1.title",
-                "ใช้งานง่าย",
-              ),
-              desc: t(
-                "home:why_apsx.why_apsx.apsx_items.blog1.description",
-                "UI/UX ออกแบบมาให้สะดวก ไม่ซับซ้อน",
-              ),
-              /* ไอคอน uil-focus สื่อถึงความง่ายที่รวมจุดสนใจไว้ที่เดียว หรือ uil-user-check */
-              icon: "uil-focus",
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-            {
-              title: t(
-                "home:why_apsx.why_apsx.apsx_items.blog2.title",
-                "Cloud-Based",
-              ),
-              desc: t(
-                "home:why_apsx.why_apsx.apsx_items.blog2.description",
-                "ใช้งานได้ทุกที่ ทุกเวลา บน AWS Cloud",
-              ),
-              /* uil-cloud-share สื่อถึงการเข้าถึงข้อมูลได้จากทุกที่ (Anywhere Access) */
-              icon: "uil-cloud-share",
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-            {
-              title: t(
-                "home:why_apsx.why_apsx.apsx_items.blog3.title",
-                "อัปเดตฟรี",
-              ),
-              desc: t(
-                "home:why_apsx.why_apsx.apsx_items.blog3.description",
-                "อัปเดตฟังก์ชันใหม่อัตโนมัติ ไม่มีค่าใช้จ่ายเพิ่ม",
-              ),
-              icon: "uil-sync", // สัญลักษณ์การอัปเดต/หมุนเวียนข้อมูล
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-            {
-              title: t(
-                "home:why_apsx.why_apsx.apsx_items.blog4.title",
-                "ฝึกอบรมฟรี",
-              ),
-              desc: t(
-                "home:why_apsx.why_apsx.apsx_items.blog4.description",
-                "สอนการใช้งานฟรี พร้อมให้คำปรึกษา",
-              ),
-              icon: "uil-presentation-play", // สัญลักษณ์การสอน/พรีเซนต์งาน
-              bgColor: "bg-[#edf9f6]",
-              iconColor: "text-[#1bb59b]",
-            },
-          ].map((item, index) => (
+        <div className="flex flex-wrap justify-center mx-[-15px]">
+          {whyApsxItems.map((item, index) => (
             <div
               data-cues="slideInDown"
-              data-delay={index * 50}
-              key={index}
-              /* xl: 5 คอลัมน์ (w-1/5)
-              lg/md: 3 คอลัมน์ (w-4/12)
-              sm: 2 คอลัมน์ (sm:w-6/12) -> ถ้าอยากให้จอเล็กกลางๆ เห็น 2
-              default: 1 คอลัมน์ (w-full) -> จอมือถือปกติเห็น 1 เต็มๆ
-            */
-              className=" mb-2 xl:w-1/5 lg:w-4/12 md:w-4/12 sm:w-6/12 w-full flex-[0_0_auto] px-[15px] max-w-full mt-[30px]"
+              data-delay={300}
+              key={item.id} // แนะนำให้ใช้ item.id เพื่อความเสถียรของ React
+              className="w-full sm:w-6/12 md:w-4/12 xl:w-1/5 flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px]"
             >
-              <div className="card !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] !h-full border-0 !rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-white overflow-hidden group">
-                <div className="card-body flex flex-col items-center text-center p-6 xl:!p-7">
-                  {/* Icon Box */}
+              <div className="card !border !border-[#a4aec633] !shadow-md !h-full !rounded-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group bg-white">
+                <div className="card-body flex flex-col items-center text-center p-6 xl:!p-8">
+                  {/* Icon Box: ใช้ bgColor และ iconColor จาก Array ข้อมูล */}
                   <div
-                    className={`w-14 h-14 flex items-center justify-center rounded-2xl   ${item.iconColor || "text-[#1bb59b]"} mb-5 group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-14 h-14 flex items-center justify-center rounded-2xl ${item.bgColor} ${item.iconColor} mb-5 group-hover:scale-110 transition-transform duration-300`}
                   >
                     <i
-                      className={`uil ${item.icon || "uil-file-info-alt"} text-[1.8rem] leading-none`}
+                      className={`uil ${item.icon} text-[2rem] leading-none`}
                     />
                   </div>
 
-                  {/* Title */}
-                  <h4 className="text-[0.95rem] xl:text-[1.05rem] font-bold text-[#343f52] mb-2 leading-tight group-hover:text-[#1bb59b] transition-colors">
+                  <h4 className="text-[1.05rem] font-bold text-[#343f52] mb-2 leading-tight">
                     {item.title}
                   </h4>
 
-                  {/* Description (ถ้ามี) */}
-                  {item.desc && (
-                    <p className="text-[0.8rem] xl:text-[0.85rem] text-[#60697b] leading-relaxed mb-0 line-clamp-2">
-                      {item.desc}
-                    </p>
-                  )}
+                  <p className="text-[0.85rem] text-[#60697b] leading-relaxed mb-0">
+                    {item.desc}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
         <ImageGallery />
-        {/* <div className="flex flex-wrap mx-[-15px] justify-center ">
-          {[
-            {
-              image: "/assets/clinic/career-img-1.jpg",
-            },
-            {
-              image: "/assets/clinic/career-img-2.jpg",
-            },
-            {
-              image: "/assets/clinic/career-img-3.jpg",
-            },
-            {
-              image: "/assets/clinic/career-img-4.jpg",
-            },
-            {
-              image: "/assets/clinic/career-img-5.jpg",
-            },
-          ].map((item, index) => (
-            <div
-              data-cues="slideInDown"
-              data-delay={300}
-              key={index}
-              className="xl:w-1/5 lg:w-4/12 md:w-6/12 w-6/12 flex-[0_0_auto] !px-[15px] max-w-full !mt-[30px] py-4"
-            >
-              <div className="group relative aspect-square flex items-center justify-center rounded overflow-hidden transition-all duration-300 hover:scale-105 bg-transparent">
-                <img
-                  src={item.image}
-                  alt={`icon-${index}`}
-                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-            </div>
-          ))}
-        </div> */}
         <div className="!mt-10  mx-auto">
           {/* หัวข้อส่วนฟังก์ชัน */}
           <div
             data-cues="slideInDown"
             data-delay={50}
-            className="mb-8 text-center lg:text-left"
+            className="mb-0 text-center lg:text-left"
           >
             <h3 className="!text-[1.8rem] font-black text-[#343f52] mb-2">
               {t("clinic:system_functions.title", "ฟังก์ชันของระบบ")}
@@ -202,114 +111,18 @@ export default async function WhyAPSX({ lng }) {
           </div>
 
           <div className="flex flex-wrap mx-[-15px]">
-            {[
-              {
-                title: t("clinic:system_functions.list1", "ภาพรวม Overview"),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list2",
-                  "รองรับการดูยอดขายได้หลายสาขาพร้อมกัน",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list3",
-                  "รองรับการดูยอด กำไร/ขาดทุน และ Top Sale",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list4",
-                  "การจัดการง่ายใน User เดียว (Simple Control Shop)",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list5",
-                  "จัดการได้ด้วยตัวเอง ไม่ต้องเรียกใช้งานฝ่าย IT",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list6",
-                  "ระบบค่าคอมมิชชั่นแบบขั้นบันได และค่ามือพนักงาน",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list7",
-                  "การตั้งค่าเอกสารยืดหยุ่น และผังบัญชี",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list8",
-                  "จัดการข้อมูลลูกค้า มาตรฐาน JCI/HL7 ระดับสากล",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list9",
-                  "รองรับพันธุกรรมครอบครัว และประวัติสุขภาพจิต",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list10",
-                  "รองรับบริการ คอร์ส/Lab/X-Ray และการตัดต้นทุน",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list11",
-                  "รองรับการให้ค่ามือแพทย์ และค่าคอมมิชชั่น",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list12",
-                  "รองรับระบบการบริหารจัดการ IPD/OPD",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list13",
-                  "ระบบส่งโปรโมชั่นผ่านข้อความ และ Email",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list14",
-                  "รองรับการออกเอกสารทางการแพทย์ครบวงจร",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list15",
-                  "รายงานผลในรูปแบบ Excel และ PDF",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:system_functions.list16",
-                  "และฟังก์ชันอื่นๆ อีกมากมาย",
-                ),
-              },
-            ].map((item, index) => (
+            {functionItems.map((item, index) => (
               <div
                 data-cues="slideInDown"
-                data-delay={index * 50} // เพิ่มลูกเล่นให้ค่อยๆ โผล่ทีละนิด
-                key={index}
-                className="xl:w-12/12 w-full px-[15px] mb-3"
+                data-delay={index * 50}
+                key={item.id}
+                /* ปรับเป็น w-6/12 บนจอใหญ่เพื่อให้แบ่งเป็น 2 คอลัมน์ */
+                className="w-full  px-[15px] mb-1"
               >
-                <div className="flex items-center p-4 bg-white rounded-xl border border-[#e7eaf3] transition-all duration-300 hover:border-[#1bb59b] hover:shadow-md group">
-                  {/* Icon Checkmark สีเขียวมินต์ */}
-                  <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#1bb59b]/10 text-[#1bb59b] mr-4 transition-all group-hover:bg-[#1bb59b] group-hover:text-white">
-                    <i className="uil uil-check text-[1rem]"></i>
-                  </div>
-
-                  <span className="text-[0.8rem] font-bold text-[#60697b] group-hover:text-[#343f52] leading-tight">
+                <div className="flex items-start p-1 bg-white border-[#e7eaf3] transition-all duration-300   group cursor-default">
+                  {/* Icon Checkmark ที่เนียนตาขึ้น */}
+                  <i className="uil uil-check text-[0.85rem] mr-2"></i>
+                  <span className="text-[0.85rem] font-bold text-[#60697b] group-hover:text-[#343f52] transition-colors duration-300 leading-tight">
                     {item.title}
                   </span>
                 </div>
@@ -365,7 +178,7 @@ export default async function WhyAPSX({ lng }) {
           <div
             data-cues="slideInDown"
             data-delay={300}
-            className="mb-8 text-center lg:text-left"
+            className="mb-0 text-center lg:text-left"
           >
             <h3
               data-cues="slideInDown"
@@ -377,190 +190,17 @@ export default async function WhyAPSX({ lng }) {
           </div>
 
           <div className="flex flex-wrap mx-[-15px]">
-            {[
-              {
-                title: t("clinic:all_reports.list1", "รายงานสรุปข้อมูลลูกค้า"),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list2",
-                  "รายงานสรุปการวินิจฉัยโรค",
-                ),
-              },
-              { title: t("clinic:all_reports.list3", "รายงานการจัดคิว") },
-              {
-                title: t("clinic:all_reports.list4", "รายงานสรุปการใช้บริการ"),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list5",
-                  "รายงานสรุปการใช้บริการคงเหลือ",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list6",
-                  "รายงานสรุปความเคลื่อนไหวการใช้บริการ",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list7",
-                  "รายงานสรุปการตรวจ/Lab/X-Ray",
-                ),
-              },
-              {
-                title: t("clinic:all_reports.list8", "รายงานวิเคราะห์ยอดขาย"),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list9",
-                  "รายงานการวิเคราะห์ยอดซื้อ RFM",
-                ),
-              },
-              {
-                title: t("clinic:all_reports.list10", "รายงานสรุปประวัติ OPD"),
-              },
-              { title: t("clinic:all_reports.list11", "รายงานคูปอง") },
-              {
-                title: t("clinic:all_reports.list12", "รายงานการนัดหมาย"),
-              },
-              {
-                title: t("clinic:all_reports.list13", "รายงาน Sale Pipeline"),
-              },
-              {
-                title: t("clinic:all_reports.list14", "รายงานยา/อุปกรณ์"),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list15",
-                  "รายงานการจ่ายยา/อุปกรณ์",
-                ),
-              },
-              {
-                title: t("clinic:all_reports.list16", "รายงานการสั่งซื้อ"),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list17",
-                  "รายงานการโอน/รับเข้า/เบิก/ปรับปรุง",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list18",
-                  "รายงานสรุปล็อตยา/อุปกรณ์คงเหลือ",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list19",
-                  "รายงานสรุปความเคลื่อนไหวยา/อุปกรณ์",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list20",
-                  "รายงานแจ้งเตือนยา/อุปกรณ์หมดอายุ",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list21",
-                  "รายงานสรุปยา/อุปกรณ์คงเหลือ",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list22",
-                  "รายงานแจ้งเตือนยา/อุปกรณ์ใกล้จะหมด",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list23",
-                  "รายงานการโอนและปรับปรุงคอร์ส",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list24",
-                  "รายงานการโอนและปรับปรุงยาในคอร์ส",
-                ),
-              },
-              {
-                title: t("clinic:all_reports.list25", "รายงานยอดขาย/บัญชี"),
-              },
-              {
-                title: t("clinic:all_reports.list26", "รายงานสรุปกำไร/ขาดทุน"),
-              },
-              {
-                title: t("clinic:all_reports.list27", "รายงานบัญชีลูกหนี้"),
-              },
-              {
-                title: t("clinic:all_reports.list28", "รายงานสรุปรายได้"),
-              },
-              {
-                title: t("clinic:all_reports.list29", "รายงานใบแจ้งหนี้"),
-              },
-              { title: t("clinic:all_reports.list30", "รายงานใบเสร็จ") },
-              {
-                title: t("clinic:all_reports.list31", "รายงานใบกำกับภาษี"),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list32",
-                  "รายงานสรุปค่ามือ/คอมมิชชั่น",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list33",
-                  "รายงานสรุปยอดขายพนักงาน",
-                ),
-              },
-              {
-                title: t("clinic:all_reports.list34", "รายงานสรุปค่าใช้จ่าย"),
-              },
-              { title: t("clinic:all_reports.list35", "รายงานผังบัญชี") },
-              { title: t("clinic:all_reports.list36", "รายงานวงเงิน") },
-              { title: t("clinic:all_reports.list37", "รายงานแต้ม") },
-              {
-                title: t(
-                  "clinic:all_reports.list38",
-                  "รายงานเบิกค่าใช้จ่าย E-Claim",
-                ),
-              },
-              {
-                title: t(
-                  "clinic:all_reports.list39",
-                  "รายงานวัตถุออกฤทธิ์/ยาเสพติดให้โทษ",
-                ),
-              },
-              { title: t("clinic:all_reports.list40", "รายงาน ร.ขจ.2") },
-              {
-                title: t("clinic:all_reports.list41", "รายงาน ร.ว.จ.3/4"),
-              },
-              {
-                title: t("clinic:all_reports.list42", "รายงาน ร.ย.ส.4/5"),
-              },
-              {
-                title: t("clinic:all_reports.list43", "รายงาน ย.ส.5/6/7"),
-              },
-            ].map((item, index) => (
+            {reportItems.map((item, index) => (
               <div
                 data-cues="slideInDown"
+                /* Logic การ Delay ที่คุณทำไว้ดีมากครับ: แบ่งกลุ่มการโผล่ตามลำดับ */
                 data-delay={(index % 2) * 100 + Math.floor(index / 2) * 50}
-                key={index}
-                className="xl:w-1/2 lg:w-1/2 w-full px-[15px] mb-3"
+                key={item.id}
+                className="w-full px-[15px] lg:w-1/2"
               >
-                <div className="flex items-center p-4 bg-white rounded-xl border border-[#e7eaf3] transition-all duration-300 hover:border-[#1bb59b] hover:shadow-md group h-full">
-                  {/* Icon Checkmark สีเขียวมินต์ */}
-                  <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-[#1bb59b]/10 text-[#1bb59b] mr-4 transition-all group-hover:bg-[#1bb59b] group-hover:text-white">
-                    <i className="uil uil-check text-[1rem]"></i>
-                  </div>
-
-                  <span className="text-[0.85rem] font-bold text-[#60697b] group-hover:text-[#343f52] leading-tight">
+                <div className="flex items-center p-1 bg-white  transition-all duration-300 group h-full cursor-default">
+                  <i className="uil uil-check text-[0.85rem] mr-2"></i>
+                  <span className="text-[0.85rem] font-bold text-[#60697b] group-hover:text-[#343f52] leading-tight transition-colors duration-300">
                     {item.title}
                   </span>
                 </div>

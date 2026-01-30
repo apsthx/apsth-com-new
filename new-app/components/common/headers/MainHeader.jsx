@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { socialLinks } from "@/data/socials";
 import TypeWriter from "@/components/common/TypeWriter";
+import Button from "@/components/common/Button";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -127,13 +128,13 @@ export default async function MainHeader({ lng }) {
                 {/* --- 1. ส่วนที่จะแสดงเฉพาะจอ lg (Dropdown เพื่อกันล้น) --- */}
                 <li className="nav-item dropdown hidden lg:block xl:hidden">
                   <a
-                    className="nav-link dropdown-toggle !relative !inline-flex items-center gap-1 !bg-[#1bb59b] hover:!bg-[#1bb5a8] !text-white !rounded-lg !py-1.5 !px-3"
+                    className="nav-link dropdown-toggle !relative !inline-flex items-center gap-1 !bg-[#EFF1F5] hover:!bg-[#e2e5eb] !text-[#1a1f24]  !rounded-lg !py-1.5 !px-3"
                     href="#"
                     role="button"
                     data-bs-toggle="dropdown"
                   >
                     <i className="uil uil-rocket" />
-                    <span className="!font-medium lg:!text-[0.75rem]">
+                    <span className="!font-medium lg:!text-[0.75rem] ">
                       {labels.free_trial}
                     </span>
                     <span className="absolute -top-2 -right-2">
@@ -148,60 +149,69 @@ export default async function MainHeader({ lng }) {
                   </a>
                   <ul className="dropdown-menu !right-0 !left-auto !border-none !shadow-xl !rounded-xl space-y-1">
                     <li>
-                      <a
-                        className="dropdown-item flex items-center gap-2 !py-2 !bg-[#00000005] rounded-lg"
-                        href="https://www.app-apsx.com/login"
+                      <Button
                         target="_blank"
+                        rounded="lg"
+                        color="gray"
+                        href="https://www.app-apsx.com/login"
+                        className="w-full"
                       >
-                        <i className="uil uil-signin" />{" "}
-                        <span className="!font-medium">{labels.login}</span>
-                      </a>
+                        <i className="uil uil-signin text-[0.8rem]" />
+                        <span className="!font-medium !text-[14px]">
+                          {labels.login}
+                        </span>
+                      </Button>
                     </li>
                     <li>
-                      <a
-                        className="dropdown-item flex items-center gap-2 !py-2 !text-white !bg-[#1bb59b]  rounded-lg"
-                        href="https://www.app-apsx.com/register"
+                      <Button
                         target="_blank"
+                        rounded="lg"
+                        color="dark"
+                        href={`/${lng}/calendar`}
+                        className="w-full"
                       >
-                        <i className="uil uil-rocket" />{" "}
-                        <span className="!font-medium">
+                        <i className="uil uil-rocket text-[0.8rem]" />
+                        <span className="!font-medium !text-[14px]">
                           {labels.free_trial}
                         </span>
-                      </a>
+                      </Button>
                     </li>
                   </ul>
                 </li>
 
                 {/* --- 2. ส่วนที่จะแสดงเฉพาะจอใหญ่ xl ขึ้นไป (แยกปุ่มปกติ) --- */}
                 <li className="hidden xl:flex items-center gap-2">
-                  {/* ปุ่ม Login */}
-                  <a
+                  <Button
                     target="_blank"
+                    rounded="lg"
+                    color="gray"
                     href="https://www.app-apsx.com/login"
-                    className="!font-medium !text-[#464c58] !tracking-wide !inline-flex items-center gap-1 !bg-[#f5f5f7] hover:!bg-[#808ca733] !border-none !shadow-none !rounded-lg !py-2 !px-3 transition-all"
                   >
                     <i className="uil uil-signin text-[0.8rem]" />
-                    <span>{labels.login}</span>
-                  </a>
-
-                  {/* ปุ่ม Register */}
-                  <a
+                    <span className="!font-medium !text-[14px]">
+                      {labels.login}
+                    </span>
+                  </Button>
+                  <Button
                     target="_blank"
-                    href="https://www.app-apsx.com/register"
-                    className="!relative !inline-flex items-center gap-1 !text-white !bg-[#1bb59b] hover:!bg-[#1bb5a8] !border-none !shadow-none !rounded-lg !py-2 !px-3 transition-all"
+                    rounded="lg"
+                    color="dark"
+                    href={`/${lng}/calendar`}
                   >
-                    <span className="absolute -top-2.5 -right-2">
+                    <span className="absolute top-1 right-1">
                       <Badge
                         color="red"
                         variant="softText"
-                        className="!text-[14px] !px-2 !py-[4px] !rounded-full"
+                        className="!text-[10px] !px-2 !py-[4px] !rounded-full"
                       >
                         {labels.free}
                       </Badge>
                     </span>
                     <i className="uil uil-rocket text-[0.8rem]" />
-                    <span className="!font-medium">{labels.free_trial}</span>
-                  </a>
+                    <span className="!font-medium !text-[14px]">
+                      {labels.free_trial}
+                    </span>
+                  </Button>
                 </li>
               </>
               <li className="nav-item xl:!hidden lg:!hidden ">

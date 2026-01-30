@@ -1,6 +1,6 @@
 import React from "react";
 
-import PlatformHighlights from "@/components/home/PlatformHighlights";
+import PlatformHighlights from "@/components/PlatformHighlights";
 import Hero from "@/components/clinic/Hero";
 import WhyAPSX from "@/components/clinic/WhyAPSX";
 
