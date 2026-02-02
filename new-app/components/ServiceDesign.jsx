@@ -3,24 +3,26 @@ import ModernServiceShowcase from "@/components/common/ModernServiceShowcase";
 export default function ServiceDesign() {
   const featureData = [
     {
-      title: "Web Design",
+      title: "ระบบคลาวด์ 100%",
       description:
-        "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida.",
+        "ใช้งานผ่านเบราว์เซอร์ได้ทันที ไม่ต้องติดตั้งโปรแกรม พร้อมระบบสำรองข้อมูลอัตโนมัติ",
       imageSrc: "/assets/img/photos/se1.jpg",
       iconClass: "uil uil-monitor",
-      iconBgClass: "btn-soft-purple",
+      iconBgClass: "btn-soft-primary",
     },
     {
-      title: "Mobile Design",
+      title: "ใช้งานได้ทุกอุปกรณ์",
       description:
-        "Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida.",
+        "ติดตามยอดขายและเช็คจำนวนคนไข้แบบ Real-time ได้ทุกที่ผ่านสมาร์ทโฟนและแท็บเล็ต",
       imageSrc: "/assets/img/photos/se2.jpg",
       iconClass: "uil uil-mobile-android",
-      iconBgClass: "btn-soft-purple",
+      iconBgClass: "btn-soft-green",
     },
   ];
 
   return (
-    <ModernServiceShowcase title="Responsive Design" items={featureData} />
+    <div className="py-16">
+      <ModernServiceShowcase title="Responsive Design" items={featureData} />
+    </div>
   );
 }

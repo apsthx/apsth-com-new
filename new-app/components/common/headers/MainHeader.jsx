@@ -187,7 +187,7 @@ export default async function MainHeader({ lng }) {
                     color="gray"
                     href="https://www.app-apsx.com/login"
                   >
-                    <i className="uil uil-signin text-[0.8rem]" />
+                    <i className="uil uil-signin text-[0.8rem] mr-1" />
                     <span className="!font-medium !text-[14px]">
                       {labels.login}
                     </span>
@@ -207,7 +207,7 @@ export default async function MainHeader({ lng }) {
                         {labels.free}
                       </Badge>
                     </span>
-                    <i className="uil uil-rocket text-[0.8rem]" />
+                    <i className="uil uil-rocket text-[0.8rem] mr-1" />
                     <span className="!font-medium !text-[14px]">
                       {labels.free_trial}
                     </span>

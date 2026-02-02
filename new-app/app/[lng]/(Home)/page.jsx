@@ -1,9 +1,8 @@
 import React from "react";
 
-import Features from "@/components/home/Features";
 import PlatformHighlights from "@/components/PlatformHighlights";
 import Hero from "@/components/home/Hero";
-import WhyAPSX from "@/components/home/WhyAPSX";
+// import WhyAPSX from "@/components/home/WhyAPSX";
 import Package from "@/components/home/Package";
 import OurCustomers from "@/components/home/OurCustomers";
 import Teams from "@/components/home/Teams";
@@ -11,7 +10,9 @@ import Certification from "@/components/home/Certification";
 import Questions from "@/components/home/Questions";
 import ServicesAPSXPlatform from "@/components/ServicesAPSXPlatform";
 import ServiceDesign from "@/components/ServiceDesign";
-import Analytics from "@/components/Analytics";
+import Analytics from "@/components/Services";
+import Features from "@/components/Features";
+import Services from "@/components/Services";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -109,12 +110,12 @@ export default async function HomePage({ params }) {
   return (
     <div className="w-full relative bg-white">
       <Hero lng={lng} />
-      <Analytics lng={lng} />
-      <ServicesAPSXPlatform />
-      <ServiceDesign />
       <Features lng={lng} />
+      <Services lng={lng} />
+      {/* <Analytics lng={lng} /> */}
+      {/* <ServicesAPSXPlatform /> */}
+      {/* <ServiceDesign /> */}
       <PlatformHighlights lng={lng} />
-      <WhyAPSX lng={lng} />
       <Package lng={lng} />
       <OurCustomers lng={lng} />
       <Teams lng={lng} />

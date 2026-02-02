@@ -176,7 +176,7 @@ export default async function Hero({ lng }) {
                       <div className="!font-Kanit card-body !py-2.5 !px-3 flex flex-row items-center gap-3">
                         <div className="flex-shrink-0 w-10 h-10 rounded-lg   flex items-center justify-center border border-[#45c4a030]">
                           <i
-                            className="uil uil-presentation-check text-[1.3rem]"
+                            className="uil uil-laptop text-[1.3rem]"
                             style={{ color: "#01c965" }}
                           />
                         </div>

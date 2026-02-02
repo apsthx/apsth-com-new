@@ -52,12 +52,6 @@ export default function ModernServiceShowcase({
                           </div>
                           <h4>{item.title}</h4>
                           <p className="!mb-2">{item.description}</p>
-                          <a
-                            href={item.link || "#"}
-                            className="more hover !text-[#747ed1]"
-                          >
-                            Learn More
-                          </a>
                         </div>
                       </div>
                     </div>
@@ -76,12 +70,6 @@ export default function ModernServiceShowcase({
               {subtitle}
             </p>
             <p className="!mb-6">{description}</p>
-            <a
-              href={buttonLink}
-              className="btn btn-purple !text-white !bg-[#747ed1] border-[#747ed1] hover:!bg-[#636db9] !rounded-[50rem] px-8 py-3"
-            >
-              {buttonText}
-            </a>
           </div>
         </div>
       </div>
