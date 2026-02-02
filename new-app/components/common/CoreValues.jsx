@@ -11,25 +11,23 @@ export default function CoreLeftValues({
   imageAlt = "Core Values Illustration",
   features = [],
   imageRight = true,
-  showPattern = false,
-  showGrain = true,
-  showGradient = false, // ถ้าเป็น True = พื้นหลังเขียวมรกต/ตัวหนังสือขาว
+  showGradient = false,
   children,
 }) {
   // 1. จัดการโทนสีตามโหมด (Gradient vs White)
-  const textColor = showGradient ? "text-[#f5f5f6]" : "text-[#343f52]";
-  const descColor = showGradient ? "text-[#f5f5f6]" : "text-[#343f52]";
-  const featureText = showGradient ? "text-[#f5f5f6]" : "text-[#343f52]";
-  const iconColor = showGradient ? "text-[#f5f5f6]" : "text-[#2bc29d]";
+  const textColor = showGradient ? "text-[#343f52]" : "text-[#343f52]";
+  const descColor = showGradient ? "text-[#343f52]" : "text-[#343f52]";
+  const featureText = showGradient ? "text-[#343f52]" : "text-[#343f52]";
+  const iconColor = showGradient ? "text-[#343f52]" : "text-[#343f52]";
 
   // 2. ปรับปรุงสี Mesh Gradient ให้ดูแพงขึ้น (ฟุ้งและโปร่งแสง)
   const backgroundStyle = {
     background: showGradient
-      ? `radial-gradient(at 0% 0%, rgba(0, 182, 124, 0.15) 0px, transparent 60%), 
-         radial-gradient(at 100% 0%, rgba(0, 182, 182, 0.15) 0px, transparent 60%), 
-         radial-gradient(at 100% 100%, rgba(0, 182, 124, 0.15) 0px, transparent 60%),
-         radial-gradient(at 0% 100%, rgba(0, 182, 182, 0.15) 0px, transparent 60%),
-         linear-gradient(135deg, #37d5af 0%, #37d5af 100%)` // ใช้ Dark Mode เมื่อเปิด Gradient
+      ? `radial-gradient(at 0% 0%, #C4F2E7 0px, transparent 60%), 
+         radial-gradient(at 100% 0%, #C4F2E7 0px, transparent 60%), 
+         radial-gradient(at 100% 0%, #ffffff 0px, transparent 60%),
+         radial-gradient(at 0% 100%, #ffffff 0px, transparent 60%),
+         linear-gradient(135deg, #ffffff 0%, #ffffff 100%)` // ใช้ Dark Mode เมื่อเปิด Gradient
       : "#ffffff",
     position: "relative",
     transition: "all 0.5s ease",
@@ -38,7 +36,7 @@ export default function CoreLeftValues({
   const grainStyle = {
     position: "absolute",
     inset: 0,
-    opacity: 0.08,
+    opacity: 0.05,
     pointerEvents: "none",
     zIndex: 1,
     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
@@ -50,7 +48,7 @@ export default function CoreLeftValues({
       <div className="absolute inset-0 z-0 pointer-events-none">
         <GridBackground
           gridColor={showGradient ? "#ffffff" : "#ffffff"}
-          gridSize="80px"
+          gridSize="90px"
           lineThickness="1px"
           opacity={showGradient ? 0.5 : 0.3}
         />
@@ -107,7 +105,7 @@ export default function CoreLeftValues({
                       </span>
                     </div>
                     <p className="text-[12px] text-gray-600 mt-1">
-                      Growth +24%
+                      <i className="uil uil-chart-line !text-md"></i> +24%
                     </p>
                   </div>
 
@@ -135,24 +133,22 @@ export default function CoreLeftValues({
           {/* ฝั่งเนื้อหา */}
           <div className="w-full lg:w-1/2">
             <div className="max-w-xl">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-2 !mb-2">
                 {iconClass && (
                   <div
-                    className={`w-10 h-10 rounded-xl flex items-center justify-center ${showGradient ? "bg-white/10" : "bg-[#2bc29d]/10"}`}
+                    className={` rounded-xl flex items-center justify-center`}
                   >
-                    <i className={`uil ${iconClass} ${iconColor} text-2xl `} />
+                    <i className={`uil ${iconClass} ${iconColor} text-xl `} />
                   </div>
                 )}
                 <span
-                  className={`text-2xl font-bold tracking-tight ${textColor}`}
+                  className={`text-xl font-bold tracking-tight ${textColor}`}
                 >
                   {title}
                 </span>
               </div>
 
-              <p
-                className={`text-lg leading-relaxed mb-8 opacity-90 ${descColor}`}
-              >
+              <p className={`text-[18px] leading-relaxed !mb-2 ${descColor}`}>
                 {description}
               </p>
 
@@ -181,11 +177,11 @@ export default function CoreLeftValues({
 }
 
 const FeatureItem = ({ text, icon, textColor, iconColor }) => (
-  <li className="flex items-start gap-3 group">
+  <li className="flex items-start gap-2 group">
     <div className={`flex-shrink-0 mt-1 transition-transform ${iconColor}`}>
-      <i className={`uil ${icon} text-xl`} />
+      <i className={`uil ${icon} text-md text-[#2bc29d]`} />
     </div>
-    <span className={`${textColor} font-medium text-base leading-7`}>
+    <span className={`${textColor} font-medium text-[16px] leading-7`}>
       {text}
     </span>
   </li>

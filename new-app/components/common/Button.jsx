@@ -29,7 +29,7 @@ const Button = ({
     magenta: { base: "#d152a5", hover: "#b6408d" },
     azure: { base: "#51a3e5", hover: "#3a88c7" },
     violet: { base: "#6b60db", hover: "#554bb8" },
-    dark: { base: "#252b31", hover: "#1a1f24" },
+    dark: { base: "#343f52", hover: "#1a1f24" },
     gray: { base: "#EFF1F5", hover: "#e2e5eb" },
     white: { base: "#fcfcfc", hover: "#f0f0f0" },
   };
