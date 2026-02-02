@@ -16,34 +16,6 @@ export default async function Services({ lng }) {
 
   return (
     <section className="container bg-white py-16 px-4 md:px-8 lg:px-20 font-sans text-[#333]">
-      <div className="flex flex-wrap mx-[-15px]">
-        <div
-          data-cues="slideInDown"
-          data-delay={50}
-          className="mb-0 text-center lg:text-left"
-        >
-          <h3 className="!text-[1.8rem] font-black text-[#343f52] mb-2">
-            {t("clinic:system_functions.title", "ฟังก์ชันของระบบ")}
-          </h3>
-        </div>
-        {functionItems.map((item, index) => (
-          <div
-            data-cues="slideInDown"
-            data-delay={index * 50}
-            key={item.id}
-            /* ปรับเป็น w-6/12 บนจอใหญ่เพื่อให้แบ่งเป็น 2 คอลัมน์ */
-            className="w-full  px-[15px] mb-1"
-          >
-            <div className="flex items-start p-1 bg-white border-[#e7eaf3] transition-all duration-300   group cursor-default">
-              {/* Icon Checkmark ที่เนียนตาขึ้น */}
-              <i className="uil uil-check text-[0.85rem] mr-2 !text-[#45c4a0]"></i>
-              <span className="text-[0.85rem] font-bold text-[#60697b] group-hover:text-[#343f52] transition-colors duration-300 leading-tight">
-                {item.title}
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
       <div className="max-w-6xl mx-auto py-20 px-6">
         <div className="flex flex-col lg:flex-row items-start gap-12">
           <div className="w-full lg:w-1/2 sticky top-20">

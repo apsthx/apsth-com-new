@@ -1,109 +1,100 @@
 import Image from "next/image";
 const GrowthCard = () => {
   return (
-    <div className="lg:w-1/2 relative flex items-center justify-center min-h-[500px]">
-      {/* 1. 🖥️ จอคอมพิวเตอร์ (Center - Background Layer) */}
-      <div className="relative z-0  left-0 md:left-30">
-        <div className=" relative w-[360px] md:w-[450px] h-[280px] bg-[#1e2530] rounded-2xl border-[6px] border-[#343f52] overflow-hidden">
-          <div className="relative w-full h-full bg-[#ffff]">
-            <Image
-              src="/assets/img/clinic/overviewd.png"
-              alt="Desktop View"
-              fill
-              className="object-contain opacity-90"
-            />
+    <div className="relative left-0 md:left-30 group">
+      {/* แสง Glow หลังรูป */}
+      <div className="absolute -z-10 inset-0 bg-[#37d5af]/20 rounded-full blur-3xl scale-90 transition-transform duration-1000" />
+
+      {/* Perspective Container */}
+      <div className="relative [perspective:1200px] flex justify-center items-center ">
+        {/* 3D Wrapper */}
+        <div className="relative transition-transform duration-700 [transform-style:preserve-3d] rotate-x-6 rotate-y-[-16deg] group-hover:rotate-y-[-5deg]">
+          {/* 1. 🖥️ จอ Dashboard หลัก */}
+          <div className="relative w-[340px] md:w-[450px] h-[260px] md:h-[280px] bg-[#1e2530] rounded-2xl border-[6px] border-[#343f52] overflow-hidden z-10 [transform-style:preserve-3d] shadow-2xl">
+            <div className="relative w-full h-full bg-white overflow-hidden">
+              <Image
+                className="w-full h-full object-cover"
+                src="/assets/img/clinic/overviewd.png"
+                alt="Desktop View"
+                width={800}
+                height={621}
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none"></div>
+            </div>
           </div>
-        </div>
-        {/* ขาตั้งจอแบบ Flat */}
-        <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-16 h-6 bg-[#2d3748] rounded-b-lg -z-10"></div>
-        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-[#343f52] rounded-full -z-10"></div>
-      </div>
 
-      {/* 2. 📱 มือถือ (Left - Front Layer) */}
-      <div className="absolute z-20 left-0 md:-left-0 bottom-10 transform -rotate-6 transition-transform duration-500 hover:rotate-0">
-        <div className="relative w-[110px] h-[220px] bg-[#1e2530] rounded-[1.5rem] border-[4px] border-[#343f52] overflow-hidden">
-          {/* Notch */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-3 bg-[#343f52] rounded-b-lg z-40"></div>
-
-          <div className="relative w-full h-full bg-white">
-            <Image
-              src="/assets/img/clinic/overviewd.png"
-              alt="Mobile View"
-              fill
-              className="object-contain"
-            />
+          {/* 2. 📱 มือถือ และ 3. 📟 แท็บเล็ต (ตำแหน่งคงเดิม) */}
+          <div className="absolute -left-16 -bottom-10 z-30 [transform:translateZ(100px)_rotateY(20deg)] transition-all duration-500">
+            <div className="relative w-[80px] h-[160px] bg-[#1e2530] rounded-[1.5rem] border-[4px] border-[#343f52] overflow-hidden shadow-2xl">
+              <Image
+                src="/assets/img/clinic/overviewd.png"
+                alt="Mobile"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
-          {/* Home Bar */}
-          <div className="absolute bottom-1 w-8 h-1 left-1/2 -translate-x-1/2 bg-[#a4aec633] rounded-full"></div>
-        </div>
-      </div>
+          <div className="absolute -right-20 -bottom-6 z-20 [transform:translateZ(60px)_rotateY(-15deg)] transition-all duration-500">
+            <div className="relative w-[180px] h-[130px] bg-[#1e2530] rounded-xl border-[5px] border-[#343f52] overflow-hidden shadow-2xl">
+              <Image
+                src="/assets/img/clinic/overviewd.png"
+                alt="Tablet"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
 
-      {/* 3. 📄 จอ Terminal (Right - Front Layer) */}
-      <div className="absolute z-10 right-0 md:-right-80 top-38 h-50 w-64 bg-[#1e2530] rounded-2xl p-4 transform rotate-6 border border-white/10 transition-transform duration-500 hover:rotate-0">
-        {/* Window Buttons */}
-        <div className="flex gap-1.5 mb-3">
-          <div className="w-2.5 h-2.5 rounded-full bg-[#e2626b]"></div>
-          <div className="w-2.5 h-2.5 rounded-full bg-[#fab758]"></div>
-          <div className="w-2.5 h-2.5 rounded-full bg-[#45c4a0]"></div>
-        </div>
+          {/* --- 🚀 กระจายไอคอนรอบจอ (Scattered Icons) --- */}
 
-        {/* Image Container */}
-        <div className="h-36 w-full bg-white rounded-lg overflow-hidden relative border border-white/5">
-          <Image
-            src="/assets/img/clinic/overviewd.png"
-            alt="Terminal View"
-            fill
-            className="object-contain p-1"
-          />
-        </div>
-        <div className="absolute bottom-5 w-14 h-1 left-1/2 -translate-x-1/2 bg-[#cfd0d1ce] rounded-full"></div>
-      </div>
+          {/* ไอคอน 1: บนซ้าย (ลอยพุ่งออกมาปานกลาง) */}
+          <div className="absolute -top-10 -left-10 z-50 [transform:translateZ(120px)] transition-all duration-700 group-hover:translate-y-[-10px]">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/40 bg-[#343f52]/80 backdrop-blur-md shadow-lg">
+              <i className="uil uil-clock text-[1.8rem] !text-[#45c4a0]"></i>
+            </div>
+          </div>
 
-      {/* Floating Badge (ส่วนที่เหลือคงเดิม) */}
-      <div className="absolute -bottom-14 left-16 z-20 p-4 rounded-2xl hidden md:block">
-        <div className="flex items-center !gap-1">
-          <div className="relative flex w-full max-w-md items-center justify-center py-0 lg:rotate-3">
-            <div className="flex items-center gap-2 md:gap-3">
-              {/* Ghost Avatar Left 2 - กระจกจางสุดขอบนอก */}
-              <div className="hidden h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/90 backdrop-blur-[2px] opacity-40 md:flex shadow-xl">
-                <i className="uil uil-bed text-[1.2rem] text-[#1bb5a8]"></i>
+          {/* ไอคอน 2: บนขวา (ลอยพุ่งออกมาลึกหน่อย) */}
+          <div className="absolute -top-5 -right-12 z-50 [transform:translateZ(80px)] transition-all duration-700 group-hover:translate-x-[10px]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/30 bg-[#343f52]/60 backdrop-blur-sm shadow-xl">
+              <i className="uil uil-shield-check text-[1.5rem] !text-[#45c4a0]"></i>
+            </div>
+          </div>
+
+          {/* ไอคอน 3: ตัวกลางหลัก (พุ่งแรงสุด อยู่ล่างจอเล็กน้อย) */}
+          <div className="absolute -bottom-16 left-1/2 -translate-x-1/2 z-50 [transform:translateZ(180px)] transition-all duration-500 group-hover:translateZ(220px)">
+            <div className="relative">
+              <div className="absolute -top-2 -right-2 z-20 flex h-7 w-7 items-center justify-center rounded-full bg-[#45c4a0] text-white shadow-lg border-2 border-white animate-bounce-slow">
+                <i className="uil uil-location-arrow text-[0.9rem]"></i>
               </div>
-
-              {/* Ghost Avatar Left 1 - กระจกชัดขึ้นมานิดนึง */}
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/40 bg-white/90 backdrop-blur-md shadow-lg transition-transform">
-                <i className="uil uil-clock text-[1.8rem] text-[#1bb5a8]"></i>
-              </div>
-
-              {/* Central Focused Card - กระจกแบบ High-Definition */}
-              <div className="relative group">
-                {/* Notification Badge - คงความสดใสไว้ตัดกับกระจก */}
-                <div className="absolute bottom-0 -right-2 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#37d5af] to-[#2fb393] text-white shadow-lg border-2 border-white animate-bounce-slow">
-                  <i className="uil uil-location-arrow text-[1.1rem]"></i>
-                </div>
-
-                <div className="relative group">
-                  {/* Main Container กระจกหลัก */}
-                  <div className="overflow-hidden relative z-10 flex h-20 w-20 items-center justify-center rounded-[1.2rem] border border-white/50 bg-white/90 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.15)] transition-all duration-500 ">
-                    <i className="uil uil-cloud-check text-[4.5rem] text-[#1bb5a8] drop-shadow-sm"></i>
-
-                    {/* แสงเงาสะท้อนบนหน้ากระจก (Glass Reflection) */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent pointer-events-none"></div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ghost Avatar Right 1 - กระจกด้านขวา */}
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/40 bg-white/90 backdrop-blur-md shadow-lg transition-transform">
-                <i className="uil uil-shield-check text-[1.8rem] text-[#1bb5a8]"></i>
-              </div>
-
-              {/* Ghost Avatar Right 2 - กระจกจางสุดด้านขวา */}
-              <div className="hidden h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/90 backdrop-blur-[2px] opacity-40 md:flex shadow-xl">
-                <i className="uil uil-flask text-[1.2rem] text-[#1bb5a8]"></i>
+              <div className="flex h-20 w-20 items-center justify-center rounded-[1.2rem] border border-white/50 bg-[#343f52] backdrop-blur-xl shadow-2xl">
+                <i className="uil uil-cloud-check text-[4rem] !text-[#45c4a0]"></i>
               </div>
             </div>
           </div>
+
+          {/* ไอคอน 4: กลางซ้าย (จางๆ หลบหลังจอเล็กน้อย) */}
+          <div className="absolute top-1/2 -left-20 z-0 opacity-40 [transform:translateZ(-50px)]">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-[#343f52] backdrop-blur-[2px]">
+              <i className="uil uil-bed text-[1.2rem] !text-[#45c4a0]"></i>
+            </div>
+          </div>
+
+          {/* ไอคอน 5: ขวาล่าง (พุ่งออกมาหาเครื่อง Tablet) */}
+          <div className="absolute bottom-10 -right-24 z-50 [transform:translateZ(100px)] transition-all duration-700">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/30 bg-[#343f52]/80 backdrop-blur-md shadow-xl">
+              <i className="uil uil-flask text-[1.5rem] !text-[#45c4a0]"></i>
+            </div>
+          </div>
+
+          {/* --- ขาตั้งจอ --- */}
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-10 bg-[#2d3748] rounded-b-md border-x-2 border-black/10 -z-10"></div>
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-28 h-3 bg-[#343f52] rounded-full border-b-2 border-black/20 -z-10"></div>
         </div>
+
+        {/* Shadow บนพื้น */}
+        <div className="absolute -bottom-14 left-1/2 -translate-x-1/2 w-64 h-6 bg-black/20 blur-3xl rounded-[100%] -z-20"></div>
       </div>
     </div>
   );

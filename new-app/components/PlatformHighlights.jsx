@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useTranslation } from "@/app/i18n";
 
 import { getApsxPlatformData, AiSuggestion } from "@/data/features";
@@ -15,59 +14,7 @@ export default async function PlatformHighlights({ lng }) {
         {/*/.row */}
         <div className="mt-0 flex flex-wrap mx-[-15px] xl:mx-0 lg:mx-0 items-center">
           <div className="container">
-            <div
-              data-cues="slideInDown"
-              data-delay={300}
-              className="flex justify-center mb-6"
-            >
-              <span className="flex items-center gap-2 px-4 py-1.5 text-[0.7rem] tracking-[0.2em] font-black uppercase rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.05)] border border-slate-100 text-[#1bb59b]">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2bc29d] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2bc29d]"></span>
-                </span>
-                Highlights APSX Platform
-              </span>
-            </div>
-            <div className="flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-50px] !mb-[4.5rem] xl:!mb-[7rem] lg:!mb-[7rem] md:!mb-[7rem] items-center">
-              <div
-                data-cues="slideInDown"
-                data-delay={300}
-                className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] !mt-[50px] max-w-full !relative xl:!order-2 lg:!order-2"
-              >
-                <div className="flex flex-wrap !relative overlap-grid-2 group/container">
-                  {/* รูปที่ 1: ด้านหลัง (Default z-[3]) */}
-                  <div className="item xl:w-[70%] xl:ml-[30%] lg:w-[70%] lg:ml-[30%] md:w-[70%] md:ml-[30%] w-full z-[3] relative transition-all duration-300 hover:scale-[1.02]">
-                    <figure className="!rounded-[1.2rem] shadow-[0_10px_30px_rgba(0,0,0,0.05)] border-[6px] border-white relative overflow-hidden bg-white">
-                      <Image
-                        className="w-full h-auto block" // เปลี่ยน object-cover เป็น block และให้มันกว้างเต็ม
-                        src="/assets/img/platform/platform_highlight2.webp"
-                        alt="platform highlight 2"
-                        width={450}
-                        height={450}
-                        priority
-                      />
-                    </figure>
-                  </div>
-                  {/* รูปที่ 2: ด้านหน้า (Default z-[4]) */}
-                  <div className="item xl:w-[50%] xl:!mt-[-60%] xl:ml-0 lg:w-[55%] lg:!mt-[-40%] lg:ml-0 md:w-[55%] md:!mt-[-40%] md:ml-0 w-full -mt-[25%] z-[4] relative transition-all duration-300 hover:scale-[1.02]">
-                    <figure className="!rounded-[1.2rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-[6px] border-white relative overflow-hidden">
-                      <Image
-                        className="w-full h-auto object-cover"
-                        src="/assets/img/platform/platform_highlight1.webp"
-                        alt="platform highlight 1"
-                        width={450}
-                        height={450}
-                      />
-                    </figure>
-                  </div>
-                </div>
-
-                <div
-                  className="shape bg-dot primary bg-[radial-gradient(#5eb9f0,transparent_2.5px)] rellax !w-[6rem] !h-[10rem] absolute z-[1] opacity-50"
-                  data-rellax-speed={1}
-                  style={{ top: "6rem", left: "4rem" }}
-                />
-              </div>
+            <div className="px-4 flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-50px] !mb-[4.5rem] xl:!mb-[7rem] lg:!mb-[7rem] md:!mb-[7rem] items-center">
               {/*/column */}
               <div
                 data-cues="slideInDown"
@@ -81,113 +28,23 @@ export default async function PlatformHighlights({ lng }) {
                     <span className="text-[#343f52]">APSX Platform</span>
                   </h2>
                 </div>
-                <p className="lead !text-[1.05rem] !leading-[1.6] font-medium">
+                <p className="lead !text-[1.05rem] !leading-[1.6] !font-medium text-[#2bc29d]">
                   {t(
                     "home:platform_highlights.sub_title",
                     "ระบบครบวงจรที่ตอบโจทย์ทุกความต้องการ",
                   )}
                 </p>
-                <p className="!mb-1">
-                  <strong className="font-bold text-[#343f52]">
-                    APSX Platform
-                  </strong>{" "}
-                  {t(
-                    "home:platform_highlights.description",
-                    "APSX Platform คือแพลตฟอร์มบริหารจัดการคลินิกและธุรกิจสุขภาพที่ออกแบบมาเพื่อให้คุณ บริหารงานได้อย่างมีประสิทธิภาพสูงสุด ไม่ว่าจะเป็น คลินิก โรงพยาบาล Wellness Spa หรือศูนย์ดูแลผู้สูงอายุ ครอบคลุมทุกฟังก์ชันการทำงานที่จำเป็นในระบบเดียว",
-                  )}
-                </p>
-                <div className="flex flex-wrap mx-[-15px] !mt-[15px] xl:mx-[-20px]">
-                  {/* Column 1 */}
-                  <div className="xl:w-6/12 w-full flex-[0_0_auto] !mt-[15px] xl:!px-[20px] !px-[15px] max-w-full">
-                    <ul className="pl-0 list-none !mb-0">
-                      {/* OPD System */}
-                      <li className="flex items-start !mt-5 first:!mt-0 group">
-                        <span className=" flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-medkit text-[#1bb59b] text-[1.2rem] leading-none" />
-                        </span>
-                        <span className="text-[#60697b] font-medium leading-relaxed self-center">
-                          {t(
-                            "home:platform_highlights.features.blog1.title",
-                            "ระบบเวชระเบียน (OPD Management)",
-                          )}
-                        </span>
-                      </li>
-
-                      {/* Inventory */}
-                      <li className="flex items-start !mt-5 group">
-                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-store text-[#1bb59b] text-[1.2rem] leading-none" />
-                        </span>
-                        <span className="text-[#60697b] font-medium leading-relaxed self-center">
-                          {t(
-                            "home:platform_highlights.features.blog2.title",
-                            "ระบบบริหารสต็อกยา",
-                          )}
-                        </span>
-                      </li>
-
-                      {/* Reports */}
-                      <li className="flex items-start !mt-5 group">
-                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-chart-line text-[#1bb59b] text-[1.2rem] leading-none" />
-                        </span>
-                        <span className="text-[#60697b] font-medium leading-relaxed self-center">
-                          {t(
-                            "home:platform_highlights.features.blog3.title",
-                            "รายงานวิเคราะห์กว่า 40 รูปแบบ",
-                          )}
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Column 2 */}
-                  <div className="xl:w-6/12 w-full flex-[0_0_auto] !mt-[15px] xl:!px-[20px] !px-[15px] max-w-full">
-                    <ul className="pl-0 list-none !mb-0">
-                      {/* CRM */}
-                      <li className="flex items-start !mt-5 first:!mt-0 group">
-                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-users-alt text-[#1bb59b] text-[1.2rem] leading-none" />
-                        </span>
-                        <span className="text-[#60697b] font-medium leading-relaxed self-center">
-                          {t(
-                            "home:platform_highlights.features.blog4.title",
-                            "เครื่องมือเก็บ–ใช้ข้อมูลลูกค้า",
-                          )}
-                        </span>
-                      </li>
-
-                      {/* Multi-Branch */}
-                      <li className="flex items-start !mt-5 group">
-                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-layers text-[#1bb59b] text-[1.2rem] leading-none" />
-                        </span>
-                        <span className="text-[#60697b] font-medium leading-relaxed self-center">
-                          {t(
-                            "home:platform_highlights.features.blog5.title",
-                            "รองรับหลายสาขาในบัญชีเดียว",
-                          )}
-                        </span>
-                      </li>
-
-                      {/* Security */}
-                      <li className="flex items-start !mt-5 group">
-                        <span className="flex-shrink-0 mr-4 w-9 h-9 flex items-center justify-center bg-[#ffffff] rounded-lg transition-transform shadow-md group-hover:scale-110">
-                          <i className="uil uil-shield-check text-[#1bb59b] text-[1.2rem] leading-none" />
-                        </span>
-                        <span className="text-[#60697b] font-medium leading-relaxed self-center">
-                          {t(
-                            "home:platform_highlights.features.blog6.title",
-                            "สิทธิ์การเข้าถึงที่ยืดหยุ่น",
-                          )}
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
                 {/*/.row */}
               </div>
-              {/*/column */}
+              <p className="!mb-1 px-6">
+                <strong className="font-bold text-[#343f52]">
+                  APSX Platform
+                </strong>{" "}
+                {t(
+                  "home:platform_highlights.description",
+                  "APSX Platform คือแพลตฟอร์มบริหารจัดการคลินิกและธุรกิจสุขภาพที่ออกแบบมาเพื่อให้คุณ บริหารงานได้อย่างมีประสิทธิภาพสูงสุด ไม่ว่าจะเป็น คลินิก โรงพยาบาล Wellness Spa หรือศูนย์ดูแลผู้สูงอายุ ครอบคลุมทุกฟังก์ชันการทำงานที่จำเป็นในระบบเดียว",
+                )}
+              </p>
             </div>
 
             <div className="w-full mb-4">

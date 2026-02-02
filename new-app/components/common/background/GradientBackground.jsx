@@ -2,9 +2,9 @@
 import { useEffect, useState } from "react";
 
 export default function GridBackground({
-  gridColor = "#37d5af", // สีของเส้นตาราง
-  fromColor = "#0f172a", // สีเริ่มต้นของ Background (เช่น สีน้ำเงินเข้ม)
-  toColor = "#1e293b", // สีปลายทางของ Background
+  gridColor = "#fff", // สีของเส้นตาราง
+  fromColor = "#00B689", // สีเริ่มต้นของ Background (เช่น สีน้ำเงินเข้ม)
+  toColor = "#fff", // สีปลายทางของ Background
   direction = "to bottom", // ทิศทางการไล่สี (to bottom, to right, 45deg ฯลฯ)
   gridSize = "80px",
   lineThickness = "1px",

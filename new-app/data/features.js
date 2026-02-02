@@ -603,8 +603,8 @@ export const getWhyApsx = (t) => [
       "home:why_apsx.why_apsx.apsx_items.blog1.description",
       "UI/UX ออกแบบมาให้สะดวก ไม่ซับซ้อน",
     ),
-    icon: "uil-focus",
-    bgColor: "bg-[#edf9f6]",
+    icon: "uil uil-apps",
+    bgColor: "bg-[#E1FAF6]",
     iconColor: "text-[#1bb59b]",
   },
   {
@@ -616,7 +616,7 @@ export const getWhyApsx = (t) => [
     ),
     icon: "uil-cloud-share",
     bgColor: "bg-[#edf9f6]",
-    iconColor: "text-[#1bb59b]",
+    iconColor: "text-[#45c4a0]",
   },
   {
     id: "reason3",
@@ -626,8 +626,8 @@ export const getWhyApsx = (t) => [
       "อัปเดตฟังก์ชันใหม่อัตโนมัติ ไม่มีค่าใช้จ่ายเพิ่ม",
     ),
     icon: "uil-sync",
-    bgColor: "bg-[#edf9f6]",
-    iconColor: "text-[#1bb59b]",
+    bgColor: "bg-[#eff7fa]",
+    iconColor: "text-[#54a8c7]",
   },
   {
     id: "reason4",
@@ -636,9 +636,9 @@ export const getWhyApsx = (t) => [
       "home:why_apsx.why_apsx.apsx_items.blog4.description",
       "สอนการใช้งานฟรี พร้อมให้คำปรึกษา",
     ),
-    icon: "uil-presentation-play",
-    bgColor: "bg-[#edf9f6]",
-    iconColor: "text-[#1bb59b]",
+    icon: "uil uil-comments",
+    bgColor: "bg-[#fff8ee]",
+    iconColor: "text-[#fab758]",
   },
 ];
 

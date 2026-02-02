@@ -2,22 +2,51 @@ import { useTranslation } from "@/app/i18n";
 import { getFeaturesData } from "@/data/features";
 import CoreLeftValues from "@/components/common/CoreValues";
 import GrowthCard from "@/components/common/GrowthCard";
+import GridBackground from "./common/background/GradientBackground";
 
 export default async function Features({ lng }) {
   const { t } = await useTranslation(lng);
-  const featuresItems = getFeaturesData(t, lng);
+
+  const backgroundStyle = {
+    background: true
+      ? `radial-gradient(at 0% 0%, #edf9f6 0px, transparent 60%), 
+         radial-gradient(at 100% 0%, #e1f6f0 0px, transparent 60%), 
+         radial-gradient(at 100% 100%, #e1f6f0 0px, transparent 60%),
+         radial-gradient(at 0% 100%, #edf9f6 0px, transparent 60%),
+         linear-gradient(135deg, #ffff 0%, #f3f3f3 100%)` // ใช้ Dark Mode เมื่อเปิด Gradient
+      : "#ffffff",
+    position: "relative",
+    transition: "all 0.5s ease",
+  };
+
+  const grainStyle = {
+    position: "absolute",
+    inset: 0,
+    opacity: 0.05, // ลดลงเหลือ 0.05 - 0.08 เพื่อให้ดูแพงบนพื้นขาว
+    pointerEvents: "none",
+    zIndex: 1,
+    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+    filter: "contrast(150%) brightness(100%)", // เพิ่ม contrast ให้เม็ดสีดูคมแต่จาง
+  };
 
   return (
-    <section className=" wrapper overflow-hidden ">
-      <section className="container bg-white py-16 px-4 md:px-8 lg:px-20 font-sans text-[#333]">
+    <section
+      className="wrapper overflow-hidden !relative "
+      style={backgroundStyle}
+    >
+      {/* เลเยอร์พื้นหลัง: Grid */}
+      <div style={grainStyle} />
+
+      <section className="container bg-transparent py-16 px-4 md:px-8 lg:px-20 font-sans relative z-10">
         <div className="max-w-7xl mx-auto flex flex-wrap lg:flex-nowrap gap-12 items-start">
-          {/* ฝั่งซ้าย: เนื้อหาข้อความ */}
+          {/* ฝั่งซ้าย: เนื้อหาข้อความเดิม */}
           <div className="w-full lg:w-3/5">
+            {/* หัวข้อ: ใส่ Gradient เบาๆ ให้กับตัวหนังสือรอง */}
             <div className="mb-6">
-              <h2 className="!text-4xl !font-bold !text-[#1e293b]">
+              <h2 className="!text-4xl md:!text-4xl !font-bold  leading-tight !mb-0 drop-shadow-sm">
                 {t("home:title", "โปรแกรม คลินิก APSX Platform")}
               </h2>
-              <h3 className="!text-xl !font-medium !text-[#1e293b]">
+              <h3 className="!text-xl !font-bold  inline-block !tracking-wider">
                 {t(
                   "home:features.title",
                   "ระบบที่ใช้งานง่ายมี ประสิทธิภาพและทันสมัย ที่สุดในตอนนี้",
@@ -25,104 +54,85 @@ export default async function Features({ lng }) {
               </h3>
             </div>
 
-            <div className="space-y-4 text-gray-600 leading-relaxed text-sm md:text-base">
-              <p>
-                {t(
-                  "home:features.description",
-                  "เป็นระบบที่ลงตัวมาพร้อมกับการใช้งานง่าย สะดวกสบาย และรันบน Cloud ด้วยเทคโนโลยีที่ทันสมัยในยุคนี้ ทำให้ไม่ต้องใช้แฟ้ม OPD Card แบบเก่าอีกต่อไป",
-                )}
+            <div className="space-y-2  leading-relaxed md:text-base !font-medium">
+              <p className="border-l-2 border-[#ffff]/60 pl-4">
+                {t("home:features.description", "เป็นระบบที่ลงตัว...")}
               </p>
-              <p>
+              <p className="border-l-2 border-[#ffff]/60 pl-4">
                 {t(
                   "home:features.features.description",
-                  "ยกระดับการบริหารจัดการคลินิกด้วยเทคโนโลยี Cloud อัจฉริยะ ที่ออกแบบมาเพื่อความรวดเร็วและความปลอดภัยสูงสุดของข้อมูลคุณ",
+                  "ยกระดับการบริหารจัดการ...",
                 )}
               </p>
             </div>
-            {/* รายการบริการ (Bullets) */}
-            <div className="mt-8 grid md:grid-cols-1 gap-2">
-              <div>
-                <h4 className="font-bold text-gray-900 mb-2">
+
+            {/* ส่วน Card หลัก: เพิ่มความสว่างที่ขอบ (Border Highlight) */}
+            <div className="mt-8">
+              <div className="!bg-white/90 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-sm relative overflow-hidden group">
+                {/* แสง Flare ตกกระทบมุม Card (Effect) */}
+                <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#2bc29d]/10 rounded-full blur-3xl group-hover:bg-[#2bc29d]/20 transition-colors duration-700"></div>
+
+                <h4 className="!font-semibold text-[#343f52] mb-6 flex items-center gap-3 text-lg relative z-10">
                   ระบบหลังบ้านที่ทำให้เรื่องคลินิกเป็นเรื่องง่าย ครบจบในที่เดียว
                 </h4>
-                <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                  <li>
-                    {t(
-                      "home:platform_highlights.features.blog1.title",
-                      "ระบบเวชระเบียน (OPD Management)",
-                    )}
-                  </li>
-                  <li>
-                    {t(
-                      "home:platform_highlights.features.blog2.title",
-                      "ระบบบริหารสต็อกยา",
-                    )}
-                  </li>
-                  <li>
-                    {t(
-                      "home:platform_highlights.features.blog3.title",
-                      "รายงานวิเคราะห์กว่า 40 รูปแบบ",
-                    )}
-                  </li>
-                  <li>
-                    {t(
-                      "home:platform_highlights.features.blog4.title",
-                      "เครื่องมือเก็บ–ใช้ข้อมูลลูกค้า",
-                    )}
-                  </li>
-                  <li>
-                    {t(
-                      "home:platform_highlights.features.blog5.title",
-                      "รองรับหลายสาขาในบัญชีเดียว",
-                    )}
-                  </li>
-                  <li>
-                    {t(
-                      "home:platform_highlights.features.blog6.title",
-                      "สิทธิ์การเข้าถึงที่ยืดหยุ่น",
-                    )}
-                  </li>
+
+                <ul className="grid grid-cols-1 md:grid-cols-1 gap-0 text-sm text-[#343f52] relative z-10">
+                  {[
+                    "ระบบเวชระเบียน (OPD Management)",
+                    "ระบบบริหารสต็อกยา",
+                    "รายงานวิเคราะห์กว่า 40 รูปแบบ",
+                    "เครื่องมือเก็บ–ใช้ข้อมูลลูกค้า",
+                    "รองรับหลายสาขาในบัญชีเดียว",
+                    "สิทธิ์การเข้าถึงที่ยืดหยุ่น",
+                  ].map((item, index) => (
+                    <li
+                      key={index}
+                      className="flex items-center gap-1 py-1 px-2 rounded-lg hover:bg-white/5 transition-colors"
+                    >
+                      <i className="uil uil-check-circle text-[#2bc29d]  shadow-glow" />
+                      <span className="text-[#343f52] !font-medium ">
+                        {t(
+                          `home:platform_highlights.features.blog${index + 1}.title`,
+                          item,
+                        )}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-900 mb-2">
-                  ประสบการณ์ไร้รอยต่อในทุกหน้าจอ
+                <h4 className="!font-medium text-[#f5f5f6]/60 mb-4 text-xs uppercase tracking-widest flex items-center gap-2">
+                  <span className="w-8 h-[1px] bg-[#2bc29d]/50"></span>
+                  อิสระในการใช้งาน ทุกที่ ทุกเวลา
+                  <span className="w-8 h-[1px] bg-[#2bc29d]/50"></span>
                 </h4>
-                <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                  <li>แสดงผลสมบูรณ์แบบทั้ง Desktop และ Mobile</li>
-                  <li>อินเทอร์เฟซใช้งานง่าย ออกแบบมาเพื่อคุณ</li>
-                  <li>เข้าถึงข้อมูลได้รวดเร็ว ทุกที่ ทุกเวลา</li>
+                <ul className="flex flex-wrap gap-3">
+                  {[
+                    { icon: "uil-mobile-android", text: "Desktop & Mobile" },
+                    { icon: "uil-heart-alt", text: "อินเทอร์เฟซใช้งานง่าย" },
+                    { icon: "uil-bolt", text: "เข้าถึงรวดเร็ว ทุกที่" },
+                  ].map((item, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-center gap-2 bg-[#343f52] backdrop-blur-md py-2 px-4 rounded-lg border border-white/10 shadow-sm transition-all"
+                    >
+                      <i className={`uil ${item.icon} text-[#ffff]`} />
+                      <span className="text-xs font-light text-[#ffff]">
+                        {item.text}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
-              </div>
-              <div
-                data-cues="slideInDown"
-                data-delay={300}
-                className="container flex flex-wrap gap-4"
-              >
-                {featuresItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className="group relative"
-                    title={item.title}
-                  >
-                    {/* กรอบไอคอน */}
-                    <div className="flex-shrink-0">
-                      <div className="border border-[#a4aec633] bg-white rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.05)] p-3 flex items-center justify-center w-[60px] h-[60px] transition-all duration-300 group-hover:shadow-md cursor-pointer">
-                        <div className="w-full h-full flex items-center justify-center">
-                          {item.icon}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
 
-          <div className="w-full lg:w-2/5 flex justify-center items-center">
-            <div className="relative">
-              <div className="bg-gradient-to-br from-purple-100 to-orange-100 rounded-full w-64 h-64 md:w-96 md:h-96 absolute blur-3xl opacity-50 -z-10"></div>
-              <GrowthCard />
+          {/* ฝั่งขวา: GrowthCard */}
+          <div className="w-full lg:w-2/5 flex justify-center !items-center relative mt-12 lg:!mt-28">
+            <div className="relative group">
+              {/* แสง Glow */}
+              <div className="bg-gradient-to-br from-purple-500/20 to-orange-400/20 rounded-full w-72 h-72 md:w-96 md:h-96 absolute blur-3xl opacity-50 -z-10 animate-pulse"></div>
+              <div className="transform transition-transform duration-700">
+                {/* <GrowthCard /> */}
+              </div>
             </div>
           </div>
         </div>
@@ -141,9 +151,12 @@ export default async function Features({ lng }) {
             "สรุปผลประกอบการแบบเปรียบเทียบ รายวัน รายเดือน และรายปี",
           ]}
           imageRight={true}
+          imageSrc="/assets/img/clinic/overview.png"
           showPattern={false}
+          showGrain={false}
           patternColor="rgba(27, 181, 168, 0.05)"
         />
+
         <CoreLeftValues
           iconClass="uil uil-chart-line"
           title="วิเคราะห์ธุรกิจอัจฉริยะ"
@@ -156,10 +169,14 @@ export default async function Features({ lng }) {
             "วิเคราะห์อัตราผลกำไรตามช่วงเวลา และประเมินแนวโน้มต้นทุนธุรกิจ",
           ]}
           imageRight={false}
+          showGradient={true}
+          imageSrc="/assets/img/clinic/business_analytics.png"
           // gradientColors={["#ffffff", "#E5FFF8"]}
+          showGrain={true}
           showPattern={false} // ปิด Pattern เพื่อความ Clean
           patternColor="rgba(27, 181, 168, 0.05)"
         ></CoreLeftValues>
+
         <CoreLeftValues
           iconClass="uil uil-calendar-alt"
           title="ระบบจัดการนัดหมาย"
@@ -175,6 +192,7 @@ export default async function Features({ lng }) {
           showPattern={false}
           patternColor="rgba(27, 181, 168, 0.05)"
         />
+
         <CoreLeftValues
           iconClass="uil uil-puzzle-piece"
           title="ระบบจัดการคิวตรวจ"
@@ -186,10 +204,13 @@ export default async function Features({ lng }) {
             "แจ้งเตือนลำดับคิวผ่าน SMS ลดความแออัดหน้าห้องตรวจ",
           ]}
           imageRight={false}
+          showGradient={true}
+          showGrain={false}
           // gradientColors={["#ffffff", "#E5FFF8"]}
           showPattern={false}
           patternColor="rgba(27, 181, 168, 0.05)"
         />
+
         <CoreLeftValues
           iconClass="uil uil-file-bookmark-alt"
           title="ระบบออกใบรับรองแพทย์"
@@ -203,10 +224,12 @@ export default async function Features({ lng }) {
             "พิมพ์เอกสารได้ทันที หรือบันทึกเป็นไฟล์ดิจิทัล PDF",
           ]}
           imageRight={true}
+          showGrain={true}
           // gradientColors={["#ffffff", "#E5FFF8"]}
           showPattern={false}
           patternColor="rgba(27, 181, 168, 0.05)"
         />
+
         <CoreLeftValues
           iconClass="uil uil-bill"
           title="ระบบจัดการเอกสารการเงินครบวงจร"
@@ -219,7 +242,9 @@ export default async function Features({ lng }) {
             "ระบบจัดการรายการขาย และบันทึกค่าใช้จ่ายคลินิกเพื่อสรุปกำไรสุทธิ",
             "ค้นหาและออกเอกสารภาษีย้อนหลังได้ทันที ด้วยระบบ Smart Search",
           ]}
+          showGradient={true}
           imageRight={false}
+          showGrain={false}
           // gradientColors={["#ffffff", "#E5FFF8"]}
           showPattern={false}
           patternColor="rgba(27, 181, 168, 0.05)"
@@ -236,10 +261,12 @@ export default async function Features({ lng }) {
             "ปรับแต่งโลโก้คลินิกและข้อมูลติดต่อบนฉลากยาได้ตามต้องการ",
           ]}
           imageRight={true}
+          showGrain={true}
           // gradientColors={["#ffffff", "#E5FFF8"]}
           showPattern={false}
           patternColor="rgba(27, 181, 168, 0.05)"
         />
+
         <CoreLeftValues
           iconClass="uil uil-store-alt"
           title="ระบบจัดการคลังยาและวัสดุอุปกรณ์"
@@ -252,7 +279,44 @@ export default async function Features({ lng }) {
             "จัดการข้อมูลคู่ค้า/ผู้จำหน่าย",
             "จัดการรายการโอนสินค้าออก รายการรับเข้า รายการเบิก",
           ]}
+          showGradient={true}
           imageRight={false}
+          showGrain={false}
+          // gradientColors={["#ffffff", "#E5FFF8"]}
+          showPattern={false}
+          patternColor="rgba(27, 181, 168, 0.05)"
+        />
+
+        <CoreLeftValues
+          iconClass="uil uil-ticket"
+          title="ระบบจัดการคูปองและวงเงินคงเหลือ"
+          description="ยกระดับการตลาดในคลินิกด้วยระบบจัดการสิทธิพิเศษและวงเงินล่วงหน้า ช่วยให้การบริหารโปรโมชั่นและแพ็กเกจเป็นเรื่องง่ายและตรวจสอบได้แม่นยำ"
+          features={[
+            "สร้างและจัดการคูปองส่วนลด ทั้งแบบจำนวนเงินและเปอร์เซ็นต์",
+            "กำหนดเงื่อนไขการใช้คูปองและวันหมดอายุได้อย่างยืดหยุ่น",
+            "บันทึกประวัติการใช้สิทธิ์ของคนไข้อย่างละเอียด ป้องกันการใช้ซ้ำ",
+            "สรุปรายงานการใช้สิทธิประโยชน์เพื่อวิเคราะห์ความคุ้มค่าของแคมเปญ",
+          ]}
+          imageRight={true}
+          showGrain={true}
+          // gradientColors={["#ffffff", "#E5FFF8"]}
+          showPattern={false}
+          patternColor="rgba(27, 181, 168, 0.05)"
+        />
+
+        <CoreLeftValues
+          iconClass="uil uil-postcard"
+          title="ระบบจัดการรายการเบิกจ่าย E-claim"
+          description="เชื่อมต่อการเบิกจ่ายประกันและสวัสดิการต่างๆ อย่างเป็นระบบ ลดขั้นตอนการคีย์ข้อมูลซ้ำซ้อน และเพิ่มโอกาสการอนุมัติเคลมที่รวดเร็วยิ่งขึ้น"
+          features={[
+            "รองรับการส่งข้อมูลเคลมประกันสุขภาพและสวัสดิการภาครัฐ (E-claim)",
+            "ระบบตรวจสอบรหัสโรค (ICD-10) และรหัสหัตถการมาตรฐานอัตโนมัติ",
+            "สรุปรายการค่ารักษาพยาบาลแยกตามสิทธิ์การเบิกจ่ายของคนไข้",
+            "รายงานสรุปยอดรวมการเบิกจ่ายประจำเดือน เพื่อการกระทบยอดบัญชีที่แม่นยำ",
+          ]}
+          showGradient={true}
+          imageRight={false}
+          showGrain={false}
           // gradientColors={["#ffffff", "#E5FFF8"]}
           showPattern={false}
           patternColor="rgba(27, 181, 168, 0.05)"
@@ -271,6 +335,7 @@ export default async function Features({ lng }) {
             "Export Data: รองรับการส่งออกไฟล์ Excel และ PDF เพื่อการวิเคราะห์ต่ออย่างง่ายดาย",
           ]}
           imageRight={true}
+          showGrain={true}
           // gradientColors={["#ffffff", "#E5FFF8"]}
           showPattern={false}
           patternColor="rgba(27, 181, 168, 0.05)"

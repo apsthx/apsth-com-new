@@ -86,7 +86,7 @@ export default function NavClient({ color, labels, badges, locale }) {
           <span className="!font-medium  !text-[#464c58] !tracking-wide">
             {labels.our_services}
           </span>
-          <Badge color="yellow" variant="softText">
+          <Badge color="yellow" variant="softText" className="!text-black">
             {badges.new}
           </Badge>
         </a>
@@ -94,7 +94,7 @@ export default function NavClient({ color, labels, badges, locale }) {
           {labels.services.map((item) => (
             <li key={item.id} className="nav-item">
               <a
-                className={`flex items-center gap-2 dropdown-item ${
+                className={`flex items-center gap-2 dropdown-item !mx-0 !px-2 ${
                   item.href === pathname ? "!text-[var(--current-color)]" : ""
                 }`}
                 href={`/${locale}/${item.href}`}
@@ -106,17 +106,26 @@ export default function NavClient({ color, labels, badges, locale }) {
                   paddingBottom: "0.8rem", // ลด padding ล่าง
                 }}
               >
-                <div className="flex items-center justify-center w-[1.1rem]">
+                <div className="flex items-center justify-center">
                   <i
-                    className={`uil ${item.icon} text-[0.95rem] leading-none`}
-                    style={{ color: item.color }}
+                    className={`uil ${item.icon} text-[1.2rem] leading-none`}
+                    style={{
+                      color: item.color,
+                      fontWeight: "lighter",
+                      WebkitFontSmoothing: "antialiased",
+                      MozOsxFontSmoothing: "grayscale",
+                    }}
                   />
                 </div>
                 <span className="leading-none !font-medium  !text-[#464c58] !tracking-wide">
                   {item.label}
                 </span>
                 {item.id != "clinic_software" && (
-                  <Badge color="yellow" variant="softText" className="!ms-auto">
+                  <Badge
+                    color="yellow"
+                    variant="softText"
+                    className="!ms-auto !text-black"
+                  >
                     {" "}
                     {/* ดัน badge ไปขวาสุดเพื่อความสะอาด */}
                     {badges.new}

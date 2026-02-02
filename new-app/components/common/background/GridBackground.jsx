@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useState } from "react";
 
 export default function GridBackground({
   gridColor = "#37d5af", // สีของเส้นตาราง
@@ -7,16 +6,6 @@ export default function GridBackground({
   lineThickness = "1px", // ความหนาของเส้น
   opacity = 0.4, // ความโปร่งใสรวม
 }) {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div
       className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
@@ -27,21 +16,18 @@ export default function GridBackground({
           linear-gradient(to bottom, ${gridColor} ${lineThickness}, transparent ${lineThickness})
         `,
         backgroundSize: `${gridSize} ${gridSize}`,
-        // Parallax Effect: ขยับตาม Scroll
-        backgroundPosition: `center ${scrollY * 0.15}px`,
+        // ตั้งค่าให้อยู่ตรงกลางนิ่งๆ ไม่ขยับตาม Scroll
+        backgroundPosition: "center center",
 
-        /* เทคนิคแสดงครึ่งเดียวและ Fade Down:
-           - เริ่มที่ดำ (ชัด) ที่ 0% (บนสุด)
-           - ค่อยๆ จางไปจนเป็น transparent (หายไป) ที่ 50% (ครึ่งจอ)
-        */
+        /* เทคนิค Fade Down: ให้ตารางค่อยๆ จางหายไปด้านล่าง */
         maskImage:
-          "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.5) 30%, transparent 50%)",
+          "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.5) 30%, transparent 60%)",
         WebkitMaskImage:
-          "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.5) 30%, transparent 50%)",
+          "linear-gradient(to bottom, black 0%, rgba(0,0,0,0.5) 30%, transparent 60%)",
 
-        height: "150%",
-        top: "-25%",
         width: "100%",
+        height: "100%", // ปรับกลับเป็น 100% เพราะไม่ต้องเผื่อระยะเลื่อนแล้ว
+        top: 0,
       }}
     />
   );

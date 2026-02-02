@@ -8,9 +8,6 @@ import OurCustomers from "@/components/home/OurCustomers";
 import Teams from "@/components/home/Teams";
 import Certification from "@/components/home/Certification";
 import Questions from "@/components/home/Questions";
-import ServicesAPSXPlatform from "@/components/ServicesAPSXPlatform";
-import ServiceDesign from "@/components/ServiceDesign";
-import Analytics from "@/components/Services";
 import Features from "@/components/Features";
 import Services from "@/components/Services";
 
