@@ -37,7 +37,7 @@ export default function CardGrid({
                 </Link>
                 <figcaption className="absolute inset-0 z-[5] opacity-0 group-hover:opacity-100 bg-slate-900/10 backdrop-blur-[2px] transition-all duration-500 flex items-center justify-center pointer-events-none">
                   <div className="bg-white/95 border border-white px-5 py-2 rounded-full shadow-2xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-out">
-                    <span className="text-[#343f52] font-medium text-[0.8rem]">
+                    <span className="text-[#343f52] ftext-[0.75rem] !font-medium tracking-wide">
                       {readMoreText}
                     </span>
                   </div>

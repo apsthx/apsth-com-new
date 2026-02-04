@@ -25,9 +25,29 @@ export const featuresData = [
   },
 ];
 
-const slidesData = [
-  { src: "/assets/img/photos/b4.jpg", alt: "System Overview 1" },
-  { src: "/assets/img/photos/b5.jpg", alt: "System Overview 2" },
-  { src: "/assets/img/photos/b6.jpg", alt: "System Overview 3" },
-  { src: "/assets/img/photos/b7.jpg", alt: "System Overview 4" },
+export const blogPosts4 = [
+  {
+    id: 1,
+    images: [
+      {
+        src: "/assets/img/features/apsplatform.png",
+        alt: "image",
+        width: 960,
+        height: 600,
+      },
+      {
+        src: "/assets/img/photos/b3.jpg",
+        alt: "image",
+        width: 960,
+        height: 600,
+      },
+    ],
+    category: "Ideas",
+    title: "Fringilla Ligula Pharetra Amet",
+    date: "5 Jul 2022",
+    author: "Sandbox",
+    comments: 3,
+    description:
+      "Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
+  },
 ];

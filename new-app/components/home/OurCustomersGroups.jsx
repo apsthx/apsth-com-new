@@ -59,8 +59,8 @@ export default function OurCustomersGroups() {
       <div
         key={isMarquee ? `marquee-${item.id}-${index}` : item.id}
         className={`group relative flex justify-center items-center transition-all duration-700 ease-out 
-        ${isMarquee ? "mx-6 md:mx-4 flex-shrink-0" : "w-full"} 
-        ${showImages ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+        ${isMarquee ? "!mx-2 md:!mx-2 flex-shrink-0" : "w-full"} 
+        ${showImages ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
         style={{
           transitionDelay: isMarquee ? "0ms" : `${index * 40}ms`,
           zIndex: isMarquee ? 50 : "auto", // ให้ตัวที่ถูก Hover อยู่ข้างบนตัวอื่นในแถวสไลด์
@@ -81,10 +81,10 @@ export default function OurCustomersGroups() {
                 alt={item.name || "logo"}
                 width={56}
                 height={56}
-                style={{ width: "3.5rem", height: "3.5rem" }}
+                style={{ width: "3rem", height: "3rem" }}
               />
             </div>
-            <h4 className="!text-xs font-bold text-[#343f52] mb-0.5 leading-tight">
+            <h4 className="!text-xs !font-medium text-[#343f52] mb-0.5 leading-tight">
               {item.name || "Customer"}
             </h4>
             <div className="flex flex-col gap-0.5">
@@ -103,7 +103,7 @@ export default function OurCustomersGroups() {
         {/* โลโก้ - สีจริง 100% */}
         <div className="relative inline-blocka p-1 border-2 border-[#eeeeee] shadow-sm rounded-3xl bg-white transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1 cursor-pointer z-10">
           <Image
-            className="object-cover rounded-3xl transition-transform duration-300 group-hover:scale-105"
+            className="object-contain rounded-3xl transition-transform duration-300 group-hover:scale-105"
             src={imageSource}
             alt={item.name || "logo"}
             width={50}

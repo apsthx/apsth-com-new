@@ -9,7 +9,7 @@ import { useTranslation } from "@/app/i18n";
 export default async function Hero({ lng }) {
   const { t } = await useTranslation(lng);
   return (
-    <div className="pt-20 xl:pt-[1rem] lg:pt-[1rem] md:pt-[1rem] !text-center !relative !font-medium !text-[#464c58] !tracking-wide">
+    <div className=" bg-[#ffff] pt-20 xl:pt-[1rem] lg:pt-[1rem] md:pt-[1rem] !text-center !relative !font-medium !text-[#464c58] !tracking-wide">
       <GridBackground
         gridColor="#37d5af"
         gridSize="80px"
@@ -169,26 +169,26 @@ export default async function Hero({ lng }) {
                   {/* ปุ่ม Book a Demo - ขนาดกะทัดรัด */}
                 </div>
                 <div className="flex flex-wrap mx-[-15px] xl:mx-[-25px] mt-[-20px]">
-                  <div className="w-full flex flex-col gap-3 xl:!px-[25px] !px-[10px] !mt-[20px]">
+                  <div className="w-full flex flex-wrap gap-1 xl:!px-[25px] !px-[10px] !mt-[20px]">
                     {/* รายการที่ 1: Free Training */}
                     {/* รายการที่ 1: Free Training */}
                     <div className="!bg-white/60 backdrop-blur-md card shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-white/40 !rounded-[0.8rem] transition-all hover:shadow-lg">
                       <div className="!font-Kanit card-body !py-2.5 !px-3 flex flex-row items-center gap-3">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg   flex items-center justify-center border border-[#45c4a030]">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-md   flex items-center justify-center border border-[#45c4a030]">
                           <i
-                            className="uil uil-laptop text-[1.3rem]"
-                            style={{ color: "#01c965" }}
+                            className="uil uil-laptop text-[1rem]"
+                            style={{ color: "#45c4a0" }}
                           />
                         </div>
 
                         <div className="flex flex-col text-start">
-                          <p className="!mb-0 text-[0.95rem] font-bold text-[#343f52] leading-tight">
+                          <p className="!mb-0 text-[0.8rem] font-medium text-[#343f52] leading-tight">
                             {t(
                               "home:hero.free_essentials.free_training",
                               "สอนการใช้งานฟรี",
                             )}
                           </p>
-                          <p className="!mb-0 text-[0.75rem] text-[#60697b] leading-tight opacity-80">
+                          <p className="!mb-0 text-[0.7rem] text-[#60697b] leading-tight opacity-80">
                             {t(
                               "home:hero.free_essentials.sub_free_training",
                               "สอนใช้งานฟรีจนกว่าจะเป็น โดยทีมผู้เชี่ยวชาญ",
@@ -199,23 +199,23 @@ export default async function Hero({ lng }) {
                     </div>
 
                     {/* รายการที่ 2: Free Updates */}
-                    <div className="!bg-white/60 backdrop-blur-md card shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-white/40 !rounded-[0.8rem] transition-all hover:shadow-lg">
+                    <div className=" !bg-white/60 backdrop-blur-md card shadow-[0_8px_32px_rgba(0,0,0,0.05)] border border-white/40 !rounded-[0.8rem] transition-all hover:shadow-lg">
                       <div className="!font-Kanit card-body !py-2.5 !px-3 flex flex-row items-center gap-3">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg  flex items-center justify-center border border-[#54a8c730]">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-md  flex items-center justify-center border border-[#54a8c730]">
                           <i
-                            className="uil uil-sync text-[1.3rem]"
+                            className="uil uil-sync text-[1rem]"
                             style={{ color: "#4ba9cd" }}
                           />
                         </div>
 
                         <div className="flex flex-col text-start">
-                          <p className="!mb-0 text-[0.95rem] font-bold text-[#343f52] leading-tight">
+                          <p className="!mb-0 text-[0.8rem] font-medium text-[#343f52] leading-tight">
                             {t(
                               "home:hero.free_essentials.free_updates",
                               "อัพเดทเวอร์ชั่นฟรี",
                             )}
                           </p>
-                          <p className="!mb-0 text-[0.75rem] text-[#60697b] leading-tight opacity-80">
+                          <p className="!mb-0 text-[0.7rem] text-[#60697b] leading-tight opacity-80">
                             {t(
                               "home:hero.free_essentials.sub_free_updates",
                               "อัปเดตฟีเจอร์ใหม่และระบบความปลอดภัยฟรี",
@@ -231,13 +231,9 @@ export default async function Hero({ lng }) {
             </div>
             {/*/.row */}
           </div>
-          {/* /. */}
-
-          {/* /. */}
         </section>
         {/* /column */}
       </div>
-      {/* /.row */}
     </div>
   );
 }

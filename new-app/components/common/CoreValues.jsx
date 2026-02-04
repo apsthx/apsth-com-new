@@ -13,6 +13,10 @@ export default function CoreLeftValues({
   imageRight = true,
   showGradient = false,
   children,
+  blog1_title,
+  blog1_des,
+  blog2_title,
+  blog2_des,
 }) {
   // 1. จัดการโทนสีตามโหมด (Gradient vs White)
   const textColor = showGradient ? "text-[#343f52]" : "text-[#343f52]";
@@ -24,7 +28,7 @@ export default function CoreLeftValues({
   const backgroundStyle = {
     background: showGradient
       ? `radial-gradient(at 0% 0%, #C4F2E7 0px, transparent 60%), 
-         radial-gradient(at 100% 0%, #C4F2E7 0px, transparent 60%), 
+         radial-gradient(at 100% 0%, #ffffff 0px, transparent 60%), 
          radial-gradient(at 100% 0%, #ffffff 0px, transparent 60%),
          radial-gradient(at 0% 100%, #ffffff 0px, transparent 60%),
          linear-gradient(135deg, #ffffff 0%, #ffffff 100%)` // ใช้ Dark Mode เมื่อเปิด Gradient
@@ -49,8 +53,8 @@ export default function CoreLeftValues({
         <GridBackground
           gridColor={showGradient ? "#ffffff" : "#ffffff"}
           gridSize="90px"
-          lineThickness="1px"
-          opacity={showGradient ? 0.5 : 0.3}
+          lineThickness="2px"
+          opacity={showGradient ? 0 : 0}
         />
       </div>
 
@@ -93,32 +97,29 @@ export default function CoreLeftValues({
                       <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none"></div>
                     </div>
                   </div>
-
                   {/* --- บล็อกข้อความที่พุ่งออกมา (Floating Cards) --- */}
-
                   {/* บล็อกที่ 1: พุ่งออกมาด้านซ้ายบน */}
                   <div className="absolute -top-6 -left-12 p-3 bg-white/90 backdrop-blur-md rounded-xl shadow-2xl z-20 border border-white/20 transition-transform duration-700 [transform:translateZ(80px)] group-hover:[transform:translateZ(120px)_translateX(-10px)]">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                      <span className="text-[10px] font-bold text-gray-800">
-                        REAL-TIME DATA
-                      </span>
+                      <div className="w-2 h-2 rounded-full bg-[#45c4a0] animate-pulse" />
+                      <div className="text-[10px] font-bold text-gray-800">
+                        {blog1_title}
+                      </div>
                     </div>
-                    <p className="text-[12px] text-gray-600 mt-1">
-                      <i className="uil uil-chart-line !text-md"></i> +24%
-                    </p>
+                    <div className="text-[12px] text-gray-600 mt-1">
+                      {blog1_des}
+                    </div>
                   </div>
 
                   {/* บล็อกที่ 2: พุ่งออกมาด้านขวาล่าง */}
                   <div className="absolute -bottom-4 -right-10 p-4 bg-[#1e2530]/95 backdrop-blur-md rounded-2xl shadow-2xl z-20 border border-white/10 transition-transform duration-700 [transform:translateZ(100px)] group-hover:[transform:translateZ(150px)_translateX(15px)]">
-                    <div className="text-[10px] text-gray-400 mb-1">
-                      Total Revenue
+                    <div className="text-[10px] text-[#f5f5f6] mb-1">
+                      {blog2_title}
                     </div>
                     <div className="text-lg font-bold text-white">
-                      $42,500.00
+                      {blog2_des}
                     </div>
                   </div>
-
                   {/* --- ขาตั้งจอ --- */}
                   <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-10 bg-[#2d3748] rounded-b-md border-x-2 border-black/10 -z-10"></div>
                   <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-28 h-3 bg-[#343f52] rounded-full border-b-2 border-black/20 -z-10"></div>
@@ -152,7 +153,7 @@ export default function CoreLeftValues({
                 {description}
               </p>
 
-              <ul className="grid grid-cols-1 gap-4">
+              <ul className="grid grid-cols-1 gap-2">
                 {features.map((item, idx) => (
                   <FeatureItem
                     key={idx}
@@ -177,12 +178,12 @@ export default function CoreLeftValues({
 }
 
 const FeatureItem = ({ text, icon, textColor, iconColor }) => (
-  <li className="flex items-start gap-2 group">
+  <div className="flex items-start gap-2 group">
     <div className={`flex-shrink-0 mt-1 transition-transform ${iconColor}`}>
       <i className={`uil ${icon} text-md text-[#2bc29d]`} />
     </div>
     <span className={`${textColor} font-medium text-[16px] leading-7`}>
       {text}
     </span>
-  </li>
+  </div>
 );

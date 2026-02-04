@@ -8,8 +8,9 @@ import OurCustomers from "@/components/home/OurCustomers";
 import Teams from "@/components/home/Teams";
 import Certification from "@/components/home/Certification";
 import Questions from "@/components/home/Questions";
-import Features from "@/components/Features";
-import Services from "@/components/Services";
+import ProductShowcase from "@/components/ProductShowcase";
+import ProductOverview from "@/components/ProductOverview";
+import ServiceExpansion from "@/components/ServiceExpansion";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -107,11 +108,9 @@ export default async function HomePage({ params }) {
   return (
     <div className="w-full relative bg-white">
       <Hero lng={lng} />
-      <Features lng={lng} />
-      <Services lng={lng} />
-      {/* <Analytics lng={lng} /> */}
-      {/* <ServicesAPSXPlatform /> */}
-      {/* <ServiceDesign /> */}
+      <ProductOverview lng={lng} />
+      <ProductShowcase lng={lng} />
+      <ServiceExpansion lng={lng} />
       <PlatformHighlights lng={lng} />
       <Package lng={lng} />
       <OurCustomers lng={lng} />
