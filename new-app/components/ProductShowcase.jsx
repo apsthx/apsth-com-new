@@ -6,89 +6,95 @@ export default async function ProductShowcase({ lng }) {
   const { t } = await useTranslation(lng);
   const feedbackItems = getFeedbackData(t, lng);
   return (
-    <section className="container wrapper overflow-hidden !relative mt-20">
+    <section className=" wrapper overflow-hidden !relative mt-20">
       <div className="relative">
-        <section className="wrapper  bg-[#ffff]  !relative lg:!flex items-center">
-          <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
-            <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
-              <Image
-                src="/assets/img/photos/bg1.jpg" // เปลี่ยนเป็น path รูปภาพของคุณ
-                alt="Dashboard Summary Overview"
-                fill
-                priority
-                className="object-center object-contain transition-transform duration-[2000ms]"
-              />{" "}
+        <div data-cues="slideInDown" data-delay={300} className="bg-[#f4fcfa]">
+          <section className="container wrapper !relative lg:!flex items-center">
+            <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
+              <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
+                <Image
+                  src="/assets/img/photos/bg1.jpg" // เปลี่ยนเป็น path รูปภาพของคุณ
+                  alt="Dashboard Summary Overview"
+                  fill
+                  priority
+                  className="object-center object-contain transition-transform duration-[2000ms]"
+                />{" "}
+              </div>
             </div>
-          </div>
-          <div className="container">
-            <div className="row mx-0">
-              <div className="lg:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full">
-                <div className="pt-[4.5rem] pb-20 xl:pb-28 lg:pb-28 md:pb-28 lg:!py-24 xl:!pr-20 lg:!pr-20 !relative">
-                  {/* Icon Wrapper */}
-                  <div className="!flex !items-center !justify-center text-center w-16 h-16 p-3 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 256 256"
-                      className="!w-[1.8rem] !h-[1.8rem]"
-                    >
-                      <path
-                        className="fill-[#2bc29d]"
-                        d="M152 0H29.33A29.32 29.32 0 000 29.33v165.33A29.32 29.32 0 0029.33 224h78.72l2.35-13.12a29.71 29.71 0 018.11-15.68l62.83-62.72V29.33A29.33 29.33 0 00152 0zM42.67 42.67h42.67a10.67 10.67 0 110 21.33H42.66a10.67 10.67 0 010-21.33zM96 149.33H42.67a10.67 10.67 0 110-21.33H96a10.67 10.67 0 110 21.33zm42.67-42.66h-96a10.67 10.67 0 010-21.34h96a10.67 10.67 0 110 21.34z"
-                      />
-                      <path
-                        className="fill-[#45c4a0]"
-                        d="M133.63 256a8 8 0 01-7.89-9.38l5.67-32.06a8 8 0 012.22-4.27l79.2-79.2c9.73-9.75 19.28-7.12 24.51-1.89l13.2 13.2a18.69 18.69 0 010 26.4l-79.2 79.2a7.83 7.83 0 01-4.27 2.22l-32 5.67a10.71 10.71 0 01-1.44.11zm32.05-13.65z"
-                      />
-                    </svg>
-                  </div>
+            <div className="container">
+              <div className="row mx-0">
+                <div className="lg:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full">
+                  <div className="pt-[4.5rem] pb-20 xl:pb-28 lg:pb-28 md:pb-28 lg:!py-24 xl:!pr-20 lg:!pr-20 !relative">
+                    {/* Icon Wrapper */}
+                    <div className="!flex !items-center !justify-center text-center w-16 h-16 p-3 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 256 256"
+                        className="!w-[1.8rem] !h-[1.8rem]"
+                      >
+                        <path
+                          className="fill-[#2bc29d]"
+                          d="M152 0H29.33A29.32 29.32 0 000 29.33v165.33A29.32 29.32 0 0029.33 224h78.72l2.35-13.12a29.71 29.71 0 018.11-15.68l62.83-62.72V29.33A29.33 29.33 0 00152 0zM42.67 42.67h42.67a10.67 10.67 0 110 21.33H42.66a10.67 10.67 0 010-21.33zM96 149.33H42.67a10.67 10.67 0 110-21.33H96a10.67 10.67 0 110 21.33zm42.67-42.66h-96a10.67 10.67 0 010-21.34h96a10.67 10.67 0 110 21.34z"
+                        />
+                        <path
+                          className="fill-[#45c4a0]"
+                          d="M133.63 256a8 8 0 01-7.89-9.38l5.67-32.06a8 8 0 012.22-4.27l79.2-79.2c9.73-9.75 19.28-7.12 24.51-1.89l13.2 13.2a18.69 18.69 0 010 26.4l-79.2 79.2a7.83 7.83 0 01-4.27 2.22l-32 5.67a10.71 10.71 0 01-1.44.11zm32.05-13.65z"
+                        />
+                      </svg>
+                    </div>
 
-                  <div className="grid items-center justify-start mb-4">
-                    <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                      จัดการเวชระเบียนออนไลน์ (E-OPD Card)
-                    </h4>
-                    <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                      บันทึก OPD/IPD ผ่านระบบออนไลน์
-                    </h5>
-                  </div>
+                    <div className="grid items-center justify-start mb-4">
+                      <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
+                        จัดการเวชระเบียนออนไลน์ (E-OPD Card)
+                      </h4>
+                      <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
+                        บันทึก OPD/IPD ผ่านระบบออนไลน์
+                      </h5>
+                    </div>
 
-                  <div className="space-y-4">
-                    <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                      บันทึกและเข้าถึงประวัติคนไข้ได้ทุกที่ทุกเวลา
-                      ผ่านระบบออนไลน์ที่มีความเสถียรและปลอดภัยสูง
-                      รองรับมาตรฐานการบันทึกข้อมูลสำหรับคลินิกหลากหลายสาขา
-                    </p>
+                    <div className="space-y-4">
+                      <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
+                        บันทึกและเข้าถึงประวัติคนไข้ได้ทุกที่ทุกเวลา
+                        ผ่านระบบออนไลน์ที่มีความเสถียรและปลอดภัยสูง
+                        รองรับมาตรฐานการบันทึกข้อมูลสำหรับคลินิกหลากหลายสาขา
+                      </p>
 
-                    {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-[0.70rem] text-[#505a6d]">
-                      {[
-                        "คลินิกทั่วไป",
-                        "คลินิกเวชกรรม",
-                        "คลินิกพยาบาลผดุงครรภ์",
-                        "คลินิกกายภาพบำบัด",
-                        "คลินิกแพทย์แผนไทย-จีน",
-                        "คลินิกแม่และเด็ก",
-                        "คลินิกบําบัดยาเสพติด",
-                        "คลินิกสุขภาพจิต",
-                        "คลินิกตา",
-                        "คลินิกทันตกรรม",
-                        "และคลินิกเฉพาะทางอื่นๆ",
-                      ].map((text, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#45c4a0]/10 transition-all duration-300 group"
-                        >
-                          <span className="font-light">{text}</span>
-                        </div>
-                      ))}
+                      {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-[0.70rem] text-[#505a6d]">
+                        {[
+                          "คลินิกทั่วไป",
+                          "คลินิกเวชกรรม",
+                          "คลินิกพยาบาลผดุงครรภ์",
+                          "คลินิกกายภาพบำบัด",
+                          "คลินิกแพทย์แผนไทย-จีน",
+                          "คลินิกแม่และเด็ก",
+                          "คลินิกบําบัดยาเสพติด",
+                          "คลินิกสุขภาพจิต",
+                          "คลินิกตา",
+                          "คลินิกทันตกรรม",
+                          "และคลินิกเฉพาะทางอื่นๆ",
+                        ].map((text, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#45c4a0]/10 transition-all duration-300 group"
+                          >
+                            <span className="font-light">{text}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
-        <section className="wrapper bg-[#ffff] !relative lg:!flex items-center">
+        <section
+          data-cues="slideInDown"
+          data-delay={300}
+          className="container wrapper bg-[#ffff] !relative lg:!flex items-center"
+        >
           {/* ส่วนรูปภาพ - ย้ายไปอยู่ด้านซ้ายมือ */}
           <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0 !left-0 image-wrapper bg-image bg-cover !h-full">
             <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
@@ -167,113 +173,119 @@ export default async function ProductShowcase({ lng }) {
           </div>
         </section>
 
-        <section className="wrapper  bg-[#ffff]  !relative lg:!flex items-center">
-          <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
-            <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
-              <Image
-                src="/assets/img/photos/bg1.jpg" // เปลี่ยนเป็น path รูปภาพของคุณ
-                alt="Dashboard Summary Overview"
-                fill
-                priority
-                className="object-center object-contain transition-transform duration-[2000ms]"
-              />{" "}
+        <div data-cues="slideInDown" data-delay={300} className="bg-[#f4fcfa]">
+          <section className="container wrapper !relative lg:!flex items-center">
+            <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
+              <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
+                <Image
+                  src="/assets/img/photos/bg1.jpg" // เปลี่ยนเป็น path รูปภาพของคุณ
+                  alt="Dashboard Summary Overview"
+                  fill
+                  priority
+                  className="object-center object-contain transition-transform duration-[2000ms]"
+                />{" "}
+              </div>
             </div>
-          </div>
-          <div className="container">
-            <div className="row mx-0">
-              <div className="lg:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full">
-                <div className="pt-[4.5rem] pb-20 xl:pb-28 lg:pb-28 md:pb-28 lg:!py-24 xl:!pr-20 lg:!pr-20 !relative">
-                  {/* Icon Wrapper */}
-                  <div className="!flex !items-center !justify-center text-center w-16 h-16 p-3 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 256 245.34"
-                      data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/icons/solid/bar-chart.svg"
-                      className="svg-inject icon-svg !w-[1.8rem] !h-[1.8rem] inline-block  solid-mono  text-primary !text-[#3f78e0] "
-                    >
-                      <path
-                        className="fill-[#1bb59b]"
-                        d="M32 106.67A10.67 10.67 0 0124.91 88l48-42.67a10.62 10.62 0 018.37-2.61l83 10.07 47-44.56A10.66 10.66 0 01226 23.74l-50.67 48a10.73 10.73 0 01-8.61 2.85L83.49 64.5 39.09 104a10.61 10.61 0 01-7.09 2.7z"
-                      ></path>
-                      <path
-                        className="fill-[#1bb59b]"
-                        d="M226.67 53.34A8 8 0 01221 51l-37.32-37.34A8 8 0 01189.33 0h37.33a8 8 0 018 8v37.33a8 8 0 01-4.95 7.39 7.66 7.66 0 01-3.04.62z"
-                      ></path>
-                      <path
-                        className="fill-[#2bc29d]"
-                        d="M74.67 184v29.33h-64V184A13.33 13.33 0 0124 170.67h37.33A13.34 13.34 0 0174.67 184zM160 120v93.33H96V120a13.33 13.33 0 0113.33-13.33h37.33A13.33 13.33 0 01160 120zm85.33 21.34v72h-64v-72A13.32 13.32 0 01194.66 128H232a13.31 13.31 0 0113.33 13.34z"
-                      ></path>
-                      <path
-                        className="fill-secondary"
-                        d="M248 245.34H8a8 8 0 010-16h240a8 8 0 010 16z"
-                      ></path>
-                    </svg>
-                  </div>
+            <div className="container">
+              <div className="row mx-0">
+                <div className="lg:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full">
+                  <div className="pt-[4.5rem] pb-20 xl:pb-28 lg:pb-28 md:pb-28 lg:!py-24 xl:!pr-20 lg:!pr-20 !relative">
+                    {/* Icon Wrapper */}
+                    <div className="!flex !items-center !justify-center text-center w-16 h-16 p-3 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 256 245.34"
+                        data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/icons/solid/bar-chart.svg"
+                        className="svg-inject icon-svg !w-[1.8rem] !h-[1.8rem] inline-block  solid-mono  text-primary !text-[#3f78e0] "
+                      >
+                        <path
+                          className="fill-[#1bb59b]"
+                          d="M32 106.67A10.67 10.67 0 0124.91 88l48-42.67a10.62 10.62 0 018.37-2.61l83 10.07 47-44.56A10.66 10.66 0 01226 23.74l-50.67 48a10.73 10.73 0 01-8.61 2.85L83.49 64.5 39.09 104a10.61 10.61 0 01-7.09 2.7z"
+                        ></path>
+                        <path
+                          className="fill-[#1bb59b]"
+                          d="M226.67 53.34A8 8 0 01221 51l-37.32-37.34A8 8 0 01189.33 0h37.33a8 8 0 018 8v37.33a8 8 0 01-4.95 7.39 7.66 7.66 0 01-3.04.62z"
+                        ></path>
+                        <path
+                          className="fill-[#2bc29d]"
+                          d="M74.67 184v29.33h-64V184A13.33 13.33 0 0124 170.67h37.33A13.34 13.34 0 0174.67 184zM160 120v93.33H96V120a13.33 13.33 0 0113.33-13.33h37.33A13.33 13.33 0 01160 120zm85.33 21.34v72h-64v-72A13.32 13.32 0 01194.66 128H232a13.31 13.31 0 0113.33 13.34z"
+                        ></path>
+                        <path
+                          className="fill-secondary"
+                          d="M248 245.34H8a8 8 0 010-16h240a8 8 0 010 16z"
+                        ></path>
+                      </svg>
+                    </div>
 
-                  <div className="grid items-center justify-start mb-4">
-                    <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                      วิเคราะห์ธุรกิจอัจฉริยะ
-                    </h4>
-                    <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                      ช่วยให้คุณมองเห็นโอกาสในการเติบโต
-                    </h5>
-                  </div>
+                    <div className="grid items-center justify-start mb-4">
+                      <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
+                        วิเคราะห์ธุรกิจอัจฉริยะ
+                      </h4>
+                      <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
+                        ช่วยให้คุณมองเห็นโอกาสในการเติบโต
+                      </h5>
+                    </div>
 
-                  <div className="space-y-4">
-                    <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                      เปลี่ยนข้อมูลหลังบ้านที่กระจัดกระจาย
-                      ให้เป็นภาพรวมผลการดำเนินงานที่ชัดเจน
-                      ช่วยให้คุณมองเห็นโอกาสในการเติบโตและจัดการต้นทุนได้อย่างมีประสิทธิภาพ
-                    </p>
+                    <div className="space-y-4">
+                      <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
+                        เปลี่ยนข้อมูลหลังบ้านที่กระจัดกระจาย
+                        ให้เป็นภาพรวมผลการดำเนินงานที่ชัดเจน
+                        ช่วยให้คุณมองเห็นโอกาสในการเติบโตและจัดการต้นทุนได้อย่างมีประสิทธิภาพ
+                      </p>
 
-                    {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2  gap-2 !text-sm text-[#343f52] mx-auto">
-                      {[
-                        {
-                          text: "สรุปรายได้และค่าใช้จ่าย",
-                          icon: "uil-chart-bar",
-                        },
-                        {
-                          text: "วิเคราะห์บริการและลูกค้า",
-                          icon: "uil-users-alt",
-                        },
-                        {
-                          text: "คาดการณ์รายได้และแนวโน้ม",
-                          icon: "uil-arrow-growth",
-                        },
-                        {
-                          text: "วัดผลประสิทธิภาพทีมงาน",
-                          icon: "uil-chart-line",
-                        },
-                        {
-                          text: "วิเคราะห์กำไรและต้นทุน",
-                          icon: "uil-money-stack",
-                        },
-                      ].map((item, index) => (
-                        <div
-                          key={index}
-                          className="flex items-start gap-3 
+                      {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
+                      <div className="grid grid-cols-1 lg:grid-cols-2  gap-2 !text-sm text-[#343f52] mx-auto">
+                        {[
+                          {
+                            text: "สรุปรายได้และค่าใช้จ่าย",
+                            icon: "uil-chart-bar",
+                          },
+                          {
+                            text: "วิเคราะห์บริการและลูกค้า",
+                            icon: "uil-users-alt",
+                          },
+                          {
+                            text: "คาดการณ์รายได้และแนวโน้ม",
+                            icon: "uil-arrow-growth",
+                          },
+                          {
+                            text: "วัดผลประสิทธิภาพทีมงาน",
+                            icon: "uil-chart-line",
+                          },
+                          {
+                            text: "วิเคราะห์กำไรและต้นทุน",
+                            icon: "uil-money-stack",
+                          },
+                        ].map((item, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start gap-3 
                             transition-all duration-300 transform group cursor-pointer"
-                        >
-                          <div className="flex-shrink-0">
-                            <i
-                              className={`${item.icon} text-md text-[#45c4a0]  transition-colors duration-300`}
-                            />
+                          >
+                            <div className="flex-shrink-0">
+                              <i
+                                className={`${item.icon} text-md text-[#45c4a0]  transition-colors duration-300`}
+                              />
+                            </div>
+                            <span className="!text-xs font-medium leading-relaxed text-[#505a6d] transition-colors duration-300">
+                              {item.text}
+                            </span>
                           </div>
-                          <span className="!text-xs font-medium leading-relaxed text-[#505a6d] transition-colors duration-300">
-                            {item.text}
-                          </span>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
-        <section className="wrapper bg-[#ffff] !relative lg:!flex items-center">
+        <section
+          data-cues="slideInDown"
+          data-delay={300}
+          className="container wrapper bg-[#ffff] !relative lg:!flex items-center"
+        >
           {/* ส่วนรูปภาพ - ย้ายไปอยู่ด้านซ้ายมือ */}
           <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0 !left-0 image-wrapper bg-image bg-cover !h-full">
             <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
@@ -381,97 +393,103 @@ export default async function ProductShowcase({ lng }) {
           </div>
         </section>
 
-        <section className="wrapper  bg-[#ffff]  !relative lg:!flex items-center">
-          <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
-            <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
-              <Image
-                src="/assets/img/photos/bg1.jpg" // เปลี่ยนเป็น path รูปภาพของคุณ
-                alt="Dashboard Summary Overview"
-                fill
-                priority
-                className="object-center object-contain transition-transform duration-[2000ms]"
-              />{" "}
+        <div data-cues="slideInDown" data-delay={300} className="bg-[#f4fcfa]">
+          <section className="container wrapper    !relative lg:!flex items-center">
+            <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
+              <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
+                <Image
+                  src="/assets/img/photos/bg1.jpg" // เปลี่ยนเป็น path รูปภาพของคุณ
+                  alt="Dashboard Summary Overview"
+                  fill
+                  priority
+                  className="object-center object-contain transition-transform duration-[2000ms]"
+                />{" "}
+              </div>
             </div>
-          </div>
-          <div className="container">
-            <div className="row mx-0">
-              <div className="lg:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full">
-                <div className="pt-[4.5rem] pb-20 xl:pb-28 lg:pb-28 md:pb-28 lg:!py-24 xl:!pr-20 lg:!pr-20 !relative">
-                  {/* Icon Wrapper */}
-                  <div className="!flex !items-center !justify-center text-center w-16 h-16 p-3 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 255.98 256"
-                      data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/icons/solid/alarm.svg"
-                      className="svg-inject icon-svg !w-[1.8rem] !h-[1.8rem] inline-block  solid-mono  text-primary !text-[#3f78e0] "
-                    >
-                      <path
-                        className="fill-[#2bc29d]"
-                        d="M26.64 256a10.66 10.66 0 01-8.26-17.4l23.33-28.67a10.67 10.67 0 1116.55 13.47l-23.33 28.67a10.65 10.65 0 01-8.29 3.93zm202.69 0a10.65 10.65 0 01-8.29-3.93l-23.33-28.67a10.67 10.67 0 0116.55-13.47l23.32 28.67a10.66 10.66 0 01-8.25 17.4zM10.66 72a10.66 10.66 0 01-7.54-18.2L53.79 3.13a10.67 10.67 0 0115.09 15.08L18.21 68.88A10.68 10.68 0 0110.66 72zm234.65 0a10.55 10.55 0 01-7.53-3.12L187.1 18.21a10.67 10.67 0 1115.09-15.08l50.67 50.67a10.66 10.66 0 01-7.55 18.2z"
-                      ></path>
-                      <path
-                        className="fill-[#2bc29d]"
-                        d="M128 32a112 112 0 10112 112A112.12 112.12 0 00128 32zm66.68 122.68H128A10.68 10.68 0 01117.31 144V80a10.68 10.68 0 0121.35 0v53.33h56a10.68 10.68 0 010 21.35z"
-                      ></path>
-                    </svg>
-                  </div>
+            <div className="container">
+              <div className="row mx-0">
+                <div className="lg:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full">
+                  <div className="pt-[4.5rem] pb-20 xl:pb-28 lg:pb-28 md:pb-28 lg:!py-24 xl:!pr-20 lg:!pr-20 !relative">
+                    {/* Icon Wrapper */}
+                    <div className="!flex !items-center !justify-center text-center w-16 h-16 p-3 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 255.98 256"
+                        data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/icons/solid/alarm.svg"
+                        className="svg-inject icon-svg !w-[1.8rem] !h-[1.8rem] inline-block  solid-mono  text-primary !text-[#3f78e0] "
+                      >
+                        <path
+                          className="fill-[#2bc29d]"
+                          d="M26.64 256a10.66 10.66 0 01-8.26-17.4l23.33-28.67a10.67 10.67 0 1116.55 13.47l-23.33 28.67a10.65 10.65 0 01-8.29 3.93zm202.69 0a10.65 10.65 0 01-8.29-3.93l-23.33-28.67a10.67 10.67 0 0116.55-13.47l23.32 28.67a10.66 10.66 0 01-8.25 17.4zM10.66 72a10.66 10.66 0 01-7.54-18.2L53.79 3.13a10.67 10.67 0 0115.09 15.08L18.21 68.88A10.68 10.68 0 0110.66 72zm234.65 0a10.55 10.55 0 01-7.53-3.12L187.1 18.21a10.67 10.67 0 1115.09-15.08l50.67 50.67a10.66 10.66 0 01-7.55 18.2z"
+                        ></path>
+                        <path
+                          className="fill-[#2bc29d]"
+                          d="M128 32a112 112 0 10112 112A112.12 112.12 0 00128 32zm66.68 122.68H128A10.68 10.68 0 01117.31 144V80a10.68 10.68 0 0121.35 0v53.33h56a10.68 10.68 0 010 21.35z"
+                        ></path>
+                      </svg>
+                    </div>
 
-                  <div className="grid items-center justify-start mb-4">
-                    <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                      ระบบจัดการคิวตรวจ
-                    </h4>
-                    <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                      ช่วยให้พนักงานหน้าเคาน์เตอร์และแพทย์ทำงานประสานกันได้อย่างราบรื่น
-                    </h5>
-                  </div>
+                    <div className="grid items-center justify-start mb-4">
+                      <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
+                        ระบบจัดการคิวตรวจ
+                      </h4>
+                      <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
+                        ช่วยให้พนักงานหน้าเคาน์เตอร์และแพทย์ทำงานประสานกันได้อย่างราบรื่น
+                      </h5>
+                    </div>
 
-                  <div className="space-y-4">
-                    <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                      จัดลำดับการเข้าตรวจอย่างเป็นระบบ
-                      ช่วยให้พนักงานหน้าเคาน์เตอร์และแพทย์ทำงานประสานกันได้อย่างราบรื่น
-                      ลดระยะเวลาการรอคอยของคนไข้
-                    </p>
+                    <div className="space-y-4">
+                      <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
+                        จัดลำดับการเข้าตรวจอย่างเป็นระบบ
+                        ช่วยให้พนักงานหน้าเคาน์เตอร์และแพทย์ทำงานประสานกันได้อย่างราบรื่น
+                        ลดระยะเวลาการรอคอยของคนไข้
+                      </p>
 
-                    {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2  gap-2 !text-sm text-[#343f52] mx-auto">
-                      {[
-                        {
-                          text: "ระบบรันคิวอัตโนมัติ แม่นยำตามลำดับ",
-                          icon: "uil-list-ol",
-                        },
-                        {
-                          text: "แดชบอร์ดคิว Real-time แยกตามห้องตรวจ",
-                          icon: "uil-monitor",
-                        },
-                        {
-                          text: "ระบบเรียกคิวผ่านหน้าจอ พร้อมเสียงแจ้งเตือน",
-                          icon: "uil-megaphone",
-                        },
-                      ].map((item, index) => (
-                        <div
-                          key={index}
-                          className="flex items-start gap-3 
+                      {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
+                      <div className="grid grid-cols-1 lg:grid-cols-2  gap-2 !text-sm text-[#343f52] mx-auto">
+                        {[
+                          {
+                            text: "ระบบรันคิวอัตโนมัติ แม่นยำตามลำดับ",
+                            icon: "uil-list-ol",
+                          },
+                          {
+                            text: "แดชบอร์ดคิว Real-time แยกตามห้องตรวจ",
+                            icon: "uil-monitor",
+                          },
+                          {
+                            text: "ระบบเรียกคิวผ่านหน้าจอ พร้อมเสียงแจ้งเตือน",
+                            icon: "uil-megaphone",
+                          },
+                        ].map((item, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start gap-3 
                             transition-all duration-300 transform group cursor-pointer"
-                        >
-                          <div className="flex-shrink-0">
-                            <i
-                              className={`${item.icon} text-md text-[#45c4a0]  transition-colors duration-300`}
-                            />
+                          >
+                            <div className="flex-shrink-0">
+                              <i
+                                className={`${item.icon} text-md text-[#45c4a0]  transition-colors duration-300`}
+                              />
+                            </div>
+                            <span className="!text-xs font-medium leading-relaxed text-[#505a6d] transition-colors duration-300">
+                              {item.text}
+                            </span>
                           </div>
-                          <span className="!text-xs font-medium leading-relaxed text-[#505a6d] transition-colors duration-300">
-                            {item.text}
-                          </span>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
-        <section className="wrapper bg-[#ffff] !relative lg:!flex items-center">
+        <section
+          data-cues="slideInDown"
+          data-delay={300}
+          className="container wrapper !relative lg:!flex items-center"
+        >
           {/* ส่วนรูปภาพ - ย้ายไปอยู่ด้านซ้ายมือ */}
           <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0 !left-0 image-wrapper bg-image bg-cover !h-full">
             <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
@@ -554,85 +572,91 @@ export default async function ProductShowcase({ lng }) {
           </div>
         </section>
 
-        <section className="wrapper  bg-[#ffff]  !relative lg:!flex items-center">
-          <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
-            <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
-              <Image
-                src="/assets/img/photos/bg1.jpg" // เปลี่ยนเป็น path รูปภาพของคุณ
-                alt="Dashboard Summary Overview"
-                fill
-                priority
-                className="object-center object-contain transition-transform duration-[2000ms]"
-              />{" "}
+        <div data-cues="slideInDown" data-delay={300} className="bg-[#f4fcfa]">
+          <section className="container wrapper !relative lg:!flex items-center">
+            <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
+              <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
+                <Image
+                  src="/assets/img/photos/bg1.jpg" // เปลี่ยนเป็น path รูปภาพของคุณ
+                  alt="Dashboard Summary Overview"
+                  fill
+                  priority
+                  className="object-center object-contain transition-transform duration-[2000ms]"
+                />{" "}
+              </div>
             </div>
-          </div>
-          <div className="container">
-            <div className="row mx-0">
-              <div className="lg:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full">
-                <div className="pt-[4.5rem] pb-20 xl:pb-28 lg:pb-28 md:pb-28 lg:!py-24 xl:!pr-20 lg:!pr-20 !relative">
-                  {/* Icon Wrapper */}
-                  <div className="!flex !items-center !justify-center text-center w-16 h-16 p-3 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 192 256"
-                      data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/icons/solid/list.svg"
-                      className="svg-inject icon-svg solid text-[#343f52] !w-[1.8rem] !h-[1.8rem] !mb-0"
-                    >
-                      <path
-                        className="fill-[#2bc29d]"
-                        d="M160 0H32A32 32 0 000 32v160a10.66 10.66 0 003.12 7.54l53.33 53.32A10.63 10.63 0 0064 256h96a32 32 0 0032-32V32a32 32 0 00-32-32zm10.67 224A10.67 10.67 0 01160 234.67H74.67v-24a29.36 29.36 0 00-29.33-29.33h-24V32A10.68 10.68 0 0132 21.33h128A10.68 10.68 0 01170.69 32v192z"
-                      ></path>
-                      <path
-                        className="fill-[#2bc29d]"
-                        d="M130.67 85.33H61.34a18.7 18.7 0 01-18.67-18.67v-5.33a18.69 18.69 0 0118.67-18.67h69.33a18.68 18.68 0 0118.67 18.67v5.33a18.7 18.7 0 01-18.67 18.67zm8 42.67H53.34a10.67 10.67 0 110-21.34h85.33a10.67 10.67 0 110 21.34zm0 42.67H53.34a10.67 10.67 0 010-21.34h85.33a10.67 10.67 0 110 21.34z"
-                      ></path>
-                    </svg>
-                  </div>
+            <div className="container">
+              <div className="row mx-0">
+                <div className="lg:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full">
+                  <div className="pt-[4.5rem] pb-20 xl:pb-28 lg:pb-28 md:pb-28 lg:!py-24 xl:!pr-20 lg:!pr-20 !relative">
+                    {/* Icon Wrapper */}
+                    <div className="!flex !items-center !justify-center text-center w-16 h-16 p-3 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 192 256"
+                        data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/icons/solid/list.svg"
+                        className="svg-inject icon-svg solid text-[#343f52] !w-[1.8rem] !h-[1.8rem] !mb-0"
+                      >
+                        <path
+                          className="fill-[#2bc29d]"
+                          d="M160 0H32A32 32 0 000 32v160a10.66 10.66 0 003.12 7.54l53.33 53.32A10.63 10.63 0 0064 256h96a32 32 0 0032-32V32a32 32 0 00-32-32zm10.67 224A10.67 10.67 0 01160 234.67H74.67v-24a29.36 29.36 0 00-29.33-29.33h-24V32A10.68 10.68 0 0132 21.33h128A10.68 10.68 0 01170.69 32v192z"
+                        ></path>
+                        <path
+                          className="fill-[#2bc29d]"
+                          d="M130.67 85.33H61.34a18.7 18.7 0 01-18.67-18.67v-5.33a18.69 18.69 0 0118.67-18.67h69.33a18.68 18.68 0 0118.67 18.67v5.33a18.7 18.7 0 01-18.67 18.67zm8 42.67H53.34a10.67 10.67 0 110-21.34h85.33a10.67 10.67 0 110 21.34zm0 42.67H53.34a10.67 10.67 0 010-21.34h85.33a10.67 10.67 0 110 21.34z"
+                        ></path>
+                      </svg>
+                    </div>
 
-                  <div className="grid items-center justify-start mb-4">
-                    <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                      ระบบจัดการเอกสารการเงินครบวงจร
-                    </h4>
-                    <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                      ออกใบเสร็จและใบกำกับภาษีได้รวดเร็ว
-                    </h5>
-                  </div>
+                    <div className="grid items-center justify-start mb-4">
+                      <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
+                        ระบบจัดการเอกสารการเงินครบวงจร
+                      </h4>
+                      <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
+                        ออกใบเสร็จและใบกำกับภาษีได้รวดเร็ว
+                      </h5>
+                    </div>
 
-                  <div className="space-y-4">
-                    <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                      บริหารจัดการรายได้อย่างมืออาชีพ
-                      ออกใบเสร็จและใบกำกับภาษีได้รวดเร็ว ถูกต้องตามหลักบัญชี
-                      พร้อมระบบสรุปยอดเงินที่ตรวจสอบได้ทุกขั้นตอน
-                    </p>
+                    <div className="space-y-4">
+                      <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
+                        บริหารจัดการรายได้อย่างมืออาชีพ
+                        ออกใบเสร็จและใบกำกับภาษีได้รวดเร็ว ถูกต้องตามหลักบัญชี
+                        พร้อมระบบสรุปยอดเงินที่ตรวจสอบได้ทุกขั้นตอน
+                      </p>
 
-                    {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
-                    <div className="space-y-3">
-                      {[
-                        "ออกใบแจ้งหนี้ ใบเสร็จรับเงิน ใบลดหนี้ และใบกำกับภาษี",
-                        "คำนวณภาษีมูลค่าเพิ่ม (VAT) และส่วนลดโปรโมชั่นให้อัตโนมัติ",
-                        "รองรับการชำระเงินหลายรูปแบบ ทั้งเงินสด โอนจ่าย และบัตรเครดิต",
-                        "บันทึกประวัติการรับชำระและติดตามยอดค้างชำระรายบุคคล",
-                        "ระบบจัดการรายการขาย และบันทึกค่าใช้จ่ายคลินิกเพื่อสรุปกำไรสุทธิ",
-                        "ค้นหาและออกเอกสารภาษีย้อนหลังได้ทันที ด้วยระบบ Smart Search",
-                      ].map((feature, index) => (
-                        <div key={index} className="flex items-start gap-3">
-                          <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#1bb59b]/10 flex items-center justify-center">
-                            <i className="uil uil-check text-[#1bb59b] text-[14px] font-bold" />
+                      {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
+                      <div className="space-y-3">
+                        {[
+                          "ออกใบแจ้งหนี้ ใบเสร็จรับเงิน ใบลดหนี้ และใบกำกับภาษี",
+                          "คำนวณภาษีมูลค่าเพิ่ม (VAT) และส่วนลดโปรโมชั่นให้อัตโนมัติ",
+                          "รองรับการชำระเงินหลายรูปแบบ ทั้งเงินสด โอนจ่าย และบัตรเครดิต",
+                          "บันทึกประวัติการรับชำระและติดตามยอดค้างชำระรายบุคคล",
+                          "ระบบจัดการรายการขาย และบันทึกค่าใช้จ่ายคลินิกเพื่อสรุปกำไรสุทธิ",
+                          "ค้นหาและออกเอกสารภาษีย้อนหลังได้ทันที ด้วยระบบ Smart Search",
+                        ].map((feature, index) => (
+                          <div key={index} className="flex items-start gap-3">
+                            <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#1bb59b]/10 flex items-center justify-center">
+                              <i className="uil uil-check text-[#1bb59b] text-[14px] font-bold" />
+                            </div>
+                            <span className="text-[0.85rem] text-[#343f52] font-medium leading-tight">
+                              {feature}
+                            </span>
                           </div>
-                          <span className="text-[0.85rem] text-[#343f52] font-medium leading-tight">
-                            {feature}
-                          </span>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
-        <section className="wrapper bg-[#ffff] !relative lg:!flex items-center">
+        <section
+          data-cues="slideInDown"
+          data-delay={300}
+          className="container wrapper bg-[#ffff] !relative lg:!flex items-center"
+        >
           {/* ส่วนรูปภาพ - ย้ายไปอยู่ด้านซ้ายมือ */}
           <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0 !left-0 image-wrapper bg-image bg-cover !h-full">
             <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
@@ -734,102 +758,108 @@ export default async function ProductShowcase({ lng }) {
           </div>
         </section>
 
-        <section className="wrapper  bg-[#ffff]  !relative lg:!flex items-center">
-          <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
-            <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
-              <Image
-                src="/assets/img/photos/bg1.jpg" // เปลี่ยนเป็น path รูปภาพของคุณ
-                alt="Dashboard Summary Overview"
-                fill
-                priority
-                className="object-center object-contain transition-transform duration-[2000ms]"
-              />{" "}
+        <div data-cues="slideInDown" data-delay={300} className="bg-[#f4fcfa]">
+          <section className="container wrapper !relative lg:!flex items-center">
+            <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
+              <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
+                <Image
+                  src="/assets/img/photos/bg1.jpg" // เปลี่ยนเป็น path รูปภาพของคุณ
+                  alt="Dashboard Summary Overview"
+                  fill
+                  priority
+                  className="object-center object-contain transition-transform duration-[2000ms]"
+                />{" "}
+              </div>
             </div>
-          </div>
-          <div className="container">
-            <div className="row mx-0">
-              <div className="lg:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full">
-                <div className="pt-[4.5rem] pb-20 xl:pb-28 lg:pb-28 md:pb-28 lg:!py-24 xl:!pr-20 lg:!pr-20 !relative">
-                  {/* Icon Wrapper */}
-                  <div className="!flex !items-center !justify-center text-center w-16 h-16 p-3 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 255.99 255.98"
-                      data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/icons/solid/badge.svg"
-                      className="svg-inject icon-svg !w-[1.8rem] !h-[1.8rem] inline-block  solid-duo text-navy-sky text-[#343f52] "
-                    >
-                      <g data-name="Layer 2">
-                        <path
-                          className="fill-[#2bc29d]"
-                          d="M88.75 256A32.88 32.88 0 0176 253.45a33.33 33.33 0 01-18.42-19l-7.92-21.12a12 12 0 00-7-7l-21.08-7.93A33.27 33.27 0 013 153.48l9.33-20.54a11.82 11.82 0 000-9.87L3 102.52a33.27 33.27 0 0118.56-44.91l21.12-7.92a12 12 0 007-7l7.92-21.12A33.25 33.25 0 01102.49 3L123 12.3a11.82 11.82 0 009.87 0l20.6-9.3a33.27 33.27 0 0144.91 18.59l7.92 21.12a12 12 0 007 7l21.12 7.92A33.25 33.25 0 01253 102.49L243.69 123a11.84 11.84 0 000 9.88l9.31 20.57a33.26 33.26 0 01-18.59 44.91l-21.12 7.92a12 12 0 00-7 7l-7.92 21.12A33.26 33.26 0 01153.5 253l-20.5-9.33a11.82 11.82 0 00-9.87 0L102.54 253a33.38 33.38 0 01-13.79 3zm0-234.66a12 12 0 00-11.19 7.76l-7.92 21.09a33.28 33.28 0 01-19.45 19.47l-21.12 7.92a11.92 11.92 0 00-6.67 16.11l9.32 20.55a33.15 33.15 0 010 27.53L22.4 162.3a11.92 11.92 0 006.67 16.11l21.1 7.92a33.3 33.3 0 0119.47 19.46l7.92 21.12a11.95 11.95 0 0016.12 6.67l20.54-9.33a33.25 33.25 0 0127.54 0l20.52 9.33a11.95 11.95 0 0016.12-6.67l7.92-21.11a33.28 33.28 0 0119.45-19.47l21.12-7.92a11.94 11.94 0 006.67-16.11l-9.33-20.54a33.25 33.25 0 010-27.54l9.33-20.53a11.94 11.94 0 00-6.67-16.11l-21.1-7.92a33.29 33.29 0 01-19.48-19.46l-7.92-21.12a11.93 11.93 0 00-16.11-6.67l-20.54 9.33a33.29 33.29 0 01-27.54 0l-20.53-9.33a11.82 11.82 0 00-4.92-1.09z"
-                        ></path>
-                        <path
-                          className="fill-[#2bc29d]"
-                          d="M96 117.32A21.33 21.33 0 11117.31 96 21.35 21.35 0 0196 117.32zm64 64A21.33 21.33 0 11181.31 160 21.35 21.35 0 01160 181.32zm-64 0a10.65 10.65 0 01-8.51-17l64-85.33a10.66 10.66 0 0117.06 12.8l-64 85.33a10.69 10.69 0 01-8.55 4.2z"
-                        ></path>
-                      </g>
-                    </svg>
-                  </div>
+            <div className="container">
+              <div className="row mx-0">
+                <div className="lg:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full">
+                  <div className="pt-[4.5rem] pb-20 xl:pb-28 lg:pb-28 md:pb-28 lg:!py-24 xl:!pr-20 lg:!pr-20 !relative">
+                    {/* Icon Wrapper */}
+                    <div className="!flex !items-center !justify-center text-center w-16 h-16 p-3 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 255.99 255.98"
+                        data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/icons/solid/badge.svg"
+                        className="svg-inject icon-svg !w-[1.8rem] !h-[1.8rem] inline-block  solid-duo text-navy-sky text-[#343f52] "
+                      >
+                        <g data-name="Layer 2">
+                          <path
+                            className="fill-[#2bc29d]"
+                            d="M88.75 256A32.88 32.88 0 0176 253.45a33.33 33.33 0 01-18.42-19l-7.92-21.12a12 12 0 00-7-7l-21.08-7.93A33.27 33.27 0 013 153.48l9.33-20.54a11.82 11.82 0 000-9.87L3 102.52a33.27 33.27 0 0118.56-44.91l21.12-7.92a12 12 0 007-7l7.92-21.12A33.25 33.25 0 01102.49 3L123 12.3a11.82 11.82 0 009.87 0l20.6-9.3a33.27 33.27 0 0144.91 18.59l7.92 21.12a12 12 0 007 7l21.12 7.92A33.25 33.25 0 01253 102.49L243.69 123a11.84 11.84 0 000 9.88l9.31 20.57a33.26 33.26 0 01-18.59 44.91l-21.12 7.92a12 12 0 00-7 7l-7.92 21.12A33.26 33.26 0 01153.5 253l-20.5-9.33a11.82 11.82 0 00-9.87 0L102.54 253a33.38 33.38 0 01-13.79 3zm0-234.66a12 12 0 00-11.19 7.76l-7.92 21.09a33.28 33.28 0 01-19.45 19.47l-21.12 7.92a11.92 11.92 0 00-6.67 16.11l9.32 20.55a33.15 33.15 0 010 27.53L22.4 162.3a11.92 11.92 0 006.67 16.11l21.1 7.92a33.3 33.3 0 0119.47 19.46l7.92 21.12a11.95 11.95 0 0016.12 6.67l20.54-9.33a33.25 33.25 0 0127.54 0l20.52 9.33a11.95 11.95 0 0016.12-6.67l7.92-21.11a33.28 33.28 0 0119.45-19.47l21.12-7.92a11.94 11.94 0 006.67-16.11l-9.33-20.54a33.25 33.25 0 010-27.54l9.33-20.53a11.94 11.94 0 00-6.67-16.11l-21.1-7.92a33.29 33.29 0 01-19.48-19.46l-7.92-21.12a11.93 11.93 0 00-16.11-6.67l-20.54 9.33a33.29 33.29 0 01-27.54 0l-20.53-9.33a11.82 11.82 0 00-4.92-1.09z"
+                          ></path>
+                          <path
+                            className="fill-[#2bc29d]"
+                            d="M96 117.32A21.33 21.33 0 11117.31 96 21.35 21.35 0 0196 117.32zm64 64A21.33 21.33 0 11181.31 160 21.35 21.35 0 01160 181.32zm-64 0a10.65 10.65 0 01-8.51-17l64-85.33a10.66 10.66 0 0117.06 12.8l-64 85.33a10.69 10.69 0 01-8.55 4.2z"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
 
-                  <div className="grid items-center justify-start mb-4">
-                    <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                      ระบบจัดการคูปองและวงเงินคงเหลือ
-                    </h4>
-                    <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                      ช่วยให้การบริหารโปรโมชั่นและแพ็กเกจเป็นเรื่องง่าย
-                    </h5>
-                  </div>
+                    <div className="grid items-center justify-start mb-4">
+                      <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
+                        ระบบจัดการคูปองและวงเงินคงเหลือ
+                      </h4>
+                      <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
+                        ช่วยให้การบริหารโปรโมชั่นและแพ็กเกจเป็นเรื่องง่าย
+                      </h5>
+                    </div>
 
-                  <div className="space-y-4">
-                    <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                      ยกระดับการตลาดในคลินิกด้วยระบบจัดการสิทธิพิเศษและวงเงินล่วงหน้า
-                      ช่วยให้การบริหารโปรโมชั่นและแพ็กเกจเป็นเรื่องง่ายและตรวจสอบได้แม่นยำ
-                    </p>
+                    <div className="space-y-4">
+                      <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
+                        ยกระดับการตลาดในคลินิกด้วยระบบจัดการสิทธิพิเศษและวงเงินล่วงหน้า
+                        ช่วยให้การบริหารโปรโมชั่นและแพ็กเกจเป็นเรื่องง่ายและตรวจสอบได้แม่นยำ
+                      </p>
 
-                    {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
-                    <div className="space-y-0">
-                      {[
-                        {
-                          text: "สร้างคูปองส่วนลด ทั้งแบบบาทและเปอร์เซ็นต์",
-                          icon: "uil-ticket",
-                        },
-                        {
-                          text: "กำหนดเงื่อนไขและวันหมดอายุได้อย่างอิสระ",
-                          icon: "uil-setting",
-                        },
-                        {
-                          text: "ระบบบันทึกประวัติละเอียด ป้องกันการใช้สิทธิ์ซ้ำ",
-                          icon: "uil-history",
-                        },
-                        {
-                          text: "รายงานวิเคราะห์ความคุ้มค่าของแต่ละแคมเปญ",
-                          icon: "uil-chart-line",
-                        },
-                      ].map((feature, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center gap-2 py-1 rounded-2xl transition-all duration-300 group"
-                        >
-                          {/* Icon สไตล์ซอฟต์ๆ */}
-                          <div className="flex-shrink-0 w-6 h-6 rounded-lg  flex items-center justify-center text-[#45c4a0] transition-all">
-                            <i className={`uil ${feature.icon} !text-sm`} />
+                      {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
+                      <div className="space-y-0">
+                        {[
+                          {
+                            text: "สร้างคูปองส่วนลด ทั้งแบบบาทและเปอร์เซ็นต์",
+                            icon: "uil-ticket",
+                          },
+                          {
+                            text: "กำหนดเงื่อนไขและวันหมดอายุได้อย่างอิสระ",
+                            icon: "uil-setting",
+                          },
+                          {
+                            text: "ระบบบันทึกประวัติละเอียด ป้องกันการใช้สิทธิ์ซ้ำ",
+                            icon: "uil-history",
+                          },
+                          {
+                            text: "รายงานวิเคราะห์ความคุ้มค่าของแต่ละแคมเปญ",
+                            icon: "uil-chart-line",
+                          },
+                        ].map((feature, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center gap-2 py-1 rounded-2xl transition-all duration-300 group"
+                          >
+                            {/* Icon สไตล์ซอฟต์ๆ */}
+                            <div className="flex-shrink-0 w-6 h-6 rounded-lg  flex items-center justify-center text-[#45c4a0] transition-all">
+                              <i className={`uil ${feature.icon} !text-sm`} />
+                            </div>
+
+                            {/* ข้อความที่กระชับขึ้น */}
+                            <span className="text-xs font-medium text-[#505a6d] transition-colors">
+                              {feature.text}
+                            </span>
                           </div>
-
-                          {/* ข้อความที่กระชับขึ้น */}
-                          <span className="text-xs font-medium text-[#505a6d] transition-colors">
-                            {feature.text}
-                          </span>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
-        <section className="wrapper bg-[#ffff] !relative lg:!flex items-center">
+        <section
+          data-cues="slideInDown"
+          data-delay={300}
+          className="container wrapper bg-[#ffff] !relative lg:!flex items-center"
+        >
           {/* ส่วนรูปภาพ - ย้ายไปอยู่ด้านซ้ายมือ */}
           <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0 !left-0 image-wrapper bg-image bg-cover !h-full">
             <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
@@ -934,141 +964,120 @@ export default async function ProductShowcase({ lng }) {
           </div>
         </section>
 
-        <section className="wrapper  bg-[#ffff]  !relative lg:!flex items-center">
-          <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
-            <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
-              <Image
-                src="/assets/img/photos/bg1.jpg" // เปลี่ยนเป็น path รูปภาพของคุณ
-                alt="Dashboard Summary Overview"
-                fill
-                priority
-                className="object-center object-contain transition-transform duration-[2000ms]"
-              />{" "}
+        <div data-cues="slideInDown" data-delay={300} className="bg-[#f4fcfa]">
+          <section className="container wrapper !relative lg:!flex items-center">
+            <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
+              <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
+                <Image
+                  src="/assets/img/photos/bg1.jpg" // เปลี่ยนเป็น path รูปภาพของคุณ
+                  alt="Dashboard Summary Overview"
+                  fill
+                  priority
+                  className="object-center object-contain transition-transform duration-[2000ms]"
+                />{" "}
+              </div>
             </div>
-          </div>
-          <div className="container">
-            <div className="row mx-0">
-              <div className="lg:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full">
-                <div className="pt-[4.5rem] pb-20 xl:pb-28 lg:pb-28 md:pb-28 lg:!py-24 xl:!pr-20 lg:!pr-20 !relative">
-                  {/* Icon Wrapper */}
-                  <div className="!flex !items-center !justify-center text-center w-16 h-16 p-3 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 256 256"
-                      data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/icons/solid/clipboard.svg"
-                      className="svg-inject icon-svg !w-[1.8rem] !h-[1.8rem] inline-block  solid-duo text-navy-sky text-[#343f52] "
-                    >
-                      <path
-                        className="fill-[#2bc29d]"
-                        d="M130.67 64H61.34a18.7 18.7 0 01-18.67-18.67v-16a8 8 0 018-8h17.11a29.33 29.33 0 0156.44 0h17.11a8 8 0 018 8v16A18.68 18.68 0 01130.67 64zm104 160a5.35 5.35 0 01-4.77-2.94l-13.74-27.49a26.82 26.82 0 01-2.82-11.92V85.34a21.33 21.33 0 0142.66 0v96.3a26.82 26.82 0 01-2.82 11.92L239.44 221a5.33 5.33 0 01-4.77 3zm13.75-32.83z"
-                      ></path>
-                      <path
-                        className="fill-[#2bc29d]"
-                        d="M162.67 32H160v13.33a29.36 29.36 0 01-29.33 29.33H61.34A29.36 29.36 0 0132 45.33V32h-2.67A29.35 29.35 0 000 61.33v165.33A29.36 29.36 0 0029.33 256h133.33A29.36 29.36 0 00192 226.67V61.33A29.35 29.35 0 00162.67 32zM152 224H40a8 8 0 010-16h112a8 8 0 010 16zm0-32H40a8 8 0 010-16h112a8 8 0 010 16zm0-32H40a8 8 0 010-16h112a8 8 0 010 16zm0-32H40a8 8 0 010-16h112a8 8 0 010 16z"
-                      ></path>
-                    </svg>
-                  </div>
+            <div className="container">
+              <div className="row mx-0">
+                <div className="lg:w-7/12 flex-[0_0_auto] !px-[15px] max-w-full">
+                  <div className="pt-[4.5rem] pb-20 xl:pb-28 lg:pb-28 md:pb-28 lg:!py-24 xl:!pr-20 lg:!pr-20 !relative">
+                    {/* Icon Wrapper */}
+                    <div className="!flex !items-center !justify-center text-center w-16 h-16 p-3 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 256 256"
+                        data-inject-url="https://sandbox-tailwind-template.netlify.app/assets/img/icons/solid/clipboard.svg"
+                        className="svg-inject icon-svg !w-[1.8rem] !h-[1.8rem] inline-block  solid-duo text-navy-sky text-[#343f52] "
+                      >
+                        <path
+                          className="fill-[#2bc29d]"
+                          d="M130.67 64H61.34a18.7 18.7 0 01-18.67-18.67v-16a8 8 0 018-8h17.11a29.33 29.33 0 0156.44 0h17.11a8 8 0 018 8v16A18.68 18.68 0 01130.67 64zm104 160a5.35 5.35 0 01-4.77-2.94l-13.74-27.49a26.82 26.82 0 01-2.82-11.92V85.34a21.33 21.33 0 0142.66 0v96.3a26.82 26.82 0 01-2.82 11.92L239.44 221a5.33 5.33 0 01-4.77 3zm13.75-32.83z"
+                        ></path>
+                        <path
+                          className="fill-[#2bc29d]"
+                          d="M162.67 32H160v13.33a29.36 29.36 0 01-29.33 29.33H61.34A29.36 29.36 0 0132 45.33V32h-2.67A29.35 29.35 0 000 61.33v165.33A29.36 29.36 0 0029.33 256h133.33A29.36 29.36 0 00192 226.67V61.33A29.35 29.35 0 00162.67 32zM152 224H40a8 8 0 010-16h112a8 8 0 010 16zm0-32H40a8 8 0 010-16h112a8 8 0 010 16zm0-32H40a8 8 0 010-16h112a8 8 0 010 16zm0-32H40a8 8 0 010-16h112a8 8 0 010 16z"
+                        ></path>
+                      </svg>
+                    </div>
 
-                  <div className="grid items-center justify-start mb-4">
-                    <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                      ระบบรายงานเชิงลึกกว่า 45 รูปแบบ
-                    </h4>
-                    <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                      ข้อมูลคลินิกได้ครบทุกมิติ
-                      ที่ช่วยให้คุณเห็นภาพรวมธุรกิจได้ชัดเจน
-                    </h5>
-                  </div>
+                    <div className="grid items-center justify-start mb-4">
+                      <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
+                        ระบบรายงานเชิงลึกกว่า 45 รูปแบบ
+                      </h4>
+                      <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
+                        ข้อมูลคลินิกได้ครบทุกมิติ
+                        ที่ช่วยให้คุณเห็นภาพรวมธุรกิจได้ชัดเจน
+                      </h5>
+                    </div>
 
-                  <div className="space-y-4">
-                    <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                      วิเคราะห์ข้อมูลคลินิกได้ครบทุกมิติด้วยรายงานมาตรฐานและรายงานขั้นสูง
-                      ที่ช่วยให้คุณเห็นภาพรวมธุรกิจได้ชัดเจนในคลิกเดียว
-                    </p>
+                    <div className="space-y-4">
+                      <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
+                        วิเคราะห์ข้อมูลคลินิกได้ครบทุกมิติด้วยรายงานมาตรฐานและรายงานขั้นสูง
+                        ที่ช่วยให้คุณเห็นภาพรวมธุรกิจได้ชัดเจนในคลิกเดียว
+                      </p>
 
-                    {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {[
-                        {
-                          title: "รายงานยอดขายและบัญชี",
-                          desc: "สรุปรายได้ ภาษีขาย และยอดค้างชำระละเอียด",
-                          icon: "uil-bill", // ไอคอนใบเสร็จ/บัญชี
-                        },
-                        {
-                          title: "รายงานสต็อกและเวชภัณฑ์",
-                          desc: "เช็คความเคลื่อนไหวสินค้าขายดีและของคงคลัง",
-                          icon: "uil-box", // ไอคอนกล่องสินค้า/สต็อก
-                        },
-                        {
-                          title: "วิเคราะห์ข้อมูลลูกค้า",
-                          desc: "สถิติคนไข้ใหม่และพฤติกรรมการใช้บริการ",
-                          icon: "uil-users-alt", // ไอคอนกลุ่มคนไข้
-                        },
-                        {
-                          title: "รายงานวัตถุอันตราย",
-                          desc: "ออกรายงานส่งกองควบคุมวัตถุเสพติดได้ทันที",
-                          icon: "uil-shield-exclamation", // ไอคอนความปลอดภัย/ควบคุมพิเศษ
-                        },
-                        {
-                          title: "สรุปรายงานตามช่วงเวลา",
-                          desc: "เลือกดูย้อนหลังรายวัน เดือน หรือปีได้อิสระ",
-                          icon: "uil-calendar-alt", // ไอคอนปฏิทินช่วงเวลา
-                        },
-                        {
-                          title: "Export Data",
-                          desc: "ส่งออกไฟล์ Excel และ PDF เพื่อวิเคราะห์ต่อ",
-                          icon: "uil-file-export", // ไอคอนส่งออกไฟล์
-                        },
-                      ].map((feature, index) => (
-                        <div
-                          key={index}
-                          className="flex items-start gap-2 p-1 rounded-2xl border border-transparent  transition-all duration-300 group"
-                        >
-                          {/* Icon Container */}
-                          <i
-                            className={`uil ${feature.icon} text-sm !text-[#2bc29d]`}
-                          />
+                      {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {[
+                          {
+                            title: "รายงานยอดขายและบัญชี",
+                            desc: "สรุปรายได้ ภาษีขาย และยอดค้างชำระละเอียด",
+                            icon: "uil-bill", // ไอคอนใบเสร็จ/บัญชี
+                          },
+                          {
+                            title: "รายงานสต็อกและเวชภัณฑ์",
+                            desc: "เช็คความเคลื่อนไหวสินค้าขายดีและของคงคลัง",
+                            icon: "uil-box", // ไอคอนกล่องสินค้า/สต็อก
+                          },
+                          {
+                            title: "วิเคราะห์ข้อมูลลูกค้า",
+                            desc: "สถิติคนไข้ใหม่และพฤติกรรมการใช้บริการ",
+                            icon: "uil-users-alt", // ไอคอนกลุ่มคนไข้
+                          },
+                          {
+                            title: "รายงานวัตถุอันตราย",
+                            desc: "ออกรายงานส่งกองควบคุมวัตถุเสพติดได้ทันที",
+                            icon: "uil-shield-exclamation", // ไอคอนความปลอดภัย/ควบคุมพิเศษ
+                          },
+                          {
+                            title: "สรุปรายงานตามช่วงเวลา",
+                            desc: "เลือกดูย้อนหลังรายวัน เดือน หรือปีได้อิสระ",
+                            icon: "uil-calendar-alt", // ไอคอนปฏิทินช่วงเวลา
+                          },
+                          {
+                            title: "Export Data",
+                            desc: "ส่งออกไฟล์ Excel และ PDF เพื่อวิเคราะห์ต่อ",
+                            icon: "uil-file-export", // ไอคอนส่งออกไฟล์
+                          },
+                        ].map((feature, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start gap-2 p-1 rounded-2xl border border-transparent  transition-all duration-300 group"
+                          >
+                            {/* Icon Container */}
+                            <i
+                              className={`uil ${feature.icon} text-sm !text-[#2bc29d]`}
+                            />
 
-                          {/* Text Content */}
-                          <div className="flex flex-col">
-                            <span className="text-xs font-medium text-[#343f52] leading-tight mb-1  transition-colors">
-                              {feature.title}
-                            </span>
-                            <span className="text-[0.7rem] text-[#64748b] leading-relaxed font-light">
-                              {feature.desc}
-                            </span>
+                            {/* Text Content */}
+                            <div className="flex flex-col">
+                              <span className="text-xs font-medium text-[#343f52] leading-tight mb-1  transition-colors">
+                                {feature.title}
+                              </span>
+                              <span className="text-[0.7rem] text-[#64748b] leading-relaxed font-light">
+                                {feature.desc}
+                              </span>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/*   
-        
-
-        <CoreLeftValues
-          iconClass="uil uil-file-info-alt"
-          title="ระบบรายงานเชิงลึกกว่า 45 รูปแบบ"
-          description="วิเคราะห์ข้อมูลคลินิกได้ครบทุกมิติด้วยรายงานมาตรฐานและรายงานขั้นสูง ที่ช่วยให้คุณเห็นภาพรวมธุรกิจได้ชัดเจนในคลิกเดียว"
-          features={[
-            "รายงานยอดขายและบัญชี: สรุปรายได้ ภาษีขาย และยอดค้างชำระอย่างละเอียด",
-            "รายงานสต็อกยาและเวชภัณฑ์: ตรวจสอบความเคลื่อนไหวสินค้าขายดีและสินค้าคงค้าง",
-            "รายงานข้อมูลลูกค้า: วิเคราะห์พฤติกรรมการใช้บริการและสถิติคนไข้ใหม่",
-            "รายงานวัตถุอันตรายและยาเสพติด: ออกรายงานส่งกองควบคุมวัตถุเสพติดได้อย่างถูกต้อง",
-            "สรุปรายงานตามช่วงเวลา: เลือกดูย้อนหลังได้ทั้งรายวัน รายเดือน และรายปี",
-            "Export Data: รองรับการส่งออกไฟล์ Excel และ PDF เพื่อการวิเคราะห์ต่ออย่างง่ายดาย",
-          ]}
-          imageRight={true}
-          showGradient={true}
-          showGrain={true}
-          // gradientColors={["#ffffff", "#E5FFF8"]}
-          showPattern={false}
-          patternColor="rgba(27, 181, 168, 0.05)"
-        /> */}
+          </section>
+        </div>
       </div>
     </section>
   );

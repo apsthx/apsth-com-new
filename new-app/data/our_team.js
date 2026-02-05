@@ -89,6 +89,13 @@ export const OurTeams = [
     imageSrc: "assets/img/teams/rapeepong_boongsri.webp",
     imageSrcSet: "assets/img/teams/rapeepong_boongsri.webp",
     name: "Rapeepong Boongsri",
-    description: "Full Stack Developer",
+    description: "SA And Manager",
+  },
+  {
+    id: 11,
+    imageSrc: "assets/img/teams/anuwat_kigsakul.png",
+    imageSrcSet: "assets/img/teams/anuwat_kigsakul.png",
+    name: "Anuwat Kingsakul",
+    description: "Mobile developer",
   },
 ];

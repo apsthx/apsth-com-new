@@ -38,8 +38,8 @@ export default function OurCustomersGroups() {
           });
 
           const shuffledData = [...validData].sort(() => 0.5 - Math.random());
-          setGridItems(shuffledData.slice(0, 63));
-          setMarqueeItems(shuffledData.slice(63));
+          setGridItems(shuffledData.slice(0, 66));
+          setMarqueeItems(shuffledData.slice(66));
           setTimeout(() => setShowImages(true), 150);
         }
       } catch (error) {
@@ -68,29 +68,16 @@ export default function OurCustomersGroups() {
       >
         {/* Tooltip - ปรับตำแหน่งให้ห่างจากตัวโลโก้มากขึ้นเพื่อลดโอกาสการโดนตัดที่ขอบล่าง */}
         <div
-          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-6 pointer-events-none 
+          className="absolute bottom-full left-1/2 -translate-x-1/2 pointer-events-none 
                         opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100
-                        transition-all duration-300 origin-bottom w-[200px] z-50"
+                        transition-all duration-300 origin-bottom w-[250px] z-50"
           style={{ zIndex: 99999 }} // บังคับให้อยู่บนสุดของระนาบ
         >
           <div className="relative rounded-[1.2rem] bg-white backdrop-blur-md border border-white/40 shadow-[0_20px_40px_rgba(0,0,0,0.2)] p-3 text-center">
-            <div className="relative inline-block mb-1 p-0.5 rounded-full bg-gradient-to-tr from-indigo-500/20 to-purple-500/20">
-              <Image
-                className="rounded-full object-contain border-2 border-white"
-                src={imageSource}
-                alt={item.name || "logo"}
-                width={56}
-                height={56}
-                style={{ width: "3rem", height: "3rem" }}
-              />
-            </div>
             <h4 className="!text-xs !font-medium text-[#343f52] mb-0.5 leading-tight">
               {item.name || "Customer"}
             </h4>
             <div className="flex flex-col gap-0.5">
-              <span className="text-[0.55rem] uppercase tracking-wider font-extrabold text-indigo-600/80">
-                {item.nature_type || "Partner"}
-              </span>
               <span className="text-[0.55rem] font-medium text-slate-400">
                 {item.province || "Thailand"}
               </span>
@@ -149,7 +136,7 @@ export default function OurCustomersGroups() {
       `}</style>
 
       <div className=" !overflow-visible ">
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-11 gap-2 md:gap-10 items-center justify-items-center !overflow-visible">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-11 gap-2 md:gap-2 items-center justify-items-center !overflow-visible">
           {loading
             ? Array.from({ length: 18 }).map((_, i) => <SkeletonCard key={i} />)
             : gridItems.map((item, index) => renderLogoItem(item, index))}

@@ -31,7 +31,7 @@ export default async function Hero({ lng }) {
           className="w-full max-w-[950px] mx-auto !px-[15px] !text-center"
         >
           {/* 2. Headline: ใช้การเน้นคำด้วยสีแบรนด์และสไตล์ที่ดูหรูหรา */}
-          <h2 className="text-[1.8rem] md:text-[2.6rem] xl:!text-[2rem] font-black !leading-[1.25] !mb-8 text-[#343f52] tracking-[0.02em]">
+          <h2 className="text-[1.4rem] md:text-[1.4rem] xl:!text-[1.8rem] !font-medium !leading-[1.25] !mb-8 text-[#343f52] tracking-[0.02em]">
             {t("spa:hero.title_part1", "ยกระดับธุรกิจ")}{" "}
             <span className=" text-[#2bc29d] relative inline-block">
               {t("spa:hero.title_part2", "ใช้งานง่าย")}
@@ -43,7 +43,7 @@ export default async function Hero({ lng }) {
 
           {/* 3. Description: ใช้ Line-height ที่โปร่ง อ่านแล้วรู้สึกผ่อนคลาย */}
           <div className="max-w-[800px] mx-auto">
-            <p className="text-[1rem] xl:text-[1.1rem] text-[#60697b] leading-[1.8] font-light">
+            <p className="text-[1rem] text-[#60697b] leading-[1.8] !font-light">
               {t(
                 "spa:hero.description",
                 "โปรแกรมบริหารจัดการสปาและคลินิกความงามยุคใหม่ ที่ออกแบบมาเพื่อช่วยลดความซับซ้อนในการทำงาน เพิ่มเวลาให้คุณดูแลลูกค้าได้มากขึ้น รองรับทุกฟังก์ชันตั้งแต่จองคิวจนถึงสรุปยอดขาย",

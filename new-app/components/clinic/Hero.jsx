@@ -28,7 +28,7 @@ export default async function Hero({ lng }) {
           className="w-full flex-[0_0_auto] max-w-[900px] mx-auto !px-[15px] !text-center"
         >
           {/* 2. Headline: ใช้ฟอนต์น้ำหนัก Black และเล่นสีแบรนด์ที่คำสำคัญ */}
-          <h2 className=" text-[1.8rem] md:text-[2.5rem] xl:!text-[2rem] font-black !leading-[1.2] !mb-6 text-[#343f52] tracking-tight">
+          <h2 className="!text-[1.2rem] md:!text-[1.2rem] xl:!text-[1.8rem] !font-medium !leading-[1.2] !mb-6 text-[#343f52] tracking-tight">
             {t("clinic:hero.title_part1", "โปรแกรม คลินิก ")}{" "}
             <span className=" text-[#2bc29d] relative inline-block">
               {t("clinic:hero.title_part2", " ใช้งานง่าย")}
@@ -40,7 +40,7 @@ export default async function Hero({ lng }) {
 
           {/* 3. Description: ปรับขนาดตัวอักษรและ Line-height ให้อ่านสบายตา */}
           <div className="max-w-[750px] mx-auto">
-            <p className="text-[1rem] xl:text-[1.1rem] text-[#60697b] leading-[1.7] font-light mb-8">
+            <p className="text-[1rem] xl:text-[1rem] text-[#60697b] leading-[1.7] font-light mb-8">
               {t(
                 "clinic:hero.description",
                 "ยกระดับการจัดการคลินิกด้วยระบบบริหารจัดการที่ครบวงจร ช่วยให้คุณทำงานได้อย่างมีประสิทธิภาพ รองรับการเติบโตทุกประเภท ทุกขนาด และทุกสาขา",

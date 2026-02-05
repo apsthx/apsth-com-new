@@ -28,7 +28,7 @@ export default async function Hero({ lng }) {
         <div className="flex flex-col items-center text-center">
           {/* Headline - เน้นความสำคัญด้วยสีสันและขนาด */}
           <h1
-            className="max-w-[900px] !text-[calc(1.8rem_+_1.5vw)] xl:!text-[2rem] font-black leading-[1.1] text-[#343f52] tracking-tight mb-6"
+            className="max-w-[900px] !text-[calc(1.4rem_+_1.5vw)] xl:!text-[1.8rem] !font-medium leading-[1.1] text-[#343f52] tracking-tight mb-6"
             data-cue="slideInDown"
           >
             {t(
@@ -40,7 +40,7 @@ export default async function Hero({ lng }) {
               <span className="absolute bottom-1 left-0 w-full h-[8px] bg-[#2bc29d]/15 -z-10"></span>
             </span>
             <br className="hidden md:block" />
-            <span className="text-slate-400 font-bold">
+            <span className="text-slate-400 !font-medium">
               {t("wellness:hero.title_part3", "จัดการง่าย ครบจบในระบบเดียว")}
             </span>
           </h1>
@@ -51,7 +51,7 @@ export default async function Hero({ lng }) {
             data-cue="slideInDown"
             data-delay="300"
           >
-            <p className="text-[0.95rem] md:text-[1.1rem] leading-relaxed text-slate-500">
+            <p className="text-[1rem] !font-light leading-relaxed text-slate-500">
               {t(
                 "wellness:hero.description",
                 "ยกระดับการบริหารจัดการศูนย์ดูแลผู้สูงอายุและ Wellness ครบวงจร ด้วยระบบที่ออกแบบมาเพื่อความสะดวก รวดเร็ว และแม่นยำ รองรับการทำงานทุกขนาดและทุกสาขา",

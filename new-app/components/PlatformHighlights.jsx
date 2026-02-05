@@ -24,6 +24,45 @@ export default async function PlatformHighlights({ lng }) {
   const verificationItems = getVerificationSystems(lng);
   const addonItems = getSystemAddons(lng);
 
+  const HIGHLIGHT_DATA = [
+    {
+      title: "THE BEST",
+      badgeColor: "bg-[#ff0000]",
+      icon: "uil-shield-check",
+      desc: "ป้องกันข้อมูล\nลูกค้าสูญหาย,\nค้นหาประวัติ\nการรักษาได้ง่าย\nไม่ต้องใช้กระดาษ\nรองรับระบบ OPD\nไม่จำกัด",
+    },
+    {
+      title: "NEW",
+      badgeColor: "bg-[#ff8a00]",
+      icon: "uil-user-circle",
+      desc: "รองรับการ\nดูแลจัดการ\nสาขาได้หลาย\nสาขาเพียง\n1 User",
+    },
+    {
+      title: "NEW",
+      badgeColor: "bg-[#ff8a00]",
+      icon: "uil-calendar-alt",
+      desc: "นัดหมาย,\nจัดคิวลูกค้ากับ\nแพทย์ได้ง่ายขึ้น\nสามารถ\nแจ้งเตือนบน\nGoogle\nCalendar ได้",
+    },
+    {
+      title: "THE BEST",
+      badgeColor: "bg-[#ff0000]",
+      icon: "uil-chart-line",
+      desc: "ไม่ต้องเสียเวลา\nทำสรุปรายงานต่างๆ\nเพราะระบบ\nAPS_X Platform\nทำการสรุปให้\nReal time",
+    },
+    {
+      title: "NEW",
+      badgeColor: "bg-[#ff8a00]",
+      icon: "uil-print",
+      desc: "ระบบรองรับการ\nพิมพ์เอกสาร\nฉลากยา\nใบแจ้งหนี้ ใบเสร็จรับ\nเงิน และใบกำกับภาษี\nในโปรแกรมเดียว",
+    },
+    {
+      title: "THE BEST",
+      badgeColor: "bg-[#ff0000]",
+      icon: "uil-file-info-alt",
+      desc: "สะดวกสบาย\nต่อการตรวจสอบ\nข้อมูลการทำงาน\nและทางการเงินได้\nReal time\nและสามารถ\nทำงานที่ไหนก็ได้",
+    },
+  ];
+
   return (
     <section className="wrapper overflow-hidden">
       <div className=" py-[2rem] xl:!py-[2rem] lg:!py-[0rem] md:!py-[0rem]">
@@ -62,6 +101,48 @@ export default async function PlatformHighlights({ lng }) {
                   "APSX Platform คือแพลตฟอร์มบริหารจัดการคลินิกและธุรกิจสุขภาพที่ออกแบบมาเพื่อให้คุณ บริหารงานได้อย่างมีประสิทธิภาพสูงสุด ไม่ว่าจะเป็น คลินิก โรงพยาบาล Wellness Spa หรือศูนย์ดูแลผู้สูงอายุ ครอบคลุมทุกฟังก์ชันการทำงานที่จำเป็นในระบบเดียว",
                 )}
               </p>
+
+              <div className="w-full py-6 bg-white">
+                <div className="max-w-[1200px] mx-auto !px-4">
+                  {/* Grid: ปรับขนาด gap ให้เล็กลงเพื่อความแน่นแต่ไม่เบียด */}
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                    {HIGHLIGHT_DATA.map((item, index) => (
+                      <div
+                        key={index}
+                        className="relative rounded-lg overflow-hidden bg-[#45c4a0] text-white flex flex-col items-center pt-10 pb-6 !px-3 shadow-sm hover:shadow-lg transition-all duration-300 min-h-[260px]"
+                      >
+                        {/* --- Badge Ribbon: ย่อขนาดลงให้รับกับกล่องที่เล็กลง --- */}
+                        <div className="absolute top-0 left-0 w-16 h-16 overflow-hidden pointer-events-none z-10">
+                          <div
+                            className={`absolute font-bold top-2 -left-8 w-24 py-0.5 shadow-sm text-center -rotate-45 text-[10px] tracking-tight ${item.badgeColor}`}
+                          >
+                            {item.title}
+                          </div>
+                        </div>
+
+                        {/* --- Icon Area: ลดขนาดวงกลมและตัวไอคอน --- */}
+                        <div className="mb-4 flex items-center justify-center">
+                          <div className="p-2.5 rounded-full border-[2px] border-white/30">
+                            <i
+                              className={`uil ${item.icon} text-4xl text-white`}
+                            />
+                          </div>
+                        </div>
+
+                        {/* --- Description Text: ปรับขนาดตัวอักษรลงเล็กน้อย --- */}
+                        <div className="text-center w-full px-1">
+                          <p
+                            className="text-[12px] sm:text-[13px] leading-[1.4] font-medium whitespace-pre-line notranslate tracking-tight"
+                            translate="no"
+                          >
+                            {item.desc}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="w-full mb-4">

@@ -1,8 +1,9 @@
 import React from "react";
 
 import PlatformHighlights from "@/components/PlatformHighlights";
+import FeaturePreview from "@/components/FeaturePreview";
+import ProductShowcase from "@/components/ProductShowcase";
 import Hero from "@/components/clinic/Hero";
-import WhyAPSX from "@/components/clinic/WhyAPSX";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -107,8 +108,10 @@ export default async function ClinicPage({ params }) {
             <section className="wrapper overflow-hidden">
               <div className="mt-10" />
               <Hero lng={lng} />
+
+              <FeaturePreview lng={lng} />
+              <ProductShowcase lng={lng} />
               <PlatformHighlights lng={lng} />
-              <WhyAPSX lng={lng} />
             </section>
           </div>
         </div>

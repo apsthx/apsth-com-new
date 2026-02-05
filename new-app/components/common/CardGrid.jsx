@@ -27,7 +27,7 @@ export default function CardGrid({
                   className="w-full h-full block"
                 >
                   <Image
-                    className="!transition-all !duration-700 !ease-in-out group-hover:scale-110 group-hover:blur-sm !w-full !h-full !object-cover"
+                    className="!transition-all !duration-700 !ease-in-out group-hover:scale-110 group-hover:blur-sm !w-full !h-full  object-contain"
                     src={item.img || "/assets/img/placeholder.jpg"}
                     alt={item.title}
                     width={600}
@@ -46,7 +46,7 @@ export default function CardGrid({
 
               {/* Content Section */}
               <div className="post-header p-6 flex flex-col flex-grow">
-                <div className="post-title h4 !mb-2 inline-flex !tracking-[0.02rem] text-[0.7rem] font-bold !text-[#aab0bc] relative align-top !pl-[1.4rem] before:content-[''] before:absolute before:inline-block before:translate-y-[-50%] before:w-3 before:h-[2px] before:left-0 before:top-1/2 before:bg-[#1bb59b]">
+                <div className="post-title h4 !mb-2 inline-flex !tracking-[0.02rem] !text-[0.85rem] !font-medium !text-[#aab0bc] relative align-top">
                   <Link
                     target="_blank"
                     className="!text-[#343f52] hover:!text-[#1bb59b] transition-colors"
@@ -69,7 +69,7 @@ export default function CardGrid({
                   </div>
                 )}
 
-                <p className="!text-[0.85rem] !leading-relaxed text-[#64748b] !mb-0 line-clamp-3 font-medium">
+                <p className="!text-[0.75rem] !leading-relaxed text-[#64748b] !mb-0 line-clamp-3 font-light">
                   {item.description}
                 </p>
               </div>

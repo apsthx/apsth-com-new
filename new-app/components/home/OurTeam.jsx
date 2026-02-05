@@ -6,8 +6,8 @@ import { OurTeams } from "@/data/our_team";
 export default function OurTeam() {
   return (
     <>
-      <div className="container !relative">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 relative z-[2] items-stretch">
+      <div className="container !relative !px-0 !mx-0">
+        <div className="grid justify-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 relative z-[2] items-stretch">
           {OurTeams.map((data) => (
             <div
               data-cues="slideInDown"

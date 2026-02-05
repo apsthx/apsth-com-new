@@ -8,9 +8,9 @@ import OurCustomers from "@/components/home/OurCustomers";
 import Teams from "@/components/home/Teams";
 import Certification from "@/components/home/Certification";
 import Questions from "@/components/home/Questions";
-import ProductShowcase from "@/components/ProductShowcase";
 import ProductOverview from "@/components/ProductOverview";
 import ServiceExpansion from "@/components/ServiceExpansion";
+import FeaturePreview from "@/components/FeaturePreview";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -71,7 +71,9 @@ export async function generateMetadata({ params }) {
         },
       ],
     },
-
+    other: {
+      google: "notranslate",
+    },
     // --- Twitter ---
     twitter: {
       card: "summary_large_image",
@@ -109,8 +111,8 @@ export default async function HomePage({ params }) {
     <div className="w-full relative bg-white">
       <Hero lng={lng} />
       <ProductOverview lng={lng} />
-      <ProductShowcase lng={lng} />
       <ServiceExpansion lng={lng} />
+      {/* <FeaturePreview lng={lng} /> */}
       <PlatformHighlights lng={lng} />
       <Package lng={lng} />
       <OurCustomers lng={lng} />

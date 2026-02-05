@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import GridBackground from "@/components/common/background/GridBackground";
+import Button from "@/components/common/Button";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -26,13 +27,13 @@ export default async function MainFooter({ lng }) {
             />
             <div className="flex flex-wrap items-center mx-[-15px]">
               <div className="xl:w-8/12 lg:w-8/12 w-full flex-[0_0_auto] px-[15px] max-w-full text-center lg:text-left">
-                <h3 className="h1 !mb-2 !text-white !leading-[1.2] drop-shadow-sm">
+                <h3 className="h1 !mb-2 !text-white !font-medium !leading-[1.2] drop-shadow-sm">
                   {t(
                     "footer:contact.title",
                     "สนใจใช้งาน โปรแกรม คลินิก APSX Platform",
                   )}
                 </h3>
-                <p className="lead !leading-[1.65] text-[1rem] font-medium !mb-0 text-white/90">
+                <p className="lead !leading-[1.65] text-[1rem] !font-light !mb-0 text-white/90">
                   {t(
                     "footer:contact.description",
                     "สามารถสอบถามเรื่องการใช้งานเพิ่มเติมได้ที่ LINE: @apsth โทรติดต่อทีมสนับสนุนของเราได้ที่ 043-002488, 098-1816769",
@@ -40,14 +41,21 @@ export default async function MainFooter({ lng }) {
                 </p>
               </div>
 
-              <div className="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] px-[15px] max-w-full text-center lg:text-right !mt-8 lg:!mt-0">
-                <a
-                  target="_blank"
-                  href="https://www.app-apsx.com/register"
-                  className="btn btn-white !bg-white !text-[#2bc29d] !border-0 !rounded-md px-10 py-3 font-bold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
-                >
-                  {t("start_to_free", "สมัครใช้งานฟรี")}
-                </a>
+              <div className="xl:w-4/12 lg:w-4/12 w-full flex-[0_0_auto] justify-end px-[15px] text-center lg:text-right !mt-8 lg:!mt-0">
+                <div>
+                  <Button
+                    target="_blank"
+                    rounded="md"
+                    color="dark"
+                    href="https://www.app-apsx.com/register"
+                    className="w-full lg:w-[200px]"
+                  >
+                    <i className="uil uil-rocket text-[0.8rem] mr-1" />
+                    <span className="!font-Kanit font-medium text-[#ffff] text-[0.95rem]">
+                      {t("start_to_free", "สมัครใช้งานฟรี")}
+                    </span>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

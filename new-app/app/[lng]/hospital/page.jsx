@@ -2,7 +2,7 @@ import React from "react";
 
 import PlatformHighlights from "@/components/PlatformHighlights";
 import Hero from "@/components/hospital/Hero";
-import WhyAPSX from "@/components/clinic/WhyAPSX";
+import ServiceExpansion from "@/components/ServiceExpansion";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -107,8 +107,8 @@ export default async function HospitalPage({ params }) {
             <section className="wrapper overflow-hidden">
               <div className="mt-10" />
               <Hero lng={lng} />
+              <ServiceExpansion lng={lng} />
               <PlatformHighlights lng={lng} />
-              <WhyAPSX lng={lng} />
             </section>
           </div>
         </div>

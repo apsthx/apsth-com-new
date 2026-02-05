@@ -2,7 +2,7 @@ import React from "react";
 
 import PlatformHighlights from "@/components/PlatformHighlights";
 import Hero from "@/components/spa/Hero";
-import WhyAPSX from "@/components/clinic/WhyAPSX";
+import ServiceExpansion from "@/components/ServiceExpansion";
 
 import { useTranslation } from "@/app/i18n";
 
@@ -106,8 +106,8 @@ export default async function SpaPage({ params }) {
             <section className="wrapper overflow-hidden">
               <div className="mt-6" />
               <Hero lng={lng} />
+              <ServiceExpansion lng={lng} />
               <PlatformHighlights lng={lng} />
-              <WhyAPSX lng={lng} />
             </section>
           </div>
         </div>
