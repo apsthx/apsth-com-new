@@ -3,6 +3,7 @@ import React from "react";
 import PlatformHighlights from "@/components/PlatformHighlights";
 import FeaturePreview from "@/components/FeaturePreview";
 import ProductShowcase from "@/components/ProductShowcase";
+import SytemFunction from "@/components/SytemFunction";
 import Hero from "@/components/clinic/Hero";
 
 import { useTranslation } from "@/app/i18n";
@@ -111,6 +112,7 @@ export default async function ClinicPage({ params }) {
 
               <FeaturePreview lng={lng} />
               <ProductShowcase lng={lng} />
+              <SytemFunction lng={lng} />
               <PlatformHighlights lng={lng} />
             </section>
           </div>

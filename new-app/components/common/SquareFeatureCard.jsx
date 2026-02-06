@@ -52,7 +52,7 @@ export default function SquareFeatureCard({ item }) {
       </div>
 
       {/* ส่วนล่าง: Spacing Footer */}
-      <div className="h-1 w-8 bg-white/20 rounded-full group-hover:w-12 transition-all duration-300" />
+      {/* <div className="h-1 w-8 bg-white/20 rounded-full group-hover:w-12 transition-all duration-300" /> */}
     </div>
   );
 }

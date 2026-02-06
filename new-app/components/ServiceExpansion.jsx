@@ -1,24 +1,13 @@
 import Image from "next/image";
 import { useTranslation } from "@/app/i18n";
 import Button from "@/components/common/Button";
-import {
-  getApsxWhyFeatures,
-  getFeedbackData,
-  getSystemFunctions,
-  getClinicReports,
-  getWhyApsx,
-  getFeaturesData,
-} from "@/data/features";
+import { getApsxWhyFeatures, getFeedbackData } from "@/data/features";
 import Link from "next/link";
 
 export default async function ServiceExpansion({ lng }) {
   const { t } = await useTranslation(lng);
   const whyFeaturesItems = getApsxWhyFeatures(t);
   const feedbackItems = getFeedbackData(t, lng);
-  const functionItems = getSystemFunctions(t);
-  const reportItems = getClinicReports(t);
-  const featuresItems = getFeaturesData(t, lng);
-  const whyApsxItems = getWhyApsx(t);
 
   return (
     <section
