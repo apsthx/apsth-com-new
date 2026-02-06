@@ -36,14 +36,14 @@ export default function SquareFeatureCard({ item }) {
       {/* ส่วนกลาง: Text Section */}
       <div className="flex-1 flex items-center justify-center px-1 !mb-0">
         <p
-          className="!mb-0 text-[13px] sm:text-[14px] md:text-[14px] leading-[1.3] font-light whitespace-pre-line notranslate"
+          className="!mb-0 !text-[13px] sm:!text-[14px] md:!text-[16px] leading-[1.3] !font-medium whitespace-pre-line notranslate"
           translate="no"
         >
           {item.title}
         </p>
       </div>
       <p
-        className="!mt-0 text-[10px] sm:text-[10px] md:text-[12px] leading-[1.3] font-light whitespace-pre-line notranslate"
+        className="!mt-0 !text-[10px] sm:!text-[10px] md:!text-[14px] leading-[1.3] !font-light whitespace-pre-line notranslate"
         translate="no"
       >
         {item.description}

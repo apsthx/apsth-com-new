@@ -29,28 +29,30 @@ export default async function ProductOverview({ lng }) {
         >
           <div className="flex flex-col-reverse lg:flex-row items-center !mt-10">
             <div className="w-full !space-y-2">
-              <span className="text-[#343f52] text-xl font-medium py-1 rounded-full">
+              <h1 className="text-[#343f52] !text-xl !font-medium !m-0 py-1 rounded-full">
                 {t("home:apsx_platform", "โปรแกรม คลินิก APSX Platform")}
-              </span>
+              </h1>
               <h2 className="text-3xl md:!text-lg !font-medium !text-[#1bb59b]">
                 {t(
                   "home:features.title",
                   "ระบบที่ใช้งานง่ายมี ประสิทธิภาพและทันสมัย ที่สุดในตอนนี้",
                 )}
               </h2>
-              <p className="text-[#343f52] text-sm leading-relaxed">
-                {t(
-                  "home:features.description",
-                  "เป็นระบบที่ลงตัวมาพร้อมกับการใช้งานง่าย สะดวกสบาย และรันบน Cloud ด้วยเทคโนโลยีที่ทันสมัยในยุคนี้ ทำให้ไม่ต้องใช้แฟ้ม OPD Card แบบเก่าอีกต่อไป",
-                )}
-              </p>
+              <div className="!space-y-0">
+                <p className="text-[#343f52] text-sm leading-relaxed">
+                  {t(
+                    "home:features.description",
+                    "เป็นระบบที่ลงตัวมาพร้อมกับการใช้งานง่าย สะดวกสบาย และรันบน Cloud ด้วยเทคโนโลยีที่ทันสมัยในยุคนี้ ทำให้ไม่ต้องใช้แฟ้ม OPD Card แบบเก่าอีกต่อไป",
+                  )}
+                </p>
 
-              <p className="text-[#343f52] text-sm leading-relaxed">
-                {t(
-                  "home:features.features.description",
-                  "ยกระดับการบริหารจัดการคลินิกด้วยเทคโนโลยี Cloud อัจฉริยะ ที่ออกแบบมาเพื่อความรวดเร็วและความปลอดภัยสูงสุดของข้อมูลคุณ",
-                )}
-              </p>
+                <p className="text-[#343f52] text-sm leading-relaxed">
+                  {t(
+                    "home:features.features.description",
+                    "ยกระดับการบริหารจัดการคลินิกด้วยเทคโนโลยี Cloud อัจฉริยะ ที่ออกแบบมาเพื่อความรวดเร็วและความปลอดภัยสูงสุดของข้อมูลคุณ",
+                  )}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -64,12 +66,11 @@ export default async function ProductOverview({ lng }) {
                     "ระบบหลังบ้านที่ทำให้เรื่องคลินิกเป็นเรื่องง่าย",
                   )}
                 </span>
-                <strong className="text-[#1bb59b] font-medium">
-                  {t("home:product_overview.hero.subtitle", "ครบจบในที่เดียว")}
-                </strong>
+                {t("home:product_overview.hero.subtitle", "ครบจบในที่เดียว")}
+                <strong className="text-[#1bb59b] font-medium"></strong>
               </h4>
             </div>
-            <p className="!text-sm">
+            <p className="!text-[0.95rem]">
               {t(
                 "home:product_overview.hero.description",
                 "จัดการทุกกระบวนการของคลินิกให้มีประสิทธิภาพด้วยระบบบริหารจัดการที่ออกแบบมาเพื่อคุณโดยเฉพาะ",
@@ -89,18 +90,18 @@ export default async function ProductOverview({ lng }) {
                           className={`uil ${item.icon} text-xl text-white transition-colors`}
                         />
                       </div>
-                      <h4 className="text-[19px] font-bold text-[#343f52] !mb-0 transition-colors group-hover:text-[#1bb59b]">
+                      <h4 className="!text-[22px] !font-medium text-[#343f52] !mb-0 transition-colors group-hover:text-[#1bb59b]">
                         {item.title}
                       </h4>
                     </div>
 
                     <div className="pl-14">
                       {item.subTitle && (
-                        <span className="block text-[13px] font-bold text-[#1bb59b] mb-1 tracking-wider uppercase">
+                        <span className="block !text-[16px] !font-medium text-[#1bb59b] mb-1 tracking-wider uppercase">
                           {item.subTitle}
                         </span>
                       )}
-                      <p className="text-[15px] text-[#60697b] leading-relaxed !mb-0 font-light">
+                      <p className="!text-[17px] text-[#343f52] leading-relaxed !mb-0 font-light">
                         {item.desc}
                       </p>
 
@@ -121,7 +122,7 @@ export default async function ProductOverview({ lng }) {
                       )}
                     </h2>
                   </div>
-                  <p className="text-slate-500 !text-[18px]">
+                  <p className="!text-[#343f52] !text-[18px]">
                     {t(
                       "home:why_apsx.what_new_apsx.title",
                       "APSX Platform ออกแบบมาเพื่อช่วยเจ้าของธุรกิจจัดการบริหารงาน ได้อย่างลงตัว",
@@ -172,7 +173,7 @@ export default async function ProductOverview({ lng }) {
                 </div>
 
                 <div className="grid items-center justify-start mb-6">
-                  <h4 className="text-xl md:text-2xl font-bold !mb-2 space-x-1 !text-[#343f52] !leading-[1.3]">
+                  <h4 className="!text-xl md:text-2xl !font-medium !mb-2 space-x-1 !text-[#343f52] !leading-[1.3]">
                     <span>
                       {t(
                         "home:product_overview.hero.title",
@@ -186,17 +187,17 @@ export default async function ProductOverview({ lng }) {
                       )}
                     </strong>
                   </h4>
-                  <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#343f52]">
+                  <p className="!text-md font-medium !mb-0 !text-[#343f52]">
                     {t(
                       "home:product_overview.workflow.title",
                       "ช่วยให้การทำงานของทีมงานลื่นไหลไม่มีสะดุด",
                     )}
-                  </h5>
+                  </p>
                 </div>
 
                 {/* ส่วนคำอธิบายที่เพิ่มเข้ามา */}
-                <p className="text-[0.85rem] leading-relaxed text-[#60697b] space-x-1 !mb-6">
-                  <strong className="!text-[#343f52]">
+                <p className="text-[0.85rem] leading-relaxed !text-[#343f52] space-x-1 !mb-6">
+                  <strong className="!text-[#343f52] !font-medium">
                     {t(
                       "home:product_overview.workflow.about1.vision_title",
                       "บอกลาความวุ่นวายของการจัดการเอกสาร",
@@ -210,8 +211,8 @@ export default async function ProductOverview({ lng }) {
                   </span>
                 </p>
 
-                <p className="text-[0.85rem] leading-relaxed text-[#60697b] space-x-1 !mb-6">
-                  <strong className="!text-[#343f52]">
+                <p className="text-[0.85rem] leading-relaxed !text-[#343f52] space-x-1 !mb-6">
+                  <strong className="!text-[#343f52] !font-medium">
                     {t(
                       "home:product_overview.workflow.about2.vision_title",
                       "เทคโนโลยี Cloud Sync ที่ล้ำสมัย",
@@ -265,12 +266,12 @@ export default async function ProductOverview({ lng }) {
                       </span>
                     </div>
                     <div>
-                      <h4 className="!mb-1 !font-medium">
+                      <h4 className="!mb-1 !font-medium !text-[#343f52]">
                         {t(
                           "home:product_overview.business_intelligence.quick_features.opd.title",
                         )}
                       </h4>
-                      <p className="!mb-0">
+                      <p className="!mb-0 !text-[#343f52]">
                         {t(
                           "home:product_overview.business_intelligence.quick_features.opd.desc",
                         )}
@@ -365,21 +366,21 @@ export default async function ProductOverview({ lng }) {
             </div>
             {/*/column */}
             <div className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] !mt-[50px] max-w-full">
-              <h2 className="!text-[calc(1.265rem_+_0.18vw)] !font-medium xl:!text-[1.2rem] !leading-[1.35] !mb-3">
+              <h2 className="!text-[#343f52] !text-[calc(1.265rem_+_0.18vw)] !font-medium xl:!text-[1.2rem] !leading-[1.35] !mb-3">
                 {t(
                   "home:product_overview.business_intelligence.title",
                   "ให้ APSX ช่วยดูแลหลังบ้าน ให้คุณจัดการธุรกิจได้ง่ายขึ้น",
                 )}
               </h2>
 
-              <p className="lead text-[0.85rem] xl:!pr-5 lg:!pr-5 !mb-4">
+              <p className="!text-[#343f52] lead !text-[0.90rem] !font-medium xl:!pr-5 lg:!pr-5 !mb-4">
                 {t(
                   "home:product_overview.business_intelligence.description",
                   "ยกระดับธุรกิจด้วยระบบ All-in-One Dashboard ที่เชื่อมโยงข้อมูลทุกแผนกแบบ Real-time ตั้งแต่การขายจนถึงการจัดการต้นทุนหลังบ้าน ช่วยลดความซับซ้อน เพิ่มความแม่นยำในการวิเคราะห์ และให้ความปลอดภัยสูงสุด เพื่อให้คุณจัดการงานเอกสารได้รวดเร็วและมีเวลาโฟกัสกับการขยายธุรกิจ (Scaling) ได้อย่างเต็มที่",
                 )}
               </p>
 
-              <div className="!space-y-1 !mt-4">
+              <div className="!space-y-1 !mt-4 !text-[#343f52] !font-medium">
                 {t("home:product_overview.business_intelligence.check_list", {
                   returnObjects: true,
                 }).map((text, index) => (
@@ -387,7 +388,7 @@ export default async function ProductOverview({ lng }) {
                     <div className="flex-shrink-0 mt-1">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#1bb59b]/50 flex items-center justify-center transition-colors duration-300"></div>
                     </div>
-                    <p className="!m-0 !p-0 text-[0.85rem] text-[#505358] leading-relaxed">
+                    <p className="!m-0 !p-0 !text-[0.85rem] !text-[#343f52] leading-relaxed">
                       {text}
                     </p>
                   </div>
@@ -428,7 +429,7 @@ export default async function ProductOverview({ lng }) {
                 {t("home:product_overview.queue_system.title", "ระบบเรียกคิว")}
               </span>
             </h2>
-            <p className="lead !mb-0 !text-[0.95rem] text-gray-500 font-light">
+            <p className="lead !mb-0 !text-[0.95rem]">
               {t(
                 "home:product_overview.queue_system.description",
                 "จัดการคิวผู้ป่วยได้อย่างเป็นระบบ ลดระยะเวลาการรอคอย เพื่อมอบบริการที่น่าประทับใจยิ่งขึ้น",
@@ -536,13 +537,13 @@ export default async function ProductOverview({ lng }) {
                   </div>
 
                   <div className="grid items-center justify-start mb-4">
-                    <h4 className="text-xl md:text-2xl font-bold !mb-0 !text-[#343f52]">
+                    <h4 className="!text-xl md:!text-2xl !font-medium !mb-0 !text-[#343f52]">
                       {t(
                         "home:product_overview.medical_records.title",
                         "บันทึกและเข้าถึงประวัติคนไข้",
                       )}
                     </h4>
-                    <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#1bb59b]">
+                    <h5 className="!text-xl md:!text-lg !font-medium !mb-0 !text-[#1bb59b]">
                       {t(
                         "home:product_overview.medical_records.subtitle",
                         "บันทึก OPD/IPD ผ่านระบบออนไลน์",
@@ -550,15 +551,15 @@ export default async function ProductOverview({ lng }) {
                     </h5>
                   </div>
 
-                  <div className="space-y-4">
-                    <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
+                  <div className="!space-y-5">
+                    <p className="!text-[1rem] text-[#343f52] leading-relaxed font-medium">
                       {t(
                         "home:product_overview.medical_records.description",
                         "บันทึกและเข้าถึงประวัติคนไข้ได้ทุกที่ทุกเวลา ผ่านระบบออนไลน์ที่มีความเสถียรและปลอดภัยสูง รองรับมาตรฐานการบันทึกข้อมูลสำหรับคลินิกหลากหลายสาขา",
                       )}
                     </p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-[0.70rem] text-[#505a6d]">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 !text-[0.8rem] !font-medium !text-[#343f52]">
                       {t("home:product_overview.medical_records.clinic_types", {
                         returnObjects: true,
                       }).map((text, index) => (
@@ -566,7 +567,7 @@ export default async function ProductOverview({ lng }) {
                           key={index}
                           className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#45c4a0]/10 transition-all duration-300 group"
                         >
-                          <span className="font-light">{text}</span>
+                          <span>{text}</span>
                         </div>
                       ))}
                     </div>
@@ -601,7 +602,7 @@ export default async function ProductOverview({ lng }) {
             </span>
           </h2>
 
-          <p className="lead !mb-12 !text-[0.95rem] text-gray-600">
+          <p className="lead !mb-12 !text-[0.95rem]">
             {t(
               "home:product_overview.billing_section.description",
               "เปลี่ยนการออกเอกสารที่ยุ่งยากให้เป็นเรื่อง",
@@ -639,10 +640,10 @@ export default async function ProductOverview({ lng }) {
 
                   {/* 2. เนื้อหา */}
                   <div className="relative z-[2]">
-                    <h4 className="!mb-2 !font-bold !text-[0.9rem] text-[#343f52] transition-colors hover:text-[#45c4a0]">
+                    <h4 className="!mb-2 !font-medium !text-[1rem] text-[#343f52] transition-colors hover:text-[#45c4a0]">
                       {column.title}
                     </h4>
-                    <p className="!mb-0 text-gray-500 text-[0.85rem] leading-relaxed">
+                    <p className="!mb-0 text-gray-500 !text-[0.85rem] leading-relaxed">
                       {column.description}
                     </p>
                   </div>

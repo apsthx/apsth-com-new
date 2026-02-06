@@ -26,7 +26,7 @@ export default async function ServiceExpansion({ lng }) {
                 {t("home:why_apsx.header.title", "APSX Platform มีอะไร?")}
               </h2>
             </div>
-            <p className="text-slate-500 !text-[18px]">
+            <p className="!text-[#343f52] !text-[18px]">
               {t(
                 "home:why_apsx.what_new_apsx.title",
                 "APSX Platform ออกแบบมาเพื่อช่วยเจ้าของธุรกิจจัดการบริหารงาน ได้อย่างลงตัว",
@@ -119,13 +119,13 @@ export default async function ServiceExpansion({ lng }) {
                       </div>
 
                       <div className="grid items-center justify-start mb-6">
-                        <h4 className="text-xl md:text-2xl font-bold !mb-1 !text-[#343f52]">
+                        <h4 className="!text-xl md:!text-2xl !font-medium !mb-0 !text-[#343f52]">
                           {t(
                             "home:product_overview.platform_func.title",
                             "ฟังก์ชันของระบบที่ออกแบบมาเพื่อคุณ",
                           )}
                         </h4>
-                        <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#1bb59b]">
+                        <h5 className="!text-lg !font-medium !mb-0 !text-[#1bb59b]">
                           {t(
                             "home:product_overview.platform_func.subtitle",
                             "บริหารจัดการง่าย ครบถ้วนทุกกระบวนการในคลิกเดียว",
@@ -134,7 +134,7 @@ export default async function ServiceExpansion({ lng }) {
                       </div>
 
                       <div className="space-y-4">
-                        <p className="text-[0.85rem] text-[#505358] leading-relaxed font-medium">
+                        <p className="!text-[0.95rem] text-[#343f52] leading-relaxed !font-medium">
                           {t(
                             "home:product_overview.platform_func.description",
                             "APSX Platform มาพร้อมกับชุดเครื่องมืออัจฉริยะที่ช่วยเปลี่ยนการทำงานอันซับซ้อนให้กลายเป็นเรื่องง่าย เราให้ความสำคัญกับการเชื่อมโยงข้อมูลตั้งแต่ระบบหน้าบ้านไปจนถึงการบริหารทรัพยากรหลังบ้าน เพื่อให้คุณมีเวลาเหลือไปโฟกัสกับการวางกลยุทธ์และการเติบโตของธุรกิจได้อย่างแท้จริง",
@@ -148,8 +148,8 @@ export default async function ServiceExpansion({ lng }) {
                           href={`/${lng}/#service_expansion`}
                         >
                           <span className="absolute top-1 right-1"></span>
-                          <i className="uil uil-comment-search text-[0.8rem] mr-1"></i>
-                          <span className="!font-medium !text-[14px]">
+                          <i className="uil uil-comment-search !text-[0.9rem] mr-1"></i>
+                          <span className="!font-medium !text-[16px]">
                             {t("read_more", "ดูรายละเอียดเพิ่มเติม")}
                           </span>
                         </Button>
@@ -199,13 +199,13 @@ export default async function ServiceExpansion({ lng }) {
                       </svg>
                     </div>
                     <div className="grid items-center justify-start mb-4">
-                      <h4 className="text-xl md:text-2xl font-bold !mb-1 !text-[#343f52]">
+                      <h4 className="!text-lg md:!text-2xl !font-medium !mb-0 !text-[#343f52]">
                         {t(
                           "home:product_overview.business_reports.title",
                           "รายงานสรุปผลภาพรวมธุรกิจ",
                         )}
                       </h4>
-                      <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#1bb59b]">
+                      <h5 className="!text-lg !font-medium !mb-0 !text-[#1bb59b]">
                         {t(
                           "home:product_overview.business_reports.subtitle",
                           "วิเคราะห์ข้อมูลอย่างแม่นยำ เพื่อการตัดสินใจที่เหนือกว่า",
@@ -213,7 +213,7 @@ export default async function ServiceExpansion({ lng }) {
                       </h5>
                     </div>
                     <div className="space-y-6">
-                      <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
+                      <p className="!text-[0.95rem] text-[#343f52] leading-relaxed font-medium">
                         {t(
                           "home:product_overview.business_reports.description",
                           "เข้าถึงข้อมูลเชิงลึกของธุรกิจได้ทันทีด้วยระบบรายงานอัจฉริยะที่ครอบคลุมกว่า 40 รูปแบบ ไม่ว่าจะเป็นรายงานยอดขาย รายงานสต็อกสินค้า หรือรายงานพฤติกรรมลูกค้า ทุกข้อมูลถูกนำมาประมวลผลให้เข้าใจง่ายในรูปแบบกราฟและตารางที่ชัดเจน ช่วยให้คุณมองเห็นแนวโน้มของธุรกิจและวางแผนรับมือกับทุกสถานการณ์ได้อย่างรวดเร็ว",
@@ -227,8 +227,8 @@ export default async function ServiceExpansion({ lng }) {
                         href={`/${lng}/#service_expansion`}
                       >
                         <span className="absolute top-1 right-1"></span>
-                        <i className="uil uil-comment-search text-[0.8rem] mr-1"></i>
-                        <span className="!font-medium !text-[14px]">
+                        <i className="uil uil-comment-search text-[0.9rem] mr-1"></i>
+                        <span className="!font-medium !text-[16px]">
                           {t("read_more", "ดูรายละเอียดเพิ่มเติม")}
                         </span>
                       </Button>

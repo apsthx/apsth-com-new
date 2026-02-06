@@ -5,13 +5,22 @@ import Providers from "./providers";
 import MainFooter from "@/components/common/footers/MainFooter";
 import MainHeader from "@/components/common/headers/MainHeader";
 import { notFound } from "next/navigation";
-import { Kanit } from "next/font/google";
-const kanit = Kanit({
+import { Prompt, Sarabun } from "next/font/google";
+
+const prompt = Prompt({
   subsets: ["thai", "latin"],
-  weight: ["100", "200", "300", "400"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
-  variable: "--font-kanit", // กำหนดชื่อตัวแปร CSS ตรงนี้
+  variable: "--font-prompt", // เปลี่ยนชื่อตัวแปรให้ตรงกับใน CSS ของคุณ
 });
+
+const sarabun = Sarabun({
+  subsets: ["thai", "latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-sarabun",
+});
+
 const locales = ["th", "en"];
 export default async function RootLayout({ children, params }) {
   const { lng } = await params;
@@ -37,7 +46,7 @@ export default async function RootLayout({ children, params }) {
         />
       </head> */}
       <body
-        className={`${kanit.className}  bg-site-bg text-body-text transition-colors duration-300`}
+        className={`${prompt.variable} ${sarabun.variable} bg-site-bg text-body-text transition-colors duration-300`}
       >
         <Providers>
           <MainHeader lng={lng} />

@@ -42,7 +42,10 @@ export default async function PlatformHighlights({ lng }) {
                   {/* ส่วนของหัวข้อ */}
                   <i className="uil uil-location-arrow text-[#2bc29d] text-lg"></i>
                   <h2 className="!text-[calc(1.2rem_+_0.66vw)] !font-medium xl:!text-[1.3rem] !leading-none !m-0">
-                    {t("home:platform_highlights.title", "จุดเด่น")}{" "}
+                    {t(
+                      "home:platform_highlights.title",
+                      "จุดเด่น APSX Platform",
+                    )}{" "}
                     <span className="text-[#343f52]">APSX Platform</span>
                   </h2>
                 </div>
@@ -94,7 +97,7 @@ export default async function PlatformHighlights({ lng }) {
                         {/* --- Description Text: ปรับขนาดตัวอักษรลงเล็กน้อย --- */}
                         <div className="text-center w-full px-1">
                           <p
-                            className="text-[12px] sm:text-[13px] leading-[1.4] font-medium whitespace-pre-line notranslate tracking-tight"
+                            className="!text-[16px] sm:text-[13px] leading-[1.4] !font-medium whitespace-pre-line notranslate tracking-tight"
                             translate="no"
                           >
                             {item.desc}

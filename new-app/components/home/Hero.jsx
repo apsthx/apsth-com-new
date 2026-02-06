@@ -129,7 +129,7 @@ export default async function Hero({ lng }) {
                     {t("home:apsx_platform", "โปรแกรม คลินิก APSX Platform")}
                   </h2>
                 </div>
-                <p className="!font-Kanit !font-normal  lead !text-[1rem] !leading-[1.6] ">
+                <p className="!font-normal text-left lead !text-[1rem] !leading-[1.6] ">
                   {t(
                     "home:hero.description",
                     "For Hospital, Clinic, Spa, Wellness, ศูนย์ดูแลผู้สูงอายุ ธุรกิจความงาม คลินิกเฉพาะทาง คลินิกเวชกรรม คลินิกทั่วไป คลินิกพยาบาลผดุงครรภ์ คลินิกกายภาพบำบัด คลินิกแพทย์แผนไทย-จีน คลินิกอายุรกรรม คลินิกแม่และเด็ก คลินิกบําบัดยาเสพติด คลินิกสุขภาพจิต คลินิกตา คลินิกทันตกรรม",
@@ -182,13 +182,13 @@ export default async function Hero({ lng }) {
                         </div>
 
                         <div className="flex flex-col text-start">
-                          <p className="!mb-0 text-[0.8rem] font-medium text-[#343f52] leading-tight">
+                          <h5 className="!mb-0 text-[0.8rem] !font-medium text-[#34383d] leading-tight">
                             {t(
                               "home:hero.free_essentials.free_training",
                               "สอนการใช้งานฟรี",
                             )}
-                          </p>
-                          <p className="!mb-0 text-[0.7rem] text-[#60697b] leading-tight opacity-80">
+                          </h5>
+                          <p className="!mb-0 !text-[0.7rem] text-[#34383d] leading-tight opacity-80">
                             {t(
                               "home:hero.free_essentials.sub_free_training",
                               "สอนใช้งานฟรีจนกว่าจะเป็น โดยทีมผู้เชี่ยวชาญ",
@@ -209,13 +209,13 @@ export default async function Hero({ lng }) {
                         </div>
 
                         <div className="flex flex-col text-start">
-                          <p className="!mb-0 text-[0.8rem] font-medium text-[#343f52] leading-tight">
+                          <h5 className="!mb-0 !text-[0.8rem] !font-medium text-[#34383d] leading-tight">
                             {t(
                               "home:hero.free_essentials.free_updates",
                               "อัพเดทเวอร์ชั่นฟรี",
                             )}
-                          </p>
-                          <p className="!mb-0 text-[0.7rem] text-[#60697b] leading-tight opacity-80">
+                          </h5>
+                          <p className="!mb-0 !text-[0.7rem] text-[#34383d] leading-tight opacity-80">
                             {t(
                               "home:hero.free_essentials.sub_free_updates",
                               "อัปเดตฟีเจอร์ใหม่และระบบความปลอดภัยฟรี",

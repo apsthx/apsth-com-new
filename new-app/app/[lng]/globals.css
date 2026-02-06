@@ -1,28 +1,29 @@
 @import "tailwindcss";
 @theme {
-  --font-Kanit: "Kanit", sans-serif;
-  --font-IBMPlexSansThai: "IBM Plex Sans Thai", sans-serif;
+  --font-prompt: "Prompt", sans-serif;
+  --font-sarabun: "Sarabun", sans-serif;
+  /* --font-IBMPlexSansThai: "IBM Plex Sans Thai", sans-serif; */
   --font-Manrope: "Manrope", sans-serif;
 
-  --font-IBMPlexSerif: "IBM Plex Serif", serif;
-  --font-SpaceGrotesk: "Space Grotesk", sans-serif;
+  /* --font-IBMPlexSerif: "IBM Plex Serif", serif; */
+  /* --font-SpaceGrotesk: "Space Grotesk", sans-serif; */
   --font-Unicons: "Unicons";
   --font-Monospace:
     "SFMono-Regular,Menlo,Monaco,Consolas", "Liberation Mono", "Courier New",
     monospace;
-  --font-DMSerif: "DM Serif Display";
-  --font-THICCCBOI: "THICCCBOI", sans-serif;
-  --font-Urbanist: "Urbanist", sans-serif;
+  /* --font-DMSerif: "DM Serif Display"; */
+  /* --font-THICCCBOI: "THICCCBOI", sans-serif; */
+  /* --font-Urbanist: "Urbanist", sans-serif; */
 
-  --font-Unicons: "Unicons";
+  /* --font-Unicons: "Unicons"; */
   --font-Monospace:
     "SFMono-Regular,Menlo,Monaco,Consolas", "Liberation Mono", "Courier New",
     "monospace";
   --font-Custom: "Custom";
-  --font-DMSerif: "DM Serif Display";
-  --font-SansSerif: "sans-serif";
-  --font-THICCCBOI: "THICCCBOI", "sans-serif";
-  --font-Urbanist: "Urbanist", "sans-serif";
+  /* --font-DMSerif: "DM Serif Display"; */
+  /* --font-SansSerif: "sans-serif"; */
+  /* --font-THICCCBOI: "THICCCBOI", "sans-serif"; */
+  /* --font-Urbanist: "Urbanist", "sans-serif"; */
   /* Default Color */
   --color-*: initial;
   --color-white: #ffffff;
@@ -40,12 +41,12 @@
   padding-inline: 2rem;
 }
 :root {
-  font-family: var(--font-default);
-
+  /* font-family: var(--font-default); */
+  font-family: var(--font-sarabun) !important;
   /* ตั้งค่าตามโจทย์: ขนาด 20px, บาง (300), และโปร่ง */
   font-size: 20px;
   font-weight: 300; /* ใช้ Weight 300 จากที่คุณ Import มา */
-  letter-spacing: 0.05em;
+  /* letter-spacing: 0.05em; */
   line-height: 1.7;
 
   color: #464c58;
@@ -169,7 +170,7 @@ h4,
 h5,
 h6 {
   @apply font-bold text-[#343f52] tracking-[-0.01rem] mt-0 mb-2;
-  word-spacing: 0.1rem;
+  /* word-spacing: 0.1rem; */
 }
 .h1,
 h1 {
@@ -202,8 +203,9 @@ html {
 body {
   @apply flex flex-col;
 }
+
 body {
-  @apply text-[0.8rem] font-medium leading-[1.7] text-[#60697b] bg-[#fefefe] m-0;
+  @apply text-[0.8rem] font-medium leading-[1.6] text-[#60697b] bg-[#fefefe] m-0;
 }
 body {
   @apply flex flex-col h-full overflow-x-hidden m-0;
@@ -217,40 +219,27 @@ body {
 hr {
   @apply text-[rgba(164,174,198,0.2)] border-t-[1px] opacity-100 mx-0 my-[4.5rem] border-0 border-solid;
 }
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
 h1,
+.h1,
 h2,
+.h2,
 h3,
+.h3,
 h4,
+.h4,
 h5,
-h6,
-p,
-span,
-a,
-li,
-button,
-input,
-select,
-textarea,
-div {
-  /* @apply font-bold leading-[1.2] text-[#343f52] tracking-[-0.01rem] mt-0 mb-2 [word-spacing:0.1rem]; */
-  /* ใช้ font-family โดยตรงเพื่อความแน่นอนที่สุด */
-  font-family: var(--font-Kanit), sans-serif !important;
-
-  /* หรือถ้าจะใช้ @apply ต้องสะกดแบบนี้ครับ */
-  /* @apply !font-Kanit; */
-
-  /* ดึงสไตล์เดิมที่คุณคอมเมนต์ไว้กลับมาบางส่วนเพื่อให้ขนาดและสีถูกต้อง */
-  @apply leading-[1.55] mt-0;
+.h5,
+.navbar {
+  font-family: var(--font-prompt), sans-serif !important;
+  @apply leading-[1.2] mt-0;
 
   /* เนื่องจากคุณโหลดมาสูงสุดที่ 400 แนะนำให้ใช้ weight 400 ครับ */
 }
-
+p,
+body {
+  --font-sarabun: var(--font-sarabun), sans-serif;
+  font-size: 19px;
+}
 .h1,
 h1 {
   @apply xl:text-[1.45rem] text-[calc(1.27rem_+_0.24vw)];
@@ -284,7 +273,7 @@ p {
 dl,
 ol,
 ul {
-  @apply mt-0 mb-4;
+  @apply mt-0 mb-2;
 }
 ol ol,
 ol ul,
