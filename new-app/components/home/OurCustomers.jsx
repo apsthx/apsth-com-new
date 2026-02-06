@@ -11,11 +11,7 @@ export default async function OurCustomers({ lng }) {
       className="container wrapper !bg-[#ffffff]  overflow-hidden"
     >
       <div className="  pb-16 xl:pb-20 lg:pb-20 md:pb-20">
-        <div
-          data-cues="slideInDown"
-          data-delay={300}
-          className="w-full flex-[0_0_auto] !px-[15px] max-w-full !text-center"
-        >
+        <div className="w-full flex-[0_0_auto] !px-[15px] max-w-full !text-center">
           {/* 1. Headline: Monochrome Style - สีเดียวแต่เล่นระดับความหนา (Weight) */}
           <h2 className="!z-[0] !text-[calc(1.4rem_+_1.5vw)] !font-medium !leading-[1.2] xl:!text-[1.2rem] !mb-2 text-[#343f52] tracking-tighter">
             {t("home:our_customers.title", "ลูกค้าของเรา")}

@@ -1,27 +1,12 @@
 import React from "react";
-import Button from "@/components/common/Button";
 import { useTranslation } from "@/app/i18n";
-import Image from "next/image";
-import { Sparkles, Zap, Lock, BarChart3 } from "lucide-react";
-import {
-  getApsxWhyFeatures,
-  getFeedbackData,
-  getSystemFunctions,
-  getClinicReports,
-  getWhyApsx,
-  getFeaturesData,
-} from "@/data/features";
+import { getApsxWhyFeatures } from "@/data/features";
 import Link from "next/link";
 import FeatureCarousel from "./common/FeatureCarousel";
 
 export default async function FeaturePreview({ lng }) {
   const { t } = await useTranslation(lng);
   const whyFeaturesItems = getApsxWhyFeatures(t);
-  const feedbackItems = getFeedbackData(t, lng);
-  const functionItems = getSystemFunctions(t);
-  const reportItems = getClinicReports(t);
-  const featuresItems = getFeaturesData(t, lng);
-  const whyApsxItems = getWhyApsx(t);
 
   const showcaseSlides = [
     {
@@ -92,7 +77,7 @@ export default async function FeaturePreview({ lng }) {
             <div className="flex items-center justify-start text-start gap-2 text-slate-800 font-medium">
               <i className="uil uil-comments !text-xl text-[#1bb59b]" />
               <h2 className="!text-xl !font-medium text-[#343f52]">
-                APSX Platform มีอะไร
+                {t("home:why_apsx.header.title", "APSX Platform มีอะไร?")}
               </h2>
             </div>
             <p className="text-slate-500 !text-[18px]">

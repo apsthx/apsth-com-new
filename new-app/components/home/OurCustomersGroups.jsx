@@ -10,9 +10,11 @@ const SkeletonCard = () => (
 
 export default function OurCustomersGroups() {
   const [gridItems, setGridItems] = useState([]);
-  const [marqueeItems, setMarqueeItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showImages, setShowImages] = useState(false);
+
+  // กำหนดรูปสำรอง
+  const fallbackImage = "/assets/img/logo/apsx_icon.png";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,19 +29,18 @@ export default function OurCustomersGroups() {
         const result = await response.json();
 
         if (result.data && Array.isArray(result.data)) {
-          const validData = result.data.filter((item) => {
-            const hasId =
-              item.id.localeCompare("S00879", undefined, { numeric: true }) >=
-              0;
-            const hasImage =
-              (item.image && item.image !== "") ||
-              (item.shop_logo && item.shop_logo !== "");
-            return hasId && hasImage;
-          });
+          // --- แก้ไข: เอาการกรอง ID S00879 ออก และดึงทุกรายการที่มีหรือไม่มีรูปก็ได้ ---
+          const processedData = result.data.map((item) => ({
+            ...item,
+            // ถ้าไม่มีรูปใน API ให้ใช้ fallbackImage ทันที
+            displayImage: item.image || item.shop_logo || fallbackImage,
+          }));
 
-          const shuffledData = [...validData].sort(() => 0.5 - Math.random());
-          setGridItems(shuffledData.slice(0, 66));
-          setMarqueeItems(shuffledData.slice(66));
+          const shuffledData = [...processedData].sort(
+            () => 0.5 - Math.random(),
+          );
+          setGridItems(shuffledData.slice(0, 55));
+
           setTimeout(() => setShowImages(true), 150);
         }
       } catch (error) {
@@ -51,52 +52,50 @@ export default function OurCustomersGroups() {
     fetchData();
   }, []);
 
-  const renderLogoItem = (item, index, isMarquee = false) => {
-    const imageSource = item.image || item.shop_logo;
-    if (!imageSource || imageSource === "") return null;
+  const renderLogoItem = (item, index) => {
+    // ฟังก์ชันจัดการเมื่อรูปภาพโหลดไม่สำเร็จ (404 หรือ URL เสีย)
+    const handleError = (e) => {
+      e.target.src = fallbackImage;
+    };
 
     return (
       <div
-        key={isMarquee ? `marquee-${item.id}-${index}` : item.id}
-        className={`group relative flex justify-center items-center transition-all duration-700 ease-out 
-        ${isMarquee ? "!mx-2 md:!mx-2 flex-shrink-0" : "w-full"} 
+        key={item.id || index}
+        className={`group relative flex justify-center items-center transition-all duration-700 ease-out w-full
         ${showImages ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
         style={{
-          transitionDelay: isMarquee ? "0ms" : `${index * 40}ms`,
-          zIndex: isMarquee ? 50 : "auto", // ให้ตัวที่ถูก Hover อยู่ข้างบนตัวอื่นในแถวสไลด์
+          transitionDelay: `${index * 30}ms`,
         }}
       >
-        {/* Tooltip - ปรับตำแหน่งให้ห่างจากตัวโลโก้มากขึ้นเพื่อลดโอกาสการโดนตัดที่ขอบล่าง */}
+        {/* Tooltip */}
         <div
           className="absolute bottom-full left-1/2 -translate-x-1/2 pointer-events-none 
                         opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100
-                        transition-all duration-300 origin-bottom w-[250px] z-50"
-          style={{ zIndex: 99999 }} // บังคับให้อยู่บนสุดของระนาบ
+                        transition-all duration-300 origin-bottom w-[200px] z-50"
+          style={{ zIndex: 99999 }}
         >
-          <div className="relative rounded-[1.2rem] bg-white backdrop-blur-md border border-white/40 shadow-[0_20px_40px_rgba(0,0,0,0.2)] p-3 text-center">
-            <h4 className="!text-xs !font-medium text-[#343f52] mb-0.5 leading-tight">
+          <div className="relative rounded-[1.2rem] bg-white border border-[#f5f5f6] shadow-[0_15px_30px_rgba(0,0,0,0.15)] p-3 text-center mb-2">
+            <h4 className="!text-[14px] !font-medium text-[#343f52] !mb-0.5 leading-tight">
               {item.name || "Customer"}
             </h4>
-            <div className="flex flex-col gap-0.5">
-              <span className="text-[0.55rem] font-medium text-slate-400">
-                {item.province || "Thailand"}
-              </span>
-            </div>
-            {/* ลูกศร - ปรับให้ชิดกับขอบขาวมากขึ้น */}
-            <div className="absolute top-[calc(100%-1px)] left-1/2 -translate-x-1/2 border-[8px] border-transparent border-t-white/95"></div>
+            <span className="text-[0.55rem] font-medium text-[#9499a3]">
+              {item.province || "Thailand"}
+            </span>
+            <div className="absolute top-[calc(100%-1px)] left-1/2 -translate-x-1/2 border-[8px] border-transparent border-t-white"></div>
           </div>
         </div>
 
-        {/* โลโก้ - สีจริง 100% */}
-        <div className="relative inline-blocka p-1 border-2 border-[#eeeeee] shadow-sm rounded-3xl bg-white transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1 cursor-pointer z-10">
+        {/* โลโก้ */}
+        <div className="relative p-1 border-2 border-[#eeeeee] shadow-sm rounded-3xl bg-white transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1 cursor-pointer z-10">
           <Image
             className="object-contain rounded-3xl transition-transform duration-300 group-hover:scale-105"
-            src={imageSource}
+            src={item.displayImage}
             alt={item.name || "logo"}
-            width={50}
-            height={50}
+            width={64}
+            height={64}
             style={{ width: "4rem", height: "4rem" }}
             unoptimized
+            onError={handleError}
           />
         </div>
       </div>
@@ -104,41 +103,11 @@ export default function OurCustomersGroups() {
   };
 
   return (
-    <section id="snippet-2" className="wrapper !overflow-visible">
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-marquee {
-          display: flex;
-          width: max-content;
-          animation: marquee 80s linear infinite;
-          /* สำคัญมาก: ห้ามมี overflow-hidden ตรงนี้ */
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-        .marquee-viewport {
-          position: relative;
-          width: 100%;
-          /* ตัดเฉพาะด้านข้างซ้าย-ขวา แต่ข้างบนต้องเปิดให้ Tooltip ลอยได้กว้างๆ */
-          overflow-x: hidden;
-          overflow-y: visible !important;
-          padding-top: 180px; /* เพิ่มพื้นที่ Safe Zone ด้านบนให้สูงขึ้นอีก */
-          margin-top: -180px;
-          padding-bottom: 20px;
-        }
-      `}</style>
-
-      <div className=" !overflow-visible ">
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-11 gap-2 md:gap-2 items-center justify-items-center !overflow-visible">
+    <section className="wrapper !overflow-visible py-5">
+      <div className="container !overflow-visible">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 xl:grid-cols-11 gap-4 items-center justify-items-center !overflow-visible">
           {loading
-            ? Array.from({ length: 18 }).map((_, i) => <SkeletonCard key={i} />)
+            ? Array.from({ length: 22 }).map((_, i) => <SkeletonCard key={i} />)
             : gridItems.map((item, index) => renderLogoItem(item, index))}
         </div>
       </div>

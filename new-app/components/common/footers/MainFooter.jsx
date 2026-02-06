@@ -45,10 +45,10 @@ export default async function MainFooter({ lng }) {
                 <div>
                   <Button
                     target="_blank"
-                    rounded="md"
+                    rounded="lg"
                     color="dark"
                     href="https://www.app-apsx.com/register"
-                    className="w-full lg:w-[200px]"
+                    className="w-full lg:w-[250px]"
                   >
                     <i className="uil uil-rocket text-[0.8rem] mr-1" />
                     <span className="!font-Kanit font-medium text-[#ffff] text-[0.95rem]">

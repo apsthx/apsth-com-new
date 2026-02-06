@@ -126,7 +126,7 @@ export default async function Hero({ lng }) {
                     /* เพิ่ม font-Kanit ลงไป และปรับจาก font-black เป็น font-normal (400) */
                     className="!font-Kanit  !text-[calc(1.4rem_+_1vw)] xl:!text-[2.8rem] !leading-[1.1] !mb-2 text-[#1c5045]"
                   >
-                    {t("home:hero.title", "โปรแกรม คลินิก APSX Platform")}
+                    {t("home:apsx_platform", "โปรแกรม คลินิก APSX Platform")}
                   </h2>
                 </div>
                 <p className="!font-Kanit !font-normal  lead !text-[1rem] !leading-[1.6] ">

@@ -11,21 +11,19 @@ export default async function ServiceExpansion({ lng }) {
 
   return (
     <section
+      data-cues="slideInDown"
+      data-delay={300}
       id="service_expansion"
       className="relative overflow-hidden py-6 !mt-14 bg-[#ffff] "
     >
-      <div
-        data-cues="slideInDown"
-        data-delay={300}
-        className="container flex flex-wrap items-center justify-center"
-      >
+      <div className="container flex flex-wrap items-center justify-center">
         <section className="wrapper !bg-[#ffffff]">
           {/* ส่วนหัวข้อ (ถ้ามี) */}
           <div className="mb-6">
             <div className="flex items-center justify-start text-start gap-2 text-slate-800 font-medium">
               <i className="uil uil-comments !text-xl text-[#1bb59b]" />
               <h2 className="!text-xl !font-medium text-[#343f52]">
-                APSX Platform มีอะไร
+                {t("home:why_apsx.header.title", "APSX Platform มีอะไร?")}
               </h2>
             </div>
             <p className="text-slate-500 !text-[18px]">
@@ -68,11 +66,7 @@ export default async function ServiceExpansion({ lng }) {
       </div>
       <section className=" wrapper overflow-hidden !relative mt-20">
         <div className="relative">
-          <div
-            data-cues="slideInDown"
-            data-delay={300}
-            className="bg-[#f4fcfa]"
-          >
+          <div className="bg-[#f4fcfa]">
             <section className="container wrapper !relative lg:!flex items-center">
               <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0  !right-0 image-wrapper bg-image bg-cover !h-full">
                 <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
@@ -126,19 +120,25 @@ export default async function ServiceExpansion({ lng }) {
 
                       <div className="grid items-center justify-start mb-6">
                         <h4 className="text-xl md:text-2xl font-bold !mb-1 !text-[#343f52]">
-                          ฟังก์ชันของระบบที่ออกแบบมาเพื่อคุณ
+                          {t(
+                            "home:product_overview.platform_func.title",
+                            "ฟังก์ชันของระบบที่ออกแบบมาเพื่อคุณ",
+                          )}
                         </h4>
                         <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#1bb59b]">
-                          บริหารจัดการง่าย ครบถ้วนทุกกระบวนการในคลิกเดียว
+                          {t(
+                            "home:product_overview.platform_func.subtitle",
+                            "บริหารจัดการง่าย ครบถ้วนทุกกระบวนการในคลิกเดียว",
+                          )}
                         </h5>
                       </div>
 
                       <div className="space-y-4">
                         <p className="text-[0.85rem] text-[#505358] leading-relaxed font-medium">
-                          APSX Platform
-                          มาพร้อมกับชุดเครื่องมืออัจฉริยะที่ช่วยเปลี่ยนการทำงานอันซับซ้อนให้กลายเป็นเรื่องง่าย
-                          เราให้ความสำคัญกับการเชื่อมโยงข้อมูลตั้งแต่ระบบหน้าบ้านไปจนถึงการบริหารทรัพยากรหลังบ้าน
-                          เพื่อให้คุณมีเวลาเหลือไปโฟกัสกับการวางกลยุทธ์และการเติบโตของธุรกิจได้อย่างแท้จริง
+                          {t(
+                            "home:product_overview.platform_func.description",
+                            "APSX Platform มาพร้อมกับชุดเครื่องมืออัจฉริยะที่ช่วยเปลี่ยนการทำงานอันซับซ้อนให้กลายเป็นเรื่องง่าย เราให้ความสำคัญกับการเชื่อมโยงข้อมูลตั้งแต่ระบบหน้าบ้านไปจนถึงการบริหารทรัพยากรหลังบ้าน เพื่อให้คุณมีเวลาเหลือไปโฟกัสกับการวางกลยุทธ์และการเติบโตของธุรกิจได้อย่างแท้จริง",
+                          )}
                         </p>
                       </div>
                       <div className="flex items-center gap-4">
@@ -150,7 +150,7 @@ export default async function ServiceExpansion({ lng }) {
                           <span className="absolute top-1 right-1"></span>
                           <i className="uil uil-comment-search text-[0.8rem] mr-1"></i>
                           <span className="!font-medium !text-[14px]">
-                            {"ดูรายละเอียดเพิ่มเติม"}
+                            {t("read_more", "ดูรายละเอียดเพิ่มเติม")}
                           </span>
                         </Button>
                       </div>
@@ -161,11 +161,7 @@ export default async function ServiceExpansion({ lng }) {
             </section>
           </div>
 
-          <section
-            data-cues="slideInDown"
-            data-delay={300}
-            className="container wrapper bg-[#ffff] !relative lg:!flex items-center"
-          >
+          <section className="container wrapper bg-[#ffff] !relative lg:!flex items-center">
             {/* ส่วนรูปภาพ - ย้ายไปอยู่ด้านซ้ายมือ */}
             <div className="lg:w-5/12 flex-[0_0_auto] !px-[15px] max-w-full lg:!absolute top-0 !left-0 image-wrapper bg-image bg-cover !h-full">
               <div className="relative w-full h-full min-h-[350px] lg:min-h-full">
@@ -204,21 +200,26 @@ export default async function ServiceExpansion({ lng }) {
                     </div>
                     <div className="grid items-center justify-start mb-4">
                       <h4 className="text-xl md:text-2xl font-bold !mb-1 !text-[#343f52]">
-                        รายงานสรุปผลภาพรวมธุรกิจ
+                        {t(
+                          "home:product_overview.business_reports.title",
+                          "รายงานสรุปผลภาพรวมธุรกิจ",
+                        )}
                       </h4>
                       <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#1bb59b]">
-                        วิเคราะห์ข้อมูลอย่างแม่นยำ เพื่อการตัดสินใจที่เหนือกว่า
+                        {t(
+                          "home:product_overview.business_reports.subtitle",
+                          "วิเคราะห์ข้อมูลอย่างแม่นยำ เพื่อการตัดสินใจที่เหนือกว่า",
+                        )}
                       </h5>
                     </div>
                     <div className="space-y-6">
                       <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                        เข้าถึงข้อมูลเชิงลึกของธุรกิจได้ทันทีด้วยระบบรายงานอัจฉริยะที่ครอบคลุมกว่า
-                        40 รูปแบบ ไม่ว่าจะเป็นรายงานยอดขาย รายงานสต็อกสินค้า
-                        หรือรายงานพฤติกรรมลูกค้า
-                        ทุกข้อมูลถูกนำมาประมวลผลให้เข้าใจง่ายในรูปแบบกราฟและตารางที่ชัดเจน
-                        ช่วยให้คุณมองเห็นแนวโน้มของธุรกิจและวางแผนรับมือกับทุกสถานการณ์ได้อย่างรวดเร็ว
+                        {t(
+                          "home:product_overview.business_reports.description",
+                          "เข้าถึงข้อมูลเชิงลึกของธุรกิจได้ทันทีด้วยระบบรายงานอัจฉริยะที่ครอบคลุมกว่า 40 รูปแบบ ไม่ว่าจะเป็นรายงานยอดขาย รายงานสต็อกสินค้า หรือรายงานพฤติกรรมลูกค้า ทุกข้อมูลถูกนำมาประมวลผลให้เข้าใจง่ายในรูปแบบกราฟและตารางที่ชัดเจน ช่วยให้คุณมองเห็นแนวโน้มของธุรกิจและวางแผนรับมือกับทุกสถานการณ์ได้อย่างรวดเร็ว",
+                        )}
                       </p>
-                    </div>{" "}
+                    </div>
                     <div className="flex items-center gap-4">
                       <Button
                         rounded="lg"
@@ -228,7 +229,7 @@ export default async function ServiceExpansion({ lng }) {
                         <span className="absolute top-1 right-1"></span>
                         <i className="uil uil-comment-search text-[0.8rem] mr-1"></i>
                         <span className="!font-medium !text-[14px]">
-                          {"ดูรายละเอียดเพิ่มเติม"}
+                          {t("read_more", "ดูรายละเอียดเพิ่มเติม")}
                         </span>
                       </Button>
                     </div>
@@ -245,12 +246,15 @@ export default async function ServiceExpansion({ lng }) {
           <div className="mb-6 text-center md:text-left">
             <div className="flex gap-2 items-center">
               <i className="uil uil-location-arrow !text-xl text-[#1bb59b] " />
-              <h4 className="!mt-2 !text-xl !font-medium">บริการของเรา</h4>
+              <h4 className="!mt-2 !text-xl !font-medium">
+                {t("home:features.services.hero.title", "บริการของเรา")}
+              </h4>
             </div>
             <p>
-              APSX Platform เป็นระบบที่ลงตัวมาพร้อมกับการใช้งานง่าย สะดวกสบาย
-              และรันบน Cloud ด้วยเทคโนโลยีที่ทันสมัยในยุคนี้ ทำให้ไม่ต้องใช้แฟ้ม
-              OPD Card แบบเก่าอีกต่อไป
+              {t(
+                "home:features.services.hero.description",
+                "APSX Platform เป็นระบบที่ลงตัวมาพร้อมกับการใช้งานง่าย สะดวกสบาย และรันบน Cloud ด้วยเทคโนโลยีที่ทันสมัยในยุคนี้ ทำให้ไม่ต้องใช้แฟ้ม OPD Card แบบเก่าอีกต่อไป",
+              )}
             </p>
           </div>
 
@@ -259,8 +263,6 @@ export default async function ServiceExpansion({ lng }) {
               <div
                 key={item.id || index}
                 className="group bg-white transition-all duration-500 overflow-hidden rounded-2xl shadow-sm hover:shadow-xl flex flex-col h-full"
-                data-cues="slideInDown"
-                data-delay={300}
               >
                 <article className="post p-0 flex flex-col h-full">
                   {/* Image Section: รูปอยู่ด้านบนเต็มความกว้าง */}
@@ -320,119 +322,6 @@ export default async function ServiceExpansion({ lng }) {
               </div>
             ))}
           </div>
-
-          {/* 
-            <div className="max-w-5xl mx-auto py-10">
-              <div className="flex flex-col gap-0"> 
-                <div className="w-full">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {whyApsxItems.map((item) => (
-                      <div key={item.id} className="w-full">
-                        <div className="card h-full transition-all duration-300 hover:shadow-xl group bg-white !border !border-[#a4aec633] !rounded-2xl !shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
-                        
-                          <div className="card-body flex flex-col items-start gap-4 p-6 text-left">
-                        
-                            <div
-                              className={`flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl ${item.bgColor} ${item.iconColor} transition-transform duration-300`}
-                            >
-                              <i
-                                className={`uil ${item.icon} text-[1.5rem] leading-none`}
-                              />
-                            </div>
-
-                            <div className="flex-grow">
-                              <h4 className="text-[1rem] !mb-2 !font-bold text-[#343f52] leading-tight">
-                                {item.title}
-                              </h4>
-                              <p className="text-[0.8rem] !font-light text-[#60697b] leading-relaxed mb-0">
-                                {item.desc}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
- 
-                <hr className="border-dashed border-gray-200" />
- 
-                <div className="w-full px-4">
-                  <div className="max-w-2xl">
-                    {featuresItems.map((item, index) => (
-                      <div
-                        key={index}
-                        className="relative flex gap-8 pb-6 group"
-                      > 
-                        {index !== featuresItems.length - 1 && (
-                          <div className="absolute left-[24px] top-10 bottom-0 w-[2px] bg-gradient-to-b from-[#45c4a0] to-transparent opacity-30 group-hover:opacity-100 transition-opacity"></div>
-                        )} 
-                        <div className="relative z-10 flex-shrink-0 w-10 h-10 bg-white border-2 border-[#e1f6f0] rounded-full shadow-sm flex items-center justify-center transition-all">
-                          <div className="text-[#45c4a0] group-hover:text-white transition-colors scale-75">
-                            {item.icon}
-                          </div>
-                        </div>
- 
-                        <div className="flex-grow pt-1">
-                          <h3 className="!text-base !font-bold text-[#343f52] !mb-2 leading-tight group-hover:text-[#45c4a0] transition-colors">
-                            {item.title}
-                          </h3>
-                          <p className="text-[#60697b] !text-[0.9rem] leading-relaxed">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div> */}
-          {/* 
-            <div className="!mt-0">
-              <div className="flex gap-2 !items-center !mb-0">
-                <i className="uil uil-sliders-v-alt text-lg text-[#2bc29d]"></i>
-                <h3 className="!mt-2 !text-lg !font-medium text-[#343f52]">
-                  {t("clinic:system_functions.title", "ฟังก์ชันของระบบ")}
-                </h3>
-              </div>
-
-              <div className="flex flex-wrap mx-[-15px]">
-                {functionItems.map((item, index) => (
-                  <div
-                    key={item.id} 
-                    className="w-full  px-[15px]"
-                  >
-                    <div className="flex items-start p-1 bg-white border-[#e7eaf3] transition-all duration-300   group cursor-default">
-                   
-                      <i className="uil uil-check text-[0.7rem] mr-2 text-[#2bc29d]"></i>
-                      <span className="text-xs font-medium text-[#60697b] group-hover:text-[#343f52] transition-colors duration-300 leading-tight">
-                        {item.title}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex gap-2 !items-center !mt-6">
-                <i className="uil uil-sliders-v-alt text-lg text-[#2bc29d]"></i>
-                <h3 className="!mt-2 !text-lg !font-medium text-[#343f52] mb-2">
-                  {t("clinic:all_reports.title", "รายงานทั้งหมด")}
-                </h3>
-              </div>
-
-              <div className="flex flex-wrap mx-[-15px]">
-                {reportItems.map((item, index) => (
-                  <div key={item.id} className="w-full px-[15px] lg:w-1/2">
-                    <div className="flex items-center p-1 transition-all duration-300 group h-full cursor-default">
-                      <i className="uil uil-check text-[0.7rem] mr-2 text-[#2bc29d]"></i>
-                      <span className="text-xs font-medium text-[#60697b] group-hover:text-[#343f52] leading-tight transition-colors duration-300">
-                        {item.title}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div> */}
         </div>
       </section>
     </section>

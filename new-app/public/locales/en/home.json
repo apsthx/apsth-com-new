@@ -2,8 +2,8 @@
   "category": "Category",
   "coming_soon": "Coming Soon",
   "read_more": "Read More",
+  "apsx_platform": "APSX Platform Clinic Program",
   "hero": {
-    "title": "APSX Platform Clinic Program",
     "our_solutions": {
       "who_are_we": "Who Are We?",
       "aps_platform_clinic": "APSX Platform Clinic",
@@ -48,6 +48,10 @@
       }
     },
     "services": {
+      "hero": {
+        "title": "Our Services",
+        "description": "APSX Platform is a perfectly integrated system that combines ease of use with modern convenience. Powered by cutting-edge Cloud technology, we eliminate the need for traditional paper-based OPD cards, bringing your clinic into the digital age."
+      },
       "blog1": {
         "title": "Clinic / Hospital",
         "description": "The Clinic/Hospital program supports services such as specialized treatments, general examinations, maternity, physiotherapy, traditional Thai-Chinese medicine, general medicine, mother and child care, rehabilitation, mental health, and eye care."
@@ -67,6 +71,32 @@
     "title": "Highlights",
     "sub_title": "All-in-One Comprehensive Clinic System",
     "description": "APSX Platform is a smart healthcare management system designed for maximum efficiency. Perfect for clinics, hospitals, wellness centers, and elder care, covering every essential function in one place.",
+    "highlights": {
+      "security": {
+        "title": "THE BEST",
+        "desc": "Protect client data from loss with paperless EMR. Search history instantly and enjoy unlimited OPD records."
+      },
+      "multi_branch": {
+        "title": "NEW",
+        "desc": "Manage multiple branches seamlessly with just a single user account."
+      },
+      "appointment": {
+        "title": "NEW",
+        "desc": "Effortless scheduling and queuing for patients and doctors, with Google Calendar integration."
+      },
+      "realtime_report": {
+        "title": "THE BEST",
+        "desc": "Skip the manual reporting. APSX Platform generates real-time business summaries automatically."
+      },
+      "printing": {
+        "title": "NEW",
+        "desc": "All-in-one printing for drug labels, invoices, receipts, and full tax invoices."
+      },
+      "remote_work": {
+        "title": "THE BEST",
+        "desc": "Monitor operations and finances in real-time. Work from anywhere, anytime."
+      }
+    },
     "features": {
       "blog1": {
         "title": "OPD Management System",
@@ -304,6 +334,10 @@
     }
   },
   "why_apsx": {
+    "header": {
+      "title": "What is APSX Platform?",
+      "subtitle": "The All-in-One Solution for Modern Clinic Management"
+    },
     "why_apsx": {
       "why_apsx": "Why APSX Platform",
       "solution": "The Complete Solution for Modern Digital Healthcare",
@@ -486,6 +520,218 @@
       "list7": {
         "question": "How long does it take to install the APSTH Clinic system?",
         "answer": "Installation takes a short time. After the customer confirms payment with the staff and provides clinic information, the system will be ready for use within 20 minutes."
+      }
+    }
+  },
+  "product_overview": {
+    "hero": {
+      "title": "Complete Backend System",
+      "subtitle": "Simplifying clinic management in one place.",
+      "description": "The all-in-one solution that makes clinic operations effortless."
+    },
+    "updates": {
+      "header": "What's New in APSX Platform"
+    },
+    "workflow": {
+      "title": "Empower your team to work smoothly and without interruption.",
+      "about1": {
+        "vision_title": "Say Goodbye to Administrative Chaos",
+        "vision_desc": "Eliminate the hassle of fragmented systems and manual paperwork. APSX Platform is designed to seamlessly integrate every department in your clinic—from front-desk registration and physician treatment records to real-time inventory and precise backend accounting."
+      },
+      "about2": {
+        "vision_title": "Advanced Cloud Sync Technology",
+        "vision_desc": "With cutting-edge Cloud Sync technology, your data is updated in real-time. This empowers clinic owners to monitor business overviews anytime, anywhere—minimizing human error and freeing up your time to focus on patient care and worry-free branch expansion."
+      }
+    },
+    "business_intelligence": {
+      "title": "Let APSX handle the back-office, while you focus on growing your business.",
+      "description": "Elevate your business with an All-in-One Dashboard that connects every department with real-time data—from sales to backend cost management. Reduce complexity, enhance analytical precision, and ensure top-tier security. Speed up your documentation and free up your time to focus entirely on scaling your business.",
+      "check_list": [
+        "Real-time 360° business overview in one place",
+        "Seamless integration between front and back office to minimize errors",
+        "Modern, secure, and customizable features tailored to your industry"
+      ],
+      "quick_features": {
+        "opd": {
+          "title": "Easy OPD Records",
+          "desc": "Access and update records online anywhere."
+        },
+        "inventory": {
+          "title": "Smart Drug Inventory",
+          "desc": "Tailored specifically for your clinic’s needs."
+        },
+        "pdf": {
+          "title": "Custom PDF Templates",
+          "desc": "Professional documents, styled your way."
+        },
+        "marketplace": {
+          "title": "Online Marketplace",
+          "desc": "Boost sales with easy promo and product tools."
+        }
+      }
+    },
+    "queue_system": {
+      "title": "Smart Queuing System",
+      "description": "Manage patient flow effortlessly. Reduce wait times and enhance the overall patient experience."
+    },
+    "queue_features": {
+      "registration": {
+        "title": "Queue Registration Screen",
+        "desc": "Quick ticket issuance via an intuitive Touch Screen system."
+      },
+      "voice": {
+        "title": "Voice Calling System",
+        "desc": "Automated Thai voice announcements for a smooth experience."
+      },
+      "dashboard": {
+        "title": "Queue Monitor Dashboard",
+        "desc": "Track waiting status and live updates in real-time."
+      }
+    },
+    "medical_records": {
+      "title": "Patient History & Records",
+      "subtitle": "Online OPD/IPD Recording System",
+      "description": "Securely record and access patient history anytime, anywhere. Our stable and highly secure online system supports clinical standards for various specialized medical practices.",
+      "clinic_types": [
+        "General Clinic",
+        "Medical Clinic",
+        "Midwifery Clinic",
+        "Physical Therapy Clinic",
+        "Traditional Thai-Chinese Clinic",
+        "Mother and Child Clinic",
+        "Rehabilitation Clinic",
+        "Mental Health Clinic",
+        "Ophthalmology Clinic",
+        "Dental Clinic",
+        "and other specialized clinics"
+      ]
+    },
+    "billing_section": {
+      "title_main": "Generate Receipts",
+      "title_highlight": "All on a Single Page",
+      "description": "Turn complex paperwork into something",
+      "desc_highlight": "Simple and Fast"
+    },
+    "platform_func": {
+      "title": "Features Designed with You in Mind",
+      "subtitle": "Effortless Management, Complete Workflow in a Single Click",
+      "description": "APSX Platform comes with a suite of intelligent tools that transform complex tasks into simple actions. We prioritize seamless data integration—from front-desk operations to backend resource management—giving you the freedom to focus on strategy and real business growth."
+    },
+    "business_reports": {
+      "title": "Business Overview Reports",
+      "subtitle": "Precise Analytics for Superior Decision-Making",
+      "description": "Gain instant insights with our intelligent reporting system, offering over 40 comprehensive report types—including sales, inventory, and customer behavior. All data is processed into easy-to-understand graphs and tables, empowering you to identify business trends and strategize effectively for any situation."
+    },
+    "high_lights_data": {
+      "f1": {
+        "title": "Multi-Branch Management",
+        "description": "Supports managing multiple branches with just a single user account."
+      },
+      "f2": {
+        "title": "User Permissions",
+        "description": "Customizable user roles and access control to suit your operational needs."
+      },
+      "f3": {
+        "title": "Sales Analytics",
+        "description": "Track sales, profit, and loss with detailed reports for each individual branch."
+      },
+      "f4": {
+        "title": "Doctor & Staff Commission",
+        "description": "Flexible commission and DF (Doctor Fee) calculations for doctors, nurses, and staff."
+      },
+      "f5": {
+        "title": "Basic Accounting",
+        "description": "Manage essential charts of accounts, including assets, liabilities, income, and expenses."
+      },
+      "f6": {
+        "title": "Tax & Billing Documents",
+        "description": "Generate professional invoices, receipts, and tax invoices effortlessly."
+      },
+      "f7": {
+        "title": "Lab & Service Bundling",
+        "description": "Integrated services for courses, labs, and X-rays with automatic medication and supply linking."
+      },
+      "f8": {
+        "title": "Coupons & Membership",
+        "description": "Supports promotional coupons and membership credit systems."
+      },
+      "f9": {
+        "title": "OPD System",
+        "description": "Comprehensive Outpatient Department (OPD) system with no patient limit."
+      },
+      "f10": {
+        "title": "SMS & Email Marketing",
+        "description": "Send promotional messages and updates directly via SMS and Email."
+      },
+      "f11": {
+        "title": "Medical Records",
+        "description": "Generate various standardized medical forms and clinical documents."
+      },
+      "f12": {
+        "title": "Smart Reporting",
+        "description": "Export comprehensive business reports in both Excel and PDF formats."
+      },
+      "f13": {
+        "title": "Excel Data Import",
+        "description": "Easily import lists and data records directly via Excel files."
+      },
+      "f14": {
+        "title": "Appointment System",
+        "description": "Manage both identified patient bookings and general appointments efficiently."
+      },
+      "f15": {
+        "title": "Notification System",
+        "description": "Stay updated with automated notification reports and system alerts."
+      },
+      "f16": {
+        "title": "Live Alert Alarms",
+        "description": "Real-time on-screen alert notifications to keep your operations on track."
+      }
+    },
+    "bill": {
+      "step1": {
+        "title": "Quotation",
+        "description": "Create and send professional quotations to close deals with customers faster."
+      },
+      "step2": {
+        "title": "Invoice",
+        "description": "Convert quotations to invoices in one click with a payment tracking system."
+      },
+      "step3": {
+        "title": "Receipt",
+        "description": "Issue receipts immediately upon payment to confirm accuracy for your customers."
+      },
+      "step4": {
+        "title": "Tax Invoice",
+        "description": "Manage tax documents according to standards, reducing hassle at month-end."
+      }
+    },
+    "services": {
+      "opd": {
+        "title": "Medical Records System",
+        "subTitle": "OPD Management",
+        "desc": "Systematically store patient history and treatment records, easily searchable at your fingertips."
+      },
+      "stock": {
+        "title": "Inventory Management",
+        "desc": "Automated stock deduction with notifications for low stock or expiring medications."
+      },
+      "analytics": {
+        "title": "Analytical Reports",
+        "subTitle": "Over 40 Formats",
+        "desc": "Consolidate sales, profit, and patient statistics all in one place."
+      },
+      "crm": {
+        "title": "Customer Insights",
+        "desc": "CRM tools to track service behavior and data for targeted marketing strategies."
+      },
+      "multi_branch": {
+        "title": "Multi-Branch Support",
+        "desc": "Manage all branches simultaneously through a single account with a Centralized Dashboard."
+      },
+      "permissions": {
+        "title": "Access Permissions",
+        "desc": "Securely define and manage data visibility roles for each level of staff."
       }
     }
   }

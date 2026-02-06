@@ -1,10 +1,8 @@
 import Image from "next/image";
 import { useTranslation } from "@/app/i18n";
-import { getFeedbackData } from "@/data/features";
 
 export default async function ProductShowcase({ lng }) {
   const { t } = await useTranslation(lng);
-  const feedbackItems = getFeedbackData(t, lng);
   return (
     <section className=" wrapper overflow-hidden !relative mt-20">
       <div className="relative">
@@ -45,35 +43,35 @@ export default async function ProductShowcase({ lng }) {
 
                     <div className="grid items-center justify-start mb-4">
                       <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                        จัดการเวชระเบียนออนไลน์ (E-OPD Card)
+                        {t(
+                          "home:product_overview.medical_records.title",
+                          "บันทึกและเข้าถึงประวัติคนไข้",
+                        )}
                       </h4>
                       <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                        บันทึก OPD/IPD ผ่านระบบออนไลน์
+                        {t(
+                          "home:product_overview.medical_records.subtitle",
+                          "บันทึก OPD/IPD ผ่านระบบออนไลน์",
+                        )}
                       </h5>
                     </div>
 
                     <div className="space-y-4">
                       <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                        บันทึกและเข้าถึงประวัติคนไข้ได้ทุกที่ทุกเวลา
-                        ผ่านระบบออนไลน์ที่มีความเสถียรและปลอดภัยสูง
-                        รองรับมาตรฐานการบันทึกข้อมูลสำหรับคลินิกหลากหลายสาขา
+                        {t(
+                          "home:product_overview.medical_records.description",
+                          "บันทึกและเข้าถึงประวัติคนไข้ได้ทุกที่ทุกเวลา ผ่านระบบออนไลน์ที่มีความเสถียรและปลอดภัยสูง รองรับมาตรฐานการบันทึกข้อมูลสำหรับคลินิกหลากหลายสาขา",
+                        )}
                       </p>
 
                       {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-[0.70rem] text-[#505a6d]">
-                        {[
-                          "คลินิกทั่วไป",
-                          "คลินิกเวชกรรม",
-                          "คลินิกพยาบาลผดุงครรภ์",
-                          "คลินิกกายภาพบำบัด",
-                          "คลินิกแพทย์แผนไทย-จีน",
-                          "คลินิกแม่และเด็ก",
-                          "คลินิกบําบัดยาเสพติด",
-                          "คลินิกสุขภาพจิต",
-                          "คลินิกตา",
-                          "คลินิกทันตกรรม",
-                          "และคลินิกเฉพาะทางอื่นๆ",
-                        ].map((text, index) => (
+                        {t(
+                          "home:product_overview.medical_records.clinic_types",
+                          {
+                            returnObjects: true,
+                          },
+                        ).map((text, index) => (
                           <div
                             key={index}
                             className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#45c4a0]/10 transition-all duration-300 group"
@@ -134,28 +132,32 @@ export default async function ProductShowcase({ lng }) {
 
                   <div className="grid items-center justify-start mb-4">
                     <h4 className="text-xl md:text-2xl font-bold !mb-0 !text-[#343f52]">
-                      แดชบอร์ดสรุปภาพรวม
+                      {t(
+                        "clinic:product_showcase.dashborad.title",
+                        "แดชบอร์ดสรุปภาพรวม",
+                      )}
                     </h4>
                     <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#1bb59b]">
-                      วิเคราะห์ธุรกิจแบบ Real-time
+                      {t(
+                        "clinic:product_showcase.dashborad.subtitle",
+                        "วิเคราะห์ธุรกิจแบบ Real-time",
+                      )}
                     </h5>
                   </div>
 
                   <div className="space-y-6">
-                    <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                      เปลี่ยนข้อมูลหลังบ้านให้เป็นกราฟบริหารจัดการที่เข้าใจง่าย
-                      ช่วยให้คุณเห็นทิศทางธุรกิจและตัดสินใจเติบโตคลินิกได้อย่างแม่นยำ
+                    <p className="text-[0.85rem] text-[#505358] leading-relaxed font-medium">
+                      {t(
+                        "clinic:product_showcase.dashborad.description",
+                        "เปลี่ยนข้อมูลหลังบ้านให้เป็นกราฟบริหารจัดการที่เข้าใจง่าย ช่วยให้คุณเห็นทิศทางธุรกิจและตัดสินใจเติบโตคลินิกได้อย่างแม่นยำ",
+                      )}
                     </p>
 
                     {/* ส่วน Features เด่นของ Dashboard */}
                     <div className="space-y-3">
-                      {[
-                        "สรุปกระแสเงินสด ยอดค้างชำระ และรายได้ย้อนหลังแบบครบวงจร",
-                        "วิเคราะห์อันดับรายการบริการและตัวยาที่ทำกำไรสูงสุด",
-                        "ติดตามสถิติคนไข้ใหม่และอัตราการกลับมาใช้บริการซ้ำ",
-                        "คำนวณค่ามือและค่าคอมมิชชั่นพนักงานอัตโนมัติ แม่นยำ 100%",
-                        "สรุปผลประกอบการแบบเปรียบเทียบ รายวัน รายเดือน และรายปี",
-                      ].map((feature, index) => (
+                      {t("clinic:product_showcase.dashborad.items", {
+                        returnObjects: true,
+                      }).map((feature, index) => (
                         <div key={index} className="flex items-start gap-3">
                           <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#1bb59b]/10 flex items-center justify-center">
                             <i className="uil uil-check text-[#1bb59b] text-[14px] font-bold" />
@@ -219,55 +221,39 @@ export default async function ProductShowcase({ lng }) {
 
                     <div className="grid items-center justify-start mb-4">
                       <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                        วิเคราะห์ธุรกิจอัจฉริยะ
+                        {t(
+                          "clinic:product_showcase.business_analytics.title",
+                          "วิเคราะห์ธุรกิจ",
+                        )}
                       </h4>
                       <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                        ช่วยให้คุณมองเห็นโอกาสในการเติบโต
+                        {t(
+                          "clinic:product_showcase.business_analytics.subtitle",
+                          "ช่วยให้คุณมองเห็นโอกาสในการเติบโต",
+                        )}
                       </h5>
                     </div>
 
                     <div className="space-y-4">
                       <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                        เปลี่ยนข้อมูลหลังบ้านที่กระจัดกระจาย
-                        ให้เป็นภาพรวมผลการดำเนินงานที่ชัดเจน
-                        ช่วยให้คุณมองเห็นโอกาสในการเติบโตและจัดการต้นทุนได้อย่างมีประสิทธิภาพ
+                        {t(
+                          "clinic:product_showcase.business_analytics.description",
+                          "เปลี่ยนข้อมูลหลังบ้านที่กระจัดกระจาย ให้เป็นภาพรวมผลการดำเนินงานที่ชัดเจน ช่วยให้คุณมองเห็นโอกาสในการเติบโตและจัดการต้นทุนได้อย่างมีประสิทธิภาพ",
+                        )}
                       </p>
 
                       {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
                       <div className="grid grid-cols-1 lg:grid-cols-2  gap-2 !text-sm text-[#343f52] mx-auto">
-                        {[
-                          {
-                            text: "สรุปรายได้และค่าใช้จ่าย",
-                            icon: "uil-chart-bar",
-                          },
-                          {
-                            text: "วิเคราะห์บริการและลูกค้า",
-                            icon: "uil-users-alt",
-                          },
-                          {
-                            text: "คาดการณ์รายได้และแนวโน้ม",
-                            icon: "uil-arrow-growth",
-                          },
-                          {
-                            text: "วัดผลประสิทธิภาพทีมงาน",
-                            icon: "uil-chart-line",
-                          },
-                          {
-                            text: "วิเคราะห์กำไรและต้นทุน",
-                            icon: "uil-money-stack",
-                          },
-                        ].map((item, index) => (
-                          <div
-                            key={index}
-                            className="flex items-start gap-3 
-                            transition-all duration-300 transform group cursor-pointer"
-                          >
-                            <div className="flex-shrink-0">
+                        {t("clinic:product_showcase.business_analytics.items", {
+                          returnObjects: true,
+                        }).map((item, index) => (
+                          <div key={index} className="flex items-center gap-3">
+                            <div className="flex-shrink-0 w-8 h-8 rounded bg-[#1bb59b]/10 flex items-center justify-center">
                               <i
-                                className={`${item.icon} text-md text-[#45c4a0]  transition-colors duration-300`}
+                                className={`uil ${item.icon} text-[#1bb59b]`}
                               />
                             </div>
-                            <span className="!text-xs font-medium leading-relaxed text-[#505a6d] transition-colors duration-300">
+                            <span className="text-[0.90rem] text-[#343f52] font-medium">
                               {item.text}
                             </span>
                           </div>
@@ -329,39 +315,48 @@ export default async function ProductShowcase({ lng }) {
 
                   <div className="grid items-center justify-start mb-4">
                     <h4 className="text-xl md:text-2xl font-bold !mb-0 !text-[#343f52]">
-                      ระบบจัดการนัดหมาย
+                      {t(
+                        "clinic:product_showcase.appointment.title",
+                        "ระบบจัดการนัดหมาย",
+                      )}
                     </h4>
                     <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#1bb59b]">
-                      ช่วยให้การทำงานของทีมงานลื่นไหลไม่มีสะดุด
+                      {t(
+                        "clinic:product_showcase.appointment.subtitle",
+                        "ช่วยให้การทำงานของทีมงานลื่นไหลไม่มีสะดุด",
+                      )}
                     </h5>
                   </div>
 
                   <div className="space-y-6">
                     <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                      จัดการนัดหมายไข้ได้อย่างเป็นระเบียบ
-                      ลดความผิดพลาดในการลงนัด
-                      และช่วยให้การทำงานของทีมงานลื่นไหลไม่มีสะดุด
+                      {t(
+                        "clinic:product_showcase.appointment.description",
+                        "จัดการนัดหมายไข้ได้อย่างเป็นระเบียบ ลดความผิดพลาดในการลงนัด และช่วยให้การทำงานของทีมงานลื่นไหลไม่มีสะดุด",
+                      )}
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-10">
                       {[
                         {
-                          title: "ปฏิทินนัดหมาย",
-                          desc: "จัดการนัดหมายอัจฉริยะ แยกสีตามประเภทเคส ดูง่ายไม่สับสน ช่วยให้คุณเห็นภาพรวมทั้งหมด",
-                          icon: "uil-calendar-alt",
-                          img: "/assets/img/photos/b1.jpg",
+                          title: t(
+                            "clinic:product_showcase.appointment.items.appointment.title",
+                            "ปฏิทินนัดหมาย",
+                          ),
+                          desc: t(
+                            "clinic:product_showcase.appointment.items.appointment.desc",
+                            "จัดการนัดหมายอัจฉริยะ แยกสีตามประเภทเคส ดูง่ายไม่สับสน ช่วยให้คุณเห็นภาพรวมทั้งหมด",
+                          ),
                         },
                         {
-                          title: "ตารางเวรแพทย์",
-                          desc: "จัดการตารางเวรและห้องตรวจอย่างเป็นระบบ ป้องกันการนัดหมายซ้อน บริหารทรัพยากรได้เต็มที่",
-                          icon: "uil-schedule",
-                          img: "/assets/img/photos/b2.jpg",
+                          title: t(
+                            "clinic:product_showcase.appointment.items.roster.title",
+                            "ตารางเวรแพทย์",
+                          ),
+                          desc: t(
+                            "clinic:product_showcase.appointment.items.roster.desc",
+                            "จัดการตารางเวรและห้องตรวจอย่างเป็นระบบ ป้องกันการนัดหมายซ้อน บริหารทรัพยากรได้เต็มที่",
+                          ),
                         },
-                        // {
-                        //   title: "ระบบติดตามผล",
-                        //   desc: "ระบบ Follow-up ติดตามสถานะนัดหมาย เพื่อการรักษาที่ต่อเนื่อง พร้อมระบบแจ้งเตือนอัตโนมัติ",
-                        //   icon: "uil-history",
-                        //   img: "/assets/img/photos/b3.jpg",
-                        // },
                       ].map((item, index) => (
                         <div
                           key={index}
@@ -431,47 +426,39 @@ export default async function ProductShowcase({ lng }) {
 
                     <div className="grid items-center justify-start mb-4">
                       <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                        ระบบจัดการคิวตรวจ
+                        {t(
+                          "clinic:product_showcase.queue.title",
+                          "ระบบจัดการคิวตรวจ",
+                        )}
                       </h4>
                       <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                        ช่วยให้พนักงานหน้าเคาน์เตอร์และแพทย์ทำงานประสานกันได้อย่างราบรื่น
+                        {t(
+                          "clinic:product_showcase.queue.subtitle",
+                          "ช่วยให้พนักงานหน้าเคาน์เตอร์และแพทย์ทำงานประสานกันได้อย่างราบรื่น",
+                        )}
                       </h5>
                     </div>
 
                     <div className="space-y-4">
                       <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                        จัดลำดับการเข้าตรวจอย่างเป็นระบบ
-                        ช่วยให้พนักงานหน้าเคาน์เตอร์และแพทย์ทำงานประสานกันได้อย่างราบรื่น
-                        ลดระยะเวลาการรอคอยของคนไข้
+                        {t(
+                          "clinic:product_showcase.queue.description",
+                          "จัดลำดับการเข้าตรวจอย่างเป็นระบบ ช่วยให้พนักงานหน้าเคาน์เตอร์และแพทย์ทำงานประสานกันได้อย่างราบรื่น ลดระยะเวลาการรอคอยของคนไข้",
+                        )}
                       </p>
 
                       {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
                       <div className="grid grid-cols-1 lg:grid-cols-2  gap-2 !text-sm text-[#343f52] mx-auto">
-                        {[
-                          {
-                            text: "ระบบรันคิวอัตโนมัติ แม่นยำตามลำดับ",
-                            icon: "uil-list-ol",
-                          },
-                          {
-                            text: "แดชบอร์ดคิว Real-time แยกตามห้องตรวจ",
-                            icon: "uil-monitor",
-                          },
-                          {
-                            text: "ระบบเรียกคิวผ่านหน้าจอ พร้อมเสียงแจ้งเตือน",
-                            icon: "uil-megaphone",
-                          },
-                        ].map((item, index) => (
-                          <div
-                            key={index}
-                            className="flex items-start gap-3 
-                            transition-all duration-300 transform group cursor-pointer"
-                          >
-                            <div className="flex-shrink-0">
+                        {t("clinic:product_showcase.queue.items", {
+                          returnObjects: true,
+                        }).map((item, index) => (
+                          <div key={index} className="flex items-center gap-3">
+                            <div className="flex-shrink-0 w-8 h-8 rounded bg-[#1bb59b]/10 flex items-center justify-center">
                               <i
-                                className={`${item.icon} text-md text-[#45c4a0]  transition-colors duration-300`}
+                                className={`uil ${item.icon} text-[#1bb59b] text-lg`}
                               />
                             </div>
-                            <span className="!text-xs font-medium leading-relaxed text-[#505a6d] transition-colors duration-300">
+                            <span className="text-[0.85rem] text-[#343f52] font-medium">
                               {item.text}
                             </span>
                           </div>
@@ -533,29 +520,31 @@ export default async function ProductShowcase({ lng }) {
 
                   <div className="grid items-center justify-start mb-4">
                     <h4 className="text-xl md:text-2xl font-bold !mb-0 !text-[#343f52]">
-                      ระบบออกใบรับรองแพทย์
+                      {t(
+                        "clinic:product_showcase.medical_certificate.title",
+                        "ระบบออกใบรับรองแพทย์",
+                      )}
                     </h4>
                     <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#1bb59b]">
-                      ช่วยลดความซ้ำซ้อนในการทำงานเอกสาร
+                      {t(
+                        "clinic:product_showcase.medical_certificate.subtitle",
+                        "ช่วยลดความซ้ำซ้อนในการทำงานเอกสาร",
+                      )}
                     </h5>
                   </div>
 
                   <div className="space-y-6">
                     <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                      สร้างเอกสารทางการแพทย์ที่ได้มาตรฐานอย่างรวดเร็ว
-                      พร้อมระบบจัดเก็บข้อมูลที่ค้นหาง่ายและปลอดภัย
-                      ช่วยลดความซ้ำซ้อนในการทำงานเอกสาร
+                      {t(
+                        "clinic:product_showcase.medical_certificate.description",
+                        "สร้างเอกสารทางการแพทย์ที่ได้มาตรฐานอย่างรวดเร็ว พร้อมระบบจัดเก็บข้อมูลที่ค้นหาง่ายและปลอดภัย ช่วยลดความซ้ำซ้อนในการทำงานเอกสาร",
+                      )}
                     </p>
                   </div>
                   <div className="space-y-3">
-                    {[
-                      "รองรับเทมเพลตมาตรฐาน (ใบรับรองทั่วไป, ใบตรวจรักษา, และใบส่งตัว)",
-                      "เชื่อมโยงข้อมูลคนไข้และวินิจฉัยเข้าเอกสารอัตโนมัติ ไม่ต้องคีย์ซ้ำ",
-                      "ระบบรันเลขที่เอกสาร (Running Number) ป้องกันการปลอมแปลง",
-                      "ประวัติการออกเอกสารย้อนหลัง ค้นหาและพิมพ์ซ้ำได้ทันที",
-                      "รองรับการฝังลายเซ็นดิจิทัลและตราประทับคลินิกเพื่อความสากล",
-                      "พิมพ์เอกสารได้ทันที หรือบันทึกเป็นไฟล์ดิจิทัล PDF",
-                    ].map((feature, index) => (
+                    {t("clinic:product_showcase.medical_certificate.items", {
+                      returnObjects: true,
+                    }).map((feature, index) => (
                       <div key={index} className="flex items-start gap-3">
                         <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#1bb59b]/10 flex items-center justify-center">
                           <i className="uil uil-check text-[#1bb59b] text-[14px] font-bold" />
@@ -610,30 +599,32 @@ export default async function ProductShowcase({ lng }) {
 
                     <div className="grid items-center justify-start mb-4">
                       <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                        ระบบจัดการเอกสารการเงินครบวงจร
+                        {t(
+                          "clinic:product_showcase.financial_doc.title",
+                          "ระบบจัดการเอกสารการเงินครบวงจร",
+                        )}
                       </h4>
                       <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                        ออกใบเสร็จและใบกำกับภาษีได้รวดเร็ว
+                        {t(
+                          "clinic:product_showcase.financial_doc.subtitle",
+                          "ออกใบเสร็จและใบกำกับภาษีได้รวดเร็ว",
+                        )}
                       </h5>
                     </div>
 
                     <div className="space-y-4">
                       <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                        บริหารจัดการรายได้อย่างมืออาชีพ
-                        ออกใบเสร็จและใบกำกับภาษีได้รวดเร็ว ถูกต้องตามหลักบัญชี
-                        พร้อมระบบสรุปยอดเงินที่ตรวจสอบได้ทุกขั้นตอน
+                        {t(
+                          "clinic:product_showcase.financial_doc.description",
+                          "บริหารจัดการรายได้อย่างมืออาชีพ ออกใบเสร็จและใบกำกับภาษีได้รวดเร็ว ถูกต้องตามหลักบัญชี พร้อมระบบสรุปยอดเงินที่ตรวจสอบได้ทุกขั้นตอน",
+                        )}
                       </p>
 
                       {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
                       <div className="space-y-3">
-                        {[
-                          "ออกใบแจ้งหนี้ ใบเสร็จรับเงิน ใบลดหนี้ และใบกำกับภาษี",
-                          "คำนวณภาษีมูลค่าเพิ่ม (VAT) และส่วนลดโปรโมชั่นให้อัตโนมัติ",
-                          "รองรับการชำระเงินหลายรูปแบบ ทั้งเงินสด โอนจ่าย และบัตรเครดิต",
-                          "บันทึกประวัติการรับชำระและติดตามยอดค้างชำระรายบุคคล",
-                          "ระบบจัดการรายการขาย และบันทึกค่าใช้จ่ายคลินิกเพื่อสรุปกำไรสุทธิ",
-                          "ค้นหาและออกเอกสารภาษีย้อนหลังได้ทันที ด้วยระบบ Smart Search",
-                        ].map((feature, index) => (
+                        {t("clinic:product_showcase.financial_doc.items", {
+                          returnObjects: true,
+                        }).map((feature, index) => (
                           <div key={index} className="flex items-start gap-3">
                             <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-[#1bb59b]/10 flex items-center justify-center">
                               <i className="uil uil-check text-[#1bb59b] text-[14px] font-bold" />
@@ -700,42 +691,31 @@ export default async function ProductShowcase({ lng }) {
 
                   <div className="grid items-center justify-start mb-4">
                     <h4 className="text-xl md:text-2xl font-bold !mb-0 !text-[#343f52]">
-                      ระบบจัดการฉลากยาและคำแนะนำ
+                      {t(
+                        "clinic:product_showcase.drug_label.title",
+                        "ระบบจัดการฉลากยาและคำแนะนำ",
+                      )}
                     </h4>
                     <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#1bb59b]">
-                      ระบบพิมพ์ฉลากยา เพิ่มความชัดเจนในการสื่อสารกับคนไข้
+                      {t(
+                        "clinic:product_showcase.drug_label.subtitle",
+                        "ระบบพิมพ์ฉลากยา เพิ่มความชัดเจนในการสื่อสารกับคนไข้",
+                      )}
                     </h5>
                   </div>
 
                   <div className="space-y-6">
                     <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                      ยกระดับมาตรฐานการจ่ายยาด้วยระบบพิมพ์ฉลากยา
-                      ที่ช่วยลดความผิดพลาดและเพิ่มความชัดเจนในการสื่อสารกับคนไข้
+                      {t(
+                        "clinic:product_showcase.drug_label.description",
+                        "ยกระดับมาตรฐานการจ่ายยาด้วยระบบพิมพ์ฉลากยา ที่ช่วยลดความผิดพลาดและเพิ่มความชัดเจนในการสื่อสารกับคนไข้",
+                      )}
                     </p>
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-2  gap-2 !text-sm text-[#343f52] mx-auto">
-                    {[
-                      {
-                        text: "พิมพ์ฉลากยา และวิธีใช้อย่างถูกต้อง",
-                        icon: "uil-print", // สื่อถึงการสั่งพิมพ์โดยตรง
-                      },
-                      {
-                        text: "เทมเพลตฉลากยามาตรฐาน รองรับทุกเครื่องพิมพ์",
-                        icon: "uil-label-alt", // สื่อถึงป้ายฉลากหรือ Sticker
-                      },
-                      {
-                        text: "ระบบบันทึกคำเตือนและข้อควรระวังพิเศษ",
-                        icon: "uil-exclamation-triangle", // สื่อถึงคำเตือน/ข้อควรระวัง (ยาระวังพิเศษ)
-                      },
-                      {
-                        text: "จัดการข้อมูลวิธีใช้ยา (Sig) อัตโนมัติ",
-                        icon: "uil-capsule", // สื่อถึงตัวยาหรือการใช้ยา
-                      },
-                      {
-                        text: "ปรับแต่งโลโก้คลินิกและข้อมูลติดต่อบนฉลาก",
-                        icon: "uil-edit", // สื่อถึงการปรับแต่งหรือการแก้ไขดีไซน์
-                      },
-                    ].map((item, index) => (
+                    {t("clinic:product_showcase.drug_label.items", {
+                      returnObjects: true,
+                    }).map((item, index) => (
                       <div
                         key={index}
                         className="flex items-start gap-3 
@@ -798,39 +778,32 @@ export default async function ProductShowcase({ lng }) {
 
                     <div className="grid items-center justify-start mb-4">
                       <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                        ระบบจัดการคูปองและวงเงินคงเหลือ
+                        {t(
+                          "clinic:product_showcase.coupon.title",
+                          "ระบบจัดการคูปองและวงเงินคงเหลือ",
+                        )}
                       </h4>
                       <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                        ช่วยให้การบริหารโปรโมชั่นและแพ็กเกจเป็นเรื่องง่าย
+                        {t(
+                          "clinic:product_showcase.coupon.subtitle",
+                          "ช่วยให้การบริหารโปรโมชั่นและแพ็กเกจเป็นเรื่องง่าย",
+                        )}
                       </h5>
                     </div>
 
                     <div className="space-y-4">
                       <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                        ยกระดับการตลาดในคลินิกด้วยระบบจัดการสิทธิพิเศษและวงเงินล่วงหน้า
-                        ช่วยให้การบริหารโปรโมชั่นและแพ็กเกจเป็นเรื่องง่ายและตรวจสอบได้แม่นยำ
+                        {t(
+                          "clinic:product_showcase.coupon.description",
+                          "ยกระดับการตลาดในคลินิกด้วยระบบจัดการสิทธิพิเศษและวงเงินล่วงหน้า ช่วยให้การบริหารโปรโมชั่นและแพ็กเกจเป็นเรื่องง่ายและตรวจสอบได้แม่นยำ",
+                        )}
                       </p>
 
                       {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
                       <div className="space-y-0">
-                        {[
-                          {
-                            text: "สร้างคูปองส่วนลด ทั้งแบบบาทและเปอร์เซ็นต์",
-                            icon: "uil-ticket",
-                          },
-                          {
-                            text: "กำหนดเงื่อนไขและวันหมดอายุได้อย่างอิสระ",
-                            icon: "uil-setting",
-                          },
-                          {
-                            text: "ระบบบันทึกประวัติละเอียด ป้องกันการใช้สิทธิ์ซ้ำ",
-                            icon: "uil-history",
-                          },
-                          {
-                            text: "รายงานวิเคราะห์ความคุ้มค่าของแต่ละแคมเปญ",
-                            icon: "uil-chart-line",
-                          },
-                        ].map((feature, index) => (
+                        {t("clinic:product_showcase.coupon.items", {
+                          returnObjects: true,
+                        }).map((feature, index) => (
                           <div
                             key={index}
                             className="flex items-center gap-2 py-1 rounded-2xl transition-all duration-300 group"
@@ -909,39 +882,31 @@ export default async function ProductShowcase({ lng }) {
 
                   <div className="grid items-center justify-start mb-4">
                     <h4 className="text-xl md:text-2xl font-bold !mb-0 !text-[#343f52]">
-                      ระบบจัดการรายการเบิกจ่าย E-claim
+                      {t(
+                        "clinic:product_showcase.eclaim.title",
+                        "ระบบจัดการรายการเบิกจ่าย E-claim",
+                      )}
                     </h4>
                     <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#1bb59b]">
-                      เชื่อมต่อการเบิกจ่ายประกันและสวัสดิการต่างๆ
+                      {t(
+                        "clinic:product_showcase.eclaim.subtitle",
+                        "เชื่อมต่อการเบิกจ่ายประกันและสวัสดิการต่างๆ",
+                      )}
                     </h5>
                   </div>
 
                   <div className="space-y-6">
                     <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                      เชื่อมต่อการเบิกจ่ายประกันและสวัสดิการต่างๆ อย่างเป็นระบบ
-                      ลดขั้นตอนการคีย์ข้อมูลซ้ำซ้อน
-                      และเพิ่มโอกาสการอนุมัติเคลมที่รวดเร็วยิ่งขึ้น
+                      {t(
+                        "clinic:product_showcase.eclaim.description",
+                        "เชื่อมต่อการเบิกจ่ายประกันและสวัสดิการต่างๆ อย่างเป็นระบบ ลดขั้นตอนการคีย์ข้อมูลซ้ำซ้อน และเพิ่มโอกาสการอนุมัติเคลมที่รวดเร็วยิ่งขึ้น",
+                      )}
                     </p>
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-2  gap-2 !text-sm text-[#343f52] mx-auto">
-                    {[
-                      {
-                        text: "ส่งเคลมประกันและสวัสดิการรัฐ (E-claim) ออนไลน์",
-                        icon: "uil-cloud-upload",
-                      },
-                      {
-                        text: "ตรวจสอบรหัส ICD-10 และหัตถการอัตโนมัติ",
-                        icon: "uil-focus-target", // สื่อถึงความแม่นยำในการระบุรหัส
-                      },
-                      {
-                        text: "สรุปค่ารักษาพยาบาล แยกตามสิทธิ์เบิกจ่าย",
-                        icon: "uil-layer-group", // สื่อถึงการจัดกลุ่ม/แยกประเภทสิทธิ์
-                      },
-                      {
-                        text: "รายงานสรุปยอดเบิกจ่ายรายเดือน แม่นยำตามหลักบัญชี",
-                        icon: "uil-file-check-alt", // สื่อถึงรายงานที่ผ่านการตรวจสอบแล้ว
-                      },
-                    ].map((item, index) => (
+                    {t("clinic:product_showcase.eclaim.items", {
+                      returnObjects: true,
+                    }).map((item, index) => (
                       <div
                         key={index}
                         className="flex items-start gap-3 
@@ -1002,54 +967,32 @@ export default async function ProductShowcase({ lng }) {
 
                     <div className="grid items-center justify-start mb-4">
                       <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                        ระบบรายงานเชิงลึกกว่า 45 รูปแบบ
+                        {t(
+                          "clinic:product_showcase.report.title",
+                          "ระบบรายงานเชิงลึกกว่า 45 รูปแบบ",
+                        )}
                       </h4>
                       <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                        ข้อมูลคลินิกได้ครบทุกมิติ
-                        ที่ช่วยให้คุณเห็นภาพรวมธุรกิจได้ชัดเจน
+                        {t(
+                          "clinic:product_showcase.report.subtitle",
+                          "ข้อมูลคลินิกได้ครบทุกมิติ ที่ช่วยให้คุณเห็นภาพรวมธุรกิจได้ชัดเจน",
+                        )}
                       </h5>
                     </div>
 
                     <div className="space-y-4">
                       <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                        วิเคราะห์ข้อมูลคลินิกได้ครบทุกมิติด้วยรายงานมาตรฐานและรายงานขั้นสูง
-                        ที่ช่วยให้คุณเห็นภาพรวมธุรกิจได้ชัดเจนในคลิกเดียว
+                        {t(
+                          "clinic:product_showcase.report.description",
+                          "วิเคราะห์ข้อมูลคลินิกได้ครบทุกมิติด้วยรายงานมาตรฐานและรายงานขั้นสูง ที่ช่วยให้คุณเห็นภาพรวมธุรกิจได้ชัดเจนในคลิกเดียว",
+                        )}
                       </p>
 
                       {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {[
-                          {
-                            title: "รายงานยอดขายและบัญชี",
-                            desc: "สรุปรายได้ ภาษีขาย และยอดค้างชำระละเอียด",
-                            icon: "uil-bill", // ไอคอนใบเสร็จ/บัญชี
-                          },
-                          {
-                            title: "รายงานสต็อกและเวชภัณฑ์",
-                            desc: "เช็คความเคลื่อนไหวสินค้าขายดีและของคงคลัง",
-                            icon: "uil-box", // ไอคอนกล่องสินค้า/สต็อก
-                          },
-                          {
-                            title: "วิเคราะห์ข้อมูลลูกค้า",
-                            desc: "สถิติคนไข้ใหม่และพฤติกรรมการใช้บริการ",
-                            icon: "uil-users-alt", // ไอคอนกลุ่มคนไข้
-                          },
-                          {
-                            title: "รายงานวัตถุอันตราย",
-                            desc: "ออกรายงานส่งกองควบคุมวัตถุเสพติดได้ทันที",
-                            icon: "uil-shield-exclamation", // ไอคอนความปลอดภัย/ควบคุมพิเศษ
-                          },
-                          {
-                            title: "สรุปรายงานตามช่วงเวลา",
-                            desc: "เลือกดูย้อนหลังรายวัน เดือน หรือปีได้อิสระ",
-                            icon: "uil-calendar-alt", // ไอคอนปฏิทินช่วงเวลา
-                          },
-                          {
-                            title: "Export Data",
-                            desc: "ส่งออกไฟล์ Excel และ PDF เพื่อวิเคราะห์ต่อ",
-                            icon: "uil-file-export", // ไอคอนส่งออกไฟล์
-                          },
-                        ].map((feature, index) => (
+                        {t("clinic:product_showcase.report.items", {
+                          returnObjects: true,
+                        }).map((feature, index) => (
                           <div
                             key={index}
                             className="flex items-start gap-2 p-1 rounded-2xl border border-transparent  transition-all duration-300 group"

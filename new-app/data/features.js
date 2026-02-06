@@ -1,9 +1,442 @@
+export const getHighlightFeatures = (t) => [
+  {
+    title: t("home:platform_highlights.highlights.security.title", "THE BEST"),
+    badgeColor: "bg-[#ff0000]",
+    icon: "uil-shield-check",
+    desc: t(
+      "home:platform_highlights.highlights.security.desc",
+      "ป้องกันข้อมูลสูญหายด้วยระบบไร้กระดาษ ค้นหาประวัติง่าย และรองรับ OPD ไม่จำกัด",
+    ),
+  },
+  {
+    title: t("home:platform_highlights.highlights.multi_branch.title", "NEW"),
+    badgeColor: "bg-[#ff8a00]",
+    icon: "uil-user-circle",
+    desc: t(
+      "home:platform_highlights.highlights.multi_branch.desc",
+      "รองรับการบริหารจัดการหลายสาขาได้อย่างง่ายดายผ่านเพียง 1 บัญชีผู้ใช้",
+    ),
+  },
+  {
+    title: t("home:platform_highlights.highlights.appointment.title", "NEW"),
+    badgeColor: "bg-[#ff8a00]",
+    icon: "uil-calendar-alt",
+    desc: t(
+      "home:platform_highlights.highlights.appointment.desc",
+      "นัดหมายและจัดคิวแพทย์ได้ง่ายขึ้น พร้อมระบบแจ้งเตือนผ่าน Google Calendar",
+    ),
+  },
+  {
+    title: t(
+      "home:platform_highlights.highlights.realtime_report.title",
+      "THE BEST",
+    ),
+    badgeColor: "bg-[#ff0000]",
+    icon: "uil-chart-line",
+    desc: t(
+      "home:platform_highlights.highlights.realtime_report.desc",
+      "ไม่ต้องเสียเวลาทำสรุปเอง เพราะระบบรวบรวมรายงานให้แบบ Real-time ทันที",
+    ),
+  },
+  {
+    title: t("home:platform_highlights.highlights.printing.title", "NEW"),
+    badgeColor: "bg-[#ff8a00]",
+    icon: "uil-print",
+    desc: t(
+      "home:platform_highlights.highlights.printing.desc",
+      "ครบจบในที่เดียว ทั้งพิมพ์ฉลากยา ใบแจ้งหนี้ ใบเสร็จ และใบกำกับภาษี",
+    ),
+  },
+  {
+    title: t(
+      "home:platform_highlights.highlights.remote_work.title",
+      "THE BEST",
+    ),
+    badgeColor: "bg-[#ff0000]",
+    icon: "uil-file-info-alt",
+    desc: t(
+      "home:platform_highlights.highlights.remote_work.desc",
+      "ตรวจสอบการทำงานและการเงินได้แบบ Real-time ทำงานจากที่ไหนก็ได้",
+    ),
+  },
+];
+export const getServicesData = (t, lng) => {
+  const data = [
+    {
+      title: t("home:product_overview.services.opd.title", "ระบบเวชระเบียน"),
+      subTitle: t(
+        "home:product_overview.services.opd.subTitle",
+        "OPD Management",
+      ),
+      icon: "uil-file-bookmark-alt",
+      desc: t(
+        "home:product_overview.services.opd.desc",
+        "จัดเก็บประวัติคนไข้และข้อมูลการรักษาอย่างเป็นระบบ ค้นหาง่ายเพียงปลายนิ้ว",
+      ),
+    },
+    {
+      title: t(
+        "home:product_overview.services.stock.title",
+        "ระบบบริหารสต็อกยา",
+      ),
+      subTitle: null,
+      icon: "uil-medkit",
+      desc: t(
+        "home:product_overview.services.stock.desc",
+        "ตัดสต็อกอัตโนมัติ แจ้งเตือนเมื่อยาใกล้หมดหรือหมดอายุ",
+      ),
+    },
+    {
+      title: t(
+        "home:product_overview.services.analytics.title",
+        "รายงานวิเคราะห์",
+      ),
+      subTitle: t(
+        "home:product_overview.services.analytics.subTitle",
+        "กว่า 40 รูปแบบ",
+      ),
+      icon: "uil-analytics",
+      desc: t(
+        "home:product_overview.services.analytics.desc",
+        "สรุปยอดขาย กำไร และสถิติคนไข้ครบจบในที่เดียว",
+      ),
+    },
+    {
+      title: t("home:product_overview.services.crm.title", "ข้อมูลลูกค้า"),
+      subTitle: null,
+      icon: "uil-users-alt",
+      desc: t(
+        "home:product_overview.services.crm.desc",
+        "เครื่องมือ CRM เก็บข้อมูลพฤติกรรมการใช้บริการเพื่อแผนการตลาดที่ตรงจุด",
+      ),
+    },
+    {
+      title: t(
+        "home:product_overview.services.multi_branch.title",
+        "รองรับหลายสาขา",
+      ),
+      subTitle: null,
+      icon: "uil-store-alt",
+      desc: t(
+        "home:product_overview.services.multi_branch.desc",
+        "จัดการข้อมูลทุกสาขาได้พร้อมกันผ่าน Centralized Dashboard เพียงบัญชีเดียว",
+      ),
+    },
+    {
+      title: t(
+        "home:product_overview.services.permissions.title",
+        "สิทธิ์การเข้าถึง",
+      ),
+      subTitle: null,
+      icon: "uil-lock-access",
+      desc: t(
+        "home:product_overview.services.permissions.desc",
+        "กำหนดสิทธิ์การมองเห็นข้อมูลของพนักงานแต่ละระดับได้อย่างปลอดภัย",
+      ),
+    },
+  ];
+  return data;
+};
+
+export const getBillData = (t, lng) => {
+  const data = [
+    {
+      number: "01",
+      title: t("home:product_overview.bill.step1.title", "ใบเสนอราคา"),
+      description: t(
+        "home:product_overview.bill.step1.description",
+        "สร้างและส่งใบเสนอราคาอย่างมืออาชีพ เพื่อปิดดีลกับลูกค้าได้รวดเร็วยิ่งขึ้น",
+      ),
+      isLast: false,
+    },
+    {
+      number: "02",
+      title: t("home:product_overview.bill.step2.title", "ใบแจ้งหนี้"),
+      description: t(
+        "home:product_overview.bill.step2.description",
+        "เปลี่ยนใบเสนอราคาเป็นใบแจ้งหนี้ในคลิกเดียว พร้อมระบบติดตามการชำระเงิน",
+      ),
+      isLast: false,
+    },
+    {
+      number: "03",
+      title: t("home:product_overview.bill.step3.title", "ใบเสร็จ"),
+      description: t(
+        "home:product_overview.bill.step3.description",
+        "ออกใบเสร็จรับเงินทันทีเมื่อได้รับการชำระ เพื่อยืนยันความถูกต้องให้แก่ลูกค้า",
+      ),
+      isLast: false,
+    },
+    {
+      number: "04",
+      title: t("home:product_overview.bill.step4.title", "ใบกำกับภาษี"),
+      description: t(
+        "home:product_overview.bill.step4.description",
+        "จัดการเอกสารทางภาษีให้ถูกต้องตามมาตรฐาน ลดความยุ่งยากในช่วงสิ้นเดือน",
+      ),
+      isLast: true,
+    },
+  ];
+  return data;
+};
+
+export const getHighLightsData = (t, lng) => [
+  {
+    id: "feature-f1",
+    badge: "NEW",
+    badgeColor: "bg-[#ff8a00]",
+    sparkle: true,
+    color: "#ff8a00",
+    title: t(
+      "home:product_overview.high_lights_data.f1.title",
+      "Multi-Branch Management",
+    ),
+    description: t(
+      "home:product_overview.high_lights_data.f1.description",
+      "รองรับการดูแลจัดการสาขาได้หลายสาขา เพียง 1 User",
+    ),
+    icon: <i className="uil uil-user-circle text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f2",
+    badge: null,
+    badgeColor: null,
+    sparkle: false,
+    color: "#343f52",
+    title: t(
+      "home:product_overview.high_lights_data.f2.title",
+      "User Permissions",
+    ),
+    description: t(
+      "home:product_overview.high_lights_data.f2.description",
+      "รองรับการกำหนดบทบาทการทำงานของผู้ใช้งานได้ตามต้องการ",
+    ),
+    icon: <i className="uil uil-users-alt text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f3",
+    badge: null,
+    badgeColor: null,
+    sparkle: false,
+    color: "#343f52",
+    title: t(
+      "home:product_overview.high_lights_data.f3.title",
+      "Sales Analytics",
+    ),
+    description: t(
+      "home:product_overview.high_lights_data.f3.description",
+      "รองรับการดูยอดขาย กำไร/ขาดทุน แยกตามสาขาได้",
+    ),
+    icon: <i className="uil uil-chart-growth text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f4",
+    badge: null,
+    badgeColor: null,
+    sparkle: false,
+    color: "#343f52",
+    title: t(
+      "home:product_overview.high_lights_data.f4.title",
+      "Commission System",
+    ),
+    description: t(
+      "home:product_overview.high_lights_data.f4.description",
+      "รองรับการให้ค่ามือและค่าคอมมิชชั่น แพทย์ / พนักงาน / พยาบาล ได้หลายแบบ",
+    ),
+    icon: <i className="uil uil-stethoscope text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f5",
+    badge: null,
+    badgeColor: null,
+    sparkle: false,
+    color: "#343f52",
+    title: t("home:product_overview.high_lights_data.f5.title", "Accounting"),
+    description: t(
+      "home:product_overview.high_lights_data.f5.description",
+      "รองรับการจัดการผังบัญชีเบื้องต้น (สินทรัพย์ หนี้สิน รายได้ ค่าใช้จ่าย)",
+    ),
+    icon: <i className="uil uil-calculator text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f6",
+    badge: "NEW",
+    badgeColor: "bg-[#ff8a00]",
+    sparkle: true,
+    color: "#ff8a00",
+    title: t(
+      "home:product_overview.high_lights_data.f6.title",
+      "Tax Documents",
+    ),
+    description: t(
+      "home:product_overview.high_lights_data.f6.description",
+      "รองรับการออกเอกสาร ใบแจ้งหนี้ ใบเสร็จรับเงิน และใบกำกับภาษี",
+    ),
+    icon: <i className="uil uil-file-search-alt text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f7",
+    badge: null,
+    badgeColor: null,
+    sparkle: false,
+    color: "#343f52",
+    title: t(
+      "home:product_overview.high_lights_data.f7.title",
+      "Service & Lab",
+    ),
+    description: t(
+      "home:product_overview.high_lights_data.f7.description",
+      "รองรับบริการ คอร์ส/ตรวจ/Lab/X-Ray พร้อมพ่วงยาอุปกรณ์ได้",
+    ),
+    icon: <i className="uil uil-parcel text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f8",
+    badge: null,
+    badgeColor: null,
+    sparkle: false,
+    color: "#343f52",
+    title: t(
+      "home:product_overview.high_lights_data.f8.title",
+      "Member Credits",
+    ),
+    description: t(
+      "home:product_overview.high_lights_data.f8.description",
+      "รองรับการทำคูปอง/บัตรสมาชิก (วงเงิน)",
+    ),
+    icon: <i className="uil uil-credit-card text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f9",
+    badge: "THE BEST",
+    badgeColor: "bg-[#ff0000]",
+    sparkle: true,
+    color: "#ff0000",
+    title: t("home:product_overview.high_lights_data.f9.title", "OPD System"),
+    description: t(
+      "home:product_overview.high_lights_data.f9.description",
+      "รองรับระบบ OPD ไม่จำกัด",
+    ),
+    icon: <i className="uil uil-bed-double text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f10",
+    badge: null,
+    badgeColor: null,
+    sparkle: false,
+    color: "#343f52",
+    title: t(
+      "home:product_overview.high_lights_data.f10.title",
+      "Marketing Tools",
+    ),
+    description: t(
+      "home:product_overview.high_lights_data.f10.description",
+      "รองรับระบบส่งข้อความโปรโมชั่นผ่าน SMS/Email",
+    ),
+    icon: <i className="uil uil-envelope-send text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f11",
+    badge: null,
+    badgeColor: null,
+    sparkle: false,
+    color: "#343f52",
+    title: t(
+      "home:product_overview.high_lights_data.f11.title",
+      "Medical Records",
+    ),
+    description: t(
+      "home:product_overview.high_lights_data.f11.description",
+      "รองรับการออกเอกสารเอกสารทางการแพทย์หลากหลาย",
+    ),
+    icon: <i className="uil uil-file-medical text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f12",
+    badge: "NEW",
+    badgeColor: "bg-[#ff8a00]",
+    sparkle: true,
+    color: "#ff8a00",
+    title: t("home:product_overview.high_lights_data.f12.title", "Reports"),
+    description: t(
+      "home:product_overview.high_lights_data.f12.description",
+      "รองรับการออกรายงานต่างๆ ทั้งรูปแบบ Excel/PDF",
+    ),
+    icon: <i className="uil uil-analytics text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f13",
+    badge: null,
+    badgeColor: null,
+    sparkle: false,
+    color: "#343f52",
+    title: t(
+      "home:product_overview.high_lights_data.f13.title",
+      "Excel Import",
+    ),
+    description: t(
+      "home:product_overview.high_lights_data.f13.description",
+      "รองรับการนำเข้ารายการต่างๆ ง่ายๆ ผ่านไฟล์ Excel",
+    ),
+    icon: <i className="uil uil-file-import text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f14",
+    badge: "NEW",
+    badgeColor: "bg-[#ff8a00]",
+    sparkle: true,
+    color: "#ff8a00",
+    title: t(
+      "home:product_overview.high_lights_data.f14.title",
+      "Appointments",
+    ),
+    description: t(
+      "home:product_overview.high_lights_data.f14.description",
+      "รองรับการลงนัดหมายทั้งแบบระบุตัวตนและแบบทั่วไป",
+    ),
+    icon: <i className="uil uil-calendar-alt text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f15",
+    badge: null,
+    badgeColor: null,
+    sparkle: false,
+    color: "#343f52",
+    title: t(
+      "home:product_overview.high_lights_data.f15.title",
+      "Alert System",
+    ),
+    description: t(
+      "home:product_overview.high_lights_data.f15.description",
+      "รองรับการแจ้งเตือนข้อมูลต่างๆ ในรูปแบบรายงาน",
+    ),
+    icon: <i className="uil uil-info-circle text-2xl !text-[#f5f5f6]"></i>,
+  },
+  {
+    id: "feature-f16",
+    badge: "NEW",
+    badgeColor: "bg-[#ff8a00]",
+    sparkle: true,
+    color: "#ff8a00",
+    title: t("home:product_overview.high_lights_data.f16.title", "Alert Alarm"),
+    description: t(
+      "home:product_overview.high_lights_data.f16.description",
+      "รองรับการแจ้งเตือน Alert Alarm หน้าโปรแกรม",
+    ),
+    icon: (
+      <i className="uil uil-monitor-heart-rate text-2xl !text-[#f5f5f6]"></i>
+    ),
+  },
+];
 export const getFeaturesData = (t, lng) => [
   {
     id: "blog1",
-    title: t("home:features.features.blog1.title", "Real Time Data"),
+    title: t(
+      "home:product_overview.features.features.blog1.title",
+      "Real Time Data",
+    ),
     description: t(
-      "home:features.features.blog1.description",
+      "home:product_overview.features.features.blog1.description",
       "การส่งข้อมูลสะดวกและรวดเร็ว อัปเดตทันที (Sync) ลดระยะเวลาและช่วยให้การตัดสินใจบริหารงานแม่นยำในทุกวินาที",
     ),
     color: "#02a353",
@@ -11,9 +444,12 @@ export const getFeaturesData = (t, lng) => [
   },
   {
     id: "blog2",
-    title: t("home:features.features.blog2.title", "AWS Cloud"),
+    title: t(
+      "home:product_overview.features.features.blog2.title",
+      "AWS Cloud",
+    ),
     description: t(
-      "home:features.features.blog2.description",
+      "home:product_overview.features.features.blog2.description",
       "ข้อมูลคลินิกถูกรักษาไว้ที่ AWS Cloud ด้วยมาตรฐานความปลอดภัยที่ได้รับการยอมรับจากองค์กรชั้นนำทั่วโลก",
     ),
     color: "#3b73e1",
@@ -21,9 +457,12 @@ export const getFeaturesData = (t, lng) => [
   },
   {
     id: "blog3",
-    title: t("home:features.features.blog3.title", "Data Security"),
+    title: t(
+      "home:product_overview.features.features.blog3.title",
+      "Data Security",
+    ),
     description: t(
-      "home:features.features.blog3.description",
+      "home:product_overview.features.features.blog3.description",
       "Web Application Security เข้ารหัสแบบ SSL 256-bit ข้อมูลของคุณจะได้รับการป้องกันด้วยมาตรฐานความปลอดภัยระดับสูงสุด",
     ),
     color: "#d93d4d",

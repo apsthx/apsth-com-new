@@ -110,7 +110,7 @@ export default async function CustomerPage({ params }) {
               <Hero lng={lng} />
             </div>
 
-            <div className="container bg-[#29bbb4] p-4 xl:p-12 md:p-10 rounded-3xl">
+            <div className="container bg-[#29bbb4] p-2 xl:p-0 md:p-4 rounded-3xl">
               <OurCustomersGroups />
             </div>
           </section>

@@ -292,10 +292,12 @@ export default async function Package({ lng }) {
 
   return (
     <section
+      data-cues="slideInDown"
+      data-delay={300}
       id="price"
       className="container wrapper !bg-white overflow-hidden py-10"
     >
-      <div className="text-center mb-4" data-cues="slideInDown">
+      <div className="text-center mb-4">
         <h2 className="text-[2rem] font-black text-[#343f52] tracking-tighter">
           {t("home:package.title", "ราคานี้ยังไม่รวมภาษีมูลค่าเพิ่ม Vat 7%")}
         </h2>

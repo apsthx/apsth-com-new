@@ -69,5 +69,216 @@
     "list41": "R.W.J.3/4 Report",
     "list42": "R.Y.S.4/5 Report",
     "list43": "Y.S.5/6/7 Report"
+  },
+  "product_showcase": {
+    "dashborad": {
+      "title": "Management Dashboard",
+      "subtitle": "Real-time Business Intelligence",
+      "description": "Transform backend data into easy-to-read visual graphs. Identify business trends and make data-driven decisions for your clinic's growth with precision.",
+      "items": [
+        "Comprehensive Cash Flow, Outstanding Balances, and Revenue History.",
+        "Profitability Analysis for Services and Medications.",
+        "New Patient Acquisition and Retention Stats.",
+        "100% Accurate Automated Professional Fee & Commission calculations.",
+        "Comparative Daily, Monthly, and Yearly Performance Summaries."
+      ]
+    },
+    "business_analytics": {
+      "title": "Business Intelligence",
+      "subtitle": "Unlocking Opportunities for Growth",
+      "description": "Transform scattered backend data into a clear performance overview. Identify new growth opportunities and manage costs with maximum efficiency.",
+      "items": [
+        {
+          "text": "Income & Expense Summary",
+          "icon": "uil-chart-bar"
+        },
+        {
+          "text": "Service & Customer Analytics",
+          "icon": "uil-users-alt"
+        },
+        {
+          "text": "Revenue & Trend Forecasting",
+          "icon": "uil-arrow-growth"
+        },
+        {
+          "text": "Team Performance Metrics",
+          "icon": "uil-chart-line"
+        },
+        {
+          "text": "Profit & Cost Analysis",
+          "icon": "uil-money-stack"
+        }
+      ]
+    },
+    "appointment": {
+      "title": "Appointment Management",
+      "subtitle": "Seamless Operations with Zero Interruptions",
+      "description": "Organize patient appointments systematically to eliminate scheduling errors and ensure your team's workflow remains fluid and efficient.",
+      "items": {
+        "appointment": {
+          "title": "Smart Booking Calendar",
+          "desc": "Intelligent color-coded scheduling for different case types, providing a clear and non-confusing daily overview."
+        },
+        "roster": {
+          "title": "Medical Staff Rostering",
+          "desc": "Systematically manage shifts and examination rooms to prevent double-bookings and optimize resource usage."
+        }
+      }
+    },
+    "queue": {
+      "title": "Queue Management System",
+      "subtitle": "Seamless Coordination Between Front Desk and Doctors",
+      "description": "Systematically organize patient flow to ensure smooth coordination between front-desk staff and medical professionals, significantly reducing patient waiting times.",
+      "items": [
+        {
+          "text": "Automated Queuing with High Precision",
+          "icon": "uil-list-ol"
+        },
+        {
+          "text": "Real-time Queue Dashboard by Examination Room",
+          "icon": "uil-monitor"
+        },
+        {
+          "text": "Digital Display & Audio Announcement System",
+          "icon": "uil-megaphone"
+        }
+      ]
+    },
+    "medical_certificate": {
+      "title": "Medical Certificate System",
+      "subtitle": "Streamlining Documentation & Paperwork",
+      "description": "Generate standardized medical documents rapidly with a secure and searchable storage system. Minimize administrative redundancy and ensure document accuracy.",
+      "items": [
+        "Supports standard templates (General certificates, treatment records, and referral letters).",
+        "Automated data syncing—pulling patient info and diagnoses without re-typing.",
+        "Secure document running numbers to prevent tampering and forgery.",
+        "Historical issuance records with instant search and re-print capabilities.",
+        "Supports digital signatures and clinic stamps for international standards.",
+        "Instant printing or export to secure digital PDF format."
+      ]
+    },
+    "financial_doc": {
+      "title": "Comprehensive Financial Management",
+      "subtitle": "Fast Billing & Professional Invoicing",
+      "description": "Manage your revenue professionally with fast, accurate, and accounting-compliant invoicing. Our system ensures every transaction is transparent and easily auditable at every step.",
+      "items": [
+        "Generate Invoices, Receipts, Credit Notes, and Full Tax Invoices.",
+        "Automated VAT calculation and promotional discount processing.",
+        "Supports multiple payment methods: Cash, Bank Transfer, and Credit Cards.",
+        "Record payment history and track individual outstanding balances.",
+        "Sales tracking and expense recording for net profit summarization.",
+        "Instant historical document retrieval with Smart Search technology."
+      ]
+    },
+    "drug_label": {
+      "title": "Medication Labeling System",
+      "subtitle": "Precision Printing for Clearer Patient Communication",
+      "description": "Elevate your dispensing standards with a professional labeling system that minimizes medication errors and enhances patient understanding of their treatment.",
+      "items": [
+        {
+          "text": "Accurate Drug Labels & Usage Instructions Printing",
+          "icon": "uil-print"
+        },
+        {
+          "text": "Universal Label Templates Compatible with All Printers",
+          "icon": "uil-label-alt"
+        },
+        {
+          "text": "Special Warnings & Precautionary Alerts System",
+          "icon": "uil-exclamation-triangle"
+        },
+        {
+          "text": "Automated SIG (Medication Usage) Data Management",
+          "icon": "uil-capsule"
+        },
+        {
+          "text": "Customizable Clinic Branding & Contact Information",
+          "icon": "uil-edit"
+        }
+      ]
+    },
+    "coupon": {
+      "title": "Coupon & Credit Balance System",
+      "subtitle": "Streamline Your Promotions and Package Management",
+      "description": "Boost your clinic's marketing with a comprehensive system for managing privileges and prepaid balances. Simplify promotion tracking with precise, auditable data.",
+      "items": [
+        {
+          "text": "Create discount coupons in both fixed amounts and percentages",
+          "icon": "uil-ticket"
+        },
+        {
+          "text": "Flexible settings for terms, conditions, and expiration dates",
+          "icon": "uil-setting"
+        },
+        {
+          "text": "Detailed usage history to prevent duplicate claims",
+          "icon": "uil-history"
+        },
+        {
+          "text": "Analytical reports to measure campaign cost-effectiveness",
+          "icon": "uil-chart-line"
+        }
+      ]
+    },
+    "eclaim": {
+      "title": "E-claim Management System",
+      "subtitle": "Integrated Insurance & Welfare Reimbursement",
+      "description": "Systematically streamline insurance and welfare claims. Reduce redundant data entry and accelerate claim approval rates with our integrated submission process.",
+      "items": [
+        {
+          "text": "Online submission for private insurance and government welfare (E-claim)",
+          "icon": "uil-cloud-upload"
+        },
+        {
+          "text": "Automated ICD-10 coding and medical procedure verification",
+          "icon": "uil-focus-target"
+        },
+        {
+          "text": "Medical expense summaries categorized by coverage types",
+          "icon": "uil-layer-group"
+        },
+        {
+          "text": "Monthly reimbursement reports with 100% accounting accuracy",
+          "icon": "uil-file-check-alt"
+        }
+      ]
+    },
+    "report": {
+      "title": "45+ Advanced In-Depth Reports",
+      "subtitle": "360° Business Visibility for Every Dimension",
+      "description": "Analyze your clinic from every angle with comprehensive standard and advanced reporting tools. Gain total business clarity in a single click.",
+      "items": [
+        {
+          "title": "Sales & Accounting",
+          "desc": "Detailed summaries of revenue, tax invoices, and outstanding balances.",
+          "icon": "uil-bill"
+        },
+        {
+          "title": "Inventory & Supplies",
+          "desc": "Track top-selling items and monitor real-time stock movement.",
+          "icon": "uil-box"
+        },
+        {
+          "title": "Patient Analytics",
+          "desc": "New patient statistics and behavioral usage insights.",
+          "icon": "uil-users-alt"
+        },
+        {
+          "title": "Regulated Substances",
+          "desc": "Instant compliance reports for the Narcotics Control Division.",
+          "icon": "uil-shield-exclamation"
+        },
+        {
+          "title": "Time-Series Reporting",
+          "desc": "Flexible data views: Daily, Monthly, or Yearly historical summaries.",
+          "icon": "uil-calendar-alt"
+        },
+        {
+          "title": "Data Export",
+          "desc": "Seamlessly export to Excel and PDF for further strategic analysis.",
+          "icon": "uil-file-export"
+        }
+      ]
+    }
   }
 }

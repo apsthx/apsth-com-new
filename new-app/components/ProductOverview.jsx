@@ -4,152 +4,17 @@ import { Sparkles, Zap, Lock, BarChart3 } from "lucide-react";
 import Button from "@/components/common/Button";
 import Image from "next/image";
 import SquareFeatureCard from "./common/SquareFeatureCard";
+import {
+  getHighLightsData,
+  getBillData,
+  getServicesData,
+} from "@/data/features";
 
 export default async function ProductOverview({ lng }) {
   const { t } = await useTranslation(lng);
-
-  const HIGHLIGHTS_DATA = [
-    // --- แถวที่ 1 ---
-    {
-      badge: "NEW",
-      badgeColor: "bg-[#ff8a00]",
-      icon: "uil-user-circle",
-      text: "รองรับการดูแลจัดการ\nสาขาได้หลายสาขา\nเพียง 1 User",
-      sparkle: true,
-    },
-    {
-      badge: null,
-      icon: "uil-users-alt",
-      text: "รองรับการกำหนด\nบทบาทการทำงานของ\nผู้ใช้งานได้ตามต้องการ",
-      sparkle: false,
-    },
-    {
-      badge: null,
-      icon: "uil-chart-growth",
-      text: "รองรับการดูยอดขาย\nกำไร/ขาดทุน แยก\nตามสาขาได้",
-      sparkle: false,
-    },
-    {
-      badge: null,
-      icon: "uil-stethoscope",
-      text: "รองรับการให้ค่ามือ\nและค่าคอมมิชชั่น\nแพทย์ / พนักงาน /\nพยาบาล ได้หลายแบบ",
-      sparkle: false,
-    },
-    {
-      badge: null,
-      icon: "uil-calculator",
-      text: "รองรับการจัดการผัง\nบัญชีเบื้องต้น\n(สินทรัพย์ หนี้สิน\nรายได้ ค่าใช้จ่าย)",
-      sparkle: false,
-    },
-    {
-      badge: "NEW",
-      badgeColor: "bg-[#ff8a00]",
-      icon: "uil-file-search-alt",
-      text: "รองรับการออก\nเอกสาร ใบแจ้งหนี้ ใบ\nเสร็จรับเงิน และใบ\nกำกับภาษี",
-      sparkle: true,
-    },
-    {
-      badge: null,
-      icon: "uil uil-parcel",
-      text: "รองรับบริการ คอร์ส/\nตรวจ/Lab/X-Ray\nพร้อมพ่วงยา\nอุปกรณ์ได้",
-      sparkle: false,
-    },
-    {
-      badge: null,
-      icon: "uil-credit-card",
-      text: "รองรับการทำ\nคูปอง/บัตรสมาชิก\n(วงเงิน)",
-      sparkle: false,
-    },
-
-    // --- แถวที่ 2 ---
-    {
-      badge: "THE BEST",
-      badgeColor: "bg-[#ff0000]",
-      icon: "uil-bed-double", // หรือ uil-medical-square-full
-      text: "รองรับระบบ\nOPD ไม่จำกัด",
-      sparkle: true,
-    },
-    {
-      badge: null,
-      icon: "uil-envelope-send",
-      text: "รองรับระบบส่ง\nข้อความโปรโมชั่นผ่าน\nSMS/Email",
-      sparkle: false,
-    },
-    {
-      badge: null,
-      icon: "uil-file-medical",
-      text: "รองรับการออก\nเอกสารเอกสาร\nทางการแพทย์หลาก\nหลาย",
-      sparkle: false,
-    },
-    {
-      badge: "NEW",
-      badgeColor: "bg-[#ff8a00]",
-      icon: "uil-analytics",
-      text: "รองรับการออก\nรายงานต่างๆทั้งรูป\nแบบ Excel/PDF",
-      sparkle: true,
-    },
-    {
-      badge: null,
-      icon: "uil-file-import",
-      text: "รองรับการนำเข้า\nรายการต่างๆง่ายๆ\nผ่านไฟล์ Excel",
-      sparkle: false,
-    },
-    {
-      badge: "NEW",
-      badgeColor: "bg-[#ff8a00]",
-      icon: "uil-calendar-alt",
-      text: "รองรับการลงนัด\nหมายทั้งแบบระบุตัว\nตนและแบบทั่วไป",
-      sparkle: true,
-    },
-    {
-      badge: null,
-      icon: "uil-info-circle",
-      text: "รองรับการแจ้งเตือน\nข้อมูลต่างๆ\nในรูปแบบรายงาน",
-      sparkle: false,
-    },
-    {
-      badge: "NEW",
-      badgeColor: "bg-[#ff8a00]",
-      icon: "uil-monitor-heart-rate",
-      text: "รองรับการแจ้งเตือน\nAlert Alarm\nหน้าโปรแกรม",
-      sparkle: true,
-    },
-  ];
-
-  const steps2 = [
-    {
-      number: "01",
-      title: "ใบเสนอราคา",
-      description:
-        "สร้างและส่งใบเสนอราคาอย่างมืออาชีพ เพื่อปิดดีลกับลูกค้าได้รวดเร็วยิ่งขึ้น",
-      isLast: false,
-      image: "/assets/img/showcaseSlides/feature_preview_step_0.png",
-    },
-    {
-      number: "02",
-      title: "ใบแจ้งหนี้",
-      description:
-        "เปลี่ยนใบเสนอราคาเป็นใบแจ้งหนี้ในคลิกเดียว พร้อมระบบติดตามการชำระเงิน",
-      isLast: false,
-      image: "/assets/img/showcaseSlides/feature_preview_step_1.png",
-    },
-    {
-      number: "03",
-      title: "ใบเสร็จ",
-      description:
-        "ออกใบเสร็จรับเงินทันทีเมื่อได้รับการชำระ เพื่อยืนยันความถูกต้องให้แก่ลูกค้า",
-      isLast: false,
-      image: "/assets/img/showcaseSlides/feature_preview_step_2.png",
-    },
-    {
-      number: "04",
-      title: "ใบกำกับภาษี",
-      description:
-        "จัดการเอกสารทางภาษีให้ถูกต้องตามมาตรฐาน ลดความยุ่งยากในช่วงสิ้นเดือน",
-      isLast: true,
-      image: "/assets/img/showcaseSlides/feature_preview_step_3.png",
-    },
-  ];
+  const HIGHLIGHTS_DATA = getHighLightsData(t, lng);
+  const BillData = getBillData(t, lng);
+  const Services = getServicesData(t, lng);
 
   return (
     <section
@@ -165,7 +30,7 @@ export default async function ProductOverview({ lng }) {
           <div className="flex flex-col-reverse lg:flex-row items-center !mt-10">
             <div className="w-full !space-y-2">
               <span className="text-[#343f52] text-xl font-medium py-1 rounded-full">
-                {t("home:title", "โปรแกรม คลินิก APSX Platform")}
+                {t("home:apsx_platform", "โปรแกรม คลินิก APSX Platform")}
               </span>
               <h2 className="text-3xl md:!text-lg !font-medium !text-[#1bb59b]">
                 {t(
@@ -174,13 +39,16 @@ export default async function ProductOverview({ lng }) {
                 )}
               </h2>
               <p className="text-[#343f52] text-sm leading-relaxed">
-                {t("home:features.description", "เป็นระบบที่ลงตัว...")}
+                {t(
+                  "home:features.description",
+                  "เป็นระบบที่ลงตัวมาพร้อมกับการใช้งานง่าย สะดวกสบาย และรันบน Cloud ด้วยเทคโนโลยีที่ทันสมัยในยุคนี้ ทำให้ไม่ต้องใช้แฟ้ม OPD Card แบบเก่าอีกต่อไป",
+                )}
               </p>
 
               <p className="text-[#343f52] text-sm leading-relaxed">
                 {t(
                   "home:features.features.description",
-                  "ยกระดับการบริหารจัดการ...",
+                  "ยกระดับการบริหารจัดการคลินิกด้วยเทคโนโลยี Cloud อัจฉริยะ ที่ออกแบบมาเพื่อความรวดเร็วและความปลอดภัยสูงสุดของข้อมูลคุณ",
                 )}
               </p>
             </div>
@@ -189,46 +57,27 @@ export default async function ProductOverview({ lng }) {
           <div className="space-y-0 !mt-0 pb-8">
             <div className="flex items-center justify-start text-center gap-2 text-slate-800 !font-medium">
               <i className="uil uil-comments !text-xl text-[#1bb59b]" />
-              <h4 className="!mt-2 !text-xl !font-medium">
-                ระบบหลังบ้านที่ทำให้เรื่องคลินิกเป็นเรื่องง่าย ครบจบในที่เดียว
+              <h4 className="!mt-2 !text-xl !font-medium space-x-1">
+                <span>
+                  {t(
+                    "home:product_overview.hero.title",
+                    "ระบบหลังบ้านที่ทำให้เรื่องคลินิกเป็นเรื่องง่าย",
+                  )}
+                </span>
+                <strong className="text-[#1bb59b] font-medium">
+                  {t("home:product_overview.hero.subtitle", "ครบจบในที่เดียว")}
+                </strong>
               </h4>
             </div>
+            <p className="!text-sm">
+              {t(
+                "home:product_overview.hero.description",
+                "จัดการทุกกระบวนการของคลินิกให้มีประสิทธิภาพด้วยระบบบริหารจัดการที่ออกแบบมาเพื่อคุณโดยเฉพาะ",
+              )}
+            </p>
             <div className="!mt-12">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-10 max-w-6xl mx-auto px-6">
-                {[
-                  {
-                    title: "ระบบเวชระเบียน",
-                    subTitle: "OPD Management",
-                    icon: "uil-file-bookmark-alt",
-                    desc: "จัดเก็บประวัติคนไข้และข้อมูลการรักษาอย่างเป็นระบบ ค้นหาง่ายเพียงปลายนิ้ว",
-                  },
-                  {
-                    title: "ระบบบริหารสต็อกยา",
-                    icon: "uil-medkit",
-                    desc: "ตัดสต็อกอัตโนมัติ แจ้งเตือนเมื่อยาใกล้หมดหรือหมดอายุ",
-                  },
-                  {
-                    title: "รายงานวิเคราะห์",
-                    subTitle: "กว่า 40 รูปแบบ",
-                    icon: "uil-analytics",
-                    desc: "สรุปยอดขาย กำไร และสถิติคนไข้ครบจบในที่เดียว",
-                  },
-                  {
-                    title: "ข้อมูลลูกค้า",
-                    icon: "uil-users-alt",
-                    desc: "เครื่องมือ CRM เก็บข้อมูลพฤติกรรมการใช้บริการเพื่อแผนการตลาดที่ตรงจุด",
-                  },
-                  {
-                    title: "รองรับหลายสาขา",
-                    icon: "uil-store-alt",
-                    desc: "จัดการข้อมูลทุกสาขาได้พร้อมกันผ่าน Centralized Dashboard เพียงบัญชีเดียว",
-                  },
-                  {
-                    title: "สิทธิ์การเข้าถึง",
-                    icon: "uil-lock-access",
-                    desc: "กำหนดสิทธิ์การมองเห็นข้อมูลของพนักงานแต่ละระดับได้อย่างปลอดภัย",
-                  },
-                ].map((item, index) => (
+                {Services.map((item, index) => (
                   <div
                     key={index}
                     className="group flex flex-col items-start relative"
@@ -261,28 +110,33 @@ export default async function ProductOverview({ lng }) {
                   </div>
                 ))}
               </div>
-              <div className="!mb-6 !mt-20">
-                <div className="flex items-center justify-start text-start gap-2 text-slate-800 font-medium">
-                  <i className="uil uil-comments !text-xl text-[#1bb59b]" />
-                  <h2 className="!text-xl !font-medium text-[#343f52]">
-                    APSX Platform มีอะไรใหม่
-                  </h2>
+              <div data-cues="slideInDown" data-delay={300}>
+                <div className="!mb-6 !mt-20">
+                  <div className="flex items-center justify-start text-start gap-2 text-slate-800 font-medium">
+                    <i className="uil uil-comments !text-xl text-[#1bb59b]" />
+                    <h2 className="!text-xl !font-medium text-[#343f52]">
+                      {t(
+                        "home:product_overview.updates.header",
+                        "จัดการทุกกระบวนการของคลินิกให้มีประสิทธิภาพด้วยระบบบริหารจัดการที่ออกแบบมาเพื่อคุณโดยเฉพาะ",
+                      )}
+                    </h2>
+                  </div>
+                  <p className="text-slate-500 !text-[18px]">
+                    {t(
+                      "home:why_apsx.what_new_apsx.title",
+                      "APSX Platform ออกแบบมาเพื่อช่วยเจ้าของธุรกิจจัดการบริหารงาน ได้อย่างลงตัว",
+                    )}
+                    {t(
+                      "home:why_apsx.what_new_apsx.description",
+                      "ระบบครอบคลุมทุกด้านของธุรกิจ ไม่ว่าจะเป็นการจัดการระบบภายใน การเงิน การตลาด การขาย การสต๊อก ค่าใช้จ่าย ค่าคอมมิชชั่น และอื่นๆ ครบจบในแพลตฟอร์มเดียว",
+                    )}
+                  </p>
                 </div>
-                <p className="text-slate-500 !text-[18px]">
-                  {t(
-                    "home:why_apsx.what_new_apsx.title",
-                    "APSX Platform ออกแบบมาเพื่อช่วยเจ้าของธุรกิจจัดการบริหารงาน ได้อย่างลงตัว",
-                  )}
-                  {t(
-                    "home:why_apsx.what_new_apsx.description",
-                    "ระบบครอบคลุมทุกด้านของธุรกิจ ไม่ว่าจะเป็นการจัดการระบบภายใน การเงิน การตลาด การขาย การสต๊อก ค่าใช้จ่าย ค่าคอมมิชชั่น และอื่นๆ ครบจบในแพลตฟอร์มเดียว",
-                  )}
-                </p>
-              </div>
-              <div className="py-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2">
-                {HIGHLIGHTS_DATA.map((item, index) => (
-                  <SquareFeatureCard key={index} item={item} />
-                ))}
+                <div className="py-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2">
+                  {HIGHLIGHTS_DATA.map((item, index) => (
+                    <SquareFeatureCard key={index} item={item} />
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -318,30 +172,57 @@ export default async function ProductOverview({ lng }) {
                 </div>
 
                 <div className="grid items-center justify-start mb-6">
-                  <h4 className="text-xl md:text-2xl font-bold !mb-2 !text-[#343f52] !leading-[1.3]">
-                    ระบบหลังบ้านที่ทำให้เรื่องคลินิกเป็นเรื่องง่าย
-                    ครบจบในที่เดียว
+                  <h4 className="text-xl md:text-2xl font-bold !mb-2 space-x-1 !text-[#343f52] !leading-[1.3]">
+                    <span>
+                      {t(
+                        "home:product_overview.hero.title",
+                        "ระบบหลังบ้านที่ทำให้เรื่องคลินิกเป็นเรื่องง่าย",
+                      )}
+                    </span>
+                    <strong className="text-[#1bb59b] font-medium">
+                      {t(
+                        "home:product_overview.hero.subtitle",
+                        "ครบจบในที่เดียว",
+                      )}
+                    </strong>
                   </h4>
-                  <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#1bb59b]">
-                    ช่วยให้การทำงานของทีมงานลื่นไหลไม่มีสะดุด
+                  <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#343f52]">
+                    {t(
+                      "home:product_overview.workflow.title",
+                      "ช่วยให้การทำงานของทีมงานลื่นไหลไม่มีสะดุด",
+                    )}
                   </h5>
                 </div>
 
                 {/* ส่วนคำอธิบายที่เพิ่มเข้ามา */}
-                <p className="text-[0.85rem] leading-relaxed text-[#60697b] !mb-6">
-                  บอกลาความวุ่นวายของการจัดการเอกสารและระบบที่กระจัดกระจาย APSX
-                  Platform ถูกออกแบบมาเพื่อเชื่อมโยงทุกแผนกในคลินิกเข้าด้วยกัน
-                  ตั้งแต่การลงทะเบียนคนไข้หน้าเคาน์เตอร์
-                  การบันทึกการรักษาของแพทย์
-                  ไปจนถึงการจัดการคลังยาและบัญชีหลังบ้านอย่างแม่นยำ
+                <p className="text-[0.85rem] leading-relaxed text-[#60697b] space-x-1 !mb-6">
+                  <strong className="!text-[#343f52]">
+                    {t(
+                      "home:product_overview.workflow.about1.vision_title",
+                      "บอกลาความวุ่นวายของการจัดการเอกสาร",
+                    )}
+                  </strong>
+                  <span>
+                    {t(
+                      "home:product_overview.workflow.about1.vision_desc",
+                      "APSX Platform ถูกออกแบบมาเพื่อเชื่อมโยงทุกแผนกในคลินิกเข้าด้วยกัน ตั้งแต่การลงทะเบียนคนไข้หน้าเคาน์เตอร์ การบันทึกการรักษาของแพทย์ ไปจนถึงการจัดการคลังยาและบัญชีหลังบ้านอย่างแม่นยำ",
+                    )}
+                  </span>
                 </p>
 
-                <p className="text-[0.85rem] leading-relaxed text-[#60697b] !mb-8 font-light">
-                  ด้วยเทคโนโลยี <strong>Cloud Sync</strong> ที่ล้ำสมัย
-                  ข้อมูลจะถูกอัปเดตแบบ Real-time
-                  ช่วยให้เจ้าของคลินิกตรวจสอบภาพรวมธุรกิจได้ทุกที่ทุกเวลา
-                  ลดความผิดพลาดของบุคลากร
-                  และเพิ่มเวลาให้คุณได้โฟกัสกับการดูแลคนไข้และการขยายสาขาได้อย่างไร้กังวล
+                <p className="text-[0.85rem] leading-relaxed text-[#60697b] space-x-1 !mb-6">
+                  <strong className="!text-[#343f52]">
+                    {t(
+                      "home:product_overview.workflow.about2.vision_title",
+                      "เทคโนโลยี Cloud Sync ที่ล้ำสมัย",
+                    )}
+                  </strong>
+                  <span>
+                    {t(
+                      "home:product_overview.workflow.about2.vision_desc",
+                      "ด้วยเทคโนโลยี Cloud Sync ที่ล้ำสมัย ข้อมูลจะถูกอัปเดตแบบ Real-time ช่วยให้เจ้าของคลินิกตรวจสอบภาพรวมธุรกิจได้ทุกที่ทุกเวลา ลดความผิดพลาดของบุคลากร และเพิ่มเวลาให้คุณได้โฟกัสกับการดูแลคนไข้และการขยายสาขาได้อย่างไร้กังวล",
+                    )}
+                  </span>
                 </p>
 
                 {/* ปุ่ม Call to Action (ตัวเลือกเสริมเพื่อให้จบสวย) */}
@@ -354,7 +235,7 @@ export default async function ProductOverview({ lng }) {
                     <span className="absolute top-1 right-1"></span>
                     <i className="uil uil-comment-search text-[0.8rem] mr-1"></i>
                     <span className="!font-medium !text-[14px]">
-                      {"ดูรายละเอียดเพิ่มเติม"}
+                      {t("read_more", "ดูรายละเอียดเพิ่มเติม")}
                     </span>
                   </Button>
                 </div>
@@ -364,7 +245,12 @@ export default async function ProductOverview({ lng }) {
         </div>
       </section>
 
-      <section id="snippet-5" className="wrapper !bg-[#f4fcfa] ">
+      <section
+        data-cues="slideInDown"
+        data-delay={300}
+        id="snippet-5"
+        className="wrapper !bg-[#f4fcfa] "
+      >
         <div className="container pt-20 xl:pt-28 lg:pt-28 md:pt-28 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
           <div className="flex flex-wrap mx-[-15px] md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px] !mt-[-50px] items-center">
             <div className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] !mt-[50px] max-w-full xl:!order-2 lg:!order-2">
@@ -379,8 +265,16 @@ export default async function ProductOverview({ lng }) {
                       </span>
                     </div>
                     <div>
-                      <h4 className="!mb-1">บันทึกข้อมูล OPD Card</h4>
-                      <p className="!mb-0">ผ่านระบบออนไลน์</p>
+                      <h4 className="!mb-1 !font-medium">
+                        {t(
+                          "home:product_overview.business_intelligence.quick_features.opd.title",
+                        )}
+                      </h4>
+                      <p className="!mb-0">
+                        {t(
+                          "home:product_overview.business_intelligence.quick_features.opd.desc",
+                        )}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -398,8 +292,16 @@ export default async function ProductOverview({ lng }) {
                       </span>
                     </div>
                     <div>
-                      <h4 className="!mb-1">บริหารสต็อกยา</h4>
-                      <p className="!mb-0">ปรับแต่งเองสำหรับคลินิกของคุณ</p>
+                      <h4 className="!mb-1 !font-medium">
+                        {t(
+                          "home:product_overview.business_intelligence.quick_features.inventory.title",
+                        )}
+                      </h4>
+                      <p className="!mb-0">
+                        {t(
+                          "home:product_overview.business_intelligence.quick_features.inventory.desc",
+                        )}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -418,8 +320,16 @@ export default async function ProductOverview({ lng }) {
                       </span>
                     </div>
                     <div>
-                      <h4 className="!mb-1">PDF Templates</h4>
-                      <p className="!mb-0">ปรับแต่งเองสำหรับคลินิกของคุณ</p>
+                      <h4 className="!mb-1 !font-medium">
+                        {t(
+                          "home:product_overview.business_intelligence.quick_features.pdf.title",
+                        )}
+                      </h4>
+                      <p className="!mb-0">
+                        {t(
+                          "home:product_overview.business_intelligence.quick_features.pdf.desc",
+                        )}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -436,8 +346,16 @@ export default async function ProductOverview({ lng }) {
                       </span>
                     </div>
                     <div>
-                      <h4 className="!mb-1">Marketplace</h4>
-                      <p className="!mb-0">จัดการสินค้าออนไลน์และโปรโมชั่น</p>
+                      <h4 className="!mb-1 !font-medium">
+                        {t(
+                          "home:product_overview.business_intelligence.quick_features.marketplace.title",
+                        )}
+                      </h4>
+                      <p className="!mb-0">
+                        {t(
+                          "home:product_overview.business_intelligence.quick_features.marketplace.desc",
+                        )}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -447,26 +365,25 @@ export default async function ProductOverview({ lng }) {
             </div>
             {/*/column */}
             <div className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] !mt-[50px] max-w-full">
-              <h2 className="!text-[calc(1.265rem_+_0.18vw)] font-bold xl:!text-[1.4rem] !leading-[1.35] !mb-3">
-                โปรแกรม คลินิก APSX Platform
+              <h2 className="!text-[calc(1.265rem_+_0.18vw)] !font-medium xl:!text-[1.2rem] !leading-[1.35] !mb-3">
+                {t(
+                  "home:product_overview.business_intelligence.title",
+                  "ให้ APSX ช่วยดูแลหลังบ้าน ให้คุณจัดการธุรกิจได้ง่ายขึ้น",
+                )}
               </h2>
 
               <p className="lead text-[0.85rem] xl:!pr-5 lg:!pr-5 !mb-4">
-                ยกระดับธุรกิจด้วยระบบ All-in-One Dashboard
-                ที่เชื่อมโยงข้อมูลทุกแผนกแบบ Real-time
-                ตั้งแต่การขายจนถึงการจัดการต้นทุนหลังบ้าน ช่วยลดความซับซ้อน
-                เพิ่มความแม่นยำในการวิเคราะห์ และให้ความปลอดภัยสูงสุด
-                เพื่อให้คุณจัดการงานเอกสารได้รวดเร็วและมีเวลาโฟกัสกับการ
-                ขยายธุรกิจ (Scaling) ได้อย่างเต็มที่
+                {t(
+                  "home:product_overview.business_intelligence.description",
+                  "ยกระดับธุรกิจด้วยระบบ All-in-One Dashboard ที่เชื่อมโยงข้อมูลทุกแผนกแบบ Real-time ตั้งแต่การขายจนถึงการจัดการต้นทุนหลังบ้าน ช่วยลดความซับซ้อน เพิ่มความแม่นยำในการวิเคราะห์ และให้ความปลอดภัยสูงสุด เพื่อให้คุณจัดการงานเอกสารได้รวดเร็วและมีเวลาโฟกัสกับการขยายธุรกิจ (Scaling) ได้อย่างเต็มที่",
+                )}
               </p>
+
               <div className="!space-y-1 !mt-4">
-                {[
-                  "เห็นภาพรวมธุรกิจครบทุกมิติในที่เดียวแบบ Real-time",
-                  "เชื่อมต่อข้อมูลหน้าบ้านและหลังบ้านอย่างไร้รอยต่อ ลดข้อผิดพลาด",
-                  "ระบบทันสมัย ปลอดภัย และปรับแต่งฟีเจอร์ได้ตามประเภทธุรกิจคุณ",
-                ].map((text, index) => (
+                {t("home:product_overview.business_intelligence.check_list", {
+                  returnObjects: true,
+                }).map((text, index) => (
                   <div key={index} className="flex items-center gap-2 group">
-                    {/* Icon Checkmark สีเขียวต้นฉบับของ APSX */}
                     <div className="flex-shrink-0 mt-1">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#1bb59b]/50 flex items-center justify-center transition-colors duration-300"></div>
                     </div>
@@ -486,7 +403,7 @@ export default async function ProductOverview({ lng }) {
                   <span className="absolute top-1 right-1"></span>
                   <i className="uil uil-comment-search text-[0.8rem] mr-1"></i>
                   <span className="!font-medium !text-[14px]">
-                    {"ดูรายละเอียดเพิ่มเติม"}
+                    {t("read_more", "ดูรายละเอียดเพิ่มเติม")}
                   </span>
                 </Button>
               </div>
@@ -497,16 +414,25 @@ export default async function ProductOverview({ lng }) {
         </div>
       </section>
 
-      <section id="snippet-2" className="wrapper !bg-[#ffffff]">
+      <section
+        data-cues="slideInDown"
+        data-delay={300}
+        id="snippet-2"
+        className="wrapper !bg-[#ffffff]"
+      >
         <div className="container pt-20 xl:pt-28 lg:pt-28 md:pt-28 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
           <div className="flex flex-col items-start mb-12">
             <h2 className="!text-[calc(1.305rem_+_0.66vw)] space-x-2 !font-medium xl:!text-[1.3rem] !leading-[1.3] !mb-2 !text-[#343f52]">
               <i className="uil uil-comments text-[#2bc29d]"></i>
-              <span>ระบบเรียกคิว</span>
+              <span>
+                {t("home:product_overview.queue_system.title", "ระบบเรียกคิว")}
+              </span>
             </h2>
             <p className="lead !mb-0 !text-[0.95rem] text-gray-500 font-light">
-              จัดการและเรียกคิวผู้ป่วยได้อย่างเป็นระบบ ลดการรอคอย
-              เพิ่มความพึงพอใจ
+              {t(
+                "home:product_overview.queue_system.description",
+                "จัดการคิวผู้ป่วยได้อย่างเป็นระบบ ลดระยะเวลาการรอคอย เพื่อมอบบริการที่น่าประทับใจยิ่งขึ้น",
+              )}
             </p>
           </div>
 
@@ -515,18 +441,36 @@ export default async function ProductOverview({ lng }) {
             {[
               {
                 src: "/assets/img/photos/bp6.jpg",
-                title: "หน้าจอลงทะเบียนคิว",
-                desc: "ออกคิวได้รวดเร็วผ่านระบบ Touch Screen",
+                title: t(
+                  "home:product_overview.queue_features.registration.title",
+                  "หน้าจอลงทะเบียนคิว",
+                ),
+                desc: t(
+                  "home:product_overview.queue_features.registration.desc",
+                  "ออกคิวได้รวดเร็วทันใจผ่านระบบ Touch Screen",
+                ),
               },
               {
                 src: "/assets/img/photos/bp6.jpg",
-                title: "ระบบเรียกคิวเสียง",
-                desc: "รองรับการเรียกคิวด้วยเสียงภาษาไทยอัตโนมัติ",
+                title: t(
+                  "home:product_overview.queue_features.voice.title",
+                  "ระบบเรียกคิวด้วยเสียง",
+                ),
+                desc: t(
+                  "home:product_overview.queue_features.voice.desc",
+                  "รองรับการเรียกคิวด้วยเสียงภาษาไทยอัตโนมัติ",
+                ),
               },
               {
                 src: "/assets/img/photos/bp6.jpg",
-                title: "แดชบอร์ดติดตามคิว",
-                desc: "ตรวจสอบสถานะคิวรอตรวจได้แบบ Real-time",
+                title: t(
+                  "home:product_overview.queue_features.dashboard.title",
+                  "แดชบอร์ดติดตามคิว",
+                ),
+                desc: t(
+                  "home:product_overview.queue_features.dashboard.desc",
+                  "เช็กสถานะคิวรอตรวจได้แบบ Real-time ทุกนาที",
+                ),
               },
             ].map((item, index) => (
               <div key={index} className="group">
@@ -536,12 +480,9 @@ export default async function ProductOverview({ lng }) {
                     <img
                       src={item.src}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-700"
                     />
                   </figure>
-
-                  {/* Overlay Gradient (Optional) */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#343f52]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
                 {/* Text Below Image */}
@@ -595,36 +536,32 @@ export default async function ProductOverview({ lng }) {
                   </div>
 
                   <div className="grid items-center justify-start mb-4">
-                    <h4 className="text-xl md:text-2xl font-bold !mb-0  !text-[#343f52]">
-                      บันทึกและเข้าถึงประวัติคนไข้
+                    <h4 className="text-xl md:text-2xl font-bold !mb-0 !text-[#343f52]">
+                      {t(
+                        "home:product_overview.medical_records.title",
+                        "บันทึกและเข้าถึงประวัติคนไข้",
+                      )}
                     </h4>
-                    <h5 className="text-xl md:text-2xl !font-medium !mb-0  !text-[#1bb59b]">
-                      บันทึก OPD/IPD ผ่านระบบออนไลน์
+                    <h5 className="text-xl md:text-2xl !font-medium !mb-0 !text-[#1bb59b]">
+                      {t(
+                        "home:product_overview.medical_records.subtitle",
+                        "บันทึก OPD/IPD ผ่านระบบออนไลน์",
+                      )}
                     </h5>
                   </div>
 
                   <div className="space-y-4">
                     <p className="text-[0.95rem] text-[#505358] leading-relaxed font-medium">
-                      บันทึกและเข้าถึงประวัติคนไข้ได้ทุกที่ทุกเวลา
-                      ผ่านระบบออนไลน์ที่มีความเสถียรและปลอดภัยสูง
-                      รองรับมาตรฐานการบันทึกข้อมูลสำหรับคลินิกหลากหลายสาขา
+                      {t(
+                        "home:product_overview.medical_records.description",
+                        "บันทึกและเข้าถึงประวัติคนไข้ได้ทุกที่ทุกเวลา ผ่านระบบออนไลน์ที่มีความเสถียรและปลอดภัยสูง รองรับมาตรฐานการบันทึกข้อมูลสำหรับคลินิกหลากหลายสาขา",
+                      )}
                     </p>
 
-                    {/* แยกเป็น 2 คอลัมน์เพื่อให้คนอ่านกวาดสายตาได้ง่าย */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-[0.70rem] text-[#505a6d]">
-                      {[
-                        "คลินิกทั่วไป",
-                        "คลินิกเวชกรรม",
-                        "คลินิกพยาบาลผดุงครรภ์",
-                        "คลินิกกายภาพบำบัด",
-                        "คลินิกแพทย์แผนไทย-จีน",
-                        "คลินิกแม่และเด็ก",
-                        "คลินิกบําบัดยาเสพติด",
-                        "คลินิกสุขภาพจิต",
-                        "คลินิกตา",
-                        "คลินิกทันตกรรม",
-                        "และคลินิกเฉพาะทางอื่นๆ",
-                      ].map((text, index) => (
+                      {t("home:product_overview.medical_records.clinic_types", {
+                        returnObjects: true,
+                      }).map((text, index) => (
                         <div
                           key={index}
                           className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#45c4a0]/10 transition-all duration-300 group"
@@ -641,23 +578,44 @@ export default async function ProductOverview({ lng }) {
         </section>
       </div>
 
-      <section id="snippet-2" className="wrapper !bg-[#ffffff] ">
+      <section
+        data-cues="slideInDown"
+        data-delay={300}
+        id="snippet-2"
+        className="wrapper !bg-[#ffffff] "
+      >
         <div className="container pt-20 xl:pt-10 lg:pt-10 md:pt-10 pb-16 xl:pb-20 lg:pb-20 md:pb-20">
-          <h2 className=" space-x-2 !text-[calc(1.305rem_+_0.66vw)] !font-medium xl:!text-[1.3rem] !leading-[1.3] !mb-0">
+          <h2 className="space-x-2 !text-[calc(1.305rem_+_0.66vw)] !font-medium xl:!text-[1.3rem] !leading-[1.3] !mb-0">
             <i className="uil uil-comments text-[#2bc29d]"></i>
-            <span>สร้างใบเสร็จ</span>
-            <span className="text-[#45c4a0]">ครบจบในหน้าเดียว</span>
+            <span>
+              {t(
+                "home:product_overview.billing_section.title_main",
+                "สร้างใบเสร็จ",
+              )}
+            </span>
+            <span className="text-[#45c4a0]">
+              {t(
+                "home:product_overview.billing_section.title_highlight",
+                "ครบจบในหน้าเดียว",
+              )}
+            </span>
           </h2>
+
           <p className="lead !mb-12 !text-[0.95rem] text-gray-600">
-            เปลี่ยนการออกเอกสารที่ยุ่งยากให้เป็นเรื่อง{" "}
+            {t(
+              "home:product_overview.billing_section.description",
+              "เปลี่ยนการออกเอกสารที่ยุ่งยากให้เป็นเรื่อง",
+            )}
             <span className="bg-[#45c4a0]/10 px-2 rounded-full text-[#45c4a0]">
-              ง่ายและรวดเร็ว
+              {t(
+                "home:product_overview.billing_section.desc_highlight",
+                "ง่ายและรวดเร็ว",
+              )}
             </span>
           </p>
-
           <div className="flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-30px] process-wrapper line">
-            {steps2.map((column, index) => {
-              return (
+            {BillData &&
+              BillData.map((column, index) => (
                 <div
                   key={index}
                   className={`md:w-6/12 lg:w-3/12 xl:w-3/12 w-full flex-[0_0_auto] !px-[15px] xl:!px-[35px] lg:!px-[20px] !mt-[30px] max-w-full !relative ${
@@ -666,7 +624,7 @@ export default async function ProductOverview({ lng }) {
                       : ""
                   }`}
                 >
-                  {/* --- 1. ส่วนของตัวเลขสเต็ป (ขยับขึ้นมาเป็นส่วนหลัก) --- */}
+                  {/* 1. เลข Step */}
                   <span
                     className={
                       index === 3
@@ -679,7 +637,7 @@ export default async function ProductOverview({ lng }) {
                     </span>
                   </span>
 
-                  {/* --- 2. ส่วนของเนื้อหาข้อความ --- */}
+                  {/* 2. เนื้อหา */}
                   <div className="relative z-[2]">
                     <h4 className="!mb-2 !font-bold !text-[0.9rem] text-[#343f52] transition-colors hover:text-[#45c4a0]">
                       {column.title}
@@ -688,12 +646,8 @@ export default async function ProductOverview({ lng }) {
                       {column.description}
                     </p>
                   </div>
-
-                  {/* ตกแต่งเพิ่มเติม: แถบสีเล็กๆ ด้านล่างหัวข้อเพื่อความสวยงาม */}
-                  <div className="w-8 h-[2px] bg-[#45c4a0]/30 mt-4 rounded-full"></div>
                 </div>
-              );
-            })}
+              ))}
           </div>
           {/*/.row */}
         </div>

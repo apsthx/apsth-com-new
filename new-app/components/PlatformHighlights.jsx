@@ -10,6 +10,7 @@ import {
   getSecurityFactors,
   getVerificationSystems,
   getSystemAddons,
+  getHighlightFeatures,
 } from "@/data/features";
 // components
 import Badge from "@/components/common/Badges";
@@ -19,49 +20,10 @@ export default async function PlatformHighlights({ lng }) {
   const apsxPlatformItems = getApsxPlatformData(t, lng);
   const suggestions = AiSuggestion(t, lng);
 
-  const whyApsxItems = getWhyApsx(t);
+  const HIGHLIGHT_DATA = getHighlightFeatures(t);
   const securityItems = getSecurityFactors(lng);
   const verificationItems = getVerificationSystems(lng);
   const addonItems = getSystemAddons(lng);
-
-  const HIGHLIGHT_DATA = [
-    {
-      title: "THE BEST",
-      badgeColor: "bg-[#ff0000]",
-      icon: "uil-shield-check",
-      desc: "ป้องกันข้อมูล\nลูกค้าสูญหาย,\nค้นหาประวัติ\nการรักษาได้ง่าย\nไม่ต้องใช้กระดาษ\nรองรับระบบ OPD\nไม่จำกัด",
-    },
-    {
-      title: "NEW",
-      badgeColor: "bg-[#ff8a00]",
-      icon: "uil-user-circle",
-      desc: "รองรับการ\nดูแลจัดการ\nสาขาได้หลาย\nสาขาเพียง\n1 User",
-    },
-    {
-      title: "NEW",
-      badgeColor: "bg-[#ff8a00]",
-      icon: "uil-calendar-alt",
-      desc: "นัดหมาย,\nจัดคิวลูกค้ากับ\nแพทย์ได้ง่ายขึ้น\nสามารถ\nแจ้งเตือนบน\nGoogle\nCalendar ได้",
-    },
-    {
-      title: "THE BEST",
-      badgeColor: "bg-[#ff0000]",
-      icon: "uil-chart-line",
-      desc: "ไม่ต้องเสียเวลา\nทำสรุปรายงานต่างๆ\nเพราะระบบ\nAPS_X Platform\nทำการสรุปให้\nReal time",
-    },
-    {
-      title: "NEW",
-      badgeColor: "bg-[#ff8a00]",
-      icon: "uil-print",
-      desc: "ระบบรองรับการ\nพิมพ์เอกสาร\nฉลากยา\nใบแจ้งหนี้ ใบเสร็จรับ\nเงิน และใบกำกับภาษี\nในโปรแกรมเดียว",
-    },
-    {
-      title: "THE BEST",
-      badgeColor: "bg-[#ff0000]",
-      icon: "uil-file-info-alt",
-      desc: "สะดวกสบาย\nต่อการตรวจสอบ\nข้อมูลการทำงาน\nและทางการเงินได้\nReal time\nและสามารถ\nทำงานที่ไหนก็ได้",
-    },
-  ];
 
   return (
     <section className="wrapper overflow-hidden">
@@ -69,13 +31,13 @@ export default async function PlatformHighlights({ lng }) {
         {/*/.row */}
         <div className="mt-0 flex flex-wrap mx-[-15px] xl:mx-0 lg:mx-0 items-center">
           <div className="container">
-            <div className="px-4 flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-50px] !mb-[4.5rem] xl:!mb-[7rem] lg:!mb-[7rem] md:!mb-[7rem] items-center">
+            <div
+              data-cues="slideInDown"
+              data-delay={300}
+              className="px-4 flex flex-wrap mx-[-15px] xl:mx-[-35px] lg:mx-[-20px] !mt-[-50px] !mb-[4.5rem] xl:!mb-[7rem] lg:!mb-[7rem] md:!mb-[7rem] items-center"
+            >
               {/*/column */}
-              <div
-                data-cues="slideInDown"
-                data-delay={300}
-                className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] !mt-[50px] max-w-full"
-              >
+              <div className="xl:w-6/12 lg:w-6/12 w-full flex-[0_0_auto] xl:!px-[35px] lg:!px-[20px] !px-[15px] !mt-[50px] max-w-full">
                 <div className="flex items-center gap-2 !mb-0">
                   {/* ส่วนของหัวข้อ */}
                   <i className="uil uil-location-arrow text-[#2bc29d] text-lg"></i>
@@ -145,7 +107,11 @@ export default async function PlatformHighlights({ lng }) {
               </div>
             </div>
 
-            <div className="w-full mb-4">
+            <div
+              data-cues="slideInDown"
+              data-delay={300}
+              className="w-full mb-4"
+            >
               {/* คอนเทนเนอร์หลัก: ใช้ flex-wrap เพื่อให้การ์ดตกลงมาเมื่อจอแคบลง */}
               <div className="flex flex-wrap justify-center mx-[-15px] !mt-[-120px]">
                 {apsxPlatformItems.map((item) => {
@@ -153,8 +119,6 @@ export default async function PlatformHighlights({ lng }) {
 
                   return (
                     <div
-                      data-cues="slideInDown"
-                      data-delay={300}
                       key={item.id}
                       className=" w-full md:w-6/12 lg:w-4/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[50px]"
                     >
@@ -353,8 +317,6 @@ export default async function PlatformHighlights({ lng }) {
             {/* --- ส่วนข้อความด้านบน (1 Column เต็มความกว้าง) --- */}
             <div
               className="max-w-[850px] mb-12 mx-auto text-center" // เพิ่ม mx-auto และ text-center เพื่อจัดกึ่งกลาง
-              data-cues="slideInDown"
-              data-delay={300}
             >
               {/* ส่วน Badge ด้านบนจัดกลาง */}
               <div className="flex items-center justify-center gap-2 mb-4">
@@ -386,9 +348,8 @@ export default async function PlatformHighlights({ lng }) {
             <div className="flex flex-wrap justify-center mx-[-15px] !mt-[-30px]">
               {securityItems.map((item) => (
                 <div
-                  data-cues="slideInDown"
-                  data-delay={300}
                   key={item.id}
+                  data-cues="slideInDown"
                   className="w-full md:w-6/12 lg:w-4/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[30px] "
                 >
                   <div className="group relative  bg-white overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border-2 border-[#a4aec633] rounded-lg shadow-md">
@@ -424,11 +385,7 @@ export default async function PlatformHighlights({ lng }) {
           <div className=" pb-16 xl:pb-20 lg:pb-20 md:pb-20">
             {/* --- ส่วนข้อความด้านบน (1 Column เต็มความกว้าง) --- */}
 
-            <div
-              className="max-w-[850px] mb-12 mx-auto text-center"
-              data-cues="slideInDown"
-              data-delay={300}
-            >
+            <div className="max-w-[850px] mb-12 mx-auto text-center">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="text-[0.7rem] uppercase tracking-[0.2rem] !text-[#9499a3] !font-normal">
                   {t(
@@ -500,11 +457,7 @@ export default async function PlatformHighlights({ lng }) {
           <div className=" pb-16 xl:pb-20 lg:pb-20 md:pb-20">
             {/* --- ส่วนข้อความด้านบน (1 Column เต็มความกว้าง) --- */}
 
-            <div
-              className="max-w-[850px] mb-12 mx-auto text-center"
-              data-cues="slideInDown"
-              data-delay={300}
-            >
+            <div className="max-w-[850px] mb-12 mx-auto text-center">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="text-[0.7rem] uppercase tracking-[0.2rem] !text-[#9499a3] !font-normal">
                   {t(
@@ -537,9 +490,8 @@ export default async function PlatformHighlights({ lng }) {
             <div className="flex flex-wrap mx-[-15px] !mt-[-30px]">
               {addonItems.map((item) => (
                 <div
-                  data-cues="slideInDown"
-                  data-delay={300}
                   key={item.id}
+                  data-cues="slideInDown"
                   className="w-full md:w-6/12 lg:w-4/12 flex-[0_0_auto] px-[15px] max-w-full !mt-[30px]"
                 >
                   <div className="group relative bg-white overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border-2 border-[#a4aec633] rounded-lg shadow-md ">
@@ -575,11 +527,7 @@ export default async function PlatformHighlights({ lng }) {
           <div className=" xl:pb-20 lg:pb-20 md:pb-20">
             {/* --- ส่วนข้อความด้านบน (1 Column เต็มความกว้าง) --- */}
 
-            <div
-              className="max-w-[850px] mb-12 mx-auto text-center"
-              data-cues="slideInDown"
-              data-delay={300}
-            >
+            <div className="max-w-[850px] mb-12 mx-auto text-center">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="text-[0.7rem] uppercase tracking-[0.2rem] !text-[#9499a3] !font-normal">
                   {t("home:why_apsx.partner.solution", "Partner")}
